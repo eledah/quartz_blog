@@ -1,6 +1,10 @@
 ---
-title: Welcome to Quartz
+title: صفحهٔ اول
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+سلام. به وبلاگ شخص من خوش آمدید 😄
+
+اولین مطلب: [[نگاه به هوش مصنوعی از لنز انقلاب صنعتی]]
+
+- صفحهٔ [آپارات](https://www.aparat.com/Crystalline) کریستالین
+- صفحهٔ من در [گیت‌هاب](https://github.com/eledah/)

@@ -15,6 +15,7 @@ import zh from "./locales/zh-CN"
 import vi from "./locales/vi-VN"
 import pt from "./locales/pt-BR"
 import hu from "./locales/hu-HU"
+import fa from "./locales/fa-IR"
 
 export const TRANSLATIONS = {
   "en-US": en,
@@ -26,6 +27,7 @@ export const TRANSLATIONS = {
   "nl-BE": nl,
   "ro-RO": ro,
   "ro-MD": ro,
+  "fa-IR": fa,
   "es-ES": es,
   "ar-SA": ar,
   "ar-AE": ar,

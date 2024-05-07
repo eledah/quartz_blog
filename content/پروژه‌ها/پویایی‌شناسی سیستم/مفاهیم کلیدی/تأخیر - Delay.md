@@ -1,5 +1,5 @@
 ---
-title: <%tp.file.title%>
+title: تأخیر - Delay
 draft: false
 tags:
 ---
