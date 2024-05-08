@@ -24,6 +24,10 @@ const TableOfContents: QuartzComponent = ({
     return null
   }
 
+  if (fileData.slug === "index") {
+    return <></>
+  }
+
   return (
     <div class={classNames(displayClass, "toc")}>
       <button type="button" id="toc" class={fileData.collapseToc ? "collapsed" : ""}>
