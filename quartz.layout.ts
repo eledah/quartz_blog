@@ -22,16 +22,24 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.Graph(),
+    Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.DesktopOnly(Component.Backlinks()),
+
+    Component.MobileOnly(Component.PageTitle()),
+    Component.MobileOnly(Component.Search()),
+    Component.MobileOnly(Component.Darkmode()),
+    Component.MobileOnly(Component.Explorer()),
   ],
   right: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.Search()),
+    Component.DesktopOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Explorer()),
+
+    Component.MobileOnly(Component.Spacer()),
+    Component.MobileOnly(Component.Graph()),
+    Component.MobileOnly(Component.Backlinks()),
   ],
 }
 
@@ -39,13 +47,15 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    
+    Component.MobileOnly(Component.PageTitle()),
+    Component.MobileOnly(Component.Darkmode()),
+    Component.MobileOnly(Component.Explorer()),
   ],
   right: [
-    Component.PageTitle(),
+    Component.DesktopOnly(Component.PageTitle()),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
-    Component.Darkmode(),
+    Component.DesktopOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Explorer()),
   ],
 }
