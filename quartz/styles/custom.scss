@@ -42,3 +42,11 @@ button#explorer .fold {
 li:has(> .folder-outer:not(.open)) > .folder-container > svg {
 	transform: rotate(90deg) !important;
 }
+
+footer {
+	text-align: center;
+}
+
+footer ul {
+	display: unset;
+}

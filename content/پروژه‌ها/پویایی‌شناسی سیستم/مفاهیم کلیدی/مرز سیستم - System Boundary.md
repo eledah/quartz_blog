@@ -4,7 +4,5 @@ draft: false
 tags:
 ---
 
-منبع: [[]]
-مرتبط: [[]]
-
+منبع: [[کتاب Thinking in Systems - a Primer]]
 ### خلاصه
