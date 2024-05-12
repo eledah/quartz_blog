@@ -39,6 +39,22 @@ button#explorer .fold {
 	padding-left: 0px !important;
 }
 
+#toc-content .depth-1 {
+	padding: 0px !important;
+	padding-right: 1rem !important;
+}
+
+#toc-content .depth-2 {
+	padding: 0px !important;
+	padding-right: 2rem !important;
+}
+
+#toc-content .depth-3 {
+	padding: 0px !important;
+	padding-right: 3rem !important;
+}
+
+
 li:has(> .folder-outer:not(.open)) > .folder-container > svg {
 	transform: rotate(90deg) !important;
 }
