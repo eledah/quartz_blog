@@ -10,7 +10,7 @@ export default {
       note: "یادداشت",
       abstract: "چکیده",
       info: "اطلاعات",
-      todo: "تسک",
+      todo: "اقدام",
       tip: "نکته",
       success: "تیک",
       question: "سؤال",
@@ -22,15 +22,15 @@ export default {
       quote: "نقل قول",
     },
     backlinks: {
-      title: "بک‌لینک",
-      noBacklinksFound: "بک‌لینکی یافت نشد",
+      title: "بک‌لینک‌ها",
+      noBacklinksFound: "بدون بک‌لینک",
     },
     themeToggle: {
       lightMode: "حالت روشن",
       darkMode: "حالت تاریک",
     },
     explorer: {
-      title: "جستجو",
+      title: "مطالب",
     },
     footer: {
       createdWith: "ساخته شده با",
@@ -40,10 +40,10 @@ export default {
     },
     recentNotes: {
       title: "یادداشت‌های اخیر",
-      seeRemainingMore: ({ remaining }) => `بیشتر ${remaining} ببینید →`,
+      seeRemainingMore: ({ remaining }) => `${remaining} یادداشت دیگر →`,
     },
     transcludes: {
-      transcludeOf: ({ targetSlug }) => `Transclude of ${targetSlug}`,
+      transcludeOf: ({ targetSlug }) => `از ${targetSlug}`,
       linkToOriginal: "پیوند به اصلی",
     },
     search: {
