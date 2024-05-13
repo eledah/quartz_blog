@@ -3,6 +3,7 @@ title: دنیای غیرخطی - Non-Linear World
 draft: false
 tags:
 ---
+منبع: [[کتاب Thinking in Systems - a Primer]] صـ۹۲
 ### خلاصه
 
 #### مثال‌هایی از رفتار غیرخطی
