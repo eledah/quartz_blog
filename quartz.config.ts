@@ -69,7 +69,6 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
-      Plugin.Remark42({ host: "eledah.github.io/quartz_blog/comments", site_id: "remark", no_footer: true }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
