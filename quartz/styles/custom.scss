@@ -67,8 +67,12 @@ footer ul {
 	display: unset;
 }
 
-code {
+code { 
 	direction: ltr !important;
+}
+
+div.search.mobile-only {
+    padding-right: 10px !important;
 }
 
 
