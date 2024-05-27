@@ -5,6 +5,8 @@ tags:
 ---
 منبع: [[کتاب Thinking in Systems - a Primer]] صـ۷۶
 
+<blockquote class="english-blockquote">Change breaks the brittle.<footer class="english-footer">Jan Houtema</footer></blockquote>
+
 ![[GK9nrLTXEAEKqH5.png]]
 
 - انعطاف‌پذیری سیستم به خاطر وجود [[حلقهٔ بازخورد - Feedback Loop|حلقه‌های بازخورد]] است که مدام سیستم را به حالت اصلی خود برمی‌گردانند. حتی بعضی از سیستم‌ها حلقه‌های بازخوردی برای احیای حلقه‌های بازخورد دارند که انعطاف آن‌ها را دوچندان می‌کند.
