@@ -1,6 +1,6 @@
 ---
 title: رسیدن به بینش یا بصیرت یا Insight
-draft: false
+draft: true
 tags:
 ---
 
