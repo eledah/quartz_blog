@@ -7,8 +7,8 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-      "آپارات": "https://www.aparat.com/Crystalline",
-      "گیت‌هاب": "https://github.com/eledah",
+      // "آپارات": "https://www.aparat.com/Crystalline",
+      // "گیت‌هاب": "https://github.com/eledah",
     },
   }),
 }
