@@ -24,7 +24,8 @@ button#explorer {
   }
 
   &.collapsed .fold {
-    transform: rotateZ(-90deg);
+    // Edited from -90 to 90
+    transform: rotateZ(90deg);
   }
 }
 

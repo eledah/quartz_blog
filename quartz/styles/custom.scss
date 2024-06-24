@@ -14,8 +14,6 @@ html {
 
 button#explorer .fold {
 	opacity: .8;
-	margin-left: 0 !important;
-    margin-right: 0.5rem !important;
 	transition: transform .3s;
 }
 
@@ -39,6 +37,20 @@ button#explorer .fold {
 	padding-left: 0px !important;
 }
 
+.explorer {
+    border:1px solid var(--lightgray);
+    border-radius:5px;
+    padding:10px;
+    font-size:1rem;
+}
+
+.toc {
+    border:1px solid var(--lightgray);
+    border-radius:5px;
+    padding:10px;
+    font-size:1rem;
+}
+
 #toc-content .depth-1 {
 	padding: 0px !important;
 	padding-right: 1rem !important;
@@ -53,6 +65,17 @@ button#explorer .fold {
 	padding: 0px !important;
 	padding-right: 3rem !important;
 }
+
+.backlinks > ul {
+    border: 1px solid var(--lightgray);
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 35px;
+    font-size: 1rem;
+    list-style: circle;
+}
+
 
 
 li:has(> .folder-outer:not(.open)) > .folder-container > svg {
@@ -69,6 +92,10 @@ footer ul {
 
 code { 
 	direction: ltr !important;
+}
+
+.search {
+    max-width: unset;
 }
 
 div.search.mobile-only {
