@@ -32,7 +32,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.PageTitle()),
     Component.Search(),
     Component.DesktopOnly(Component.Darkmode()),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      filterFn: (node) => {
+        // exclude files with the tag "explorerexclude"
+        return node.file?.frontmatter?.tags?.includes("explorerexclude") !== true
+      },
+    })),
     Component.DesktopOnly(Component.TableOfContents()),
 
     Component.MobileOnly(Component.Backlinks()),
@@ -50,6 +55,11 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.PageTitle()),
     Component.Search(),
     Component.DesktopOnly(Component.Darkmode()),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      filterFn: (node) => {
+        // exclude files with the tag "explorerexclude"
+        return node.file?.frontmatter?.tags?.includes("explorerexclude") !== true
+      },
+    })),
   ],
 }
