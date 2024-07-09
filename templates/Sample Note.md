@@ -1,5 +1,6 @@
 ---
 title: <%tp.file.title%>
 draft: false
-tags:
+tags: 
+date: <% tp.file.creation_date() %>
 ---
