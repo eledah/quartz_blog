@@ -354,3 +354,55 @@ body::-webkit-scrollbar-button {
 th {
     text-align: center !important;
 }
+
+// Katex LTR
+
+.poem-title {
+    text-align: center;
+    font-family: IranNastaliq !important;
+}
+
+h3.poem-title::before {
+    content: none;
+}
+
+.poem-verse-div {
+    margin: auto;
+    height: 30px;
+    text-align: center;
+    clear: both;
+    font-weight: 400;
+}
+
+.poem-right-verse-div {
+    width: 45%;
+    float: right;
+    text-align: left;
+}
+
+.poem-left-verse-div {
+    width: 45%;
+    float: left;
+    text-align: right;
+}
+
+.poem-reference {
+    display:table;
+    margin:0 auto;
+    direction: rtl;
+}
+
+.poem-verse-num {
+    position: relative !important;
+    right: -5% !important;
+    top: 34px !important;
+    line-height: 0px !important;
+    margin-top: 6px !important;
+    margin-right: 3px !important;
+    font-family: 'Sahel FD' !important;
+    font-weight: 500 !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    font-style: normal !important;
+    color: var(--text-faint) !important;
+}
