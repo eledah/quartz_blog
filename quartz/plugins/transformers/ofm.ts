@@ -447,14 +447,15 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
 
                 const toggleIcon = `<div class="fold-callout-icon"></div>`
 
+                // Changed the location of ${collapse ? toggleIcon : ""}
                 const titleHtml: Html = {
                   type: "html",
                   value: `<div
                   class="callout-title"
                 >
+                  ${collapse ? toggleIcon : ""}
                   <div class="callout-icon"></div>
                   <div class="callout-title-inner">${title}</div>
-                  ${collapse ? toggleIcon : ""}
                 </div>`,
                 }
 

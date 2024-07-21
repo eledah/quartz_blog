@@ -422,3 +422,7 @@ h3.poem-title::before {
 .ayah_translation {
     color: darkgray;
 }
+
+.callout.is-collapsed > .callout-title > .fold-callout-icon {
+    transform: rotate(90deg);
+}
