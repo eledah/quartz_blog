@@ -426,3 +426,14 @@ h3.poem-title::before {
 .callout.is-collapsed > .callout-title > .fold-callout-icon {
     transform: rotate(90deg);
 }
+
+h2#footnote-label{
+    visibility: hidden;
+}
+  
+  
+h2#footnote-label::after{
+    content: "پانوشت‌ها";
+    visibility: visible;
+    display: block;
+}
