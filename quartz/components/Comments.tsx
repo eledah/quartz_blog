@@ -62,6 +62,7 @@ export default ((opts: Options) => {
 
       const theme = document.documentElement.getAttribute("saved-theme")
       giscusScript.setAttribute("data-theme", theme)
+      giscusScript.setAttribute("data-lang", "fa")
       giscusContainer.appendChild(giscusScript)
 
       document.addEventListener("themechange", changeTheme)
