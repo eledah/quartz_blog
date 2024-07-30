@@ -5,6 +5,7 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
+  afterBody: [],
   footer: Component.Footer({
     links: {
       // "آپارات": "https://www.aparat.com/Crystalline",
