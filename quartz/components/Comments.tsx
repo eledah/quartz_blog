@@ -19,7 +19,12 @@ function boolToStringBool(b: boolean): string {
 }
 
 export default ((opts: Options) => {
-  const Comments: QuartzComponent = (_props: QuartzComponentProps) => <div class="giscus"></div>
+  const Comments: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
+    if (fileData.slug === "index") {
+      return <></>
+    }
+    return <div class="giscus"></div>
+  }
 
   Comments.afterDOMLoaded = `
     const changeTheme = (e) => {
