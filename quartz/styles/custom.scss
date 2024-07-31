@@ -431,3 +431,8 @@ h2#footnote-label::after{
     visibility: visible;
     display: block;
 }
+
+
+div>ul>li>a {
+    font-weight: 400;
+}
