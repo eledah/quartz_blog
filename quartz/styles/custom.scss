@@ -436,3 +436,7 @@ h2#footnote-label::after{
 div>ul>li>a {
     font-weight: 400;
 }
+
+body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوانی-How-to-do-Great-Work"] article > p, body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوانی-How-to-do-Great-Work"] section.footnotes>ol {
+    direction: ltr;
+}
