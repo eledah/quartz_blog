@@ -7,9 +7,9 @@ cssclasses: []
 ---
 
 > [!NOTE] مقدمه
-> متن How to do Great Work یا همان «چطور کار درجه یک انجام دهیم؟» بهترین متنی است که دربارهٔ کار کردن و انتخاب مسیر شغلی خوانده‌ام. نویسندهٔ متن، پاول گراهام، بنیان‌گذار شتاب‌دهندهٔ [Y Combinator](https://www.ycombinator.com/about) و از حکیمان سالم روزگار است. هدف او از نوشتن این متن طولانی، تهیهٔ فهرستی از تکنیک‌های عالی کار کردن -مستقل از حوزهٔ کاری- است. همین باعث می‌شود که هر مخاطبی با آن ارتباط بگیرد و پس از خواندن متن، چند نکته‌ای برای مسیر خود بردارد.
+> متن How to do Great Work یا همان «چطور کار درجه یک انجام دهیم؟» بهترین متنی است که دربارهٔ کار کردن و انتخاب مسیر شغلی خوانده‌ام. نویسندهٔ متن، پاول گراهام، بنیان‌گذار شتاب‌دهندهٔ [Y Combinator](https://www.ycombinator.com/about) و از حکیمان سالم روزگار است. هدف او از نوشتن این متن طولانی، تهیهٔ فهرستی از تکنیک‌های عالی کار کردن -مستقل از حوزهٔ کاری- است. همین باعث می‌شود که هر مخاطبی با آن ارتباط بگیرد و پس از خواندن متن، چند نکته‌ای برای مسیر خود بردارد. 
 > 
-> متن با همهٔ خوبی‌هایش، یک ایراد دارد. به خاطر تعدد تکنیک‌ها و توصیه‌ها، ساختارش به هم پیوسته و مرتب نیست. مدام از یک نکته به نکتهٔ دیگر می‌پرد. به خاطر همین محتویاتش فرّار است و باید هرچندوقت یکبار در مقام تذکر دوباره نکاتش را مرور کرد. از آن‌جایی که ترجمهٔ فارسی یا خلاصهٔ کاربردی از این متن وجود ندارد، تصمیم گرفتم که یک دور نکات آن را برای خودم جدا کنم و بنویسم که هر بار مجبور به خواندن کل متن نشوم. علاوه بر این، یادداشت‌برداری از این متنْ مثالی از [[چطور یادداشت برداریم؟|یادداشت‌برداری]] است که برای تازه‌کارها کار را در عمل به نمایش می‌کشد.
+> متن با همهٔ خوبی‌هایش، یک ایراد دارد. به خاطر تعدد تکنیک‌ها و توصیه‌ها، ساختارش به هم پیوسته و مرتب نیست. مدام از یک نکته به نکتهٔ دیگر می‌پرد. غلظت متن بسیار بالاست. به خاطر همین محتویاتش فرّار است و باید هرچندوقت یکبار در مقام تذکر دوباره نکاتش را مرور کرد. از آن‌جایی که ترجمهٔ فارسی یا خلاصهٔ کاربردی از این متن وجود ندارد، تصمیم گرفتم که یک دور نکات آن را برای خودم جدا کنم و بنویسم که هر بار مجبور به خواندن کل متن نشوم. علاوه بر این، یادداشت‌برداری از این متنْ مثالی از [[چطور یادداشت برداریم؟|یادداشت‌برداری]] است که برای تازه‌کارها کار را در عمل به نمایش می‌کشد.
 > 
 > متن جستار به انگلیسی است. ترجمه هم نشده است. با گوگل‌ترنسلیت و سایر ابزارها قابل ترجمه ولی خطاپذیر است. تلاش می‌کنم به مرور که در متن جلو می‌رویم، حرف‌های اصلی را هم ترجمه کنم که مطلبی از دست نرود.
 
@@ -27,7 +27,7 @@ The following recipe assumes you're very ambitious.
 > محتوای متن تکنیک‌هایی دربارهٔ انجام کار درجه یک در حوزه‌های مختلف است. پیش‌فرض متن دربارهٔ خواننده، داشتن همت بلند است.
 
 
----
+## بخش اول: مقدمه
  
 The first step is to decide what to work on. The work you choose needs to have three qualities: it has to be something you have a natural aptitude for, that you have a deep interest in, and that offers scope to do great work. 
 
@@ -46,7 +46,7 @@ That sounds straightforward, but it's often quite difficult. When you're young y
 The way to figure out what to work on is by working. If you're not sure what to work on, guess. But pick something and get going. You'll probably guess wrong some of the time, but that's fine. It's good to know about multiple things; some of the biggest discoveries come from noticing connections between different fields.
 
 > [!NOTE] ورود به کار، دید ما را نسبت به آن واقعی می‌کند
-> بهترین راه برای تشخیص ویژگی‌های بالا در یک کار، ورود و مشغولیت به آن کار است. حتی اگر مطمئن نیستیم، باز کاری که به نظرمان نزدیک‌تر است را انتخاب کنیم و مشغول شویم تا جواب‌ها کم‌کم مشخص شوند.
+> بهترین راه برای تشخیص ویژگی‌های بالا در یک کار، ورود و مشغولیت به آن کار است. حتی اگر مطمئن نیستیم، باز کاری که به نظرمان نزدیک‌تر است را انتخاب کنیم و مشغول شویم تا جواب‌ها کم‌کم مشخص شوند. به قول عطار، «*تو پای به راه در نِه و هیچ مپرس | خود راه بگویدت که چون باید رفت*»  
 
 > [!warning] خطر اهمال‌کاری
 > تأکید روی شروع کار به این خاطر است که شناختن کارها از بیرون اغلب مشکل یا غلط‌انداز است. خیلی‌ها با نگاه ناقصی که از گفته‌ها و شنیده‌ها پیدا می‌کنند بلافاصله بیخیال می‌شوند و به علاقه یا استعداد خودشان بی‌توجهی می‌کنند.
@@ -96,7 +96,7 @@ The big prize is to discover a new fractal bud. You notice a crack in the surfac
 > انجام کامل مرحلهٔ دوم و چهارم انگیزهٔ جدی می‌خواهد. انگیزه هم ترکیبی از کنجکاوی، شوق و میل به انجام کارهای بزرگ است. زمانی که این سه عامل انگیزه همگرا شوند، کار با بیشترین قوت خودش انجام می‌شود.
 
 
-> [!tldr] جمله‌های بخش اول
+> [!tldr] ایده‌های اصلی بخش اول
 > - کار انتخابی ما باید مورد علاقه، مقیاس‌پذیر و هم‌خوان با استعدادمان باشد
 > - ورود به کار، دید ما را نسبت به آن واقعی می‌کند
 > - پروژه‌های شخصی علاقه‌های ما را به ما نشان می‌دهند
@@ -104,19 +104,34 @@ The big prize is to discover a new fractal bud. You notice a crack in the surfac
 > -  راه‌حل‌های کاربردی و خلاقانه، همیشه دوز کوچکی از عجیب و غریب بودن را با خود دارند
 
 
- 
----
+## بخش دوم: انتخاب 
+
  
 Let's talk a little more about the complicated business of figuring out what to work on. The main reason it's hard is that you can't tell what most kinds of work are like except by doing them. Which means the four steps overlap: you may have to work at something for years before you know how much you like it or how good you are at it. And in the meantime you're not doing, and thus not learning about, most other kinds of work. So in the worst case you choose late based on very incomplete information.[^4]
- 
+
+
+> [!NOTE] برای شناختن کارها، چاره‌ای جز انجام آن وجود ندارد
+> یکی از دلایل اصلی سختی انتخاب کار، کافی نبودن شناخت است. خیلی از کارها را باید چند سال تجربه کنیم تا دستمان بیاید که آن را دوست داریم یا خیر. به تجربهٔ من، شناختن کار و نزدیکی به مرزهای آن بین ۳ تا ۵ سال طول می‌کشد. به خاطر همین است که عدهٔ زیادی شغل پدر یا مادر خودشان را انتخاب می‌کنند. آن‌ها چند سال فرصت داشته‌اند و آن کار را شناخته‌اند و نمی‌خواهند چند سال دیگر را تلف شناختن کار دیگری بکنند.
+
+
 The nature of ambition exacerbates this problem. Ambition comes in two forms, one that precedes interest in the subject and one that grows out of it. Most people who do great work have a mix, and the more you have of the former, the harder it will be to decide what to do. 
- 
+
 The educational systems in most countries pretend it's easy. They expect you to commit to a field long before you could know what it's really like. And as a result an ambitious person on an optimal trajectory will often read to the system as an instance of breakage. 
  
-It would be better if they at least admitted it — if they admitted that the system not only can't do much to help you figure out what to work on, but is designed on the assumption that you'll somehow magically guess as a teenager. They don't tell you, but I will: when it comes to figuring out what to work on, you're on your own. Some people get lucky and do guess correctly, but the rest will find themselves scrambling diagonally across tracks laid down on the assumption that everyone does. 
- 
+It would be better if they at least admitted it — if they admitted that the system not only can't do much to help you figure out what to work on, but is designed on the assumption that you'll somehow magically guess as a teenager. They don't tell you, but I will: when it comes to figuring out what to work on, you're on your own. Some people get lucky and do guess correctly, but the rest will find themselves scrambling diagonally across tracks laid down on the assumption that everyone does.
+
+
+> [!NOTE] سیستم آموزشی هیچ کمکی به انتخاب مسیر شغلی نمی‌کند
+> عجیب‌تر اینکه از جوان ۱۸ ساله انتظار می‌رود که بدون هیچ شناختی، آینده شغلی خودش را انتخاب کند. در این شرایط معیارهای دیگر -مثل شنیده‌ها از بازار کار، شانس اپلای، اوقات فراغت بیشتر و...- روی آیندهٔ کاری تأثیر می‌گذارند. بعضی‌ها شانسی به علاقه و استعداد خودشان می‌رسند؛ باقی هم ول‌معطل می‌مانند تا در مقاطع بعدی شانس خودشان را امتحان کنند.
+
+
 What should you do if you're young and ambitious but don't know what to work on? What you should _not_ do is drift along passively, assuming the problem will solve itself. You need to take action. But there is no systematic procedure you can follow. When you read biographies of people who've done great work, it's remarkable how much luck is involved. They discover what to work on as a result of a chance meeting, or by reading a book they happen to pick up. So you need to make yourself a big target for luck, and the way to do that is to be curious. Try lots of things, meet lots of people, read lots of books, ask lots of questions.[^5]
- 
+
+
+> [!NOTE] کسی که نمی‌داند می‌خواهد چکار کند، بهتر است شانسش را افزایش دهد
+> فرآیند مشخص و سیستمی برای پیدا کردن کار مورد علاقه وجود ندارد. شانسی است. افراد بزرگ هم خیلی از اوقات با دیدن یا شنیدن اتفاقی یک مطلب بوده که جرقه‌ای در ذهن‌شان خورده است. بهترین کار برای کسی که نمی‌داند می‌خواهد چکار کند، این است که با دیدن نمونه‌های زیاد، خواندن کتاب‌های مختلف و صحبت با آدم‌ها از طیف‌های گوناگون شانس خودش را زیاد کند. درست مثل تیرانداز آماتوری که به جای ۱ تیر، ۱۰۰ تیر می‌اندازد.
+
+
 When in doubt, optimize for interestingness. Fields change as you learn more about them. What mathematicians do, for example, is very different from what you do in high school math classes. So you need to give different types of work a chance to show you what they're like. But a field should become _increasingly_ interesting as you learn more about it. If it doesn't, it's probably not for you. 
  
 Don't worry if you find you're interested in different things than other people. The stranger your tastes in interestingness, the better. Strange tastes are often strong ones, and a strong taste for work means you'll be productive. And you're more likely to find new things if you're looking where few have looked before. 
@@ -124,22 +139,50 @@ Don't worry if you find you're interested in different things than other people.
 One sign that you're suited for some kind of work is when you like even the parts that other people find tedious or frightening. 
  
 But fields aren't people; you don't owe them any loyalty. If in the course of working on one thing you discover another that's more exciting, don't be afraid to switch. 
- 
+
+
+> [!NOTE] یک راه دیگر برای تشخیص کار مناسب، جالب‌تر شدن تدریجی آن برای ماست
+> کار ایدئال آنی است که هرچه بیشتر در آن عمیق می‌شویم، برایمان جالب‌تر می‌شود. این شاخص کار می‌کند چون عمق بیشتر اکثر اوقات یا افراد را خسته می‌کند یا آن‌ها را می‌ترساند. وقتی به حوزه‌ای علاقه دارید که برای هیچ‌کس دیگری مهم نیست، احتمالاً در آن ارزشی نهفته است.
+
+
 If you're making something for people, make sure it's something they actually want. The best way to do this is to make something you yourself want. Write the story you want to read; build the tool you want to use. Since your friends probably have similar interests, this will also get you your initial audience. 
  
 This _should_ follow from the excitingness rule. Obviously the most exciting story to write will be the one you want to read. The reason I mention this case explicitly is that so many people get it wrong. Instead of making what they want, they try to make what some imaginary, more sophisticated audience wants. And once you go down that route, you're lost.[^6]
  
 There are a lot of forces that will lead you astray when you're trying to figure out what to work on. Pretentiousness, fashion, fear, money, politics, other people's wishes, eminent frauds. But if you stick to what you find genuinely interesting, you'll be proof against all of them. If you're interested, you're not astray. 
  
+> [!NOTE] همان چیزی را بسازید که خودتان می‌خواهید
+> شعار اصلی شتاب‌دهندهٔ YC این است که «[چیزی بسازید که مردم می‌خواهند](https://paulgraham.com/good.html)». ساده‌ترین راه برای تشخیص اینکه مردم چه می‌خواهند، این است که ببینیم خودمان و اطرافیانمان چه می‌خواهیم. داستانی که برای ما جالب است، احتمالاً برای دیگران هم جذاب است. اگر ابزاری به کار من بیاید، احتمالاً مشکل اطرافیانم را هم حل می‌کند و آن‌ها از همین اول کار مخاطبم می‌شوند.
+
+
+
 ---
  
  Following your interests may sound like a rather passive strategy, but in practice it usually means following them past all sorts of obstacles. You usually have to risk rejection and failure. So it does take a good deal of boldness. 
- 
+
+
+> [!NOTE] «برو دنبال علاقت» یک توصیهٔ دم دستی نیست
+> رفتن به دنبال علاقه یعنی مقاومت در برابر سختی‌های مسیر و جسارت رد شدن از موانع آن.
+
+
 But while you need boldness, you don't usually need much planning. In most cases the recipe for doing great work is simply: work hard on excitingly ambitious projects, and something good will come of it. Instead of making a plan and then executing it, you just try to preserve certain invariants. 
  
 The trouble with planning is that it only works for achievements you can describe in advance. You can win a gold medal or get rich by deciding to as a child and then tenaciously pursuing that goal, but you can't discover natural selection that way. 
  
 I think for most people who want to do great work, the right strategy is not to plan too much. At each stage do whatever seems most interesting and gives you the best options for the future. I call this approach "staying upwind." This is how most people who've done great work seem to have done it.
+
+
+> [!NOTE] انجام کار درجه یک برنامه‌ریزی چندانی نمی‌خواهد
+> سخت کار کردن روی پروژه‌های جالب خواه-ناخواه به کار بزرگ منجر می‌شود. مشکل برنامه‌ریزی این است که برای اهداف مشخص جواب می‌دهد. اما وقتی هدف مشخص نباشد (مثل یک اکتشاف یا حل مسألهٔ اساسی) برنامه‌ریزی جواب نمی‌دهد. در این شرایط حضور مداوم و برنامه‌ریزی رو به جلو کارگشاست.
+
+> [!example] برنامه‌ریزی رو به جلو و برنامه‌ریزی از انتها
+> دو نوع اصلی برنامه‌ریزی وجود دارد: Backward Planning و Forward Planning. برنامه‌ریزی از انتها زمانی بهتر جواب می‌دهد که هدف مشخص و [[پیچیدگی چیست؟|پیچیدگی]] کم باشد. در غیر این‌صورت برنامه‌ریزی رو به جلو بهتر است.
+> > [!example]- برنامه‌ریزی Backward
+> > اول هدف را مشخص می‌کنیم و به مرور پله‌ها را می‌چینیم تا به زمان حال برسیم. مثلاً قرار است تا یک ماه آینده یک سایت طراحی کنیم. پس تا دو هفتهٔ دیگر باید طراحی رابط کاربری آن آماده باشد. پس تا هفتهٔ آینده باید یک طرح اولیه از آن داشته باشیم. پس امروز باید به سراغ طراح گرافیک برویم
+> 
+> > [!example]- برنامه‌ریزی Forward
+> > هدفی مشخص نیست که بخواهیم به آن برسیم. در بهترین حالت یک تصویر کلی -مثل درمان سرطان- در ذهن ماست. کسی نمی‌داند که این کار چطور انجام می‌شود که بخواهد پله‌پله برایش برنامه‌ریزی کند. پس چاره‌ای جز برنامه‌ریزی رو به جلو ندارد. برای این مدل برنامه‌ریزی داشته‌ها -باورها و منابع- را به خط می‌کنیم و درست‌ترین و بهترین کاری که به نظرمان می‌رسد را انجام می‌دهیم. مثل یک استاد دانشگاه که مدام راه‌های مختلف درمان سرطان را در آزمایشگاه تست می‌کند و مدام در این باره مقاله می‌دهد تا به نتیجه‌ای برسد یا نرسد.
+
 
 ---
  
