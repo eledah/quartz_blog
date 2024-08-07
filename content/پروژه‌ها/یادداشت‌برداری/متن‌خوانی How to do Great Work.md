@@ -9,7 +9,7 @@ cssclasses: []
 > [!NOTE] مقدمه
 > متن How to do Great Work یا همان «چطور کار درجه یک انجام دهیم؟» بهترین متنی است که دربارهٔ کار کردن و انتخاب مسیر شغلی خوانده‌ام. نویسندهٔ متن، پاول گراهام، بنیان‌گذار شتاب‌دهندهٔ [Y Combinator](https://www.ycombinator.com/about) و از حکیمان سالم روزگار است. هدف او از نوشتن این متن طولانی، تهیهٔ فهرستی از تکنیک‌های عالی کار کردن -مستقل از حوزهٔ کاری- است. همین باعث می‌شود که هر مخاطبی با آن ارتباط بگیرد و پس از خواندن متن، چند نکته‌ای برای مسیر خود بردارد. 
 > 
-> متن با همهٔ خوبی‌هایش، یک ایراد دارد. به خاطر تعدد تکنیک‌ها و توصیه‌ها، ساختارش به هم پیوسته و مرتب نیست. مدام از یک نکته به نکتهٔ دیگر می‌پرد. غلظت متن بسیار بالاست. به خاطر همین محتویاتش فرّار است و باید هرچندوقت یکبار در مقام تذکر دوباره نکاتش را مرور کرد. از آن‌جایی که ترجمهٔ فارسی یا خلاصهٔ کاربردی از این متن وجود ندارد، تصمیم گرفتم که یک دور نکات آن را برای خودم جدا کنم و بنویسم که هر بار مجبور به خواندن کل متن نشوم. علاوه بر این، یادداشت‌برداری از این متنْ مثالی از [[چطور یادداشت برداریم؟|یادداشت‌برداری]] است که برای تازه‌کارها کار را در عمل به نمایش می‌کشد.
+> متن با همهٔ خوبی‌هایش، یک ایراد دارد. به خاطر تعدد تکنیک‌ها و توصیه‌ها، ساختارش به هم پیوسته و مرتب نیست. مدام از یک نکته به نکتهٔ دیگر می‌پرد. غلظت متن بسیار بالاست. به خاطر همین محتویاتش فرّار است و باید هرچندوقت یکبار در مقام تذکر دوباره نکاتش را مرور کرد. از آن‌جایی که ترجمهٔ فارسی یا خلاصهٔ کاربردی از این متن وجود ندارد، تصمیم گرفتم که یک دور نکات آن را برای خودم جدا کنم و بنویسم که هر بار مجبور به خواندن کل متن نشوم. در کنار نکات متن، تجربیات خودم و نکات دیگر را هم به یادداشت‌ها اضافه کرده‌ام. علاوه بر این، یادداشت‌برداری از این متنْ مثالی از [[چطور یادداشت برداریم؟|یادداشت‌برداری]] است که برای تازه‌کارها کار را در عمل به نمایش می‌کشد.
 > 
 > متن جستار به انگلیسی است. ترجمه هم نشده است. با گوگل‌ترنسلیت و سایر ابزارها قابل ترجمه ولی خطاپذیر است. تلاش می‌کنم به مرور که در متن جلو می‌رویم، حرف‌های اصلی را هم ترجمه کنم که مطلبی از دست نرود.
 
@@ -24,7 +24,7 @@ The following recipe assumes you're very ambitious.
 
 
 > [!info] دربارهٔ خود متن
-> محتوای متن تکنیک‌هایی دربارهٔ انجام کار درجه یک در حوزه‌های مختلف است. پیش‌فرض متن دربارهٔ خواننده، داشتن همت بلند است.
+> محتوای متن تکنیک‌هایی عمومی دربارهٔ انجام کار درجه یک در حوزه‌های مختلف است. پیش‌فرض متن دربارهٔ خواننده، حضور عزم و ارادهٔ جدی در اوست.
 
 
 ## بخش اول: مقدمه
@@ -111,7 +111,7 @@ Let's talk a little more about the complicated business of figuring out what to 
 
 
 > [!NOTE] برای شناختن کارها، چاره‌ای جز انجام آن وجود ندارد
-> یکی از دلایل اصلی سختی انتخاب کار، کافی نبودن شناخت است. خیلی از کارها را باید چند سال تجربه کنیم تا دستمان بیاید که آن را دوست داریم یا خیر. به تجربهٔ من، شناختن کار و نزدیکی به مرزهای آن بین ۳ تا ۵ سال طول می‌کشد. به خاطر همین است که عدهٔ زیادی شغل پدر یا مادر خودشان را انتخاب می‌کنند. آن‌ها چند سال فرصت داشته‌اند و آن کار را شناخته‌اند و نمی‌خواهند چند سال دیگر را تلف شناختن کار دیگری بکنند.
+> یکی از دلایل اصلی سختی انتخاب کار، کافی نبودن شناخت است. خیلی از کارها را باید چند سال تجربه کنیم تا دستمان بیاید که آن را دوست داریم یا خیر. به تجربهٔ من، شناختن کار و نزدیکی به مرزهای آن بین ۳ تا ۵ سال طول می‌کشد. به خاطر همین است که عدهٔ زیادی شغل پدر یا مادر خودشان را انتخاب می‌کنند. چرا که چند سال فرصت داشته‌اند، آن کار را شناخته‌اند، بقیهٔ افراد آن حرفه هم آن‌ها را می‌شناسند و نمی‌خواهند چند سال دیگر را تلف شناختن کار دیگری بکنند.
 
 
 The nature of ambition exacerbates this problem. Ambition comes in two forms, one that precedes interest in the subject and one that grows out of it. Most people who do great work have a mix, and the more you have of the former, the harder it will be to decide what to do. 
@@ -141,7 +141,7 @@ One sign that you're suited for some kind of work is when you like even the part
 But fields aren't people; you don't owe them any loyalty. If in the course of working on one thing you discover another that's more exciting, don't be afraid to switch. 
 
 
-> [!NOTE] یک راه دیگر برای تشخیص کار مناسب، جالب‌تر شدن تدریجی آن برای ماست
+> [!NOTE] یک راه دیگر تشخیص کار مناسب، جالب‌تر شدن تدریجی آن برای ماست
 > کار ایدئال آنی است که هرچه بیشتر در آن عمیق می‌شویم، برایمان جالب‌تر می‌شود. این شاخص کار می‌کند چون عمق بیشتر اکثر اوقات یا افراد را خسته می‌کند یا آن‌ها را می‌ترساند. وقتی به حوزه‌ای علاقه دارید که برای هیچ‌کس دیگری مهم نیست، احتمالاً در آن ارزشی نهفته است.
 
 
@@ -161,8 +161,8 @@ There are a lot of forces that will lead you astray when you're trying to figure
  Following your interests may sound like a rather passive strategy, but in practice it usually means following them past all sorts of obstacles. You usually have to risk rejection and failure. So it does take a good deal of boldness. 
 
 
-> [!NOTE] «برو دنبال علاقت» یک توصیهٔ دم دستی نیست
-> رفتن به دنبال علاقه یعنی مقاومت در برابر سختی‌های مسیر و جسارت رد شدن از موانع آن.
+> [!NOTE] «برو دنبال علاقت» یک توصیهٔ منفعلانه نیست
+> رفتن به دنبال علاقه یعنی مقاومت در برابر سختی‌های مسیر و جسارت رد شدن از موانع آن. علاقه یک موتور کمکی است که در زمان خستگی‌ها آدم را به خط پایان می‌رساند.
 
 
 But while you need boldness, you don't usually need much planning. In most cases the recipe for doing great work is simply: work hard on excitingly ambitious projects, and something good will come of it. Instead of making a plan and then executing it, you just try to preserve certain invariants. 
@@ -172,7 +172,7 @@ The trouble with planning is that it only works for achievements you can describ
 I think for most people who want to do great work, the right strategy is not to plan too much. At each stage do whatever seems most interesting and gives you the best options for the future. I call this approach "staying upwind." This is how most people who've done great work seem to have done it.
 
 
-> [!NOTE] انجام کار درجه یک برنامه‌ریزی چندانی نمی‌خواهد
+> [!NOTE] انجام کار درجه یک برنامه‌ریزی چندانی نمی‌خواهد. چرا که هدف واضحی ندارد
 > سخت کار کردن روی پروژه‌های جالب خواه-ناخواه به کار بزرگ منجر می‌شود. مشکل برنامه‌ریزی این است که برای اهداف مشخص جواب می‌دهد. اما وقتی هدف مشخص نباشد (مثل یک اکتشاف یا حل مسألهٔ اساسی) برنامه‌ریزی جواب نمی‌دهد. در این شرایط حضور مداوم و برنامه‌ریزی رو به جلو کارگشاست.
 
 > [!example] برنامه‌ریزی رو به جلو و برنامه‌ریزی از انتها
@@ -184,26 +184,65 @@ I think for most people who want to do great work, the right strategy is not to 
 > > هدفی مشخص نیست که بخواهیم به آن برسیم. در بهترین حالت یک تصویر کلی -مثل درمان سرطان- در ذهن ماست. کسی نمی‌داند که این کار چطور انجام می‌شود که بخواهد پله‌پله برایش برنامه‌ریزی کند. پس چاره‌ای جز برنامه‌ریزی رو به جلو ندارد. برای این مدل برنامه‌ریزی داشته‌ها -باورها و منابع- را به خط می‌کنیم و درست‌ترین و بهترین کاری که به نظرمان می‌رسد را انجام می‌دهیم. مثل یک استاد دانشگاه که مدام راه‌های مختلف درمان سرطان را در آزمایشگاه تست می‌کند و مدام در این باره مقاله می‌دهد تا به نتیجه‌ای برسد یا نرسد.
 
 
----
+> [!tldr] ایده‌های اصلی بخش دوم
+> - برای شناختن کارها، چاره‌ای جز انجام آن وجود ندارد
+> - سیستم آموزشی هیچ کمکی به انتخاب مسیر شغلی نمی‌کند
+> - کسی که نمی‌داند می‌خواهد چکار کند، بهتر است شانسش را افزایش دهد
+> - یک راه برای تشخیص کار مناسب، جالب‌تر شدن تدریجی آن برای ماست
+> - همان چیزی را بسازید که خودتان می‌خواهید
+> - «برو دنبال علاقت» یک توصیهٔ منفعلانه نیست.
+> - انجام کار درجه یک برنامه‌ریزی چندانی نمی‌خواهد. چرا که هدف واضحی ندارد
+
+
+> [!check] جمع‌بندی بخش دوم
+> کسی که نمی‌داند می‌خواهد چکار کند، بهتر است با دیدن و شنیدن تجربیات دیگران از گزینه‌های شغلی مطلع باشد. به مرور هم وارد کاری شود که به نظرش بیشترین هماهنگی را با آن دارد. این کار باعث شناختن دقیق کار و علاقهٔ فرد می‌شود. اگر به مرور کار برایش جالب‌تر شد و حتی با بخش‌های خسته‌کنندهٔ آن ارتباط گرفت، نشانهٔ خوبی برای اوست. علاقه‌ای که در این بین کسب شده، موتور محرکی برای پیشرفت و عبور از موانع خواهد بود.
+> ‌
+> برای انجام کار بزرگ، تعیین قدم بعدی مهم‌تر از تعیین هدف انتهایی است؛ چرا که اصلاً هدفی متصور نیست که فرد بخواهد به آن برسد.
+
+## بخش سوم: کار کردن
+
  
 Even when you've found something exciting to work on, working on it is not always straightforward. There will be times when some new idea makes you leap out of bed in the morning and get straight to work. But there will also be plenty of times when things aren't like that. 
  
 You don't just put out your sail and get blown forward by inspiration. There are headwinds and currents and hidden shoals. So there's a technique to working, just as there is to sailing. 
+
+
+> [!NOTE] کار کردن همیشه سرراست نیست
+> درست مثل قایق‌رانی، کار کردن هم چم‌وخم‌های مخصوص خودش را دارد. بعضی اوقات همه‌چیز مشخص است و گاهی اوقات هم ابهام به قدری زیاد است که سرعت کار به شدت پایین می‌آید.
+
  
 For example, while you must work hard, it's possible to work too hard, and if you do that you'll find you get diminishing returns: fatigue will make you stupid, and eventually even damage your health. The point at which work yields diminishing returns depends on the type. Some of the hardest types you might only be able to do for four or five hours a day. 
- 
+
 Ideally those hours will be contiguous. To the extent you can, try to arrange your life so you have big blocks of time to work in. You'll shy away from hard tasks if you know you might be interrupted. 
+
+
+> [!NOTE] کار باید به اندازه و بدون حواس‌پرتی باشد
+> خیلی از کارها را نمی‌شود بیشتر از ۴ یا ۵ ساعت انجام داد. اگر کسی بخواهد زمان بیشتری بگذارد، یا خودش را برای روزهای بعدی خسته می‌کند یا خروجی بی‌ارزش یا مخرب تولید می‌کند. یکی از بهترین نشانه‌ها برای خستگی زمانی است که آدم متوجه می‌شود که دارد اشتباه کار می‌کند.
+> ‌
+> هر چقدر بلوک‌های زمانی کار بزرگ‌تر باشند، کار کردن در آن‌ها راحت‌تر است. چرا که امکان پرت شدن حواس کمتر است. چک کردن یک نوتیفیکیشن ممکن است ۵ ثانیه هم طول نکشد. ولی بیرون کشیده شدن از وسط کار و دوباره تمرکز کردن زمانی خیلی بیشتر از ۵ ثانیه را از فرد تلف می‌کند.
+
  
 It will probably be harder to start working than to keep working. You'll often have to trick yourself to get over that initial threshold. Don't worry about this; it's the nature of work, not a flaw in your character. Work has a sort of activation energy, both per day and per project. And since this threshold is fake in the sense that it's higher than the energy required to keep going, it's ok to tell yourself a lie of corresponding magnitude to get over it. 
  
 It's usually a mistake to lie to yourself if you want to do great work, but this is one of the rare cases where it isn't. When I'm reluctant to start work in the morning, I often trick myself by saying "I'll just read over what I've got so far." Five minutes later I've found something that seems mistaken or incomplete, and I'm off. 
  
 Similar techniques work for starting new projects. It's ok to lie to yourself about how much work a project will entail, for example. Lots of great things began with someone saying "How hard could it be?" 
- 
+
 This is one case where the young have an advantage. They're more optimistic, and even though one of the sources of their optimism is ignorance, in this case ignorance can sometimes beat knowledge. 
+
+> [!NOTE] شروع کردن کار از ادامه دادنش سخت‌تر است
+> آغاز به کار یک انرژی فعال‌سازی دارد. نیاز به هل اولیه دارد. برای همین سخت‌تر است. ایراد شخصی هم نیست و در طبیعت کار است. برای کم کردن این انرژی فعال‌سازی، بهتر است آدم خودش را گول بزند. مثلاً بگوید که «یه صفحه ازش می‌خونم و اگه خسته شدم دیگه ادامه نمی‌دم». شروع کردن با کارهای کوچک ۵ دقیقه‌ای در ابتدای بلوک‌های کاری، انرژی فعال‌سازی بسیار پایینی دارد؛ ولی جواب می‌دهد و موتور آدم را خیلی سریع گرم می‌کند.
+> ‌
+> همین قاعده در انجام پروژه‌های بزرگ هم صادق است. بهتر است آدم با گزاره‌هایی مثل «مگه چقدر می‌تونه سخت باشه؟» به خودش دروغ بگوید و تا دیر نشده پروژه را شروع کند.
+> ‌
+> جوان‌ترها بهتر از پس اینکار برمی‌آیند؛ چون خوش‌بین‌تر (کله‌خرتر/دایورت‌تر) هستند.
  
 Try to finish what you start, though, even if it turns out to be more work than you expected. Finishing things is not just an exercise in tidiness or self-discipline. In many projects a lot of the best work happens in what was meant to be the final stage. 
- 
+
+
+> [!NOTE] کاری را ناقص باقی نگذارید
+> نه به خاطر وسواس یا اجبار اخلاقی. بلکه به این خاطر که خیلی از اوقات بهترین کارها و خروجی‌ها در مراحل انتهایی اتفاق می‌افتند. عدهٔ زیادی هستند که تا قدم‌های آخر می‌آیند و درست قبل از رسیدن به صندوق گنج بی‌خیال همه‌چیز می‌شوند.
+
 Another permissible lie is to exaggerate the importance of what you're working on, at least in your own mind. If that helps you discover something new, it may turn out not to have been a lie after all.[^7]
 
 ---
@@ -214,7 +253,12 @@ One reason per-project procrastination is so dangerous is that it usually camouf
  
 The way to beat it is to stop occasionally and ask yourself: Am I working on what I most want to work on? When you're young it's ok if the answer is sometimes no, but this gets increasingly dangerous as you get older.[^9]
 
----
+
+> [!NOTE] خطرناک‌ترین نوع اهمال‌کاری خودش را کار جا می‌زند
+> دو نوع اهمال‌کاری داریم: (۱) اهمال‌کاری روزانه و (۲) اهمال‌کاری در پروژه. اولی خطر چندانی ندارد و به راحتی متوجه آن می‌شویم. ولی در حالت دوم در کل دوران انجام یک پروژه در حال اهمال‌کاری هستیم. این مدل از اهمال‌کاری زمانی اتفاق می‌افتد که به جای انجام کار واقعی، خودمان را سرگرم پروژهٔ دیگری می‌کنیم و اتفاقاً با جدیت و مثل کار بزرگ با آن رفتار می‌کنیم. اینطوری خیال می‌کنیم که اتفاق بزرگی در حال افتادن است. در حالی که چند سال از عمرمان را هدر داده‌ایم.
+> ‌
+> بهترین راه مقابله با اهمال‌کاری نوع ۲ این است که مدام از خودمان بپرسیم «آیا این همون کاریه که بیشتر از همه دوست دارم انجامش بدم؟». در سنین جوانی ایرادی ندارد که گاهی اوقات جواب این سؤال «نه» باشد؛ ولی هر چه سن بالاتر برود، پاسخ «نه» به این سؤال خطرناک‌تر می‌شود.
+
 
 Great work usually entails spending what would seem to most people an unreasonable amount of time on a problem. You can't think of this time as a cost, or it will seem too high. You have to find the work sufficiently engaging as it's happening. 
  
