@@ -259,12 +259,17 @@ The way to beat it is to stop occasionally and ask yourself: Am I working on wha
 > ‌
 > بهترین راه مقابله با اهمال‌کاری نوع ۲ این است که مدام از خودمان بپرسیم «آیا این همون کاریه که بیشتر از همه دوست دارم انجامش بدم؟». در سنین جوانی ایرادی ندارد که گاهی اوقات جواب این سؤال «نه» باشد؛ ولی هر چه سن بالاتر برود، پاسخ «نه» به این سؤال خطرناک‌تر می‌شود.
 
+> [!tip] سؤال سخت
+> معروف است که ریچارد هَمینگ، ریاضی‌دان آمریکایی، مدام سؤالی شبیه همین را از اطرافیانش می‌پرسید: «اگر کاری که در حال حاضر مشغولش هستید مهم نیست و قرار هم نیست به چیز مهمی برسد، پس اصلاً چرا روی آن کار می‌کنید؟»
+> <blockquote class="english-blockquote">If what you are doing is not important, and if you don't think it is going to lead to something important, why are you at working on it?</blockquote>
+>  
 
-Great work usually entails spending what would seem to most people an unreasonable amount of time on a problem. You can't think of this time as a cost, or it will seem too high. You have to find the work sufficiently engaging as it's happening. 
+
+Great work usually entails spending what would seem to most people an unreasonable amount of time on a problem. You can't think of this time as a cost, or it will seem too high. You have to find the work sufficiently engaging as it's happening.
  
 There may be some jobs where you have to work diligently for years at things you hate before you get to the good part, but this is not how great work happens. Great work happens by focusing consistently on something you're genuinely interested in. When you pause to take stock, you're surprised how far you've come. 
- 
-The reason we're surprised is that we underestimate the cumulative effect of work. Writing a page a day doesn't sound like much, but if you do it every day you'll write a book a year. That's the key: consistency. People who do great things don't get a lot done every day. They get something done, rather than nothing. 
+
+The reason we're surprised is that we underestimate the cumulative effect of work. Writing a page a day doesn't sound like much, but if you do it every day you'll write a book a year. That's the key: **consistency**. People who do great things don't get a lot done every day. They get something done, rather than nothing. 
  
 If you do work that compounds, you'll get exponential growth. Most people who do this do it unconsciously, but it's worth stopping to think about. Learning, for example, is an instance of this phenomenon: the more you learn about something, the easier it is to learn more. Growing an audience is another: the more fans you have, the more new fans they'll bring you. 
  
@@ -272,15 +277,22 @@ The trouble with exponential growth is that the curve feels flat in the beginnin
  
 Something that grows exponentially can become so valuable that it's worth making an extraordinary effort to get it started. But since we underrate exponential growth early on, this too is mostly done unconsciously: people push through the initial, unrewarding phase of learning something new because they know from experience that learning new things always takes an initial push, or they grow their audience one fan at a time because they have nothing better to do. If people consciously realized they could invest in exponential growth, many more would do it. 
 
----
+
+> [!NOTE] کلید کار عالی استمرار است
+> روزی یک صفحه نوشتن چندان کار بزرگی نیست؛ ولی کسی که این کار را برای یک سال بکند، در انتهای سال یک کتاب نوشته است. استمرار به معنی کار کردن مداوم -مستقل از حجم آن- است. کسانی که استقامت دارند، مدام نتیجهٔ کارهای کوچک خودشان را می‌بینند و برای شروع کارهای بعدی انگیزهٔ بیشتری خواهند داشت.
+
+> [!NOTE] برخی کارها رشد نمایی دارند
+> هر چقدر بیشتر یاد بگیریم، یادگیری مطالب بعدی ساده‌تر می‌شود. هر چقدر مخاطب بیشتری داشته باشیم، اضافه کردن مخاطب جدید آسان‌تر می‌شود. کارهای بسیاری هستند که از قاعدهٔ [[حلقهٔ تشدیدی - Reinforcing Feedback Loop|تشدید]] پیروی می‌کنند. برای تازه‌کارها شاید این رشد نمایی دیده نشود و زود خسته شوند. ولی اگر صبر داشته باشند و خروجی یکی-دو کار را ببینند، بعد از آن شروع کردن کارها از صفر برایشان ساده‌تر خواهد بود.
+
 
 Work doesn't just happen when you're trying to. There's a kind of undirected thinking you do when walking or taking a shower or lying in bed that can be very powerful. By letting your mind wander a little, you'll often solve problems you were unable to solve by frontal attack. 
  
 You have to be working hard in the normal way to benefit from this phenomenon, though. You can't just walk around daydreaming. The daydreaming has to be interleaved with deliberate work that feeds it questions.[^10] 
- 
+
 Everyone knows to avoid distractions at work, but it's also important to avoid them in the other half of the cycle. When you let your mind wander, it wanders to whatever you care about most at that moment. So avoid the kind of distraction that pushes your work out of the top spot, or you'll waste this valuable type of thinking on the distraction instead. (Exception: Don't avoid love.) 
 
----
+> [!NOTE] کار در اوقات بی‌خیالی هم اتفاق می‌افتد
+> زمان‌هایی مثل حمام یا پیاده‌روی هستند که ذهن ما حین آن‌ها آزادتر است. تمرکزی ندارد و با خیال راحت رؤیاپردازی می‌کند. اگر مسألهٔ ما قبل از این به خوبی در ذهن خیس خورده باشد، در این اوقات آزادی ذهن هم ایده‌های جدیدی درباره‌اش به ما می‌رسد. لازمهٔ خیس خوردن، جمع کردن حواس حین کار کردن است. اگر حواس حین کار پرت باشد، در اوقات آزادی ذهن هم چیزی دست ما را نخواهد گرفت. البته که این تمرکز زیاد نباید باعث بی‌توجهی ما به عزیزان اطرافمان شود. به قول یکی، ۱۰ سال بعد از همهٔ این ماجرا‌ها تنها کسی که کار کردن‌های دیروقت ما را یادش مانده بچهٔ ماست.
 
 Consciously cultivate your taste in the work done in your field. Until you know which is the best and what makes it so, you don't know what you're aiming for. 
  
