@@ -294,15 +294,19 @@ Everyone knows to avoid distractions at work, but it's also important to avoid t
 > [!NOTE] کار در اوقات بی‌خیالی هم اتفاق می‌افتد
 > زمان‌هایی مثل حمام یا پیاده‌روی هستند که ذهن ما حین آن‌ها آزادتر است. تمرکزی ندارد و با خیال راحت رؤیاپردازی می‌کند. اگر مسألهٔ ما قبل از این به خوبی در ذهن خیس خورده باشد، در این اوقات آزادی ذهن هم ایده‌های جدیدی درباره‌اش به ما می‌رسد. لازمهٔ خیس خوردن، جمع کردن حواس حین کار کردن است. اگر حواس حین کار پرت باشد، در اوقات آزادی ذهن هم چیزی دست ما را نخواهد گرفت. البته که این تمرکز زیاد نباید باعث بی‌توجهی ما به عزیزان اطرافمان شود. به قول یکی، ۱۰ سال بعد از همهٔ این ماجرا‌ها تنها کسی که کار کردن‌های دیروقت ما را یادش مانده بچهٔ ماست.
 
-Consciously cultivate your taste in the work done in your field. Until you know which is the best and what makes it so, you don't know what you're aiming for. 
+Consciously cultivate your taste in the work done in your field. Until you know which is the best and what makes it so, you don't know what you're aiming for.
  
 And that _is_ what you're aiming for, because if you don't try to be the best, you won't even be good. This observation has been made by so many people in so many different fields that it might be worth thinking about why it's true. It could be because ambition is a phenomenon where almost all the error is in one direction — where almost all the shells that miss the target miss by falling short. Or it could be because ambition to be the best is a qualitatively different thing from ambition to be good. Or maybe being good is simply too vague a standard. Probably all three are true.[^11]
- 
+
 Fortunately there's a kind of economy of scale here. Though it might seem like you'd be taking on a heavy burden by trying to be the best, in practice you often end up net ahead. It's exciting, and also strangely liberating. It simplifies things. In some ways it's easier to try to be the best than to try merely to be good. 
  
 One way to aim high is to try to make something that people will care about in a hundred years. Not because their opinions matter more than your contemporaries', but because something that still seems good in a hundred years is more likely to be genuinely good. 
 
----
+> [!NOTE] اگر برای عالی بودن را هدف نگیریم، به حد خوب هم نمی‌رسیم
+> ذائقهٔ کاری با شناختن بهترین‌ها و علتِ بهترین بودنِ آن‌ها ساخته می‌شود. ذائقه را بسازید و فاصلهٔ خود را با بهترین‌ها کم و کمتر کنید.
+
+> [!tip] خلق [[نویز#زمان و مکان|لازمان]]
+> یک راه برای هدف گرفتن بلندبالا، ساختن چیزی است که به درد انسان صدسال آینده هم بخورد.
 
 Don't try to work in a distinctive style. Just try to do the best job you can; you won't be able to help doing it in a distinctive way. 
  
@@ -312,7 +316,9 @@ Affectation is in effect to pretend that someone other than you is doing the wor
  
 The temptation to be someone else is greatest for the young. They often feel like nobodies. But you never need to worry about that problem, because it's self-solving if you work on sufficiently ambitious projects. If you succeed at an ambitious project, you're not a nobody; you're the person who did it. So just do the work and your identity will take care of itself. 
 
----
+
+> [!NOTE] ادای درآوردن لازم نیست
+> بعضی‌ها سبک کار دیگران را کپی می‌کنند. مشکل اینجاست که تظاهر و نقش بازی کردن، نتیجهٔ کپی و قلابی به همراه دارد. کلاغ خواست راه رفتن کبک رو یاد بگیرد، راه رفتن خودش یادش رفت. اگر واقعاً کار را به بهترین شکلی که تصور می‌کنید انجام دهید، خودبه‌خود سبک شخصی خودتان سروشکل می‌گیرد.
 
 "Avoid affectation" is a useful rule so far as it goes, but how would you express this idea positively? How would you say what to be, instead of what not to be? The best answer is earnest. If you're earnest you avoid not just affectation but a whole set of similar vices. 
  

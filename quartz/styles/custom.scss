@@ -440,3 +440,10 @@ div>ul>li>a {
 body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوانی-How-to-do-Great-Work"] article > p, body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوانی-How-to-do-Great-Work"] section.footnotes>ol {
     direction: ltr;
 }
+
+
+// Margin fix in tag pages
+
+li.section-li > .section > .meta {
+    margin: 0 0 0 1em !important;
+}
