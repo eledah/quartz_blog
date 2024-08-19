@@ -447,3 +447,30 @@ body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوا�
 li.section-li > .section > .meta {
     margin: 0 0 0 1em !important;
 }
+
+.logo-div {
+    border:1px solid var(--lightgray);
+    border-radius:5px;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-link {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.logo-svg {
+    fill: gray;
+    transition: fill .4s ease;
+    transition: scale .4s ease;
+}
+
+.logo-svg:hover {
+    fill: var(--tertiary);
+    scale: 1.1;
+}
