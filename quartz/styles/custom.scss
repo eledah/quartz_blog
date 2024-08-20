@@ -81,7 +81,11 @@ button#explorer .fold {
     list-style: circle;
 }
 
+// Margin fix in tag pages
 
+li.section-li > .section > .meta {
+    margin: 0 0 0 1em !important;
+}
 
 li:has(> .folder-outer:not(.open)) > .folder-container > svg {
 	transform: rotate(90deg) !important;
@@ -101,6 +105,11 @@ code {
 
 .search {
     max-width: unset;
+}
+
+.search > #search-icon {
+    background-color: unset !important;
+    border: 1px solid var(--lightgray) !important;
 }
 
 div.search.mobile-only {
@@ -368,7 +377,7 @@ h3.poem-title::before {
 
 .poem-verse-div {
     margin: auto;
-    height: 30px;
+    height: auto;
     text-align: center;
     clear: both;
     font-weight: 400;
@@ -384,6 +393,12 @@ h3.poem-title::before {
     width: 45%;
     float: left;
     text-align: right;
+}
+
+.poem-footer {
+    text-align: center;
+    color: gray;
+    font-size: 12px;
 }
 
 .poem-reference {
@@ -442,11 +457,9 @@ body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوا�
 }
 
 
-// Margin fix in tag pages
 
-li.section-li > .section > .meta {
-    margin: 0 0 0 1em !important;
-}
+
+// 
 
 .logo-div {
     border:1px solid var(--lightgray);
@@ -473,4 +486,33 @@ li.section-li > .section > .meta {
 .logo-svg:hover {
     fill: var(--tertiary);
     scale: 1.1;
+}
+
+// Article Header
+
+.article-header {/* Default background color */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.article-header h1 { 
+    margin: 0;
+    color: white !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.article-header p {
+    margin: 5px 0 0;
+    color: white !important;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* background image */
+.article-header.with-background-image {
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+    background-position: center;
 }

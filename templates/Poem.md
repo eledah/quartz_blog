@@ -1,1 +1,1 @@
-<div class='poem-verse-div'><div class='poem-right-verse-div'>مصرع۱</div><div class='poem-left-verse-div'>مصرع۲</div></div>
+<div class='poem-verse-div'><div class='poem-right-verse-div'>مصرع۱</div><div class='poem-left-verse-div'>مصرع۲</div><div class='poem-footer'>ازکی</div></div>
