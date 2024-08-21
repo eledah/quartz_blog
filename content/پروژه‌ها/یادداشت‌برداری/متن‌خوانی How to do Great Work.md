@@ -11,7 +11,7 @@ cssclasses: []
 > 
 > متن با همهٔ خوبی‌هایش، یک ایراد دارد. به خاطر تعدد تکنیک‌ها و توصیه‌ها، ساختارش به هم پیوسته و مرتب نیست. مدام از یک نکته به نکتهٔ دیگر می‌پرد. غلظت متن بسیار بالاست. به خاطر همین محتویاتش فرّار است و باید هرچندوقت یکبار در مقام تذکر دوباره نکاتش را مرور کرد. از آن‌جایی که ترجمهٔ فارسی یا خلاصهٔ کاربردی از این متن وجود ندارد، تصمیم گرفتم که یک دور نکات آن را برای خودم جدا کنم و بنویسم که هر بار مجبور به خواندن کل متن نشوم. در کنار نکات متن، تجربیات خودم و نکات دیگر را هم به یادداشت‌ها اضافه کرده‌ام. علاوه بر این، یادداشت‌برداری از این متنْ مثالی از [[چطور یادداشت برداریم؟|یادداشت‌برداری]] است که برای تازه‌کارها کار را در عمل به نمایش می‌کشد.
 > 
-> متن جستار به انگلیسی است. ترجمه هم نشده است. با گوگل‌ترنسلیت و سایر ابزارها قابل ترجمه ولی خطاپذیر است. تلاش می‌کنم به مرور که در متن جلو می‌رویم، حرف‌های اصلی را هم ترجمه کنم که مطلبی از دست نرود.
+> متن جستار به انگلیسی است. ترجمه هم نشده است. با گوگل‌ترنسلیت و سایر ابزارها قابل ترجمه ولی خطاپذیر است. تلاش می‌کنم به مرور که در متن جلو می‌رویم، حرف‌های اصلی را هم ترجمه کنم که مطلبی از دست نرود. حرف‌هایی را که به نظرم فرعی می‌رسند یا متصل به حرف‌های بعدی خود هستند ترجمه نمی‌کنم.
 
 ## متن جستار
 
@@ -303,7 +303,7 @@ Fortunately there's a kind of economy of scale here. Though it might seem like y
 One way to aim high is to try to make something that people will care about in a hundred years. Not because their opinions matter more than your contemporaries', but because something that still seems good in a hundred years is more likely to be genuinely good. 
 
 > [!NOTE] اگر برای عالی بودن را هدف نگیریم، به حد خوب هم نمی‌رسیم
-> ذائقهٔ کاری با شناختن بهترین‌ها و علتِ بهترین بودنِ آن‌ها ساخته می‌شود. ذائقه را بسازید و فاصلهٔ خود را با بهترین‌ها کم و کمتر کنید.
+> ذائقهٔ کاری با شناختن بهترین‌ها و علتِ بهترین بودنِ آن‌ها ساخته می‌شود. کنجکاوی، ذائقه را می‌سازد و ذائقه فاصلهٔ ما را با بهترین‌ها کم و کم‌تر می‌کند.
 
 > [!tip] خلق [[نویز#زمان و مکان|لازمان]]
 > یک راه برای هدف گرفتن بلندبالا، ساختن چیزی است که به درد انسان صدسال آینده هم بخورد.
@@ -316,16 +316,16 @@ Affectation is in effect to pretend that someone other than you is doing the wor
  
 The temptation to be someone else is greatest for the young. They often feel like nobodies. But you never need to worry about that problem, because it's self-solving if you work on sufficiently ambitious projects. If you succeed at an ambitious project, you're not a nobody; you're the person who did it. So just do the work and your identity will take care of itself. 
 
-
-> [!NOTE] ادای درآوردن لازم نیست
-> بعضی‌ها سبک کار دیگران را کپی می‌کنند. مشکل اینجاست که تظاهر و نقش بازی کردن، نتیجهٔ کپی و قلابی به همراه دارد. کلاغ خواست راه رفتن کبک رو یاد بگیرد، راه رفتن خودش یادش رفت. اگر واقعاً کار را به بهترین شکلی که تصور می‌کنید انجام دهید، خودبه‌خود سبک شخصی خودتان سروشکل می‌گیرد.
-
 "Avoid affectation" is a useful rule so far as it goes, but how would you express this idea positively? How would you say what to be, instead of what not to be? The best answer is earnest. If you're earnest you avoid not just affectation but a whole set of similar vices. 
- 
-The core of being earnest is being intellectually honest. We're taught as children to be honest as an unselfish virtue — as a kind of sacrifice. But in fact it's a source of power too. To see new ideas, you need an exceptionally sharp eye for the truth. You're trying to see more truth than others have seen so far. And how can you have a sharp eye for the truth if you're intellectually dishonest? 
+
+The core of being earnest is being intellectually honest. We're taught as children to be honest as an unselfish virtue — as a kind of sacrifice. But in fact it's a source of power too. To see new ideas, you need an exceptionally sharp eye for the truth. You're trying to see more truth than others have seen so far. And how can you have a sharp eye for the truth if you're intellectually dishonest?
  
 One way to avoid intellectual dishonesty is to maintain a slight positive pressure in the opposite direction. Be aggressively willing to admit that you're mistaken. Once you've admitted you were mistaken about something, you're free. Till then you have to carry it.[^13]
- 
+
+> [!NOTE] ادا درآوردن لازم نیست
+> بعضی‌ها سبک کار دیگران را کپی می‌کنند. مشکل اینجاست که تظاهر و نقش بازی کردن، نتیجهٔ کپی و قلابی به همراه دارد. کلاغ خواست راه رفتن کبک رو یاد بگیرد، راه رفتن خودش یادش رفت. اگر واقعاً کار را به بهترین شکلی که تصور می‌کنید صادقانه انجام دهید، خودبه‌خود سبک شخصی خودتان سروشکل می‌گیرد.<br><br>
+> صداقت جلوی ادابازی را می‌گیرد. علاوه بر این، صداقت جلوی دروغ گفتن به خود را هم می‌گیرد. خیلی از اوقات آدم‌ها برای انجام کارهای دست چندم یا توجه اشتباهات مجبور می‌شوند به خودشان دروغ بگویند و بارشان را سنگین می‌کنند.
+
 Another more subtle component of earnestness is informality. Informality is much more important than its grammatically negative name implies. It's not merely the absence of something. It means focusing on what matters instead of what doesn't. 
  
 What formality and affectation have in common is that as well as doing the work, you're trying to seem a certain way as you're doing it. But any energy that goes into how you seem comes out of being good. That's one reason nerds have an advantage in doing great work: they expend little effort on seeming anything. In fact that's basically the definition of a nerd. 
@@ -339,9 +339,16 @@ Some people are naturally earnest, and with others it takes a conscious effort. 
 ---
 
 Great work is consistent not only with who did it, but with itself. It's usually all of a piece. So if you face a decision in the middle of working on something, ask which choice is more consistent. 
- 
+
+> [!NOTE] کار عالی یک‌پارچه است
+> همه‌چیزش به همه‌چیزش می‌آید. پس در هنگام برداشتن قدم بعدی، باید از بین گزینه‌ها آنی را انتخاب کنیم که برازندهٔ حال فعلی است.
+
 You may have to throw things away and redo them. You won't necessarily have to, but you have to be willing to. And that can take some effort; when there's something you need to redo, status quo bias and laziness will combine to keep you in denial about it. To beat this ask: If I'd already made the change, would I want to revert to what I have now? 
- 
+
+
+> [!NOTE] آدم‌ها نسبت به تغییر حس بدی دارند
+> برای از بین بردن این حس، بد نیست از خودمان بپرسیم که «اگر این تغییر اتفاق افتاده بود، آیا حاضر بودم که به زحمت بیفتم و به حالت برش گردانم؟»
+
 Have the confidence to cut. Don't keep something that doesn't fit just because you're proud of it, or because it cost you a lot of effort. 
  
 Indeed, in some kinds of work it's good to strip whatever you're doing to its essence. The result will be more concentrated; you'll understand it better; and you won't be able to lie to yourself about whether there's anything real there. 
@@ -353,7 +360,10 @@ Elegance can be a long-term bet, though. Laborious solutions will often have mor
 Whereas some of the very best work will seem like it took comparatively little effort, because it was in a sense already there. It didn't have to be built, just seen. It's a very good sign when it's hard to say whether you're creating something or discovering it. 
  
 When you're doing work that could be seen as either creation or discovery, err on the side of discovery. Try thinking of yourself as a mere conduit through which the ideas take their natural shape. 
- 
+
+> [!NOTE] غلبهٔ کشف بر اختراع
+> بهترین کارها بیشتر شبیه اکتشاف هستند تا اختراع. اگر کار ما شکل اکتشاف به خودش بگیرد، نشانهٔ خیلی بهتری از انجام کار درجهٔ یک است. 
+
 (Strangely enough, one exception is the problem of choosing a problem to work on. This is usually seen as search, but in the best case it's more like creating something. In the best case you create the field in the process of exploring it.) 
  
 Similarly, if you're trying to build a powerful tool, make it gratuitously unrestrictive. A powerful tool almost by definition will be used in ways you didn't expect, so err on the side of eliminating restrictions, even if you don't know what the benefit will be. 
@@ -361,6 +371,13 @@ Similarly, if you're trying to build a powerful tool, make it gratuitously unres
 Great work will often be tool-like in the sense of being something others build on. So it's a good sign if you're creating ideas that others could use, or exposing questions that others could answer. The best ideas have implications in many different areas. 
  
 If you express your ideas in the most general form, they'll be truer than you intended. 
+
+> [!NOTE] کار عالی ابزاری است که دیگران تکمیلش می‌کنند
+> چرا که از این جهت قدرت تکامل بیشتری پیدا می‌کند. ابزارهای متن‌باز این ویژگی را دارند. رویدادها و بازارها (Marketplace) هم این ویژگی را دارند. ابزاری که بازار می‌سازد، پایداری‌اش تضمین شده است.
+
+> [!example] مثال Airbnb
+> خود Airbnb ابزار پیچیده‌ای نیست. ابزاری است که به مسافران اجازهٔ اجارهٔ خانه را در مقصدشان می‌دهد. اما همین ابزار باعث شده که عده‌ای شغلشان خرید و تجهیز خانه برای میزبانی از مسافران باشد.
+
 
 ---
 
