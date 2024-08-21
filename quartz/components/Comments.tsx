@@ -73,23 +73,28 @@ export default ((opts: Options) => {
       giscusContainer.appendChild(giscusScript)
     }
 
-    document.addEventListener("nav", loadComments)
-    
-    const observer = new MutationObserver((mutations) => {
+    function handleThemeChange(mutations) {
       mutations.forEach((mutation) => {
         if (mutation.type === "attributes" && mutation.attributeName === "saved-theme") {
           const newTheme = getCurrentTheme()
           changeTheme(newTheme)
         }
       })
-    })
+    }
 
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["saved-theme"] })
+    const observer = new MutationObserver(handleThemeChange)
+    
+    function setupGiscus() {
+      loadComments()
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ["saved-theme"] })
+    }
 
-    window.addCleanup(() => {
-      document.removeEventListener("nav", loadComments)
+    function cleanupGiscus() {
       observer.disconnect()
-    })
+    }
+
+    document.addEventListener("nav", setupGiscus)
+    document.addEventListener("cleanup", cleanupGiscus)
   `
 
   return Comments
