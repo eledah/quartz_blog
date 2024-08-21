@@ -34,6 +34,7 @@ export default ((opts: Options) => {
         return
       }
 
+
       iframe.contentWindow.postMessage({
         giscus: {
           setConfig: {
@@ -61,7 +62,7 @@ export default ((opts: Options) => {
       giscusScript.setAttribute("data-input-position", "${opts.options.inputPosition ?? "bottom"}")
 
       const theme = document.documentElement.getAttribute("saved-theme")
-      giscusScript.setAttribute("data-theme", theme)
+      giscusScript.setAttribute("data-theme", "https://cdn.jsdelivr.net/gh/eledah/quartz_blog/quartz/static/giscus.css")
       giscusScript.setAttribute("data-lang", "fa")
       giscusContainer.appendChild(giscusScript)
 
