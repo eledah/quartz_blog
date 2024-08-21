@@ -27,25 +27,31 @@ export default ((opts: Options) => {
   }
 
   Comments.afterDOMLoaded = `
-    const changeTheme = (e) => {
-      const theme = e.detail.theme
-      const iframe = document.querySelector('iframe.giscus-frame')
-      if (!iframe) {
-        return
-      }
+    function getThemeUrl(theme) {
+      return \`https://cdn.jsdelivr.net/gh/eledah/quartz_blog/quartz/static/giscus-\${theme}.css\`
+    }
 
+    function getCurrentTheme() {
+      return document.documentElement.getAttribute("saved-theme") || "light"
+    }
+
+    const changeTheme = (theme) => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
 
       iframe.contentWindow.postMessage({
         giscus: {
           setConfig: {
-            theme: theme
+            theme: getThemeUrl(theme)
           }
         }
       }, 'https://giscus.app')
     }
 
-    document.addEventListener("nav", () => {
+    function loadComments() {
       const giscusContainer = document.querySelector(".giscus")
+      if (giscusContainer.hasChildNodes()) return
+
       const giscusScript = document.createElement("script")
       giscusScript.src = "https://giscus.app/client.js"
       giscusScript.async = true
@@ -61,14 +67,30 @@ export default ((opts: Options) => {
       giscusScript.setAttribute("data-reactions-enabled", "${boolToStringBool(opts.options.reactionsEnabled ?? true)}")
       giscusScript.setAttribute("data-input-position", "${opts.options.inputPosition ?? "bottom"}")
 
-      const theme = document.documentElement.getAttribute("saved-theme")
-      giscusScript.setAttribute("data-theme", "https://cdn.jsdelivr.net/gh/eledah/quartz_blog/quartz/static/giscus.css")
+      const currentTheme = getCurrentTheme()
+      giscusScript.setAttribute("data-theme", getThemeUrl(currentTheme))
       giscusScript.setAttribute("data-lang", "fa")
       giscusContainer.appendChild(giscusScript)
+    }
 
-      document.addEventListener("themechange", changeTheme)
-      window.addCleanup(() => document.removeEventListener("themechange", changeTheme))
-    })`
+    document.addEventListener("nav", loadComments)
+    
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === "attributes" && mutation.attributeName === "saved-theme") {
+          const newTheme = getCurrentTheme()
+          changeTheme(newTheme)
+        }
+      })
+    })
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["saved-theme"] })
+
+    window.addCleanup(() => {
+      document.removeEventListener("nav", loadComments)
+      observer.disconnect()
+    })
+  `
 
   return Comments
 }) satisfies QuartzComponentConstructor<Options>
