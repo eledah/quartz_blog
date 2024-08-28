@@ -96,7 +96,7 @@ USERNAME/REPONAME
 
 ## قدم سوم: ساختن تصاویر با مدل
 
-برای ساختن مدل بر روی Replicate به [lucataco/flux-dev-lora](https://replicate.com/lucataco/flux-dev-lora) بروید.
+برای ساختن تصویر از مدل روی Replicate به [lucataco/flux-dev-lora](https://replicate.com/lucataco/flux-dev-lora) بروید.
 
 ![](attachment/448b998c7bc2f1ff96938a72769b9414.png)
 
@@ -130,7 +130,7 @@ Chamran as a quantum physicist in a modern lab coat, performing intricate experi
 
 ### فیلدهای num_inference_steps و guidance_scale
 
-نیازی به تغییر این دو فیلد نیست.
+نیازی به تغییر این دو فیلد نیست. اولی برای تعداد مراحل نویزگیری از تصویر است و دومی اهمیت پرامپت را در تولید عکس نشان می‌دهد.
 
 ### فیلد hf_lora
 
@@ -186,7 +186,7 @@ USERNAME/REPONAME
 
 ![[ch6.jpg]]
 
-## ضمیمه: بهینه‌سازی برای کاربران عادی
+## ضمیمه ۱: بهینه‌سازی برای کاربران عادی
 
 طی همهٔ این مراحل برای کاربر عادی نه صرفه‌ای دارد و نه ساده است. راهکار، استفاده از [API](https://replicate.com/lucataco/flux-dev-lora/api) سایت Replicate و بالا آوردن یک میانجیِ کاربرپسند است. به عنوان مثال برای طی این مراحل با پایتون کافیست ابتدا `API_TOKEN` را وارد سرور کرد
 
