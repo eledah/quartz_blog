@@ -1,9 +1,9 @@
 ---
-title: چهره‌پردازی و ساختن مدل با Flux
+title: مدل‌سازی و چهره‌پردازی با Flux
 draft: false
 tags:
   - آموزش
-  - explorerexclude
+  - AI
 date: 2024-08-28 12:02
 ---
 این متن به شما آموزش می‌دهد که چطور با داشتن ۱۰-۱۲ تصویر از سوژهٔ خود، مدلی بر طبق آن بسازید تا از سوژه در حالات و مکان‌های مختلف با کمک مدل‌های هوش مصنوعی تصویر ایجاد کنید.
@@ -186,21 +186,67 @@ USERNAME/REPONAME
 
 ![[ch6.jpg]]
 
-## ضمیمه ۱: بهینه‌سازی برای کاربران عادی
+## ضمیمه ۱: تمرین مدل با کد
 
-طی همهٔ این مراحل برای کاربر عادی نه صرفه‌ای دارد و نه ساده است. راهکار، استفاده از [API](https://replicate.com/lucataco/flux-dev-lora/api) سایت Replicate و بالا آوردن یک میانجیِ کاربرپسند است. به عنوان مثال برای طی این مراحل با پایتون کافیست ابتدا `API_TOKEN` را وارد سرور کرد
+اگر اهل برنامه‌نویسی هستید، کل مراحل بالا را می‌توان با کد پایتون هم انجام داد. بخش اول کد پایین، برای شما مدلی در سایت `replicate.com` با اسم انتخابی می‌سازد. برای این کار اول از همه باید `API_TOKEN` خودتان را برای سایت `Replicate` از [این صفحه](https://replicate.com/account/api-tokens) بردارید و داخل فایلی با نام `.env` در پوشهٔ کد قرار دهید. به این شکل:
 
-```bash
-export REPLICATE_API_TOKEN=r8_PEF********************
+```shell
+REPLICATE_API_TOKEN=r8_PE*********************************
 ```
 
-سپس کتابخانهٔ `replicate` را نصب کرد
+در بخش دوم، برنامه فایل ورودی `input.zip` را از شما می‌گیرد و آن را برای مدل می‌فرستد. برای خروجی مدل می‌توانید `huggingface` را برای میزبانی انتخاب کنید. در این صورت باید از قبل مدل را در `huggingface` بسازید و مشابه قبل `Access Token` آن را در داخل کد قرار دهید.
 
-```bash
-pip install replicate
+```python
+import replicate
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+replicate.api_key = os.environ["REPLICATE_API_TOKEN"]
+
+# Creating a model
+model = replicate.models.create(
+    owner="USERNAME",
+    name="MODELNAME",
+    visibility="public",  # or "private" if you prefer
+    hardware="gpu-t4",
+    description="A fine-tuned FLUX.1 model"
+)
+
+print(f"Model created: {model.name}")
+print(f"Model URL: https://replicate.com/{model.owner}/{model.name}")
+
+
+# Training Phase
+training = replicate.trainings.create(
+    version="ostris/flux-dev-lora-trainer:4ffd32160efd92e956d39c5338a9b8fbafca58e03f791f6d8011f3e20e8ea6fa",
+    input={
+        "input_images": open("input.zip", "rb"),
+        "steps": 1000,
+        "steps": 1000,
+        "lora_rank": 16,
+        "optimizer": "adamw8bit",
+        "batch_size": 1,
+        "resolution": "512,768,1024",
+        "autocaption": True,
+        "trigger_word": "HAJGH",
+        "learning_rate": 0.0004,
+        "hf_token": "HF_TOKEN",  # optional
+        "hf_repo_id": "HF_REPO",  # optional
+    },
+    destination=f"{model.owner}/{model.name}"
+)
+
+print(f"Training started: {training.status}")
+print(f"Training URL: https://replicate.com/p/{training.id}")
 ```
 
-و بعد با فرستادن فیلدهای درخواستی به سایت، خروجی را دریافت کرد:
+با پایان برنامه، مدل شما در `huggingface` قرار می‌گیرد و آمادهٔ استفاده می‌شود.
+
+## ضمیمه ۲: بهینه‌سازی برای کاربران عادی
+
+طی همهٔ این مراحل برای کاربر عادی نه صرفه‌ای دارد و نه ساده است. راهکار، استفاده از [API](https://replicate.com/lucataco/flux-dev-lora/api) سایت Replicate و بالا آوردن یک میانجیِ کاربرپسند است. به عنوان مثال برای طی این مراحل با پایتون کافیست با فرستادن فیلدهای درخواستی به سایت، خروجی را دریافت کرد:
 
 ```python
 import replicate
