@@ -1,5 +1,5 @@
 ---
-title: مدل‌سازی و چهره‌پردازی با Flux
+title: ساختن مدل با Flux
 draft: false
 tags:
   - آموزش

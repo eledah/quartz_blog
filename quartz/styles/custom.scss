@@ -543,3 +543,27 @@ body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوا�
     background-size: cover;
     background-position: center;
 }
+
+
+// Mermaid fix: https://ifard.ir/quartz-configuration#%D8%AF%DB%8C%D8%A7%DA%AF%D8%B1%D8%A7%D9%85
+
+.mermaid {
+	direction: rtl !important;
+    text-align: center;
+}
+ 
+pre:has(>code.mermaid) {
+	background-color: transparent;
+}
+ 
+.nodeLabel {
+	font-family: var(--bodyFont);
+}
+
+.edgeLabel {
+    font-family: var(--bodyFont);
+}
+ 
+pre:has(>code.mermaid) .clipboard-button {
+	display: none;
+}
