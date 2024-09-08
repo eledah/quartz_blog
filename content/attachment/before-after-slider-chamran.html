@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After Image Slider</title>
+    <style>
+        .before-after-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .before-after-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .before-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .slider-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: white;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="before-after-container">
+        <img src="https://raw.githubusercontent.com/eledah/quartz_blog/v4/content/attachment/ch-small.png" class="before-after-image" alt="After">
+        <div class="before-image">
+            <img src="https://raw.githubusercontent.com/eledah/quartz_blog/v4/content/attachment/ch-upscaled.png" class="before-after-image" alt="Before">
+        </div>
+        <div class="slider-line"></div>
+    </div>
+
+    <script>
+        const container = document.querySelector('.before-after-container');
+        const beforeImage = document.querySelector('.before-image');
+        const sliderLine = document.querySelector('.slider-line');
+
+        const setPositionX = (x) => {
+            const containerRect = container.getBoundingClientRect();
+            const containerWidth = containerRect.width;
+            const newPosition = Math.max(0, Math.min(x - containerRect.left, containerWidth));
+            const percentage = (newPosition / containerWidth) * 100;
+            
+            beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+            sliderLine.style.left = `${percentage}%`;
+        };
+
+        const handleMove = (event) => {
+            const x = event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            setPositionX(x);
+        };
+
+        container.addEventListener('mousemove', handleMove);
+        container.addEventListener('touchmove', handleMove);
+    </script>
+</body>
+</html>
