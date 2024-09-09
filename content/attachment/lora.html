@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نقشه شبکه عصبی</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    .network {
+      display: grid;
+      grid-template-columns: repeat(5, 100px); /* Reduced width */
+      grid-gap: 50px; /* Reduced gap */
+      position: relative;
+    }
+
+    .layer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .node, .box {
+      width: 70px; /* Reduced size */
+      height: 70px; /* Reduced size */
+      border-radius: 50%;
+      background-color: rgb(180, 70, 171);
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-size: 10px; /* Reduced font size */
+      cursor: pointer;
+      margin-bottom: 15px; /* Reduced margin */
+      margin-left: 15px;
+      z-index: 1; /* Ensure nodes are above connections */
+      direction: rtl; /* Set text direction to RTL */
+    }
+
+    .box {
+      width: 100px; /* Reduced size */
+      height: 70px; /* Reduced size */
+      border-radius: 10px;
+      background-color: lightcoral;
+    }
+
+    .node:hover, .box:hover {
+      background-color: rgb(237, 100, 230);
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .text {
+      font-size: 12px; /* Reduced font size */
+      color: black;
+      text-align: center;
+    }
+
+    .layer.hidden {
+      margin-top: 30px; /* Reduced margin */
+    }
+  </style>
+</head>
+<body>
+
+<div class="network">
+  <!-- Input Layer -->
+  <div class="layer">
+    <div class="node" data-layer="Input">ورودی</div>
+  </div>
+  
+  <!-- Hidden Layer 1 -->
+  <div class="layer" >
+    <div class="box" data-layer="Frozen">مدل W<br>فریز شده</div>
+    <div style="display: flex;">
+      <div class="box" data-layer="B">B (d x r)</div>
+      <div class="box" data-layer="A">A (r x k)</div>
+    </div>
+  </div>
+
+  <!-- Output Layer -->
+  <div class="layer">
+    <div class="node" data-layer="Output">خروجی</div>
+  </div>
+
+  <!-- Target Layer -->
+  <div class="layer">
+    <div class="node" data-layer="Target">هدف</div>
+  </div>
+</div>
+
+<canvas id="connections"></canvas>
+
+<script>
+  function drawConnections() {
+    const canvas = document.getElementById('connections');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const nodes = document.querySelectorAll('.node, .box');
+    const nodePositions = {};
+
+    nodes.forEach(node => {
+      const rect = node.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      nodePositions[node.dataset.layer] = nodePositions[node.dataset.layer] || [];
+      nodePositions[node.dataset.layer].push({ x: centerX, y: centerY });
+    });
+
+    // Draw connections from Input to Frozen Layer (W) and B
+    nodePositions['Input'].forEach(inputNode => {
+      nodePositions['Frozen'].forEach(frozenNode => {
+        ctx.beginPath();
+        ctx.moveTo(inputNode.x, inputNode.y);
+        ctx.lineTo(frozenNode.x, frozenNode.y);
+        ctx.strokeStyle = 'gray'; // Changed to gray
+        ctx.lineWidth = 2; /* Reduced line width */
+        ctx.stroke();
+      });
+      nodePositions['B'].forEach(bNode => { // Added connection to B
+        ctx.beginPath();
+        ctx.moveTo(inputNode.x, inputNode.y);
+        ctx.lineTo(bNode.x, bNode.y);
+        ctx.strokeStyle = 'gray'; // Changed to gray
+        ctx.lineWidth = 2; /* Reduced line width */
+        ctx.stroke();
+      });
+    });
+
+    // Draw connections from Frozen Layer (W) to Output
+    nodePositions['Frozen'].forEach(frozenNode => {
+      nodePositions['Output'].forEach(outputNode => {
+        ctx.beginPath();
+        ctx.moveTo(frozenNode.x, frozenNode.y);
+        ctx.lineTo(outputNode.x, outputNode.y);
+        ctx.strokeStyle = 'gray'; // Changed to gray
+        ctx.lineWidth = 2; /* Reduced line width */
+        ctx.stroke();
+      });
+    });
+
+    // Draw connections from A to Output
+    nodePositions['A'].forEach(aNode => {
+      nodePositions['Output'].forEach(outputNode => {
+        ctx.beginPath();
+        ctx.moveTo(aNode.x, aNode.y);
+        ctx.lineTo(outputNode.x, outputNode.y);
+        ctx.strokeStyle = 'gray'; // Changed to gray
+        ctx.lineWidth = 2; /* Reduced line width */
+        ctx.stroke();
+      });
+    });
+
+    // Draw connection from B to A
+    nodePositions['B'].forEach(bNode => {
+      nodePositions['A'].forEach(aNode => {
+        ctx.beginPath();
+        ctx.moveTo(bNode.x, bNode.y);
+        ctx.lineTo(aNode.x, aNode.y);
+        ctx.strokeStyle = 'gray'; // Changed to gray
+        ctx.lineWidth = 2; /* Reduced line width */
+        ctx.stroke();
+      });
+    });
+
+    // Draw connections from Output to Target
+    nodePositions['Output'].forEach(outputNode => {
+      nodePositions['Target'].forEach(targetNode => {
+        ctx.beginPath();
+        ctx.moveTo(outputNode.x, outputNode.y);
+        ctx.lineTo(targetNode.x, targetNode.y);
+        ctx.strokeStyle = 'gray'; // Changed to gray
+        ctx.setLineDash([5, 5]);
+        ctx.lineWidth = 2; /* Reduced line width */
+        ctx.stroke();
+      });
+    });
+  }
+
+  window.addEventListener('resize', drawConnections);
+  window.addEventListener('load', drawConnections);
+</script>
+
+</body>
+</html>
