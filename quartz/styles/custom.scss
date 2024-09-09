@@ -562,8 +562,16 @@ pre:has(>code.mermaid) {
 
 .edgeLabel {
     font-family: var(--bodyFont);
+    background-color: #fff !important;
 }
  
 pre:has(>code.mermaid) .clipboard-button {
 	display: none;
+}
+
+
+// Latex LTR
+
+.katex-display {
+    direction: ltr;
 }
