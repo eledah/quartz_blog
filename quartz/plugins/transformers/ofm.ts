@@ -18,6 +18,12 @@ import { PhrasingContent } from "mdast-util-find-and-replace/lib"
 import { capitalize } from "../../util/lang"
 import { PluggableList } from "unified"
 
+// Add the isFarsi function here
+function isFarsi(char: string): boolean {
+  const farsiRange = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
+  return farsiRange.test(char);
+}
+
 export interface Options {
   comments: boolean
   highlight: boolean
@@ -528,6 +534,21 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
     },
     htmlPlugins() {
       const plugins: PluggableList = [rehypeRaw]
+
+      plugins.push(() => {
+        return (tree: HtmlRoot) => {
+          visit(tree, 'element', (node) => {
+            if (node.tagName === 'p' && node.children.length > 0) {
+              const firstChild = node.children[0]
+              if (firstChild.type === 'text' && firstChild.value.length > 0) {
+                const firstChar = firstChild.value[0]
+                node.properties = node.properties || {}
+                node.properties.dir = isFarsi(firstChar) ? 'rtl' : 'ltr'
+              }
+            }
+          })
+        }
+      })
 
       if (opts.parseBlockReferences) {
         plugins.push(() => {
