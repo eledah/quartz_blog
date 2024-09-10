@@ -26,7 +26,7 @@ date: 2024-08-28 12:02
 
 ![](attachment/1717433d0e6cd5bbd25bb24140fa8797.png)
 
-مدل Flux که قصد ساختن آن را داریم، با `Nvidia A100` و تکنیک [LoRA](https://huggingface.co/docs/diffusers/en/training/lora) ترین می‌شود و حدود ۳۰ دقیقه طول می‌کشد. تولید تصویر هم با کانفیگ یکسان و حدود ۲۰ ثانیه زمان می‌برد.
+مدل Flux که قصد ساختن آن را داریم، با `Nvidia A100` و [[تکنیک LoRA]] آموزش داده می‌شود. یادگیری مدل حدود ۳۰ دقیقه طول می‌کشد. تولید تصویر هم با کانفیگ یکسان و حدود ۲۰ ثانیه زمان می‌برد.
 
 ![](attachment/0eab1629724124d8c3a10d459fe6911b.png)
 
@@ -125,7 +125,7 @@ Enhance this prompt for me to use in a AI image generator. Use 77 Tokens or less
 Chamran as a quantum physicist in a modern lab coat, performing intricate experiments in a high-tech futuristic lab, illuminated by glowing instruments and screens
 ```
 
-### فیلد aspect ratio
+### فیلد aspect_ratio
 
 نسبت طول به عرض تصویر است. بسته به دلخواه قابل تنظیم است.
 
@@ -277,4 +277,4 @@ print(output)
 #=> ["https://replicate.delivery/yhqm/U0JjGgdA6E4NBB8RRfSXv0q...
 ```
 
-همهٔ این اقدامات کافیست در بک‌اند سایت انجام شود و کاربر  تنها مقادیر `aspect_ration` و `prompt` را در فرانت تغییر دهد تا خروجی‌های خود را ببیند.
+همهٔ این اقدامات کافیست در بک‌اند سایت انجام شود و کاربر  تنها مقادیر `aspect_ratio` و `prompt` را در فرانت تغییر دهد تا خروجی‌های خود را ببیند.

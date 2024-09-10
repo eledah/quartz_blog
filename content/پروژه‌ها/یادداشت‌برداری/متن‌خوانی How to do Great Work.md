@@ -162,7 +162,7 @@ There are a lot of forces that will lead you astray when you're trying to figure
 
 
 > [!NOTE] «برو دنبال علاقت» یک توصیهٔ منفعلانه نیست
-> رفتن به دنبال علاقه یعنی مقاومت در برابر سختی‌های مسیر و جسارت رد شدن از موانع آن. علاقه یک موتور کمکی است که در زمان خستگی‌ها آدم را به خط پایان می‌رساند.
+> رفتن به دنبال علاقه یعنی مقاومت در برابر سختی‌های مسیر و جسارت رد شدن از موانع آن. علاقه زمانی به کار می‌آید که دوروبری‌ها درآمد، جایگاه اجتماعی و زندگی بهتری پیدا کرده باشند و آدم آنجا باز بین این‌ها علاقه‌اش را انتخاب کند. علاقه یک موتور کمکی است که در زمان خستگی‌ها آدم را به خط پایان می‌رساند.
 
 
 But while you need boldness, you don't usually need much planning. In most cases the recipe for doing great work is simply: work hard on excitingly ambitious projects, and something good will come of it. Instead of making a plan and then executing it, you just try to preserve certain invariants. 
@@ -173,7 +173,7 @@ I think for most people who want to do great work, the right strategy is not to 
 
 
 > [!NOTE] انجام کار درجه یک برنامه‌ریزی چندانی نمی‌خواهد. چرا که هدف واضحی ندارد
-> سخت کار کردن روی پروژه‌های جالب خواه-ناخواه به کار بزرگ منجر می‌شود. مشکل برنامه‌ریزی این است که برای اهداف مشخص جواب می‌دهد. اما وقتی هدف مشخص نباشد (مثل یک اکتشاف یا حل مسألهٔ اساسی) برنامه‌ریزی جواب نمی‌دهد. در این شرایط حضور مداوم و برنامه‌ریزی رو به جلو کارگشاست.
+> سخت کار کردن روی پروژه‌های جالب خواه-ناخواه به کار بزرگ منجر می‌شود. مشکل برنامه‌ریزی این است که برای اهداف مشخص جواب می‌دهد. اما وقتی هدف مشخص نباشد (مثل یک اکتشاف یا حل مسألهٔ اساسی) برنامه‌ریزی جواب نمی‌دهد. در این شرایط حضور مداوم و برنامه‌ریزی رو به جلو کارگشاست. در این رابطه می‌توانید مقالهٔ یک‌صفحه‌ای [The importance of stupidity in scientific research](https://cob.silverchair-cdn.com/cob/content_public/journal/jcs/121/11/10.1242_jcs.033340/3/1771.pdf?Expires=1728977931&Signature=NuoDpvxNeC4WUwL8RsNsw~kxYG0Zmmd1prwWwR2HBeBFopMxatn975X0tGgOJSos1f84k9y6QEBY-GvXv5ypTN-N0~zTxZsIKrKWAFU1DxIXWxCC20T5SlveUCHtBnPXBVipGSfhGkxWiPJN2aLWf6xTuPGVHKdiLKSg9G1HLP9J3ul41ghfyFpxkNciGv9zMiWXQPTogjDf07U0tkPSxtlGofJQK-JucV4kp75FadSNYjr-Lxnusmfl85ciVp62eZdYlFPQOibrAvb33oQM1D41~IWgjnE-QJG8UswiUEtJStsyoxFuZa9IaJVkHOdQF9OmcBG09VfL3RpI~HyJHA__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA) را هم بخوانید.
 
 > [!example] برنامه‌ریزی رو به جلو و برنامه‌ریزی از انتها
 > دو نوع اصلی برنامه‌ریزی وجود دارد: Backward Planning و Forward Planning. برنامه‌ریزی از انتها زمانی بهتر جواب می‌دهد که هدف مشخص و [[پیچیدگی چیست؟|پیچیدگی]] کم باشد. در غیر این‌صورت برنامه‌ریزی رو به جلو بهتر است.

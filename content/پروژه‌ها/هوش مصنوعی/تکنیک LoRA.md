@@ -19,8 +19,8 @@ date: 2024-09-09 11:02
 
 
 > [!example] منابع بیشتر
-> ویدئوی [LoRA: Low-Rank Adaptation of Large Language Models](https://www.youtube.com/watch?v=PXWYUTMt-AU)
-> ویدئوی [Explaining the Key Concepts Behind LoRA](https://www.youtube.com/watch?v=dA-NhCtrrVE)
+> - ویدئوی [LoRA: Low-Rank Adaptation of Large Language Models](https://www.youtube.com/watch?v=PXWYUTMt-AU)
+> - ویدئوی [Explaining the Key Concepts Behind LoRA](https://www.youtube.com/watch?v=dA-NhCtrrVE)
 
 
 [^1]: Freeze
