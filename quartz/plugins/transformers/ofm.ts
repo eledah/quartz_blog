@@ -19,9 +19,17 @@ import { capitalize } from "../../util/lang"
 import { PluggableList } from "unified"
 
 // Add the isFarsi function here
-function isFarsi(char: string): boolean {
+function isFarsi(text: string): boolean {
   const farsiRange = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
-  return farsiRange.test(char);
+  const skipChars = /[\p{Emoji}\s\-\[\]{}\/\\#=@!*_]/u;
+  
+  for (const char of text) {
+    if (skipChars.test(char)) {
+      continue;
+    }
+    return farsiRange.test(char);
+  }
+  return false;
 }
 
 export interface Options {
@@ -541,9 +549,8 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
             if ((node.tagName === 'p' || /^h[1-6]$/.test(node.tagName)) && node.children.length > 0) {
               const firstChild = node.children[0]
               if (firstChild.type === 'text' && firstChild.value.length > 0) {
-                const firstChar = firstChild.value[0]
                 node.properties = node.properties || {}
-                node.properties.dir = isFarsi(firstChar) ? 'rtl' : 'ltr'
+                node.properties.dir = isFarsi(firstChild.value) ? 'rtl' : 'ltr'
               }
             }
           })
