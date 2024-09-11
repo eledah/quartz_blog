@@ -149,6 +149,12 @@ USERNAME/REPONAME
 
 وزن مدل شما در تولید تصویر. وزن ۱ بیشترین و وزن ۰ کمترین تعهد به مدل را دارد. مقدار ۰٫۸ برای آن مناسب است. چرا که گاهی اوقات با وزن ۱ علاوه بر چهره، لباس‌ها هم تکرار می‌شوند. اگر وزن ۰٫۸ خروجی‌های ناسازگاری به شما داد، بهتر است مقدار آن را دستکاری کنید.
 
+![[lora_scales.jpg]]
+
+```
+chamran impressionist painting with a yellow wheat field behind him, in style of Vincent van Gogh, swirly brush strokes, impressionist art style, vibrant coloring, 8K
+```
+
 ### فیلد seed
 
 مقدار رندومی که عکس با آن تولید می‌شود. اگر به دنبال خروجی‌های تکراری هستید، `seed` و پرامپت‌های تکراری به مدل بدهید. در غیر این‌صورت آن را خالی بگذارید.
