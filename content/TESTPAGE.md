@@ -37,6 +37,8 @@ But متنی که با کاراکترهای انگلیسی شروع شود از 
 
 _متن ایتالیک_
 
+### [لینک با متن فارسی](https://example.com) در هدینگ
+
 ## English Heading Test
 
 Mixed text with Farsi and English
@@ -62,6 +64,8 @@ Mixed text with Farsi and English
 *Bold Text*
 
 _Italic Text_
+
+### [Link](https://example.com) in heading
 
 - بولت لیست
 - English List

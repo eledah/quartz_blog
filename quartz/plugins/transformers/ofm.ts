@@ -546,11 +546,18 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
       plugins.push(() => {
         return (tree: HtmlRoot) => {
           visit(tree, 'element', (node) => {
-            if ((node.tagName === 'p' || /^h[1-6]$/.test(node.tagName) || node.tagName === 'a' || node.tagName === 'em') && node.children.length > 0) {
-              const firstChild = node.children[0]
-              if (firstChild.type === 'text' && firstChild.value.length > 0) {
+            if (node.tagName === 'p' || /^h[1-6]$/.test(node.tagName)) {
+              const textContent = node.children
+                .map(child => {
+                  if (child.type === 'text') return child.value;
+                  if (child.type === 'element') return (child as Element).children.map(c => c.type === 'text' ? (c as Literal).value : '').join('');
+                  return '';
+                })
+                .join('');
+              
+              if (textContent.length > 0) {
                 node.properties = node.properties || {}
-                node.properties.dir = isFarsi(firstChild.value) ? 'rtl' : 'ltr'
+                node.properties.dir = isFarsi(textContent) ? 'rtl' : 'ltr'
               }
             }
           })
