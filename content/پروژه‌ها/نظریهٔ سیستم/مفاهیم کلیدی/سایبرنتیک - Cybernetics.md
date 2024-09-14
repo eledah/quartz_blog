@@ -3,6 +3,7 @@ title: سایبرنتیک - Cybernetics
 draft: false
 tags: 
 date: 2024-07-08 16:59
+cssclasses:
 ---
 # Cybernetics: A Comprehensive Overview
 

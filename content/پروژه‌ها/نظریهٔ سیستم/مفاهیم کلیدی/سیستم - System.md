@@ -1,7 +1,8 @@
 ---
 title: سیستم - System
 draft: false
-tags:
+tags: 
+date: 2024-05-13
 ---
 ### خلاصه
 

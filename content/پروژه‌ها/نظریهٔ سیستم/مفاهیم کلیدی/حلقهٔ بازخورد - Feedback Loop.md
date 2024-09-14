@@ -1,7 +1,8 @@
 ---
 title: حلقهٔ بازخورد - Feedback Loop
 draft: false
-tags:
+tags: 
+date: 2024-05-13
 ---
 
 منبع: [[کتاب Thinking in Systems - a Primer]] صـ۲۵
