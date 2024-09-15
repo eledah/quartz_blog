@@ -1,5 +1,5 @@
 ---
-title: ساختن مدل با Flux
+title: ساختن مدل و خلق تصویر با Flux
 draft: false
 tags:
   - آموزش
