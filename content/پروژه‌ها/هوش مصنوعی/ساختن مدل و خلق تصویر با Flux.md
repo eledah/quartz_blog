@@ -139,6 +139,16 @@ Chamran as a quantum physicist in a modern lab coat, performing intricate experi
 
 نیازی به تغییر این دو فیلد نیست. اولی برای تعداد مراحل نویزگیری از تصویر است و دومی اهمیت پرامپت را در تولید عکس نشان می‌دهد.
 
+![[ch-guidance.jpg]]
+
+```
+chamran poster with a ak47 in his hands, standing at the top of a mountain with a red sun behind his head, 2d graphic is style of soviet propoganda
+```
+
+فیلد `num_of_inference_step` هم تعداد گام‌های تدقیق تصویر را تعیین می‌کند. مدل‌های تولید تصویر فعلی اکثراً از یک تصویر رندوم -مثل فریم اول ویدئوی پایین- شروع می‌کنند و به مرور نویززدایی از تصویر، به خروجی می‌رسند. عدد ۲۸ که پیش‌فرض مدل است، برای رسیدن به خروجی راضی‌کننده کافی است؛ اما اگر خروجی مطلوب شما نبود، این عدد را بالاتر ببرید تا مدل زمان بیشتری صرف ساختن عکس‌ها بکند.
+
+![[cg_steps_flux.mp4]]
+
 ### فیلد `hf_lora`
 
 آدرس `huggingface` مدلی که ساخته‌اید. بدون این مدل، `flux` شخصیتی به نام چمران را نمی‌شناسد. فرمت آن هم به این شکل است:

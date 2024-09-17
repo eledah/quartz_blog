@@ -104,7 +104,7 @@ Enhance this prompt for me to use in a AI image generator. Provide 5 alternate p
 chamran as a quantum physicist in a modern lab coat, performing intricate experiments in a high-tech futuristic lab, illuminated by glowing instruments and screens
 ```
 
-### فیلد `negative_prompt`\
+### فیلد `negative_prompt`
 
 درست برعکس پرامپت، این فیلد شامل مواردی است که نمی‌خواهیم در عکس باشد. مثلا اگر می‌خواهیم خروجی در شب باشد، «روز» را به این فیلد اضافه می‌کنیم. علاوه بر این‌ها، مدل‌های تولید تصویر در خراب کردن جزئیات مثل تعداد انگشتان یا چشم‌ها زبانزد هستند. یکی از راه‌های جلوگیری از این قضیه، اضافه کردن خرابی‌های احتمالی به فیلد `negative_prompt` است.
 
@@ -148,11 +148,21 @@ chamran as a quantum physicist in a modern lab coat, performing intricate experi
 
 ### فیلدهای `scheduler, num_inference_steps, guidance_scale, prompt_strength` 
 
-بهتر است این فیلدها را دست‌نخورده باقی بگذارید.
+بهتر است این فیلدها را دست‌نخورده باقی بگذارید. فیلد `guidance_scale` اهمیت پرامپت شما را در تولید تصویر نشان می‌دهد. اگر خواسته‌های شما در تصویر نیست، آن را افزایش دهید.
+
+![[ch-guidance.jpg]]
+
+```
+chamran poster with a ak47 in his hands, standing at the top of a mountain with a red sun behind his head, 2d graphic is style of soviet propoganda
+```
+
+فیلد `num_of_inference_step` هم تعداد گام‌های نویززدایی را تعیین می‌کند. مدل‌های تولید تصویر فعلی اکثراً از یک نویز رندوم -مثل فریم اول ویدئوی پایین- شروع می‌کنند و به مرور نویززدایی از تصویر، به خروجی می‌رسند. عدد ۵۰ که پیش‌فرض مدل است، برای رسیدن به خروجی راضی‌کننده کافی است؛ اما اگر خروجی مطلوب شما نبود، این عدد را بالاتر ببرید تا مدل زمان بیشتری صرف ساختن عکس‌ها بکند.
+
+![[ch_steps.mp4]]
 
 ### فیلد `seed`
 
-مقدار `seed` عددی تصادفی است که ساختن تصویر با آن آغاز می‌شود. اگر می‌خواهید هر بار خروجی یکسانی بگیرید و اثر باقی فیلدها را روی خروجی بسنجید، مقدار آن را یک عدد ثابت بگذارید؛ در غیر این‌صورت مقدارش را پاک کنید تا هر بار عکس‌هایی تصادفی تولید شود.
+مقدار `seed` عددی تصادفی است که ساختن تصویر با آن آغاز می‌شود. `seed` تصویر نویزدار بالا را تولید می‌کند. اگر می‌خواهید هر بار خروجی یکسانی بگیرید و اثر باقی فیلدها را روی خروجی بسنجید، مقدار آن را یک عدد ثابت بگذارید؛ در غیر این‌صورت مقدارش را پاک کنید تا هر بار عکس‌هایی تصادفی تولید شود.
 
 ### فیلدهای `refine, high_noise_frac, refine_steps, apply_watermark`
 
@@ -165,7 +175,7 @@ chamran as a quantum physicist in a modern lab coat, performing intricate experi
 
 تغییر تدریجی مقدار `lora_scale` و نزدیک شدن به چهرهٔ دلخواه را در نمونهٔ زیر هم می‌توانید ببینید:
 
-![[clideo_editor_9ac7085ad46a472d8b72fb31e04a7a78.mp4]]
+![[ch_lora.mp4]]
 
 بعد از اعمال تنظیمات، دکمهٔ `Run` را بزنید. مدل در عرض چند ثانیه تصاویر با چهرهٔ انتخابی برای شما می‌سازد. خلق تصاویر مختلف نیازمند خلاقیت در ایجاد سناریوهاست و دستکاری متغیرهای مدل است. مدل‌های زبانی می‌توانند در خلق این سناریوها به ما کمک کنند.
 
