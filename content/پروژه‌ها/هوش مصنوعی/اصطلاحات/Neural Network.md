@@ -1,5 +1,5 @@
 ---
-title: شبکهٔ عصبی
+title: Neural Network
 draft: false
 tags: 
 date: 2024-09-09 13:41

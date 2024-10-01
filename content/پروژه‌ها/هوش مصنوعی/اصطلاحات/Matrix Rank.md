@@ -1,5 +1,5 @@
 ---
-title: رتبهٔ ماتریس
+title: Matrix Rank
 draft: false
 tags: 
 date: 2024-09-09 12:37
@@ -15,4 +15,31 @@ $$
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{pmatrix}
+$$
+
+مرحلهٔ اول:
+
+$$
+R_2 \rightarrow R_2 - 4R_1, \quad R_3 \rightarrow R_3 - 7R_1
+$$
+
+$$
+
+\mathbf{A} = \begin{pmatrix} 1 & 2 & 3 \\ 0 & -3 & -6 \\ 0 & -6 & -12 \end{pmatrix}
+$$
+
+مرحلهٔ دوم:
+
+$$
+R_3 \rightarrow R_3 - 2R_2
+$$
+
+$$
+\mathbf{A} = \begin{pmatrix} 1 & 2 & 3 \\ 0 & -3 & -6 \\ 0 & 0 & 0 \end{pmatrix}
+$$
+
+مرتب‌سازی ماتریس:
+
+$$
+\mathbf{A} = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{pmatrix}
 $$
