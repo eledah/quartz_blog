@@ -347,7 +347,7 @@ You may have to throw things away and redo them. You won't necessarily have to, 
 
 
 > [!NOTE] آدم‌ها نسبت به تغییر حس بدی دارند
-> برای از بین بردن این حس، بد نیست از خودمان بپرسیم که «اگر این تغییر اتفاق افتاده بود، آیا حاضر بودم که به زحمت بیفتم و به حالت برش گردانم؟»
+> برای از بین بردن این حس، بد نیست از خودمان بپرسیم که «اگر این تغییر اتفاق افتاده بود، آیا حاضر بودم که به زحمت بیفتم و به حالت قبلی برش گردانم؟»
 
 Have the confidence to cut. Don't keep something that doesn't fit just because you're proud of it, or because it cost you a lot of effort. 
  
@@ -372,12 +372,11 @@ Great work will often be tool-like in the sense of being something others build 
  
 If you express your ideas in the most general form, they'll be truer than you intended. 
 
-> [!NOTE] کار عالی ابزاری است که دیگران تکمیلش می‌کنند
-> چرا که از این جهت قدرت تکامل بیشتری پیدا می‌کند. ابزارهای متن‌باز این ویژگی را دارند. رویدادها و بازارها (Marketplace) هم این ویژگی را دارند. ابزاری که بازار می‌سازد، پایداری‌اش تضمین شده است.
+> [!NOTE] از مصادیق کار عالی، ابزاری است که دیگران از تکمیلش سود می‌برند
+> چرا که از این جهت قدرت تکامل بیشتری پیدا می‌کند. ابزارهای متن‌باز این ویژگی را دارند. رویدادها و بازارها (Marketplace) هم این ویژگی را دارند. ابزاری که بازار می‌سازد، پایداری و سودآوری‌اش در بلندمدت تضمین می‌شود.
 
 > [!example] مثال Airbnb
-> خود Airbnb ابزار پیچیده‌ای نیست. ابزاری است که به مسافران اجازهٔ اجارهٔ خانه را در مقصدشان می‌دهد. اما همین ابزار باعث شده که عده‌ای شغلشان خرید و تجهیز خانه برای میزبانی از مسافران باشد.
-
+> خود Airbnb ابزار پیچیده‌ای نیست.صرفاً به مسافران اجازهٔ اجارهٔ خانه را می‌دهد. اما همین ابزار باعث شکل‌گیری بازار شده. تا جایی که عده‌ای شغلشان خرید و تجهیز خانه برای میزبانی از مسافران شده است.
 
 ---
 
@@ -400,6 +399,11 @@ It also helps to travel in topic space. You'll have more new ideas if you explor
 Don't divide your attention _evenly_ between many topics though, or you'll spread yourself too thin. You want to distribute it according to something more like a power law.[^17] Be professionally curious about a few topics and idly curious about many more. 
  
 Curiosity and originality are closely related. Curiosity feeds originality by giving it new things to work on. But the relationship is closer than that. Curiosity is itself a kind of originality; it's roughly to questions what originality is to answers. And since questions at their best are a big component of answers, curiosity at its best is a creative force. 
+
+> [!NOTE] پرورش نوآوری
+> صداقت زمانی کار می‌کند که با نوآوری ترکیب شده باشد. آدم‌های نوآور روی هر چیزی که کار کنند، مثل فشفشه مدام ایده‌های تازه تولید می‌کنند. به خصوص اگر مسأله‌ای که رویش کار می‌کنند دشوار باشد. نوشتن یا حرف زدن درباره این مسائل به مرور زمان باعث تولد ایده‌ها می‌شود.
+> 
+> یک راه دیگر برای پرورش نوآوری، سفر به حوزه‌های مختلف است. دیدن تجربه‌های مشابه در دیگر زمینه‌ها و آشنایی با استعاره‌های آن، ذهن انسان را باز می‌کند. اما این سفر باید به اندازهٔ کافی باشد. برای غرق نشدن در حوزه‌های دیگر، بهتر است برخی را به صورت جزئی و باقی را از دور و کلی دنبال کنیم.
 
 ---
 
@@ -426,6 +430,14 @@ The aggressively independent-minded are the naughty ones. Rules don't merely fai
 The other way to break rules is not to care about them, or perhaps even to know they exist. This is why novices and outsiders often make new discoveries; their ignorance of a field's assumptions acts as a source of temporary passive independent-mindedness. Aspies also seem to have a kind of immunity to conventional beliefs. Several I know say that this helps them to have new ideas. 
  
 Strictness plus rule-breaking sounds like a strange combination. In popular culture they're opposed. But popular culture has a broken model in this respect. It implicitly assumes that issues are trivial ones, and in trivial matters strictness and rule-breaking _are_ opposed. But in questions that really matter, only rule-breakers can be truly strict. 
+
+> [!NOTE] جور دیگر دیدن لازمهٔ ایده‌پردازی است
+> کشف ایده جدید خیلی از اوقات به معنی دیدن حقایقی که دقیقا جلوی چشم ماست که دیده نمی‌شوند. چرا این ایده‌ها دیده نمی‌شوند؟ چون مدل فعلی نگاه ما آن‌ها را نادیده می‌گیرد. اگر [[هنر#هنر چیست؟|به گونه‌ای دیگر ببینیم]]، ایده‌ها و مسائل خیلی راحت خودشان را نشان می‌دهند.
+> ‌ ‌‌ ‌‌ 
+> یک راه برای تغییر زاویه نگاه، سخت‌گیری بیش از اندازه است. آدم‌های زودگذر، خیلی راحت به مدل های فعلی عادت می‌کنند. اما کسی که ایرادی را می‌بیند و بی‌خیال نمی‌شود، دیر یا زود به یک مدل جدید برای حل مسأله می‌رسد. این دقیقاً کاری بود که انیشتین کرد. مشابه این نوآوری‌ها در کتاب [ساختار انقلاب‌های علمی](https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1_%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%B9%D9%84%D9%85%DB%8C) از توماس کوهن آمده است. جور دیگر دیدن نوعی قانون شکنی است. پس یک خصیصهٔ لازم برای رسیدن به مدل‌های جدید، میل به قانون‌شکنی و تحمل عوارض آن است. چون همواره از سمت اکثریت پیروان مدل قبلی، در برابر مدل جدید مقاومت وجود داره. حرف گالیله و انیشتین تا سال‌ها بعد از کشف اولیه جدی گرفته نشد. امروز هم اگر کسی ادعای جدید علمی بکند، تا مدت‌ها نادیده گرفته خواهد شد. ایده خوب در اوایل مسیر به دید همه احمقانه می‌آید. چون اگر احمقانه نبود، همه امتحانش می‌کردند. به مرور که نتیجه می‌دهد، کم‌تر احمقانه به نظر می‌رسد.
+
+> [!NOTE] قانون‌شکن‌ها دو دسته‌اند
+دسته اول افرادی هستند که از شکستن قوانین لذت می‌برند. دسته دوم اصلا برای قوانین اهمیتی قائل نیستند. کسی که قوانین را مهم می‌داند، به دام آن‌ها نمی‌افتد و محدود به آن‌ها نمی‌شود. به خاطر همین فکرش آزادتر است.
 
 ---
 
