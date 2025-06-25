@@ -32,6 +32,7 @@ cssclasses:
 - [[upward-spit|تف سربالا]]
 - [[against-gatekeepers|علیه کاهنان]]
 - [[overflow|سرریز]]
+- [[war-talk|صحبت جنگ]]
 
 # 📝 تأملات و تخیلات
 

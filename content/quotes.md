@@ -117,3 +117,5 @@ date: 2024-05-18
 <blockquote class="farsi-blockquote">أحسِنِ الظَّنَّ باللّه ِ؛ فإنّ اللّه َ عَزَّ و جلَّ یقولُ : أنا عِندَ ظَنِّ عَبدِیَ المُؤمِنِ بی؛ إن خَیرا فخَیرا، و إن شَرّا فَشَرّا | به خداوند گمان نیک ببر ؛ زیرا خداى عزّ و جلّ مى‌فرماید: من نزد گمان بنده مؤمن خویشم؛ اگر گمانِ او به من نیک باشد، مطابق آن گمان با او رفتار کنم و اگر بد باشد نیز مطابق همان گمانِ بد با او عمل کنم.<footer class="farsi-footer">امام رضا علیه‌السلام- <a href="https://www.hadithlib.com/rolls/view/2300477/%DA%AF%D9%85%D8%A7%D9%86-%D9%86%D9%8A%DA%A9-%D8%A8%D9%87-%D8%AE%D8%AF%D8%A7%D9%88%D9%86%D8%AF">مشابهات</a></footer></blockquote>
 
 
+<blockquote class="english-blockquote">Learning more is a smart person’s favorite form of procrastination.<footer class="english-footer">Mark Manson</footer></blockquote>
+
