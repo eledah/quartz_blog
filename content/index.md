@@ -23,16 +23,9 @@ cssclasses:
 
 # ✍🏻 لقمه‌های فکری
 
-*جرقه‌های ذهنی برای مطالعات ۵ دقیقه‌ای*
+*جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
-- [[the-undersoul|زیرزمین روح]]
-- [[new-manager-paradox|مدیریت با ذهن کارمندی]]
-- [[perspective-calibration|تنظیم پرسپکتیو]]
-- [[against-omnitools|علیه ابزارهای همه‌کاره]]
-- [[upward-spit|تف سربالا]]
-- [[against-gatekeepers|علیه کاهنان]]
-- [[overflow|سرریز]]
-- [[war-talk|صحبت جنگ]]
+[[the-undersoul|زیرزمین روح]] | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[upward-spit|تف سربالا]] | [[against-gatekeepers|علیه کاهنان]] | [[overflow|سرریز]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]]
 
 # 📝 تأملات و تخیلات
 
