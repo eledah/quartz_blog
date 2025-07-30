@@ -25,7 +25,7 @@ cssclasses:
 
 *جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
-[[the-undersoul|زیرزمین روح]] | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[upward-spit|تف سربالا]] | [[against-gatekeepers|علیه کاهنان]] | [[overflow|سرریز]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]]
+[[the-undersoul|زیرزمین روح]] | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[upward-spit|تف سربالا]] | [[against-gatekeepers|علیه کاهنان]] | [[overflow|سرریز]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]]
 
 # 📝 تأملات و تخیلات
 
