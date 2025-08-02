@@ -1,7 +1,7 @@
 ---
 title: مارپیچ
 draft: false
-tags: 
+tags:
 aliases:
   - spiral
 date: 2024-05-26

@@ -1,5 +1,8 @@
 ---
 title: هنر
+description: "هنر، جور دیگر دیدن است. باز کردن پنجره‌ای تازه به باغ زندگی است."
+image: "/attachment/Storm_over_the_Black_Sea_by_Aivazovsky,_1893-2.jpg"
+featured: true
 draft: false
 tags: []
 date: 2024-07-17 12:57

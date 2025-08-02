@@ -730,4 +730,61 @@ pre:has(>code.mermaid) .clipboard-button {
     }
 }
 
-
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .card-container {
+    display: block; /* Ensures the <a> tag behaves like a container */
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: var(--darkgray); /* Fallback for when things go wrong */
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 100px;
+  }
+  .card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+  .card-bg {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-image: var(--card-bg);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s ease;
+  }
+  .card-container.has-image .card-bg {
+    filter: blur(4px) brightness(0.6);
+    transform: scale(1.05);
+  }
+  .card-container.has-image:hover .card-bg {
+    filter: blur(0px) brightness(0.8);
+    transform: scale(1);
+  }
+  .card-container.no-image .card-bg {
+    background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #3B82F6 100%);
+  }
+  .card-content { 
+    position: relative; 
+    z-index: 2; 
+  }
+  .card-content h3 { 
+    margin: 0 0 0.5rem 0; 
+    color: var(--light); 
+    font-size: 1.25rem; 
+  }
+  .card-content p { 
+    margin: 0; 
+    color: var(--lightgray); 
+    font-size: 0.9rem; 
+  }

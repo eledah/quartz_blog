@@ -1,5 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import IndexPage from "./quartz/components/pages/IndexPage"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -55,6 +56,29 @@ export const defaultContentPageLayout: PageLayout = {
     //     return node.file?.frontmatter?.tags?.includes("explorerexclude") !== true
     //   },
     // })),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.MobileOnly(Component.Backlinks()),
+  ],
+}
+
+// components for the index page specifically (with featured cards)
+export const indexPageLayout: PageLayout = {
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+    Component.TagList(),
+  ],
+  left: [
+    Component.DesktopOnly(Component.Graph()),
+    Component.DesktopOnly(Component.Backlinks()),
+    Component.MobileOnly(Component.PageTitle()),
+    Component.MobileOnly(Component.Darkmode()),
+  ],
+  right: [
+    Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.Darkmode()),
+    Component.DesktopOnly(Component.Search()),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.MobileOnly(Component.Backlinks()),
   ],

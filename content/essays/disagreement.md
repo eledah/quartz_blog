@@ -4,6 +4,8 @@ draft: false
 tags:
   - جستار
 date: 2022-08-17
+featured: false
+description: "شش رده از مخالفت: از برچسب زدن تا نقد اصل حرف. هر رده چقدر می‌تواند از اصل حرف دور یا به آن نزدیک باشد."
 ---
 ![[disagreement.jpg]]
 

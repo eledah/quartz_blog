@@ -1,5 +1,8 @@
 ---
 title: ابرفرمالیسم
+description: "آدم گمشده، ناچار روی تکنیک‌های قدم زدنش کار می‌کند"
+image: "/attachment/AcristaArt_WarriorOfLight_720.jpg"
+featured: true
 draft: false
 tags: 
 date: 2025-07-30
@@ -19,30 +22,33 @@ date: 2025-07-30
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>گرو شد در خم زلفش دلِ من</div><div class='poem-left-verse-div'>یکی صد شد ز دوری مشکلِ من</div></div>
 
-<br>
+<br><br>
 
 صنعت ادبی «ترک منقوط» که در آن از حروف بدون نقطه استفاده می‌کنند.
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>حسامِ او عطا مُلکِ عدَم کرد</div><div class='poem-left-verse-div'>کلام او حل اسرارِ همم کرد</div></div>
 
-<br>
+<br><br>
+
 برعکسش صنعت «بانقطه» است که در آن فقط از حروف نقطه‌دار استفاده می‌شود:
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>نغزْ غبغب ذَقَن جبین بینی</div><div class='poem-left-verse-div'>غش بپیشِ تنت بُتِ چینی</div></div>
 
-<br>
+<br><br>
+
 صنعت دیگر «تصحیف» است که در آن شکل بدون نقطهٔ ابیات شبیه هم هستند:
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>عاقل بشوی تو ای ستمگار</div><div class='poem-left-verse-div'>پابوسم من ز بیم بسیار</div></div>
 <div class='poem-verse-div'><div class='poem-right-verse-div'>غافل نشوی تو ای ستمگار</div><div class='poem-left-verse-div'>پاپوشم من ز نیم بسیار</div></div>
 
-<br>
+<br><br>
+
 صنعت بعدی «واسع‌ُالشَّفَتَیْن» است که حین خواندن بیت متکلم لازم نیست لب‌هایش را به هم بزند.
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>عارضت لالهٔ گلستان است</div><div class='poem-left-verse-div'>خطِّ رخسار رشکِ ریحان است</div></div>
 <div class='poem-verse-div'><div class='poem-right-verse-div'>شاد کردیش از یکی دیدار</div><div class='poem-left-verse-div'>دلِ شیدا رهینِ احسان است</div></div>
 
-<br>
+<br><br>
 
 نمونهٔ صنایع دیوانه‌وار این‌چنینی در ادبیات کم نیستند[^2]. نمونه‌های دیگر این ماجراجویی‌های بی‌فایده را می‌شود در باقی مدیوم‌های هنری دید: فیلم‌های تک‌برداشتی، موسیقی‌های دوطرفه و الی آخر. اکثر کارهای این‌چنینی برای عرض اندام و قدرت‌نمایی هنرمند است. البته به شرط یکباره بودن.
 

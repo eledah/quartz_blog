@@ -1,7 +1,10 @@
 ---
-title: تاب‌آوری - Resilience
+title: تاب‌آوری
+description: "باد، شمع را خاموش می‌کند و آتش را شعله‌ورتر."
+image: "/attachment/kitsugi-2.jpg"
 draft: false
-tags: 
+featured: true
+tags:
 date: 2024-05-13
 ---
 <blockquote class="farsi-blockquote">

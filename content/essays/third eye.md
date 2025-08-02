@@ -1,7 +1,7 @@
 ---
 title: چشم سوم
 draft: false
-tags: 
+tags:
 date: 2023-11-27 15:28
 ---
 ![[third-eye.jpg]]

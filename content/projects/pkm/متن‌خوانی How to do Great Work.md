@@ -1,5 +1,8 @@
 ---
 title: متن‌خوانی How to do Great Work
+description: "مرور یکی از بهترین متن‌ها برای انجام کارهای بزرگ"
+image: "/attachment/The_Doctor_Luke_Fildes_crop.jpg"
+featured: true
 draft: false
 tags: 
 date: 2024-08-03 10:53
