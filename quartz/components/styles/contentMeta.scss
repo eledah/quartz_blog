@@ -1,9 +1,9 @@
 .content-meta {
   margin-top: 0;
-  color: var(--gray);
+  color: var(--darkgray);
 
   &[show-comma="true"] {
-    > span:not(:last-child) {
+    > *:not(:last-child) {
       margin-right: 8px;
 
       &::after {

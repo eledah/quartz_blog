@@ -1,4 +1,7 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { classNames } from "../util/lang"
+// @ts-ignore
+import script from "./scripts/comments.inline"
 
 type Options = {
   provider: "giscus"
@@ -7,10 +10,14 @@ type Options = {
     repoId: string
     category: string
     categoryId: string
+    themeUrl?: string
+    lightTheme?: string
+    darkTheme?: string
     mapping?: "url" | "title" | "og:title" | "specific" | "number" | "pathname"
     strict?: boolean
     reactionsEnabled?: boolean
     inputPosition?: "top" | "bottom"
+    lang?: string
   }
 }
 

@@ -1,11 +1,11 @@
 import { promises } from "fs"
 import path from "path"
 import esbuild from "esbuild"
-import chalk from "chalk"
+import { styleText } from "util"
 import { sassPlugin } from "esbuild-sass-plugin"
 import fs from "fs"
 import { intro, outro, select, text } from "@clack/prompts"
-import { rimraf } from "rimraf"
+import { rm } from "fs/promises"
 import chokidar from "chokidar"
 import prettyBytes from "pretty-bytes"
 import { execSync, spawnSync } from "child_process"
@@ -15,6 +15,7 @@ import { WebSocketServer } from "ws"
 import { randomUUID } from "crypto"
 import { Mutex } from "async-mutex"
 import { CreateArgv } from "./args.js"
+import { globby } from "globby"
 import {
   exitIfCancel,
   escapePath,
@@ -33,30 +34,43 @@ import {
 } from "./constants.js"
 
 /**
+ * Resolve content directory path
+ * @param contentPath path to resolve
+ */
+function resolveContentPath(contentPath) {
+  if (path.isAbsolute(contentPath)) return path.relative(cwd, contentPath)
+  return path.join(cwd, contentPath)
+}
+
+/**
  * Handles `npx quartz create`
  * @param {*} argv arguments for `create`
  */
 export async function handleCreate(argv) {
   console.log()
-  intro(chalk.bgGreen.black(` Quartz v${version} `))
-  const contentFolder = path.join(cwd, argv.directory)
+  intro(styleText(["bgGreen", "black"], ` Quartz v${version} `))
+  const contentFolder = resolveContentPath(argv.directory)
   let setupStrategy = argv.strategy?.toLowerCase()
   let linkResolutionStrategy = argv.links?.toLowerCase()
   const sourceDirectory = argv.source
 
-  // If all cmd arguments were provided, check if theyre valid
+  // If all cmd arguments were provided, check if they're valid
   if (setupStrategy && linkResolutionStrategy) {
     // If setup isn't, "new", source argument is required
     if (setupStrategy !== "new") {
       // Error handling
       if (!sourceDirectory) {
         outro(
-          chalk.red(
-            `Setup strategies (arg '${chalk.yellow(
+          styleText(
+            "red",
+            `Setup strategies (arg '${styleText(
+              "yellow",
               `-${CreateArgv.strategy.alias[0]}`,
-            )}') other than '${chalk.yellow(
+            )}') other than '${styleText(
+              "yellow",
               "new",
-            )}' require content folder argument ('${chalk.yellow(
+            )}' require content folder argument ('${styleText(
+              "yellow",
               `-${CreateArgv.source.alias[0]}`,
             )}') to be set`,
           ),
@@ -65,19 +79,23 @@ export async function handleCreate(argv) {
       } else {
         if (!fs.existsSync(sourceDirectory)) {
           outro(
-            chalk.red(
-              `Input directory to copy/symlink 'content' from not found ('${chalk.yellow(
+            styleText(
+              "red",
+              `Input directory to copy/symlink 'content' from not found ('${styleText(
+                "yellow",
                 sourceDirectory,
-              )}', invalid argument "${chalk.yellow(`-${CreateArgv.source.alias[0]}`)})`,
+              )}', invalid argument "${styleText("yellow", `-${CreateArgv.source.alias[0]}`)})`,
             ),
           )
           process.exit(1)
         } else if (!fs.lstatSync(sourceDirectory).isDirectory()) {
           outro(
-            chalk.red(
-              `Source directory to copy/symlink 'content' from is not a directory (found file at '${chalk.yellow(
+            styleText(
+              "red",
+              `Source directory to copy/symlink 'content' from is not a directory (found file at '${styleText(
+                "yellow",
                 sourceDirectory,
-              )}', invalid argument ${chalk.yellow(`-${CreateArgv.source.alias[0]}`)}")`,
+              )}', invalid argument ${styleText("yellow", `-${CreateArgv.source.alias[0]}`)}")`,
             ),
           )
           process.exit(1)
@@ -109,7 +127,7 @@ export async function handleCreate(argv) {
     if (contentStat.isSymbolicLink()) {
       await fs.promises.unlink(contentFolder)
     } else {
-      await rimraf(contentFolder)
+      await rm(contentFolder, { recursive: true, force: true })
     }
   }
 
@@ -215,7 +233,11 @@ See the [documentation](https://quartz.jzhao.xyz) for how to get started.
  * @param {*} argv arguments for `build`
  */
 export async function handleBuild(argv) {
-  console.log(chalk.bgGreen.black(`\n Quartz v${version} \n`))
+  if (argv.serve) {
+    argv.watch = true
+  }
+
+  console.log(`\n${styleText(["bgGreen", "black"], ` Quartz v${version} `)} \n`)
   const ctx = await esbuild.context({
     entryPoints: [fp],
     outfile: cacheFile,
@@ -234,6 +256,11 @@ export async function handleBuild(argv) {
     plugins: [
       sassPlugin({
         type: "css-text",
+        cssImports: true,
+      }),
+      sassPlugin({
+        filter: /\.inline\.scss$/,
+        type: "css",
         cssImports: true,
       }),
       {
@@ -285,13 +312,13 @@ export async function handleBuild(argv) {
     }
 
     if (cleanupBuild) {
+      console.log(styleText("yellow", "Detected a source code change, doing a hard rebuild..."))
       await cleanupBuild()
-      console.log(chalk.yellow("Detected a source code change, doing a hard rebuild..."))
     }
 
     const result = await ctx.rebuild().catch((err) => {
-      console.error(`${chalk.red("Couldn't parse Quartz configuration:")} ${fp}`)
-      console.log(`Reason: ${chalk.grey(err)}`)
+      console.error(`${styleText("red", "Couldn't parse Quartz configuration:")} ${fp}`)
+      console.log(`Reason: ${styleText("grey", err)}`)
       process.exit(1)
     })
     release()
@@ -316,9 +343,10 @@ export async function handleBuild(argv) {
     clientRefresh()
   }
 
+  let clientRefresh = () => {}
   if (argv.serve) {
     const connections = []
-    const clientRefresh = () => connections.forEach((conn) => conn.send("rebuild"))
+    clientRefresh = () => connections.forEach((conn) => conn.send("rebuild"))
 
     if (argv.baseDir !== "" && !argv.baseDir.startsWith("/")) {
       argv.baseDir = "/" + argv.baseDir
@@ -328,7 +356,8 @@ export async function handleBuild(argv) {
     const server = http.createServer(async (req, res) => {
       if (argv.baseDir && !req.url?.startsWith(argv.baseDir)) {
         console.log(
-          chalk.red(
+          styleText(
+            "red",
             `[404] ${req.url} (warning: link outside of site, this is likely a Quartz bug)`,
           ),
         )
@@ -350,12 +379,23 @@ export async function handleBuild(argv) {
               source: "**/*.*",
               headers: [{ key: "Content-Disposition", value: "inline" }],
             },
+            {
+              source: "**/*.webp",
+              headers: [{ key: "Content-Type", value: "image/webp" }],
+            },
+            // fixes bug where avif images are displayed as text instead of images (future proof)
+            {
+              source: "**/*.avif",
+              headers: [{ key: "Content-Type", value: "image/avif" }],
+            },
           ],
         })
         const status = res.statusCode
         const statusString =
-          status >= 200 && status < 300 ? chalk.green(`[${status}]`) : chalk.red(`[${status}]`)
-        console.log(statusString + chalk.grey(` ${argv.baseDir}${req.url}`))
+          status >= 200 && status < 300
+            ? styleText("green", `[${status}]`)
+            : styleText("red", `[${status}]`)
+        console.log(statusString + styleText("grey", ` ${argv.baseDir}${req.url}`))
         release()
       }
 
@@ -364,7 +404,10 @@ export async function handleBuild(argv) {
         res.writeHead(302, {
           Location: newFp,
         })
-        console.log(chalk.yellow("[302]") + chalk.grey(` ${argv.baseDir}${req.url} -> ${newFp}`))
+        console.log(
+          styleText("yellow", "[302]") +
+            styleText("grey", ` ${argv.baseDir}${req.url} -> ${newFp}`),
+        )
         res.end()
       }
 
@@ -409,25 +452,37 @@ export async function handleBuild(argv) {
 
       return serve()
     })
+
     server.listen(argv.port)
     const wss = new WebSocketServer({ port: argv.wsPort })
     wss.on("connection", (ws) => connections.push(ws))
     console.log(
-      chalk.cyan(
+      styleText(
+        "cyan",
         `Started a Quartz server listening at http://localhost:${argv.port}${argv.baseDir}`,
       ),
     )
-    console.log("hint: exit with ctrl+c")
-    chokidar
-      .watch(["**/*.ts", "**/*.tsx", "**/*.scss", "package.json"], {
-        ignoreInitial: true,
-      })
-      .on("all", async () => {
-        build(clientRefresh)
-      })
   } else {
-    await build(() => {})
+    await build(clientRefresh)
     ctx.dispose()
+  }
+
+  if (argv.watch) {
+    const paths = await globby([
+      "**/*.ts",
+      "quartz/cli/*.js",
+      "quartz/static/**/*",
+      "**/*.tsx",
+      "**/*.scss",
+      "package.json",
+    ])
+    chokidar
+      .watch(paths, { ignoreInitial: true })
+      .on("add", () => build(clientRefresh))
+      .on("change", () => build(clientRefresh))
+      .on("unlink", () => build(clientRefresh))
+
+    console.log(styleText("grey", "hint: exit with ctrl+c"))
   }
 }
 
@@ -436,8 +491,8 @@ export async function handleBuild(argv) {
  * @param {*} argv arguments for `update`
  */
 export async function handleUpdate(argv) {
-  const contentFolder = path.join(cwd, argv.directory)
-  console.log(chalk.bgGreen.black(`\n Quartz v${version} \n`))
+  const contentFolder = resolveContentPath(argv.directory)
+  console.log(`\n${styleText(["bgGreen", "black"], ` Quartz v${version} `)} \n`)
   console.log("Backing up your content")
   execSync(
     `git remote show upstream || git remote add upstream https://github.com/jackyzha0/quartz.git`,
@@ -450,18 +505,36 @@ export async function handleUpdate(argv) {
   try {
     gitPull(UPSTREAM_NAME, QUARTZ_SOURCE_BRANCH)
   } catch {
-    console.log(chalk.red("An error occurred above while pulling updates."))
+    console.log(styleText("red", "An error occurred above while pulling updates."))
     await popContentFolder(contentFolder)
     return
   }
 
   await popContentFolder(contentFolder)
   console.log("Ensuring dependencies are up to date")
-  const res = spawnSync("npm", ["i"], { stdio: "inherit" })
+
+  /*
+  On Windows, if the command `npm` is really `npm.cmd', this call fails
+  as it will be unable to find `npm`. This is often the case on systems
+  where `npm` is installed via a package manager.
+
+  This means `npx quartz update` will not actually update dependencies
+  on Windows, without a manual `npm i` from the caller.
+
+  However, by spawning a shell, we are able to call `npm.cmd`.
+  See: https://nodejs.org/api/child_process.html#spawning-bat-and-cmd-files-on-windows
+  */
+
+  const opts = { stdio: "inherit" }
+  if (process.platform === "win32") {
+    opts.shell = true
+  }
+
+  const res = spawnSync("npm", ["i"], opts)
   if (res.status === 0) {
-    console.log(chalk.green("Done!"))
+    console.log(styleText("green", "Done!"))
   } else {
-    console.log(chalk.red("An error occurred above while installing dependencies."))
+    console.log(styleText("red", "An error occurred above while installing dependencies."))
   }
 }
 
@@ -470,7 +543,7 @@ export async function handleUpdate(argv) {
  * @param {*} argv arguments for `restore`
  */
 export async function handleRestore(argv) {
-  const contentFolder = path.join(cwd, argv.directory)
+  const contentFolder = resolveContentPath(argv.directory)
   await popContentFolder(contentFolder)
 }
 
@@ -479,15 +552,15 @@ export async function handleRestore(argv) {
  * @param {*} argv arguments for `sync`
  */
 export async function handleSync(argv) {
-  const contentFolder = path.join(cwd, argv.directory)
-  console.log(chalk.bgGreen.black(`\n Quartz v${version} \n`))
+  const contentFolder = resolveContentPath(argv.directory)
+  console.log(`\n${styleText(["bgGreen", "black"], ` Quartz v${version} `)}\n`)
   console.log("Backing up your content")
 
   if (argv.commit) {
     const contentStat = await fs.promises.lstat(contentFolder)
     if (contentStat.isSymbolicLink()) {
       const linkTarg = await fs.promises.readlink(contentFolder)
-      console.log(chalk.yellow("Detected symlink, trying to dereference before committing"))
+      console.log(styleText("yellow", "Detected symlink, trying to dereference before committing"))
 
       // stash symlink file
       await stashContentFolder(contentFolder)
@@ -522,7 +595,7 @@ export async function handleSync(argv) {
     try {
       gitPull(ORIGIN_NAME, QUARTZ_SOURCE_BRANCH)
     } catch {
-      console.log(chalk.red("An error occurred above while pulling updates."))
+      console.log(styleText("red", "An error occurred above while pulling updates."))
       await popContentFolder(contentFolder)
       return
     }
@@ -531,14 +604,17 @@ export async function handleSync(argv) {
   await popContentFolder(contentFolder)
   if (argv.push) {
     console.log("Pushing your changes")
-    const res = spawnSync("git", ["push", "-uf", ORIGIN_NAME, QUARTZ_SOURCE_BRANCH], {
+    const currentBranch = execSync("git rev-parse --abbrev-ref HEAD").toString().trim()
+    const res = spawnSync("git", ["push", "-uf", ORIGIN_NAME, currentBranch], {
       stdio: "inherit",
     })
     if (res.status !== 0) {
-      console.log(chalk.red(`An error occurred above while pushing to remote ${ORIGIN_NAME}.`))
+      console.log(
+        styleText("red", `An error occurred above while pushing to remote ${ORIGIN_NAME}.`),
+      )
       return
     }
   }
 
-  console.log(chalk.green("Done!"))
+  console.log(styleText("green", "Done!"))
 }

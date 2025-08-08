@@ -65,9 +65,12 @@
 
 .popover {
   z-index: 999;
-  position: absolute;
+  position: fixed;
   overflow: visible;
   padding: 1rem;
+  left: 0;
+  top: 0;
+  will-change: transform;
 
   & > .popover-inner {
     position: relative;
@@ -85,6 +88,8 @@
     box-shadow: 6px 6px 36px 0 rgba(0, 0, 0, 0.25);
     overflow: hidden;
     white-space: normal;
+    user-select: none;
+    cursor: default;
   }
 
   & > .popover-inner[data-content-type] {
@@ -123,12 +128,12 @@
     opacity 0.3s ease,
     visibility 0.3s ease;
 
-  @media all and (max-width: $mobileBreakpoint) {
+  @media all and ($mobile) {
     display: none !important;
   }
 }
 
-a:hover .popover,
+.active-popover,
 .popover:hover {
   animation:slide-in-blurred-bottom .4s cubic-bezier(.23,1.000,.32,1.000) both;
 }
