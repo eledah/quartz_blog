@@ -85,6 +85,8 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
       ]
     },
     async *emit(ctx, content, resources) {
+      const cfg = ctx.cfg.configuration
+      const fps: string[] = []
       const allFiles = content.map((c) => c[1].data)
       let containsIndex = false
 

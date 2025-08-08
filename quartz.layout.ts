@@ -1,6 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import IndexPage from "./quartz/components/pages/IndexPage"
+// import IndexPage from "./quartz/components/pages/IndexPage"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -46,12 +46,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Backlinks()),
 
     Component.MobileOnly(Component.PageTitle()),
-    Component.MobileOnly(Component.Darkmode()),
     // Component.MobileOnly(Component.Search()),
   ],
   right: [
     Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Search()),
     // Component.DesktopOnly(Component.Explorer({
     //   filterFn: (node) => {
@@ -67,7 +65,6 @@ export const defaultContentPageLayout: PageLayout = {
 // components for the index page specifically (with featured cards)
 export const indexPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -76,11 +73,9 @@ export const indexPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.Backlinks()),
     Component.MobileOnly(Component.PageTitle()),
-    Component.MobileOnly(Component.Darkmode()),
   ],
   right: [
     Component.DesktopOnly(Component.PageTitle()),
-    Component.DesktopOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Search()),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.MobileOnly(Component.Backlinks()),
@@ -92,17 +87,12 @@ export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.MobileOnly(Component.PageTitle()),
-    Component.MobileOnly(Component.Darkmode()),
   ],
   right: [
     Component.DesktopOnly(Component.PageTitle()),
     Component.Search(),
-    Component.DesktopOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Explorer({
-      filterFn: (node) => {
-        // exclude files with the tag "explorerexclude"
-        return node.file?.frontmatter?.tags?.includes("explorerexclude") !== true
-      },
+      filterFn: (node) => node.slugSegment !== "explorerexclude",
     })),
   ],
 }

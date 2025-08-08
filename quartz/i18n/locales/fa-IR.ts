@@ -57,7 +57,10 @@ export default {
       title: "فهرست",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `زمان تقریبی مطالعه: ${minutes} دقیقه`,
+      readingTime: ({ minutes }) => {
+        const localizedMinutes = new Intl.NumberFormat("fa-IR").format(minutes)
+        return `⏱️ زمان تقریبی مطالعه: ${localizedMinutes} دقیقه`
+      },
     },
   },
   pages: {
@@ -68,6 +71,7 @@ export default {
     error: {
       title: "یافت نشد",
       notFound: "این صفحه یا خصوصی است یا وجود ندارد",
+      home: "خانه",
     },
     folderContent: {
       folder: "پوشه",

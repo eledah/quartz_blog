@@ -27,5 +27,7 @@ export function formatDate(d: Date, locale: ValidLocale = "en-US"): string {
 }
 
 export function Date({ date, locale }: Props) {
-  return <time datetime={date.toISOString()}>{formatDate(date, locale)}</time>
+  const formatted = formatDate(date, locale)
+  const emojiPrefix = locale && locale.startsWith("fa") ? "📅 " : ""
+  return <time datetime={date.toISOString()}>{emojiPrefix}{formatted}</time>
 }

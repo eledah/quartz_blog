@@ -185,6 +185,8 @@ a {
   & > #quartz-body {
     width: 100%;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     @media all and (max-width: $desktopBreakpoint) {
       flex-direction: column;
     }
@@ -195,6 +197,7 @@ a {
       box-sizing: border-box;
       padding: 0 4rem;
       position: fixed;
+      width: $sidePanelWidth;
       @media all and (max-width: $desktopBreakpoint) {
         position: initial;
         flex-direction: row;
@@ -231,6 +234,9 @@ a {
         }
       }
     }
+    & > footer {
+      flex-basis: 100%;
+    }
     & .page-header,
     & .page-footer {
       margin-top: 1rem;
@@ -248,21 +254,34 @@ a {
     @media all and (max-width: $desktopBreakpoint) {
       width: initial;
     }
+    }
 
   & .page-header {
     margin: $topSpacing auto 0 auto;
     @media all and (max-width: $desktopBreakpoint) {
       margin-top: 2rem;
     }
+  }
 
-  & .center,
-  & footer {
+  & .center {
     margin-left: auto;
     margin-right: auto;
     width: $pageWidth;
     @media all and (max-width: $desktopBreakpoint) {
       width: initial;
       margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  & footer {
+    margin-left: auto;
+    margin-right: auto;
+    width: $pageWidth;
+    @media all and (max-width: $desktopBreakpoint) {
+      width: initial;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

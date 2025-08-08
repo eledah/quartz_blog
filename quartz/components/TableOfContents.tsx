@@ -34,9 +34,9 @@ export default ((opts?: Partial<Options>) => {
     return <></>
   }
 
-  return (
-    <div class={classNames(displayClass, "toc")}>
-      <button type="button" id="toc" class={fileData.collapseToc ? "collapsed" : ""}>
+    return (
+      <div class={classNames(displayClass, "toc")}>
+        <button type="button" class={classNames("toc-header", fileData.collapseToc ? "collapsed" : "") }>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -53,8 +53,7 @@ export default ((opts?: Partial<Options>) => {
         </svg>
         <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
       </button>
-      <div id="toc-content">
-        <ul class="overflow">
+        <OverflowList class={classNames("toc-content", fileData.collapseToc ? "collapsed" : "")}>
           {fileData.toc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
               <a href={`#${tocEntry.slug}`} data-for={tocEntry.slug}>
@@ -63,7 +62,7 @@ export default ((opts?: Partial<Options>) => {
             </li>
           ))}
         </OverflowList>
-      </div>
+    </div>
     )
   }
 

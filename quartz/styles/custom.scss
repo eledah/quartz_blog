@@ -72,15 +72,7 @@ button#explorer .fold {
 	padding-right: 2.5rem !important;
 }
 
-.backlinks > ul {
-    border: 1px solid var(--gray);
-    border-radius: 5px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 35px;
-    font-size: 1rem;
-    list-style: circle;
-}
+/* Backlinks styles moved to component stylesheet (quartz/components/styles/backlinks.scss) */
 
 // Margin fix in tag pages
 
@@ -642,9 +634,6 @@ pre:has(>code.mermaid) .clipboard-button {
     }
     .page > #quartz-body .sidebar {
         margin-top: 7rem !important;
-    }
-    .darkmode {
-        right: 40%;
     }
 }
 

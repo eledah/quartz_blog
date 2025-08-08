@@ -60,7 +60,9 @@ export default (() => {
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
         <meta name="telegram:channel" content="@crystalline_channel"></meta>
-        {cfg.baseUrl && <meta property="og:image" content={ogImagePath} />}
+        {!usesCustomOgImage && cfg.baseUrl && (
+          <meta property="og:image" content={ogImageDefaultPath} />
+        )}
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="675" />
         <link rel="icon" href={iconPath} />
