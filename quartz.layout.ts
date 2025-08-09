@@ -50,6 +50,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Search()),
     // Component.DesktopOnly(Component.Explorer({
     //   filterFn: (node) => {
@@ -73,9 +74,11 @@ export const indexPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.Backlinks()),
     Component.MobileOnly(Component.PageTitle()),
+    Component.MobileOnly(Component.Darkmode()),
   ],
   right: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Search()),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.MobileOnly(Component.Backlinks()),
@@ -90,6 +93,7 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.PageTitle()),
+    Component.DesktopOnly(Component.Darkmode()),
     Component.Search(),
     Component.DesktopOnly(Component.Explorer({
       filterFn: (node) => node.slugSegment !== "explorerexclude",

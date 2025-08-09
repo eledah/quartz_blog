@@ -224,6 +224,7 @@ a {
     & .sidebar.right {
       right: calc(calc(100vw - $pageWidth) / 2 - $sidePanelWidth);
       flex-wrap: wrap;
+      display: grid;
       & > * {
         @media all and (max-width: $desktopBreakpoint) {
           flex: 1;

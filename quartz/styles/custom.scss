@@ -743,6 +743,7 @@ pre:has(>code.mermaid) .clipboard-button {
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 100px;
+    z-index: 0;
   }
   
   .card-container:hover {

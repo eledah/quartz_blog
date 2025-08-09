@@ -6,9 +6,11 @@
   border: none;
   width: 20px;
   height: 20px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   text-align: inherit;
   flex-shrink: 0;
+  display: block; /* Ensure it's visible */
+  z-index: 1000; /* Make sure it's above other elements */
 
   & svg {
     position: absolute;
@@ -44,13 +46,5 @@
   & > .nightIcon {
     display: none;
   }
-}
-
-#dayIcon {
-  fill: #b8860b; // dark yellow color for light mode
-}
-
-.darkmode input:checked ~ label #nightIcon {
-  fill: white; // white color for dark mode
 }
 
