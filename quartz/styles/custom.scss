@@ -793,3 +793,10 @@ pre:has(>code.mermaid) .clipboard-button {
     color: #E5E7EB !important; /* Always a light gray */
     font-size: 0.9rem;
   }
+
+// align page header to the right on mobile and tablet
+@media (max-width: calc(variables.$desktopBreakpoint - 1px)) {
+    .page-title-container {
+        align-items: flex-start;
+    }
+}
