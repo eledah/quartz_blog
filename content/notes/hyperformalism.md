@@ -1,8 +1,8 @@
 ---
 title: ابرفرمالیسم
-description: "آدم گمشده، ناچار روی تکنیک‌های قدم زدنش کار می‌کند"
-image: "/attachment/AcristaArt_WarriorOfLight_720.jpg"
-featured: true
+description: آدم گمشده، ناچار روی تکنیک‌های قدم زدنش کار می‌کند
+image: /attachment/AcristaArt_WarriorOfLight_720.jpg
+featured: false
 draft: false
 tags: 
 date: 2025-07-30

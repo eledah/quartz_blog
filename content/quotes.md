@@ -4,6 +4,8 @@ draft: false
 tags: 
 date: 2024-05-18
 ---
+<blockquote class="english-blockquote">All you have to do is write one true sentence. Write the truest sentence that you know.<footer class="english-footer">Ernest Hemingway, A Moveable Feast</footer></blockquote>
+
 <blockquote class="english-blockquote">How we spend our days is, of course, how we spend our lives. 
 <footer class="english-footer">Annie Dillard</footer></blockquote>
 
