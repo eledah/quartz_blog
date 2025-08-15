@@ -1,6 +1,6 @@
 ---
 title: ته‌دیگ
-draft: true
+draft: false
 tags: 
 date: 2025-08-15
 featured: true

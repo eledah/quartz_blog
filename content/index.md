@@ -23,13 +23,13 @@ cssclasses:
 - [[architecture|معماری]]: معماری، هنر فرق گذاشتن و تمایز برای رسیدن به کمترین ناسازگاری است
 - [[noise|نویز]]: نویز، اطلاعات ناخواسته‌ای است که خلاف میل ما به ما می‌رسد
 - [[art|هنر]]: هنر، جور دیگر دیدن است
-- [[to-grow|رشد]]: رشد یعنی مسئولیت‌پذیری و نشستن پشت فرمان
+- [[to-grow|رشد]]: رشد، پذیرفتن مسئولیت و نشستن پشت فرمان زندگی است
 
 # ✍🏻 لقمه‌های فکری
 
 *جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
-[[the-undersoul|زیرزمین روح]] | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[upward-spit|تف سربالا]] | [[against-gatekeepers|علیه کاهنان]] | [[overflow|سرریز]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]]
+[[the-undersoul|زیرزمین روح]] | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[upward-spit|تف سربالا]] | [[against-gatekeepers|علیه کاهنان]] | [[overflow|سرریز]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[ta-dig|ته‌دیگ]]
 
 # 📝 تأملات و تخیلات
 
