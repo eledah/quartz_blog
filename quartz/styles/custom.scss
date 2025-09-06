@@ -800,3 +800,9 @@ pre:has(>code.mermaid) .clipboard-button {
         align-items: flex-start;
     }
 }
+
+// Recent Notes ul fix
+.recent-notes .recent-ul {
+    list-style: none !important;
+    padding-right: 0 !important;
+}

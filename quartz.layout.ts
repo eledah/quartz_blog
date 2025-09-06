@@ -1,6 +1,14 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { QuartzPluginData } from "./quartz/plugins/vfile"
 // import IndexPage from "./quartz/components/pages/IndexPage"
+
+const recentNotesFilter = (f: QuartzPluginData): boolean => {
+  const isIndex = f.slug === "index"
+  const isDraft = f.frontmatter?.draft === true
+  // console.log(`Checking file: ${f.slug}, draft: ${f.frontmatter?.draft}, include: ${!isIndex && !isDraft}`)
+  return !isIndex && !isDraft
+}
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -73,6 +81,10 @@ export const indexPageLayout: PageLayout = {
   left: [
     Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.Backlinks()),
+    Component.DesktopOnly(Component.RecentNotes({
+      limit: 3,
+      filter: recentNotesFilter
+    })),
     Component.MobileOnly(Component.PageTitle()),
     Component.MobileOnly(Component.Darkmode()),
   ],

@@ -1,6 +1,6 @@
 ---
 title: یادگیری در دنیای هوش مصنوعی
-draft: false
+draft: true
 tags:
 date: 2025-09-03
 ---
