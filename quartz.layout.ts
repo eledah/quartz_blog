@@ -6,8 +6,9 @@ import { QuartzPluginData } from "./quartz/plugins/vfile"
 const recentNotesFilter = (f: QuartzPluginData): boolean => {
   const isIndex = f.slug === "index"
   const isDraft = f.frontmatter?.draft === true
+  const hasExplorerExcludeTag = f.frontmatter?.tags?.includes("explorerexclude") === true
   // console.log(`Checking file: ${f.slug}, draft: ${f.frontmatter?.draft}, include: ${!isIndex && !isDraft}`)
-  return !isIndex && !isDraft
+  return !isIndex && !isDraft && !hasExplorerExcludeTag
 }
 
 // components shared across all pages

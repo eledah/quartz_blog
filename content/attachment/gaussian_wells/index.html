@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Plotly.js via CDN -->
+    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0; /* Removed default margin for tighter integration */
+            background-color: #f4f4f4; /* Or transparent if your blog handles it */
+        }
+        #plotContainer {
+            width: 100%; /* Make it responsive to the container it's in */
+            max-width: 800px; /* You can adjust this max-width */
+            height: 600px;   /* You can adjust this height */
+            margin: 20px auto; /* Centering the plot if it's narrower than page */
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="plotContainer"></div>
+    
+    <script>
+        // --- Configuration for Features (Wells and Peaks) ---
+        // Format: { x0: center_x, y0: center_y, amp: amplitude, sigma: width, name: 'label' }
+        // Negative amplitude for wells (depth), positive for peaks (height).
+        const featureParams = [
+            // Wells
+            { x0: 0,   y0: 0,   amp: -5, sigma: 1.0, name: 'Well 1' },
+            { x0: 4,   y0: 2.5, amp: -3, sigma: 0.8, name: 'Well 2' },
+            { x0: -3,  y0: 3.5, amp: -7, sigma: 1.2, name: 'Well 3' },
+            // Peaks
+            { x0: -4,  y0: -3,  amp: 6,  sigma: 1.1, name: 'Peak 1' },
+            { x0: 2.5, y0: -4,  amp: 4,  sigma: 0.9, name: 'Peak 2' }
+        ];
+
+        // --- Helper Function for a Single Gaussian Feature (Well or Peak) ---
+        function gaussianFeature(x, y, x0, y0, amplitude, sigma) {
+            // amplitude positive for peak, negative for well
+            return amplitude * Math.exp(-((Math.pow(x - x0, 2) + Math.pow(y - y0, 2)) / (2 * Math.pow(sigma, 2))));
+        }
+
+        // --- Generate Data for Plotting ---
+        const xVals = [];
+        const yVals = [];
+        const zVals = []; // This will be a 2D array for the surface
+
+        const numPoints = 80; // Number of points in each dimension
+        const xMin = -7, xMax = 7; // Adjusted range slightly for new features
+        const yMin = -6, yMax = 6; // Adjusted range slightly for new features
+
+        const xStep = (xMax - xMin) / (numPoints - 1);
+        const yStep = (yMax - yMin) / (numPoints - 1);
+
+        for (let i = 0; i < numPoints; i++) {
+            xVals.push(xMin + i * xStep);
+            yVals.push(yMin + i * yStep);
+        }
+
+        for (let i = 0; i < numPoints; i++) { // Corresponds to y
+            const y = yVals[i];
+            const zRow = [];
+            for (let j = 0; j < numPoints; j++) { // Corresponds to x
+                const x = xVals[j];
+                let zTotal = 0;
+                featureParams.forEach(feature => {
+                    zTotal += gaussianFeature(x, y, feature.x0, feature.y0, feature.amp, feature.sigma);
+                });
+                zRow.push(zTotal);
+            }
+            zVals.push(zRow);
+        }
+
+        // --- Data for Feature Center Points ---
+        const featurePointsX = [];
+        const featurePointsY = [];
+        const featurePointsZ = [];
+        const featurePointsText = [];
+
+        featureParams.forEach(feature => {
+            featurePointsX.push(feature.x0);
+            featurePointsY.push(feature.y0);
+            let zAtCenter = 0;
+            // Calculate Z at the center considering all features
+            featureParams.forEach(otherFeature => {
+                zAtCenter += gaussianFeature(feature.x0, feature.y0, otherFeature.x0, otherFeature.y0, otherFeature.amp, otherFeature.sigma);
+            });
+            featurePointsZ.push(zAtCenter);
+            featurePointsText.push(`${feature.name}<br>(${feature.x0}, ${feature.y0})<br>Value: ${zAtCenter.toFixed(2)}`);
+        });
+
+
+        // --- Plotly Trace for the Surface ---
+        const surfaceTrace = {
+            x: xVals,
+            y: yVals,
+            z: zVals,
+            type: 'surface',
+            colorscale: 'Viridis', 
+            colorbar: {
+                title: 'Z Value',
+                titleside: 'right'
+            },
+            name: 'Potential Surface',
+            showscale: true
+        };
+
+        // --- Plotly Trace for Feature Centers ---
+        const pointsTrace = {
+            x: featurePointsX,
+            y: featurePointsY,
+            z: featurePointsZ,
+            mode: 'markers+text', 
+            type: 'scatter3d',
+            marker: {
+                size: 6,
+                color: 'red'
+            },
+            text: featurePointsText,
+            textposition: 'top center',
+            name: 'Feature Centers'
+        };
+
+        // --- Plotly Layout ---
+        const layout = {
+            title: '3D Surface with Wells and Peaks', // Chart title (can be removed if not needed)
+            scene: {
+                xaxis: { title: 'X axis' },
+                yaxis: { title: 'Y axis' },
+                zaxis: { title: 'Z axis (Value)' },
+                camera: {
+                    eye: {x: -1.6, y: -1.6, z: 1.2} // Adjusted camera for better initial view
+                }
+            },
+            margin: { l: 0, r: 0, b: 0, t: 40 }, // Adjusted top margin for title
+            legend: {
+                x: 0.8, y: 0.9 
+            },
+        };
+
+        // --- Create the Plot ---
+        Plotly.newPlot('plotContainer', [surfaceTrace, pointsTrace], layout);
+
+    </script>
+
+</body>
+</html>
