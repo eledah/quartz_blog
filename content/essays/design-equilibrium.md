@@ -184,7 +184,7 @@ Top five most values for F(S):
 برای فهم بهتر قضیه، نمودار پایین را ببینید. ما در دیزاین به دنبال پیدا کردن و ساختن نقاط چاه‌مانند هستیم که در آن‌ها ناسازگاری به حداقل خودش می‌رسد.
 
 
-<iframe width="100%" height="700px" src="https://eledah.github.io/quartz_blog/attachment/gaussian_wells.html"></iframe>
+<iframe width="100%" height="700px" src="https://raw.githack.com/eledah/quartz_blog/refs/heads/v4/content/attachment/gaussian_wells.html"></iframe>
 
 ### تکنیک خوشه‌بندی برای دیزاین‌های پیچیده‌تر
 
@@ -270,7 +270,7 @@ $$
 
 برای خوشه‌بندی نیاز به کنار هم گذاشتن متغیرهایی با همبستگی بالا هستیم. در ماتریس بالا، همبستگی‌های بالاتر از ۰٫۵ به صورت بُلد آمده‌اند. با کنار هم گذاشتن متغیرهای که همبستگی بالایی با هم دارند، خوشه‌های اولیه تشکیل می‌شوند. شکل زیر، گرافی از ارتباطات میان متغیرها را نشان می‌دهد. هر چقدر قدرمطلق همبستگی بیشتر باشد، جاذبهٔ بیشتری بین متغیرها برقرار خواهد بود. همبستگی‌های مثبت با رنگ سبز و منفی با رنگ قرمز مشخص شده‌اند.
 
-<iframe width="100%" height="500px" src="https://blog.eledah.ir/attachment/design-graph"></iframe>
+<iframe width="100%" height="500px" src="https://raw.githack.com/eledah/quartz_blog/refs/heads/v4/content/attachment/design-graph.html"></iframe>
 
 |  متغیر  |   متغیرهای مرتبط    |
 | :-----: | :-----------------: |
