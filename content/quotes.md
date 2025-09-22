@@ -127,3 +127,6 @@ date: 2024-05-18
 <blockquote class="farsi-blockquote">بخشودن فقط نابخشودنی را می‌بخشد<footer class="farsi-footer">ژاک دریدا</footer></blockquote>
 
 <blockquote class="english-blockquote">If someone watched you for a week, would they believe you're serious about your goals?</blockquote>
+
+<blockquote class="farsi-blockquote">آن ها که به شایستگی با فلسفه مأنوس‌اند گویا از دیگران کناره می‌گیرند و تمام فکر و ذکرشان این می‌شود که چگونه بمیرند<footer class="farsi-footer">افلاطون - فایدون</footer></blockquote>
+
