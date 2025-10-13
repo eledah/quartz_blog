@@ -6,6 +6,15 @@
   overflow-y: hidden;
   min-height: 1.4rem;
   flex: 0 0.5 auto;
+  /* Container styling similar to backlinks */
+  margin: 0.5em 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--gray);
+  border-radius: 6px;
+  background: transparent;
+  box-sizing: border-box;
+  width: 100%;
+  
   &:has(button.toc-header.collapsed) {
     flex: 0 1 1.4rem;
   }
@@ -49,6 +58,15 @@ ul.toc-content.overflow {
   list-style: none;
   transition: max-height 250ms ease, opacity 200ms ease;
   opacity: 1;
+  /* Make the TOC scrollable when content is long */
+  overflow-y: auto;
+  /* Hide scrollbar in browsers that might still render it */
+  scrollbar-width: none;
+  height: 200px;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 
   & > li > a {
     color: var(--dark);

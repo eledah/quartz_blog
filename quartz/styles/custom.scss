@@ -3,8 +3,34 @@
 
 // put your custom CSS here!
 
+// 1. Add Gradient Backgrounds
+body {
+  background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+  min-height: 100vh;
+}
+
+.dark body {
+  background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+}
+
 html {
     font-family: Vazirmatn, sans-serif !important;
+}
+
+// Enhanced Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1.2em;
 }
 
 .breadcrumb-element p {
@@ -43,14 +69,12 @@ button#explorer .fold {
     border-radius:5px;
     padding:10px;
     font-size:1rem;
+    // 7. Add Glassmorphism Effects
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.toc {
-    border:1px solid var(--gray);
-    border-radius:5px;
-    padding:10px;
-    font-size:1rem;
-}
 
 #toc-content .depth-0 {
 	padding: 0px !important;
@@ -86,23 +110,70 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
 
 footer {
 	text-align: center;
+	// Match footer background with body gradient
+	// background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+	padding: 2rem 0;
+	margin-top: 2rem;
+}
+
+.dark footer {
+	background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
 }
 
 footer ul {
 	display: unset;
 }
 
-code { 
+code {
 	direction: ltr !important;
+	font-family: 'Fira Code', 'IBM Plex Mono', monospace;
+	font-size: 0.9em;
+}
+
+// Enhanced Code Blocks
+pre {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(90deg, #ff5f56 0%, #ffbd2e 33%, #27c93f 66%);
+  opacity: 0.8;
 }
 
 .search {
     max-width: unset;
+    // 8. Improve Search Bar
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
 }
 
 .search > #search-icon {
     background-color: unset !important;
     border: 1px solid var(--gray) !important;
+}
+
+.search input {
+    border-radius: 25px;
+    padding: 12px 20px 12px 45px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.search input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(139, 126, 200, 0.3);
 }
 
 div.search.mobile-only {
@@ -313,6 +384,27 @@ blockquote footer:before {
     background-size: 100% 100%;
 }
 
+// 3. Add Smooth Animations (RTL version)
+a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
 // Center tables
 
 .table-container > table {
@@ -453,22 +545,10 @@ body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوا�
 }
 
 
-// 
-.logo-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    background-color: var(--light);
-    border-radius: 10px;
-}
-
 .about-div {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light);
 }
 
 .logo-link {
@@ -744,11 +824,16 @@ pre:has(>code.mermaid) .clipboard-button {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 100px;
     z-index: 0;
+    // 4. Improve Card Design
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   }
   
   .card-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
   }
   
   .card-bg {
@@ -794,6 +879,17 @@ pre:has(>code.mermaid) .clipboard-button {
     font-size: 0.9rem;
   }
 
+// 5. Add Floating Elements
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.logo-link:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
 // align page header to the right on mobile and tablet
 @media (max-width: calc(variables.$desktopBreakpoint - 1px)) {
     .page-title-container {
@@ -805,4 +901,28 @@ pre:has(>code.mermaid) .clipboard-button {
 .recent-notes .recent-ul {
     list-style: none !important;
     padding-right: 0 !important;
+}
+
+// 10. Dark Mode Enhancements
+.dark .card-container {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .search input {
+  background: rgba(40, 40, 40, 0.8);
+  color: var(--dark);
+}
+
+.dark .explorer {
+  background: rgba(40, 40, 40, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+// Additional glassmorphism utility class
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }

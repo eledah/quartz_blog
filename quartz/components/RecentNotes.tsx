@@ -51,13 +51,12 @@ export default ((userOpts?: Partial<Options>) => {
                       <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
                         {title}
                       </a>
-                      {page.dates && (
-                        <span class="meta">
-                          {" • "}
-                          <Date date={getDate(cfg, page)!} locale={cfg.locale} />
-                        </span>
-                      )}
                     </h4>
+                    {page.dates && (
+                      <div class="date">
+                        <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                      </div>
+                    )}
                   </div>
                   {opts.showTags && (
                     <ul class="tags">

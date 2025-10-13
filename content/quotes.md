@@ -130,3 +130,4 @@ date: 2024-05-18
 
 <blockquote class="farsi-blockquote">آن ها که به شایستگی با فلسفه مأنوس‌اند گویا از دیگران کناره می‌گیرند و تمام فکر و ذکرشان این می‌شود که چگونه بمیرند<footer class="farsi-footer">افلاطون - فایدون</footer></blockquote>
 
+<blockquote class="farsi-blockquote">جوهرهٔ استراتژی انتخاب کارهایی است که نباید انجام داد<footer class="farsi-footer">مایکل پورتر - استراتژی چیست؟</footer></blockquote>
