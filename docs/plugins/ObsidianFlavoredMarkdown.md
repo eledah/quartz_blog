@@ -23,6 +23,7 @@ This plugin accepts the following configuration options:
 - `enableYouTubeEmbed`: If `true` (default), enables the embedding of YouTube videos and playlists using external image Markdown syntax.
 - `enableVideoEmbed`: If `true` (default), enables the embedding of video files.
 - `enableCheckbox`: If `true`, adds support for interactive checkboxes in content. Defaults to `false`.
+- `disableBrokenWikilinks`: If `true`, replaces links to non-existent notes with a dimmed, disabled link. Defaults to `false`.
 
 > [!warning]
 > Don't remove this plugin if you're using [[Obsidian compatibility|Obsidian]] to author the content!
@@ -31,4 +32,4 @@ This plugin accepts the following configuration options:
 
 - Category: Transformer
 - Function name: `Plugin.ObsidianFlavoredMarkdown()`.
-- Source: [`quartz/plugins/transformers/toc.ts`](https://github.com/jackyzha0/quartz/blob/v4/quartz/plugins/transformers/toc.ts).
+- Source: [`quartz/plugins/transformers/ofm.ts`](https://github.com/jackyzha0/quartz/blob/v4/quartz/plugins/transformers/ofm.ts)

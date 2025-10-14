@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Found by John Bidwell (an undergraduate student at the University of Hawaii) in 1997 or 1998.
+        Source: Private communication between Erich Friedman and John Bidwell, 1998
+            Source: Packing Unit Squares in Squares: A Survey and New Results, by Erich Friedman, Version 2 (July 17, 2000) and later: https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS7/versions and https://erich-friedman.github.io/papers/squares/squares.html
+
+    RootReduce[Solve[{RotationTransform[-a][{s - 1, 2}  - ({x1, 2} + RotationTransform[a][{u2 + 2, v0 - 2}])][[2]] == 0,
+                      RotationTransform[-a][{x5, y5}    - ({x1, 2} + RotationTransform[a][{u1 + 2, 0     }])][[1]] == 0,
+                      RotationTransform[ b][{s - 1, y4} - {x5, y5}                                          ][[1]] == 1}, {s, a, b}][[2]]]
+    RootReduce[Solve[{s+(s-2)*Tan[a]-3*Sec[a] == 3,
+                      Cos[a]*Sin[a] == Sin[a+b]*(1+Sin[b]*(2-s+2*Sec[a]+Sin[a]-(s-3)*Tan[a])),
+                      ((s-3)*(1+Cot[a])-2*Csc[a])*Sin[b]+Cos[b]*(s-2-2*Sec[a]-Sin[a]+(s-3)*Tan[a]) == 1}, {s, a, b}][[2]]]
+    s = Root[-2631254953 + 26662976550*# - 126167814419*#^2 + 358189195800*#^3 - 660388959899*#^4 + 808819596154*#^5 - 662986732745*#^6 + 350268230564*#^7 - 93528282146*#^8 - 18522084588*#^9 + 32970034584*#^10 - 18310153596*#^11 + 6502333062*#^12 - 1640654808*#^13 + 300416928*#^14 - 39318012*#^15 + 3501307*#^16 - 190430*#^17 + 4775*#^18, 2]
+    a = ArcCos[Root[-8 - 40*# - 55*#^2 + 56*#^3 + 218*#^4 + 136*#^5 - 151*#^6 - 232*#^7 - 48*#^8 + 96*#^9 + 46*#^10 - 104*#^11 - 122*#^12 + 56*#^13 + 140*#^14 + 32*#^15 - 24*#^16 + 5*#^18, 2]]
+    b = ArcCsc[Root[-2 - 12*# - 15*#^2 + 20*#^3 - 96*#^4 + 436*#^5 - 258*#^6 - 240*#^7 + 182*#^8 - 680*#^9 + 1015*#^10 + 336*#^11 - 1152*#^12 + 420*#^13 + 54*#^14 + 28*#^15 - 42*#^16 + 4*#^17 + #^18, 3]]
+
+    To get the simplified form of the first equation in the Solve[]: FullSimplify[RotationTransform[...] / Cos[a] == 0]
+-->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-0.00242507 -0.00242507 4.68038 4.68038" style="fill: rgb(178, 178, 178); stroke: black; stroke-width: 0.0036376px;" id="svg">
+    <script xlink:href="square-_17_files/svgDisp.js"/>
+    <defs>
+        <rect width="4.67553009360455095163411127048315" height="4.67553009360455095163411127048315" id="outer"/>
+        <rect width="1" height="1" id="one"/>
+        <g id="sider">
+            <rect style="stroke:none" y="-1" width="1" height="1"/>
+            <path style="fill:none" d="M0,0 V-1 H1 V0"/>
+        </g>
+    </defs>
+    <use xlink:href="#outer" style="fill:white; stroke:none"/>
+    <g id="side1">
+        <path style="stroke:none" d="M0,2 H1 V1 H2 V0 H0"/>
+        <path style="fill:none" d="M0,2 L1,2 L1,0                                      M0,1 L2,1 L2,0"/>
+        <g transform="translate(0 4.67553009360455095163411127048315) scale(1 -1)">
+            <rect style="stroke:none" width="1" height="1"/>
+            <path style="fill:none" d="M0,1 H1 V0"/>
+        </g>
+    </g>
+    <use xlink:href="#side1" transform="translate(4.67553009360455095163411127048315) scale(-1 1)"/>
+    <g transform="translate(.640176192429266087584168543270317 2) rotate(39.8049589797677950558662536965423)">
+        <use xlink:href="#one"/>
+        <use xlink:href="#one" transform="                   translate(1 .056838696870287317626412465614310)"/>
+        <use xlink:href="#one" transform="translate(.276426766820379851031162763090775 -1)"/>
+        <use xlink:href="#one" transform="translate(.276426766820379851031162763090775 -1) translate(1 .056838696870287317626412465614310)"/>
+        <use xlink:href="#one" transform="translate(.404478693276882795154318979238136 -2)"/>
+        <use xlink:href="#one" transform="translate(.404478693276882795154318979238136 -2) translate(1 .056838696870287317626412465614310)"/>
+    </g>
+    <g transform="translate(1.84732482651028509718122846547049 4.67553009360455095163411127048315)">
+        <use xlink:href="#sider"/>
+        <use xlink:href="#one" transform="translate(1 -1) rotate(-36.6237863834465893201859433547298) translate(0 -.505927428006637436155510942971393)"/>
+    </g>
+    <use xlink:href="#sider" transform="translate(4.67553009360455095163411127048315 3.11346013251256404552110105703834) rotate(-90)"/>
+    <use xlink:href="#outer" style="fill:none"/>
+<div xmlns="" id="divScriptsUsed" style="display: none"/><script xmlns="" id="globalVarsDetection" src="moz-extension://09d0e9d5-aaf5-4ce1-a104-f5505d134950/js/wrs_env.js"/></svg>

@@ -1,0 +1,1 @@
+<blockquote class="farsi-blockquote">متن<footer class="farsi-footer">منبع</footer></blockquote>

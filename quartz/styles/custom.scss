@@ -1,3 +1,928 @@
 @use "./base.scss";
+@use "./variables.scss";
 
 // put your custom CSS here!
+
+// 1. Add Gradient Backgrounds
+body {
+  background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+  min-height: 100vh;
+}
+
+.dark body {
+  background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+}
+
+html {
+    font-family: Vazirmatn, sans-serif !important;
+}
+
+// Enhanced Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1.2em;
+}
+
+.breadcrumb-element p {
+	margin: 0 .5rem 0 0;
+	padding: 0;
+	line-height: normal;
+}
+
+button#explorer .fold {
+	opacity: .8;
+	transition: transform .3s;
+}
+
+.content-meta[show-comma="true"] > span:not(:last-child) {
+	margin-left: 8px !important;
+    margin-right: 0px !important;
+}
+
+.tags {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.folder-icon {
+	margin-right: 0px !important;
+	margin-left: 5px !important;
+}
+
+#explorer-content ul {
+	padding-right: .5rem !important;
+	padding-left: 0px !important;
+}
+
+.explorer {
+    border:1px solid var(--gray);
+    border-radius:5px;
+    padding:10px;
+    font-size:1rem;
+    // 7. Add Glassmorphism Effects
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+#toc-content .depth-0 {
+	padding: 0px !important;
+	padding-right: 1rem !important;
+}
+
+#toc-content .depth-1 {
+	padding: 0px !important;
+	padding-right: 1.5rem !important;
+}
+
+#toc-content .depth-2 {
+	padding: 0px !important;
+	padding-right: 2rem !important;
+}
+
+#toc-content .depth-3 {
+	padding: 0px !important;
+	padding-right: 2.5rem !important;
+}
+
+/* Backlinks styles moved to component stylesheet (quartz/components/styles/backlinks.scss) */
+
+// Margin fix in tag pages
+
+li.section-li > .section > .meta {
+    margin: 0 0 0 1em !important;
+}
+
+li:has(> .folder-outer:not(.open)) > .folder-container > svg {
+	transform: rotate(90deg) !important;
+}
+
+footer {
+	text-align: center;
+	// Match footer background with body gradient
+	// background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+	padding: 2rem 0;
+	margin-top: 2rem;
+}
+
+.dark footer {
+	background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+}
+
+footer ul {
+	display: unset;
+}
+
+code {
+	direction: ltr !important;
+	font-family: 'Fira Code', 'IBM Plex Mono', monospace;
+	font-size: 0.9em;
+}
+
+// Enhanced Code Blocks
+pre {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(90deg, #ff5f56 0%, #ffbd2e 33%, #27c93f 66%);
+  opacity: 0.8;
+}
+
+.search {
+    max-width: unset;
+    // 8. Improve Search Bar
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search > #search-icon {
+    background-color: unset !important;
+    border: 1px solid var(--gray) !important;
+}
+
+.search input {
+    border-radius: 25px;
+    padding: 12px 20px 12px 45px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.search input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(139, 126, 200, 0.3);
+}
+
+div.search.mobile-only {
+    padding-right: 10px !important;
+    padding-left: 30px;
+    margin-right: auto;
+}
+
+.center img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+// Farsi Blockquote
+
+.markdown-preview-view .farsi-blockquote {
+    direction: rtl;
+    
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0 20px 0 0;
+
+    border-right: 2px solid gray !important;
+    border-left: unset;
+
+    
+    color: gray;
+    /* color: gray; */
+}
+  
+.farsi-blockquote {
+    direction: rtl;
+    padding: 0 20px 0 0;
+
+    max-width: var(--max-width);
+
+    border-right: 2px solid gray !important;
+    border-left: unset;
+
+    // font-family: Sahel;
+    font-size: 16px;
+    /* font-style: italic; */
+    color: var(--text-muted);   
+    max-width: var(--max-width);
+    margin: 0 auto!important;
+    width: var(--line-width-adaptive);
+    /* color: gray; */
+}
+
+.farsi-blockquote-black {
+    color: var(--text-normal) !important;
+}
+
+.farsi-blockquote::before {
+    content:unset;
+}
+
+blockquote .farsi-footer {
+    margin-top: 1em;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 10pt;
+    text-align: right;
+    // font-family: Sahel;
+    font-style: normal;
+    color: gray;
+}
+
+.markdown-preview-view blockquote .farsi-footer {
+    margin-top: 1em !important;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 10pt;
+    text-align: right;
+    // font-family: Sahel;
+    font-style: normal;
+    /* color: gray; */
+}
+
+blockquote footer:before {
+    content: '— ';
+}
+
+
+.markdown-preview-view blockquote {
+    direction: rtl;
+    
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0 calc(var(--nested-padding)) 0 0;
+
+    border-right: 2px solid var(--text-muted) !important;
+    border-left: unset;
+
+    
+    color: var(--text-muted);
+    /* color: gray; */
+}
+  
+blockquote {
+    direction: rtl;
+
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0 calc(var(--nested-padding)) 0 0;
+
+    // border-right: 2px solid var(--text-muted) !important;
+    border-left: unset;
+
+    // font-family: Sahel;
+    font-size: 17px;
+    /* font-style: italic; */
+    color: var(--text-muted);   
+    width: var(--line-width-adaptive);
+    /* color: gray; */
+}
+
+blockquote::before {
+    content: none !important;
+}
+
+// English Blockquote
+
+.markdown-preview-view .english-blockquote {
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-left: 2px solid var(--text-muted) !important;
+    border-right: none !important;
+    direction: ltr;
+    color: var(--text-muted);
+    font-size: 19px !important;
+    font-style: italic;
+    padding: 0 0 0 20px;
+}
+  
+.english-blockquote {
+    direction: ltr;
+    
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0 0 0 20px;
+
+    border-left: 2px solid var(--text-muted) !important;
+    border-right: none !important;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-muted);   
+}
+
+.english-blockquote::before {
+    content: none;
+}
+
+blockquote .english-footer {
+    margin-top: 1em;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 10pt;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.markdown-preview-view blockquote .english-footer {
+    margin-top: 1em !important;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 10pt;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    
+}
+
+blockquote footer:before {
+    content: '— ';
+}
+
+
+// Highlight Coloring
+
+.text-highlight {
+    font-weight: normal;
+    background-color: transparent;
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 3px;
+    transition: background 200ms ease;
+    background-image: linear-gradient(120deg, var(--secondary), var(--secondary));
+}
+
+.text-highlight:hover {
+    background-size: 100% 100%;
+}
+
+// 3. Add Smooth Animations (RTL version)
+a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+// Center tables
+
+.table-container > table {
+    margin: auto;
+}
+
+// Two columns in index page
+
+// .index ul{
+//     list-style-type: disc;
+//     -webkit-columns: 2;
+//     -moz-columns: 2;
+//     columns: 2;
+//     list-style-position: inside;
+// }
+
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+body::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+    display:none;
+}
+
+th {
+    text-align: center !important;
+}
+
+// Katex LTR
+
+.poem-title {
+    text-align: center;
+    font-family: IranNastaliq !important;
+}
+
+h3.poem-title::before {
+    content: none;
+}
+
+.poem-verse-div {
+    margin: auto;
+    height: auto;
+    text-align: center;
+    clear: both;
+    font-weight: 400;
+}
+
+.poem-right-verse-div {
+    width: 45%;
+    float: right;
+    text-align: left;
+}
+
+.poem-left-verse-div {
+    width: 45%;
+    float: left;
+    text-align: right;
+}
+
+.poem-footer {
+    text-align: center;
+    color: gray;
+    font-size: 12px;
+}
+
+.poem-reference {
+    display:table;
+    margin:0 auto;
+    direction: rtl;
+}
+
+.poem-verse-num {
+    position: relative !important;
+    right: -5% !important;
+    top: 34px !important;
+    line-height: 0px !important;
+    margin-top: 6px !important;
+    margin-right: 3px !important;
+    // font-family: 'Sahel FD' !important;
+    font-weight: 500 !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    font-style: normal !important;
+    color: var(--text-faint) !important;
+}
+
+.ayah {
+    font-family: "Amiri";
+    font-size: 22px !important;
+    line-height: 2.5em;
+}
+
+.ayah_translation {
+    color: darkgray;
+}
+
+.callout.is-collapsed > .callout-title > .fold-callout-icon {
+    transform: rotate(90deg);
+}
+
+h2#footnote-label{
+    visibility: hidden;
+    direction: rtl !important;
+}
+  
+  
+h2#footnote-label::after{
+    content: "پانوشت‌ها";
+    visibility: visible;
+    display: block;
+}
+
+
+div>ul>li>a {
+    font-weight: 400;
+}
+
+body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوانی-How-to-do-Great-Work"] article > p, body[data-slug="پروژه‌ها/یادداشت‌برداری/متن‌خوانی-How-to-do-Great-Work"] section.footnotes>ol {
+    direction: ltr;
+}
+
+
+.about-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--lightgray);
+    transition: all 0.3s ease;
+}
+
+.logo-svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo-link:hover .logo-svg {
+    fill: var(--tertiary);
+    filter: brightness(1.2) saturate(1.3);
+}
+
+@media (max-width: variables.$mobileBreakpoint) {
+    .logo-div {
+        gap: 10px;
+        padding: 10px;
+    }
+    .logo-link {
+        width: 35px;
+        height: 35px;
+    }
+    .logo-svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+// Article Header
+
+.article-header {/* Default background color */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.article-header h1 { 
+    margin: 0;
+    color: white !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.article-header p {
+    margin: 5px 0 0;
+    color: white !important;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* background image */
+.article-header.with-background-image {
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+// Mermaid fix: https://ifard.ir/quartz-configuration#%D8%AF%DB%8C%D8%A7%DA%AF%D8%B1%D8%A7%D9%85
+
+.mermaid {
+	direction: rtl !important;
+    text-align: center;
+}
+ 
+pre:has(>code.mermaid) {
+	background-color: transparent;
+}
+ 
+.nodeLabel {
+	font-family: var(--bodyFont);
+}
+
+.edgeLabel {
+    font-family: var(--bodyFont);
+    background-color: #fff !important;
+}
+ 
+pre:has(>code.mermaid) .clipboard-button {
+	display: none;
+}
+
+
+// Latex LTR
+
+.katex-display {
+    direction: ltr;
+}
+
+.katex {
+    direction: ltr;
+    display: inline-block;
+}
+
+// title logo
+.title-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    img {
+        width: 150px;
+    }
+}
+
+@media (max-width: variables.$mobileBreakpoint) {
+    .title-logo {
+        flex-direction: row;
+        align-items: center;
+        img {
+            width: 75px;
+        }
+    }
+    #header-text {
+        overflow-wrap: unset;
+    }
+}
+
+// Tablet styles
+@media (min-width: variables.$mobileBreakpoint) and (max-width: calc(variables.$desktopBreakpoint - 1px)) {
+    .title-logo {
+        flex-direction: row;
+        align-items: center;
+        img {
+            width: 75px;
+        }
+    }
+    #header-text {
+        overflow-wrap: unset;
+    }
+}
+
+#icon-header {
+    margin: 0;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// top margin
+
+@media (min-width: variables.$desktopBreakpoint) {
+    .page-header {
+        margin: 7rem auto 0 !important;
+    }
+    .page > #quartz-body .sidebar {
+        margin-top: 7rem !important;
+    }
+}
+
+// Image Grid 
+.img-grid, article.img-grid {
+    // Handle images directly in paragraphs
+    > p {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        
+        > img {
+            flex: 1;
+            min-width: 200px;
+            width: 100%;
+            object-fit: cover;
+            margin: 0;
+        }
+    }
+    
+    // Keep the existing selectors for compatibility
+    article > div:has(> img) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    article > div:has(> img) > * {
+        flex: 1;
+        min-width: 200px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    
+    article > div:has(> img) > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    // Make sure paragraphs with images inside are properly handled
+    article > div:has(> p:has(> img)) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    article > div:has(> p:has(> img)) > p {
+        flex: 1;
+        min-width: 200px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    
+    article > div:has(> p:has(> img)) > p > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    // Support for internal embeds that contain images
+    article > div:has(> .internal-embed:has(> img)) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    article > div:has(> .internal-embed:has(> img)) > .internal-embed {
+        flex: 1;
+        min-width: 200px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+    
+    article > div:has(> .internal-embed:has(> img)) > .internal-embed > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+/* === Styles for Featured Cards === */
+
+.featured-cards-title {
+    text-align: right;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .card-container {
+    display: block;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: var(--darkgray); /* Fallback color */
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 100px;
+    z-index: 0;
+    // 4. Improve Card Design
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  }
+  
+  .card-container:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--card-bg);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s ease;
+  }
+  
+  .card-container.has-image .card-bg {
+    filter: blur(4px) brightness(0.6);
+    transform: scale(1.05);
+  }
+  
+  .card-container.has-image:hover .card-bg {
+    filter: blur(0px) brightness(0.8);
+    transform: scale(1);
+  }
+  
+  .card-container.no-image .card-bg {
+    background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #3B82F6 100%);
+  }
+  
+  .card-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .card-content h3 {
+    margin: 0 0 0.5rem 0;
+    color: #FFFFFF !important; /* Always pure white */
+    font-size: 1.25rem;
+  }
+  
+  .card-content p {
+    margin: 0;
+    color: #E5E7EB !important; /* Always a light gray */
+    font-size: 0.9rem;
+  }
+
+// 5. Add Floating Elements
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.logo-link:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+// align page header to the right on mobile and tablet
+@media (max-width: calc(variables.$desktopBreakpoint - 1px)) {
+    .page-title-container {
+        align-items: flex-start;
+    }
+}
+
+// Recent Notes ul fix
+.recent-notes .recent-ul {
+    list-style: none !important;
+    padding-right: 0 !important;
+}
+
+// 10. Dark Mode Enhancements
+.dark .card-container {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .search input {
+  background: rgba(40, 40, 40, 0.8);
+  color: var(--dark);
+}
+
+.dark .explorer {
+  background: rgba(40, 40, 40, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+// Additional glassmorphism utility class
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

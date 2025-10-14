@@ -1,19 +1,55 @@
+@use "../../styles/variables.scss" as *;
+
 .backlinks {
-  position: relative;
+  flex-direction: column;
 
   & > h3 {
     font-size: 1rem;
-    margin: 0;
+    margin: 0 0 0.5rem 0;
   }
 
-  & > ul {
+  & > ul.overflow {
+    /* Container */
+    margin: 0.5em 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    background: transparent;
+    direction: rtl;
+    box-sizing: border-box;
+    width: 100%;
+    /* Avoid internal scrollbars for small lists */
+    max-height: none;
+    overflow-y: visible;
+    /* Disable global overflow gradient */
+    position: relative;
+    &::after {
+      display: none !important;
+    }
+    /* Hide scrollbar in browsers that might still render it */
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    /* List */
     list-style: none;
-    padding: 0;
-    margin: 0.5rem 0;
+    overscroll-behavior: contain;
 
     & > li {
+      line-height: 1.35rem;
+      margin: 0.15rem 0;
+
       & > a {
+        display: block;
+        padding: 0.15rem 0.25rem;
         background-color: transparent;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: var(--light);
+        }
       }
     }
   }

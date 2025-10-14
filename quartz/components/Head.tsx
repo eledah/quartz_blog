@@ -1,22 +1,40 @@
 import { i18n } from "../i18n"
-import { FullSlug, joinSegments, pathToRoot } from "../util/path"
-import { JSResourceToScriptElement } from "../util/resources"
-import { googleFontHref } from "../util/theme"
+import { FullSlug, getFileExtension, joinSegments, pathToRoot } from "../util/path"
+import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/resources"
+import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-
+import { unescapeHTML } from "../util/escape"
+import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
 export default (() => {
-  const Head: QuartzComponent = ({ cfg, fileData, externalResources }: QuartzComponentProps) => {
-    const title = fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
+  const Head: QuartzComponent = ({
+    cfg,
+    fileData,
+    externalResources,
+    ctx,
+  }: QuartzComponentProps) => {
+    const titleSuffix = cfg.pageTitleSuffix ?? ""
+    const title =
+      (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
     const description =
-      fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description
-    const { css, js } = externalResources
+      fileData.frontmatter?.socialDescription ??
+      fileData.frontmatter?.description ??
+      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
+
+    const { css, js, additionalHead } = externalResources
 
     const url = new URL(`https://${cfg.baseUrl ?? "example.com"}`)
     const path = url.pathname as FullSlug
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
-
     const iconPath = joinSegments(baseDir, "static/icon.png")
-    const ogImagePath = `https://${cfg.baseUrl}/static/og-image.png`
+
+    // Url of current page
+    const socialUrl =
+      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+
+    const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
+      (e) => e.name === CustomOgImagesEmitterName,
+    )
+    const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
 
     return (
       <head>
@@ -27,23 +45,41 @@ export default (() => {
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link rel="stylesheet" href={googleFontHref(cfg.theme)} />
+            <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+            <link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet'></link>
           </>
         )}
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
-        {cfg.baseUrl && <meta property="og:image" content={ogImagePath} />}
+        <meta name="telegram:channel" content="@crystalline_channel"></meta>
+        {!usesCustomOgImage && cfg.baseUrl && (
+          <meta property="og:image" content={ogImageDefaultPath} />
+        )}
         <meta property="og:width" content="1200" />
         <meta property="og:height" content="675" />
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
-        {css.map((href) => (
-          <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
-        ))}
+
+        {css.map((resource) => CSSResourceToStyleElement(resource, true))}
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
+        {additionalHead.map((resource) => {
+          if (typeof resource === "function") {
+            return resource(fileData)
+          } else {
+            return resource
+          }
+        })}
       </head>
     )
   }

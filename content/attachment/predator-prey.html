@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدل شکارچی-طعمه</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #16213e;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #e94560;
+            font-weight: 700;
+        }
+        #chartContainer {
+            width: 600px;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: 'Vazirmatn', sans-serif;
+            cursor: pointer;
+            background-color: #0f3460;
+            color: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e94560;
+        }
+        .slider-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        #speedSlider {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>مدل شکارچی-طعمه</h1>
+        <div id="chartContainer">
+            <canvas id="populationChart"></canvas>
+        </div>
+        <div class="controls">
+            <div class="slider-container">
+                <span>کند</span>
+                <input type="range" id="speedSlider" min="1000" max="2000" value="1500" step="100">
+                <span>سریع</span>
+            </div>
+            <div class="buttons">
+                <button id="startBtn">شروع</button>
+                <button id="stepBtn">مرحله</button>
+                <button id="resetBtn">بازنشانی</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('populationChart').getContext('2d');
+        let chart;
+        let time = 0;
+        let rabbits = 50;
+        let foxes = 10;
+        let running = false;
+        let intervalId;
+
+        const rabbitGrowthRate = 0.1; // Lowered from 0.2
+        const rabbitDeathRate = 0.0005;
+        const foxGrowthRate = 0.0002;
+        const foxDeathRate = 0.1;
+
+        function initChart() {
+            Chart.defaults.font.family = 'Vazirmatn';
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: 'خرگوش‌ها',
+                            data: [],
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                        },
+                        {
+                            label: 'روباه‌ها',
+                            data: [],
+                            borderColor: 'rgb(255, 99, 132)',
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'زمان'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'جمعیت'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChart() {
+            chart.data.labels.push(time);
+            chart.data.datasets[0].data.push(rabbits);
+            chart.data.datasets[1].data.push(foxes);
+            chart.update();
+        }
+
+        function step() {
+            const newRabbits = rabbits + (rabbitGrowthRate * rabbits) - (rabbitDeathRate * rabbits * foxes);
+            const newFoxes = foxes + (foxGrowthRate * foxes * rabbits) - (foxDeathRate * foxes);
+
+            rabbits = Math.max(0, Math.min(newRabbits, 1000));
+            foxes = Math.max(0, Math.min(newFoxes, 500));
+            time++;
+
+            updateChart();
+        }
+
+        function start() {
+            if (!running) {
+                running = true;
+                startBtn.textContent = 'توقف';
+                intervalId = setInterval(step, getSimulationSpeed());
+            } else {
+                running = false;
+                startBtn.textContent = 'شروع';
+                clearInterval(intervalId);
+            }
+        }
+
+        function reset() {
+            time = 0;
+            rabbits = 50;
+            foxes = 10;
+            chart.data.labels = [];
+            chart.data.datasets[0].data = [];
+            chart.data.datasets[1].data = [];
+            chart.update();
+            running = false;
+            startBtn.textContent = 'شروع';
+            clearInterval(intervalId);
+        }
+
+        function getSimulationSpeed() {
+            return 2100 - speedSlider.value;
+        }
+
+        const startBtn = document.getElementById('startBtn');
+        const stepBtn = document.getElementById('stepBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const speedSlider = document.getElementById('speedSlider');
+
+        startBtn.addEventListener('click', start);
+        stepBtn.addEventListener('click', step);
+        resetBtn.addEventListener('click', reset);
+        speedSlider.addEventListener('input', () => {
+            if (running) {
+                clearInterval(intervalId);
+                intervalId = setInterval(step, getSimulationSpeed());
+            }
+        });
+
+        initChart();
+        updateChart();
+    </script>
+</body>
+</html>

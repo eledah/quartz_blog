@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .network {
+      display: grid;
+      grid-template-columns: repeat(5, 100px);
+      grid-gap: 50px; /* Increased gap between layers */
+      position: relative; /* Added to position nodes on top of connections */
+    }
+
+    .layer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .node {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgb(180, 70, 171);
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
+      position: relative; /* Ensure nodes are positioned above connections */
+      z-index: 1; /* Ensure nodes are above connections */
+      margin-top: 10px;
+    }
+
+    .node:hover {
+      background-color: rgb(237, 100, 230);
+    }
+
+    .connections {
+      position: absolute;
+      z-index: 0; /* Set connections below nodes */
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .layer-label {
+      color: black;
+      font-size: 14px;
+      margin-top: 5px; /* Space between node and label */
+    }
+  </style>
+</head>
+<body>
+
+<div class="network">
+  <div class="layer">
+    <div class="node" data-layer="Input">ورودی</div>
+  </div>
+  <div class="layer">
+    <div class="node" data-layer="Hidden1"></div>
+    <div class="node" data-layer="Hidden1"></div>
+    <div class="node" data-layer="Hidden1"></div>
+    <div class="node" data-layer="Hidden1"></div>
+    <div class="layer-label">لایه یکم</div>
+  </div>
+  <div class="layer">
+    <div class="node" data-layer="Hidden2"></div>
+    <div class="node" data-layer="Hidden2"></div>
+    <div class="node" data-layer="Hidden2"></div>
+    <div class="node" data-layer="Hidden2"></div>
+    <div class="layer-label">لایه دوم</div>
+  </div>
+  <div class="layer">
+    <div class="node" data-layer="Output">خروجی</div>
+  </div>
+  <div class="layer">
+    <div class="node" data-layer="Target">هدف</div>
+  </div>
+</div>
+
+<canvas id="connections"></canvas>
+
+<script>
+  function drawConnections() {
+    const canvas = document.getElementById('connections');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const nodes = document.querySelectorAll('.node');
+    const nodePositions = {};
+
+    nodes.forEach(node => {
+      const rect = node.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      nodePositions[node.dataset.layer] = nodePositions[node.dataset.layer] || [];
+      nodePositions[node.dataset.layer].push({ x: centerX, y: centerY });
+    });
+
+    // Draw lines from Input to Hidden1
+    nodePositions['Input'].forEach(inputNode => {
+      nodePositions['Hidden1'].forEach(hiddenNode => {
+        ctx.beginPath();
+        ctx.moveTo(inputNode.x, inputNode.y);
+        ctx.lineTo(hiddenNode.x, hiddenNode.y);
+        ctx.strokeStyle = 'gray';
+        ctx.stroke();
+      });
+    });
+
+    // Draw lines from Hidden1 to Hidden2
+    nodePositions['Hidden1'].forEach(hidden1Node => {
+      nodePositions['Hidden2'].forEach(hidden2Node => {
+        ctx.beginPath();
+        ctx.moveTo(hidden1Node.x, hidden1Node.y);
+        ctx.lineTo(hidden2Node.x, hidden2Node.y);
+        ctx.strokeStyle = 'gray';
+        ctx.stroke();
+      });
+    });
+
+    // Draw lines from Hidden2 to Output
+    nodePositions['Hidden2'].forEach(hidden2Node => {
+      nodePositions['Output'].forEach(outputNode => {
+        ctx.beginPath();
+        ctx.moveTo(hidden2Node.x, hidden2Node.y);
+        ctx.lineTo(outputNode.x, outputNode.y);
+        ctx.strokeStyle = 'gray';
+        ctx.stroke();
+      });
+    });
+
+    // Draw line from Output to Target
+    nodePositions['Output'].forEach(outputNode => {
+      nodePositions['Target'].forEach(targetNode => {
+        ctx.beginPath();
+        ctx.moveTo(outputNode.x, outputNode.y);
+        ctx.lineTo(targetNode.x, targetNode.y);
+        ctx.strokeStyle = 'red';
+        ctx.stroke();
+      });
+    });
+  }
+
+  window.addEventListener('resize', drawConnections);
+  window.addEventListener('load', drawConnections);
+</script>
+
+</body>
+</html>
