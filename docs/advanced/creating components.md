@@ -129,11 +129,11 @@ export default (() => {
     return <button id="btn">Click me</button>
   }
 
-  YourComponent.beforeDOMLoaded = `
+  YourComponent.beforeDOM = `
   console.log("hello from before the page loads!")
   `
 
-  YourComponent.afterDOMLoaded = `
+  YourComponent.afterDOM = `
   document.getElementById('btn').onclick = () => {
     alert('button clicked!')
   }
@@ -161,18 +161,6 @@ document.addEventListener("nav", () => {
 })
 ```
 
-You can also add the equivalent of a `beforeunload` event for [[SPA Routing]] via the `prenav` event.
-
-```ts
-document.addEventListener("prenav", () => {
-  // executed after an SPA navigation is triggered but
-  // before the page is replaced
-  // one usage pattern is to store things in sessionStorage
-  // in the prenav and then conditionally load then in the consequent
-  // nav
-})
-```
-
 It is best practice to track any event handlers via `window.addCleanup` to prevent memory leaks.
 This will get called on page navigation.
 
@@ -192,7 +180,7 @@ export default (() => {
     return <button id="btn">Click me</button>
   }
 
-  YourComponent.afterDOMLoaded = script
+  YourComponent.afterDOM = script
   return YourComponent
 }) satisfies QuartzComponentConstructor
 ```
@@ -226,11 +214,9 @@ Then, you can use it like any other component in `quartz.layout.ts` via `Compone
 As Quartz components are just functions that return React components, you can compositionally use them in other Quartz components.
 
 ```tsx title="quartz/components/AnotherComponent.tsx"
-import YourComponentConstructor from "./YourComponent"
+import YourComponent from "./YourComponent"
 
 export default (() => {
-  const YourComponent = YourComponentConstructor()
-
   function AnotherComponent(props: QuartzComponentProps) {
     return (
       <div>

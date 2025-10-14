@@ -29,9 +29,6 @@ export default {
       lightMode: "Modul luminos",
       darkMode: "Modul întunecat",
     },
-    readerMode: {
-      title: "Modul de citire",
-    },
     explorer: {
       title: "Explorator",
     },
@@ -69,7 +66,6 @@ export default {
     error: {
       title: "Pagina nu a fost găsită",
       notFound: "Fie această pagină este privată, fie nu există.",
-      home: "Reveniți la pagina de pornire",
     },
     folderContent: {
       folder: "Dosar",

@@ -29,9 +29,6 @@ export default {
       lightMode: "Tema claro",
       darkMode: "Tema escuro",
     },
-    readerMode: {
-      title: "Modo leitor",
-    },
     explorer: {
       title: "Explorador",
     },
@@ -68,7 +65,6 @@ export default {
     error: {
       title: "Não encontrado",
       notFound: "Esta página é privada ou não existe.",
-      home: "Retornar a página inicial",
     },
     folderContent: {
       folder: "Arquivo",

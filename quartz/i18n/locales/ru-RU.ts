@@ -29,9 +29,6 @@ export default {
       lightMode: "Светлый режим",
       darkMode: "Тёмный режим",
     },
-    readerMode: {
-      title: "Режим чтения",
-    },
     explorer: {
       title: "Проводник",
     },
@@ -70,7 +67,6 @@ export default {
     error: {
       title: "Страница не найдена",
       notFound: "Эта страница приватная или не существует",
-      home: "Вернуться на главную страницу",
     },
     folderContent: {
       folder: "Папка",

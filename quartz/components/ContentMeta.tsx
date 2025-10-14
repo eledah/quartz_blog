@@ -1,4 +1,4 @@
-import { Date, getDate } from "./Date"
+import { formatDate, getDate } from "./Date"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import readingTime from "reading-time"
 import { classNames } from "../util/lang"
@@ -26,15 +26,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
     const text = fileData.text
 
-    if (fileData.slug === "index") {
-      return <></>
-    }
-
     if (text) {
       const segments: (string | JSX.Element)[] = []
 
       if (fileData.dates) {
-        segments.push(<Date date={getDate(cfg, fileData)!} locale={cfg.locale} />)
+        segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
       }
 
       // Display reading time if enabled
@@ -43,12 +39,14 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
           minutes: Math.ceil(minutes),
         })
-        segments.push(<span>{displayedTime}</span>)
+        segments.push(displayedTime)
       }
+
+      const segmentsElements = segments.map((segment) => <span>{segment}</span>)
 
       return (
         <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
-          {segments}
+          {segmentsElements}
         </p>
       )
     } else {

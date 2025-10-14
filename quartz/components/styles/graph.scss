@@ -8,21 +8,18 @@
 
   & > .graph-outer {
     border-radius: 5px;
-    border: 1px solid var(--gray);
+    border: 1px solid var(--lightgray);
     box-sizing: border-box;
     height: 250px;
     margin: 0.5em 0;
     position: relative;
     overflow: hidden;
 
-    & > .global-graph-icon {
-      cursor: pointer;
-      background: none;
-      border: none;
+    & > #global-graph-icon {
       color: var(--dark);
       opacity: 0.5;
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
       position: absolute;
       padding: 0.2rem;
       margin: 0.3rem;
@@ -38,7 +35,7 @@
     }
   }
 
-  & > .global-graph-outer {
+  & > #global-graph-outer {
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -53,7 +50,7 @@
       display: inline-block;
     }
 
-    & > .global-graph-container {
+    & > #global-graph-container {
       border: 1px solid var(--lightgray);
       background-color: var(--light);
       border-radius: 5px;
@@ -62,10 +59,10 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      height: 80vh;
-      width: 80vw;
+      height: 60vh;
+      width: 50vw;
 
-      @media all and not ($desktop) {
+      @media all and (max-width: $fullPageWidth) {
         width: 90%;
       }
     }

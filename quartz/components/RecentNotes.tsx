@@ -12,15 +12,13 @@ interface Options {
   title?: string
   limit: number
   linkToMore: SimpleSlug | false
-  showTags: boolean
   filter: (f: QuartzPluginData) => boolean
   sort: (f1: QuartzPluginData, f2: QuartzPluginData) => number
 }
 
 const defaultOptions = (cfg: GlobalConfiguration): Options => ({
-  limit: 5,
+  limit: 3,
   linkToMore: false,
-  showTags: false,
   filter: () => true,
   sort: byDateAndAlphabetical(cfg),
 })
@@ -47,31 +45,29 @@ export default ((userOpts?: Partial<Options>) => {
               <li class="recent-li">
                 <div class="section">
                   <div class="desc">
-                    <h4>
+                    <h3>
                       <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
                         {title}
                       </a>
-                    </h4>
-                    {page.dates && (
-                      <div class="date">
-                        <Date date={getDate(cfg, page)!} locale={cfg.locale} />
-                      </div>
-                    )}
+                    </h3>
                   </div>
-                  {opts.showTags && (
-                    <ul class="tags">
-                      {tags.map((tag) => (
-                        <li>
-                          <a
-                            class="internal tag-link"
-                            href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
-                          >
-                            {tag}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                  {page.dates && (
+                    <p class="meta">
+                      <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                    </p>
                   )}
+                  <ul class="tags">
+                    {tags.map((tag) => (
+                      <li>
+                        <a
+                          class="internal tag-link"
+                          href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
+                        >
+                          {tag}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </li>
             )

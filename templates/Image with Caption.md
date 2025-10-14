@@ -1,4 +1,0 @@
-
-| path                     |
-| ------------------------ |
-| <center>Caption</center> |

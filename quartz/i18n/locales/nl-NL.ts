@@ -29,9 +29,6 @@ export default {
       lightMode: "Lichte modus",
       darkMode: "Donkere modus",
     },
-    readerMode: {
-      title: "Leesmodus",
-    },
     explorer: {
       title: "Verkenner",
     },
@@ -69,7 +66,6 @@ export default {
     error: {
       title: "Niet gevonden",
       notFound: "Deze pagina is niet zichtbaar of bestaat niet.",
-      home: "Keer terug naar de start pagina",
     },
     folderContent: {
       folder: "Map",

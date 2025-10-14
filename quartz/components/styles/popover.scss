@@ -14,69 +14,17 @@
   }
 }
 
-@keyframes slideUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes slide-in-blurred-bottom {
-  0% {
-    -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
-            transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
-    -webkit-filter: blur(40px);
-            filter: blur(40px);
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
-            transform: translateY(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@keyframes slide-in-bottom {
-  0% {
-    -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 .popover {
   z-index: 999;
-  position: fixed;
+  position: absolute;
   overflow: visible;
   padding: 1rem;
-  left: 0;
-  top: 0;
-  will-change: transform;
 
   & > .popover-inner {
     position: relative;
-    width: 20rem;
+    width: 30rem;
     max-height: 20rem;
-    padding: 1rem 2rem 2rem 2rem;
+    padding: 0 1rem 1rem 1rem;
     font-weight: initial;
     font-style: initial;
     line-height: normal;
@@ -84,12 +32,10 @@
     font-family: var(--bodyFont);
     border: 1px solid var(--lightgray);
     background-color: var(--light);
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: 6px 6px 36px 0 rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+    overflow: auto;
     white-space: normal;
-    user-select: none;
-    cursor: default;
   }
 
   & > .popover-inner[data-content-type] {
@@ -118,22 +64,20 @@
     font-size: 1.5rem;
   }
 
-  .breadcrumb-container {
-    display: none;
-  }
-
   visibility: hidden;
   opacity: 0;
   transition:
     opacity 0.3s ease,
     visibility 0.3s ease;
 
-  @media all and ($mobile) {
+  @media all and (max-width: $mobileBreakpoint) {
     display: none !important;
   }
 }
 
-.active-popover,
+a:hover .popover,
 .popover:hover {
-  animation:slide-in-blurred-bottom .4s cubic-bezier(.23,1.000,.32,1.000) both;
+  animation: dropin 0.3s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
 }

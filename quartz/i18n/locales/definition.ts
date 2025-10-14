@@ -31,9 +31,6 @@ export interface Translation {
       lightMode: string
       darkMode: string
     }
-    readerMode: {
-      title: string
-    }
     explorer: {
       title: string
     }
@@ -70,7 +67,6 @@ export interface Translation {
     error: {
       title: string
       notFound: string
-      home: string
     }
     folderContent: {
       folder: string

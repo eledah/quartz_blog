@@ -26,11 +26,8 @@ export default {
       noBacklinksFound: "Keine Backlinks gefunden",
     },
     themeToggle: {
-      lightMode: "Heller Modus",
-      darkMode: "Dunkler Modus",
-    },
-    readerMode: {
-      title: "Lesemodus",
+      lightMode: "Light Mode",
+      darkMode: "Dark Mode",
     },
     explorer: {
       title: "Explorer",
@@ -68,7 +65,6 @@ export default {
     error: {
       title: "Nicht gefunden",
       notFound: "Diese Seite ist entweder nicht öffentlich oder existiert nicht.",
-      home: "Return to Homepage",
     },
     folderContent: {
       folder: "Ordner",

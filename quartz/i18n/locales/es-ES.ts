@@ -22,15 +22,12 @@ export default {
       quote: "Cita",
     },
     backlinks: {
-      title: "Retroenlaces",
-      noBacklinksFound: "No se han encontrado retroenlaces",
+      title: "Enlaces de Retroceso",
+      noBacklinksFound: "No se han encontrado enlaces traseros",
     },
     themeToggle: {
       lightMode: "Modo claro",
       darkMode: "Modo oscuro",
-    },
-    readerMode: {
-      title: "Modo lector",
     },
     explorer: {
       title: "Explorador",
@@ -57,18 +54,17 @@ export default {
       title: "Tabla de Contenidos",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `Se lee en ${minutes} min`,
+      readingTime: ({ minutes }) => `${minutes} min read`,
     },
   },
   pages: {
     rss: {
       recentNotes: "Notas recientes",
-      lastFewNotes: ({ count }) => `Últimas ${count} notas`,
+      lastFewNotes: ({ count }) => `Últimás ${count} notas`,
     },
     error: {
-      title: "No se ha encontrado.",
+      title: "No se encontró.",
       notFound: "Esta página es privada o no existe.",
-      home: "Regresa a la página principal",
     },
     folderContent: {
       folder: "Carpeta",
@@ -81,7 +77,7 @@ export default {
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 artículo con esta etiqueta." : `${count} artículos con esta etiqueta.`,
       showingFirst: ({ count }) => `Mostrando las primeras ${count} etiquetas.`,
-      totalTags: ({ count }) => `Se han encontrado ${count} etiquetas en total.`,
+      totalTags: ({ count }) => `Se encontraron ${count} etiquetas en total.`,
     },
   },
 } as const satisfies Translation
