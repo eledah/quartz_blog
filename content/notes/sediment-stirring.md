@@ -11,13 +11,13 @@ date: 2025-10-05
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>هدر جلب توجه</title>
     <style>
-        * {
+        .sediment-container * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        .sediment-container {
             font-family: 'Vazir', 'Tahoma', sans-serif;
             background: #1a1a1a;
             display: flex;
@@ -27,7 +27,7 @@ date: 2025-10-05
             padding: 20px;
         }
 
-        .sediment-container {
+        .sediment-container .sediment-container {
             max-width: 800px;
             width: 100%;
             text-align: center !important;
@@ -121,7 +121,7 @@ date: 2025-10-05
         }
 
         .sediment h1 {
-            font-size: 2.5em;
+            font-size: 1.8em;
             color: white;
             text-align: center;
             margin-bottom: 0;
@@ -162,7 +162,7 @@ date: 2025-10-05
 
         @media (max-width: 600px) {
             .sediment h1 {
-                font-size: 1.8em;
+                font-size: 1.4em;
             }
             
             .sediment-warning p {
@@ -210,13 +210,13 @@ date: 2025-10-05
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>هدر جلب توجه</title>
     <style>
-        * {
+        .sediment-container-2 * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
+        .sediment-container-2 {
             font-family: 'Vazir', 'Tahoma', sans-serif;
             background: #1a1a1a;
             display: flex;
@@ -226,7 +226,7 @@ date: 2025-10-05
             padding: 20px;
         }
 
-        .sediment-container-2 {
+        .sediment-container-2 .sediment-container-2 {
             max-width: 800px;
             width: 100%;
             text-align: center !important;
@@ -320,7 +320,7 @@ date: 2025-10-05
         }
 
         .sediment-2 h1 {
-            font-size: 2.5em;
+            font-size: 1.8em;
             color: white;
             text-align: center;
             margin-bottom: 0;
@@ -361,7 +361,7 @@ date: 2025-10-05
 
         @media (max-width: 600px) {
             .sediment-2 h1 {
-                font-size: 1.8em;
+                font-size: 1.4em;
             }
             
             .sediment-warning-2 p {
