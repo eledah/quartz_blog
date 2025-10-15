@@ -19,11 +19,9 @@ date: 2025-10-05
 
         .sediment-container {
             font-family: 'Vazir', 'Tahoma', sans-serif;
-            background: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             padding: 20px;
         }
 
@@ -121,7 +119,7 @@ date: 2025-10-05
         }
 
         .sediment h1 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: white;
             text-align: center;
             margin-bottom: 0;
@@ -162,7 +160,7 @@ date: 2025-10-05
 
         @media (max-width: 600px) {
             .sediment h1 {
-                font-size: 1.4em;
+                font-size: 1.2em;
             }
             
             .sediment-warning p {
@@ -184,7 +182,7 @@ date: 2025-10-05
             <div class="sediment-bubble"></div>
             <div class="sediment-bubble"></div>
             <div class="sediment-content">
-                <h1>🗑️ هر چی تا الان می‌دونستی رو بریز دور 🗑️</h1>
+                <h1>🗑️ هر چی بلدی رو بریز دور 🗑️</h1>
             </div>
         </div>
     </div>
@@ -218,11 +216,9 @@ date: 2025-10-05
 
         .sediment-container-2 {
             font-family: 'Vazir', 'Tahoma', sans-serif;
-            background: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             padding: 20px;
         }
 
@@ -320,7 +316,7 @@ date: 2025-10-05
         }
 
         .sediment-2 h1 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: white;
             text-align: center;
             margin-bottom: 0;
@@ -361,7 +357,7 @@ date: 2025-10-05
 
         @media (max-width: 600px) {
             .sediment-2 h1 {
-                font-size: 1.4em;
+                font-size: 1.2em;
             }
             
             .sediment-warning-2 p {
