@@ -3,9 +3,6 @@ title: کریستالین
 cssclasses:
   - index
 ---
-
-
-
 # 🌳 کاوش‌ها و آموخته‌ها
 
 *پژوهش‌هایی در جریان، برای درک بهتر جهان*
@@ -29,7 +26,7 @@ cssclasses:
 
 *جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
-[[the-undersoul|زیرزمین روح]] | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[upward-spit|تف سربالا]] | [[against-gatekeepers|علیه کاهنان]] | [[overflow|سرریز]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]]
+[[the-undersoul|زیرزمین روح]] | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[upward-spit|تف سربالا]] | [[against-gatekeepers|علیه کاهنان]] | [[overflow|سرریز]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]] | [[impressionism|امپرسیونیسم]]
 
 # 📝 تأملات و تخیلات
 

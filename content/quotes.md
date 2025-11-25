@@ -131,3 +131,11 @@ date: 2024-05-18
 <blockquote class="farsi-blockquote">آن ها که به شایستگی با فلسفه مأنوس‌اند گویا از دیگران کناره می‌گیرند و تمام فکر و ذکرشان این می‌شود که چگونه بمیرند<footer class="farsi-footer">افلاطون - فایدون</footer></blockquote>
 
 <blockquote class="farsi-blockquote">جوهرهٔ استراتژی انتخاب کارهایی است که نباید انجام داد<footer class="farsi-footer">مایکل پورتر - استراتژی چیست؟</footer></blockquote>
+
+<blockquote class="farsi-blockquote">کسی که‌به دنبال دو تا خرگوش بدود، به هیچ‌کدام نمی‌رسد.<footer class="farsi-footer">ضرب‌المثل روسی که در کتاب جنایات و مکافات دیدم</footer></blockquote>
+
+<blockquote class="english-blockquote">The 'Instagram Generation' now experiences the present as an anticipated memory.<footer class="english-footer">Daniel Kahneman</footer></blockquote>
+
+<blockquote class="farsi-blockquote">من جبار باغچه‌بان هرگز شایسته ندانسته‌ام که بر تلاش‌ها و رنج‌های خود، نام «خدمت بر جامعه» بگذارم. در تنهایی هنگامی که خاطرات خود را از روز تولد تا کنون مرور می‌کنم، به این نتیجه می‌رسم که هیچ بهانه‌ای برای آن که بتوانم خود را خدمت‌گزار جامعه بدانم، وجود ندارد. می‌بینم این جامعهٔ بزرگ بشریت بوده است که به من خدمت کرده است و من را مدیون خود ساخته است. چراغی در سر راهم گذاشت تا در تاریکی‌های شب، گم نشوم. آنچه کرده‌ام و می‌کنم برای ادای این همه دینی است که به گردن دارم. اگر هزاران سال زندگی کنم و شب و روز زحمت بکشم، هرگز ممکن نیست دین یک ساعت از آسایش خود را ادا کرده باشم<footer class="farsi-footer">کتاب روشنگران تاریکی، صـ۳۵</footer></blockquote>
+
+<blockquote class="farsi-blockquote">مونه می‌گفت آرزو داشت که نابینا متولد شده بود و سپس ناگهان بینایی‌اش را به دست می‌آورد تا می‌توانست بدون اینکه بداند اشیایی که در برابرش می‌بیند چه هستند، نقاشی کردن به این شیوه را آغاز کند.<footer class="farsi-footer">لیلا کبت پری، «خاطراتی از کلود مونه از ۱۸۸۹ تا ۱۹۰۹»، مجله هنر آمریکا، جلد ۱۸، شماره ۳ (۱۹۲۷)، صفحه ۱۲۰.</footer></blockquote>
