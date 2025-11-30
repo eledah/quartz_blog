@@ -19,7 +19,7 @@ date: 2024-05-18
 
 <blockquote class="farsi-blockquote">لذایذ دنیا برای انسان آفریده شده اند، نه انسان برای آن ها و آن ها باید به دنبال انسان باشند، نه انسان به دنبال آن ها.  <footer class="farsi-footer">سید محمدحسین طباطبائی، شیعه در اسلام</footer></blockquote>
 
-<blockquote class="farsi-blockquote">این نکته را هم عرض کنم که گاهی بعضی از افراد بی همت به دلیل اینکه عرضه ندارند، به دلیل اینکه همّ ندارند، به دلیل اینکه مرد نیستند، وقتی آدمی را میبینند که دنبال جمع کردن ثروت میرود، تحقیرش میکنند، به او میخندند، آیات زهد را میخوانند، دم از تقوا و زهد میزنند، میخواهند مغالطه کنند. نه آقا! او که دنبال جمع کردن ثروت میرود، با همان حرص و حالت دنیاپرستی هم میرود، از توی ضعیف‌همت و دون همت گداصفت بالاتر است، از تو با شخصیت تر است. او نسبت به آن مردی که همتش ازین بالاتر است، مذموم است.<footer class="farsi-footer">مرتضی مطهری آزادی معنوی</footer></blockquote>
+<blockquote class="farsi-blockquote">این نکته را هم عرض کنم که گاهی بعضی از افراد بی همت به دلیل اینکه عرضه ندارند، به دلیل اینکه همّ ندارند، به دلیل اینکه مرد نیستند، وقتی آدمی را میبینند که دنبال جمع کردن ثروت میرود، تحقیرش میکنند، به او میخندند، آیات زهد را میخوانند، دم از تقوا و زهد میزنند، میخواهند مغالطه کنند. نه آقا! او که دنبال جمع کردن ثروت میرود، با همان حرص و حالت دنیاپرستی هم میرود، از توی ضعیف‌همت و دون همت گداصفت بالاتر است، از تو با شخصیت تر است. او نسبت به آن مردی که همتش ازین بالاتر است، مذموم است.<footer class="farsi-footer">مرتضی مطهری - آزادی معنوی</footer></blockquote>
 
 <blockquote class="farsi-blockquote">چو علم آموختی از حرص آن گه ترس کاندر شب | چو دزدی با چراغ آید گزیده‌تر برد کالا<footer class="farsi-footer">قصیدهٔ ۷ ثنایی - در مقام اهل توحید</footer></blockquote>
 
@@ -83,6 +83,7 @@ date: 2024-05-18
 <blockquote class="english-blockquote">An expert is a man who has made all the mistakes which can be made in a very narrow field.<footer class="english-footer">Niels Bohr</footer></blockquote>
 
 <blockquote class="english-blockquote">The product of an idealized design is not an ideal state or system, but an ideal-seeking state or system.<footer class="english-footer">The Art of Problem Solving. Accompanied by Ackoff's Fables</footer></blockquote>
+
 <blockquote class="english-blockquote">Intellectualism is a common cover up for fear of direct experience.<footer class="english-footer">C.G. Jung</footer></blockquote>
 
 <blockquote class="english-blockquote">The first death is in the heart.<footer class="english-footer">Disco Elysium</footer></blockquote>
@@ -105,7 +106,6 @@ date: 2024-05-18
 
 <blockquote class="farsi-blockquote">نوشتهٔ خوب خبری است که خبر می‌ماند.<footer class="farsi-footer">ازرا پاوند</footer></blockquote>
 
-
 <blockquote class="english-blockquote">I make all my decisions on intuition. But then, I must know why I made that decision. I throw a spear into the darkness. That is intuition. Then I must send an army into the darkness to find the spear. That is intellect.<footer class="english-footer">Ingmar Bergman</footer></blockquote>
 
 <blockquote class="farsi-blockquote">اَلنّاسُ بِاُمَرائِهِمْ اَشْبَهُ مِنْهُمْ بِآبائِهِمْ - مردم، به حاکمان خود شبیه‌ترند تا به پدرانشان<footer class="farsi-footer">امام علی علیه‌السلام</footer></blockquote>
@@ -113,11 +113,9 @@ date: 2024-05-18
 
 <blockquote class="english-blockquote">People who don't take risks generally make about two big mistakes a year. People who do take risks generally make about two big mistakes a year.<footer class="english-footer">Peter Drucker</footer></blockquote>
 
-
 <blockquote class="english-blockquote">Yet if the only form of tradition, of handing down, consisted in following the ways of the immediate generation before us in a blind or timid adherence to its successes, "tradition" should positively be discouraged. We have seen many such simple currents soon lost in the sand; and novelty is better than repetition. Tradition is a matter of much wider significance. It cannot be inherited, and if you want it you must obtain it by great labour.<footer class="english-footer">T.S. Elliot, Tradition and the Individual Talent</footer></blockquote>
 
 <blockquote class="farsi-blockquote">أحسِنِ الظَّنَّ باللّه ِ؛ فإنّ اللّه َ عَزَّ و جلَّ یقولُ : أنا عِندَ ظَنِّ عَبدِیَ المُؤمِنِ بی؛ إن خَیرا فخَیرا، و إن شَرّا فَشَرّا | به خداوند گمان نیک ببر ؛ زیرا خداى عزّ و جلّ مى‌فرماید: من نزد گمان بنده مؤمن خویشم؛ اگر گمانِ او به من نیک باشد، مطابق آن گمان با او رفتار کنم و اگر بد باشد نیز مطابق همان گمانِ بد با او عمل کنم.<footer class="farsi-footer">امام رضا علیه‌السلام- <a href="https://www.hadithlib.com/rolls/view/2300477/%DA%AF%D9%85%D8%A7%D9%86-%D9%86%D9%8A%DA%A9-%D8%A8%D9%87-%D8%AE%D8%AF%D8%A7%D9%88%D9%86%D8%AF">مشابهات</a></footer></blockquote>
-
 
 <blockquote class="english-blockquote">Learning more is a smart person’s favorite form of procrastination.<footer class="english-footer">Mark Manson</footer></blockquote>
 
@@ -136,6 +134,10 @@ date: 2024-05-18
 
 <blockquote class="english-blockquote">The 'Instagram Generation' now experiences the present as an anticipated memory.<footer class="english-footer">Daniel Kahneman</footer></blockquote>
 
-<blockquote class="farsi-blockquote">من جبار باغچه‌بان هرگز شایسته ندانسته‌ام که بر تلاش‌ها و رنج‌های خود، نام «خدمت بر جامعه» بگذارم. در تنهایی هنگامی که خاطرات خود را از روز تولد تا کنون مرور می‌کنم، به این نتیجه می‌رسم که هیچ بهانه‌ای برای آن که بتوانم خود را خدمت‌گزار جامعه بدانم، وجود ندارد. می‌بینم این جامعهٔ بزرگ بشریت بوده است که به من خدمت کرده است و من را مدیون خود ساخته است. چراغی در سر راهم گذاشت تا در تاریکی‌های شب، گم نشوم. آنچه کرده‌ام و می‌کنم برای ادای این همه دینی است که به گردن دارم. اگر هزاران سال زندگی کنم و شب و روز زحمت بکشم، هرگز ممکن نیست دین یک ساعت از آسایش خود را ادا کرده باشم<footer class="farsi-footer">کتاب روشنگران تاریکی، صـ۳۵</footer></blockquote>
+<blockquote class="farsi-blockquote">من، جبار باغچه‌بان، هرگز شایسته ندانسته‌ام که بر تلاش‌ها و رنج‌های خود، نام «خدمت بر جامعه» بگذارم. در تنهایی هنگامی که خاطرات خود را از روز تولد تا کنون مرور می‌کنم، به این نتیجه می‌رسم که هیچ بهانه‌ای برای آن که بتوانم خود را خدمت‌گزار جامعه بدانم، وجود ندارد. می‌بینم این جامعهٔ بزرگ بشریت بوده است که به من خدمت کرده است و من را مدیون خود ساخته است. چراغی در سر راهم گذاشت تا در تاریکی‌های شب، گم نشوم. آنچه کرده‌ام و می‌کنم برای ادای این همه دینی است که به گردن دارم. اگر هزاران سال زندگی کنم و شب و روز زحمت بکشم، هرگز ممکن نیست دین یک ساعت از آسایش خود را ادا کرده باشم<footer class="farsi-footer">کتاب روشنگران تاریکی، صـ۳۵</footer></blockquote>
 
 <blockquote class="farsi-blockquote">مونه می‌گفت آرزو داشت که نابینا متولد شده بود و سپس ناگهان بینایی‌اش را به دست می‌آورد تا می‌توانست بدون اینکه بداند اشیایی که در برابرش می‌بیند چه هستند، نقاشی کردن به این شیوه را آغاز کند.<footer class="farsi-footer">لیلا کبت پری، «خاطراتی از کلود مونه از ۱۸۸۹ تا ۱۹۰۹»، مجله هنر آمریکا، جلد ۱۸، شماره ۳ (۱۹۲۷)، صفحه ۱۲۰.</footer></blockquote>
+
+<blockquote class="english-blockquote">The camera is an instrument that teaches people how to see without a camera.<footer class="english-footer">Dorothea Lang</footer></blockquote>
+
+<blockquote class="farsi-blockquote">چند سال پیش، خانواده‌ای بندباز در حین اجرای نمایش، از بندی مرتغع سقوطی هول‌انگیز کردند. همه‌شان کشته یا معلول شدند؛ مگر پدر خانواده، که پایش شکست اما از مرگ نجات یافت. این پدر با آنکه در این سقوط بچه‌هایش را از دست داده بود، چند ماه بعد دوباره به سر کار خود در بندبازی برگشت. کسی در مصاحبه‌ای از او پرسید چطور می‌شود بعد از چنان حادثهٔ هولناکی خود را به چنین کاری راضی کند. جواب داد: «زندگی روی بند است؛... مابقی معطلی است.»<footer class="farsi-footer">معماری و راز جاودانگی - کریستوفر الکساندر</footer></blockquote>
