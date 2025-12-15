@@ -26,7 +26,11 @@ cssclasses:
 
 *جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
-[[the-undersoul|زیرزمین روح]] | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[upward-spit|تف سربالا]] | [[against-gatekeepers|علیه کاهنان]] | [[overflow|سرریز]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]] | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]]
+ | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[against-gatekeepers|علیه کاهنان]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]]  | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]]
+
+## 📷 استعاره‌ها
+
+[[the-undersoul|زیرزمین روح]] | [[upward-spit|تف سربالا]] | [[overflow|سرریز]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]] | [[peach-and-onion|هلو و پیاز]]
 
 # 📝 تأملات و تخیلات
 
