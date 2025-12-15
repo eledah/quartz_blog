@@ -26,7 +26,7 @@ cssclasses:
 
 *جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
- | [[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[against-gatekeepers|علیه کاهنان]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]]  | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]]
+[[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[against-gatekeepers|علیه کاهنان]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]]  | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]]
 
 ## 📷 استعاره‌ها
 
