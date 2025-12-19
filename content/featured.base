@@ -1,0 +1,13 @@
+views:
+  - type: cards
+    name: Table
+    filters:
+      and:
+        - featured == true
+    order:
+      - title
+      - file.path
+      - description
+    image: note.image
+    imageFit: contain
+    imageAspectRatio: 0.7
