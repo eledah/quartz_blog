@@ -3,14 +3,46 @@
 
 // put your custom CSS here!
 
-// 1. Add Gradient Backgrounds
+// 1. Add Global Background Texture (Feature D)
 body {
-  background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+  background-color: #F9F7F2;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  opacity: 0.05; // Make the noise very subtle
+  pointer-events: none;
+  z-index: -1;
 }
 
 .dark body {
-  background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+  background-color: #1a1915; // Darker warm beige for dark mode
+}
+
+// 2. Main Content Container (Feature C)
+.center {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  padding: 32px !important;
+  margin-top: 2rem !important;
+  margin-bottom: 4rem !important;
+  z-index: 1;
+}
+
+.dark .center {
+  background-color: var(--light);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 html {
@@ -801,83 +833,118 @@ pre:has(>code.mermaid) .clipboard-button {
 /* === Styles for Featured Cards === */
 
 .featured-cards-title {
-    text-align: right;
-    margin-bottom: 1.5rem;
-    font-size: 1.75rem;
+  text-align: right;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+// Feature A: Bento Grid Layout
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(160px, auto);
+  gap: 1.5rem;
+  margin: 2rem 0;
+
+  @media (max-width: 600px) { // Using standard mobile breakpoint
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
   }
-  
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+}
+
+.card-container {
+  display: block;
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 24px; // Match main container rounded corners (Feature C/specs 32)
+  background-color: var(--darkgray);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  min-height: 100px;
+  z-index: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+}
+
+// Specific Bento positions
+.card-container:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 350px;
+
+  @media (max-width: 600px) {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 250px;
   }
-  
-  .card-container {
-    display: block;
-    position: relative;
-    padding: 1.5rem;
-    border-radius: 8px;
-    background-color: var(--darkgray); /* Fallback color */
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 100px;
-    z-index: 0;
-    // 4. Improve Card Design
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.card-container:nth-child(4) {
+  grid-column: span 3;
+
+  @media (max-width: 600px) {
+    grid-column: span 1;
   }
-  
-  .card-container:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: var(--card-bg);
-    background-size: cover;
-    background-position: center;
-    transition: all 0.4s ease;
-  }
-  
-  .card-container.has-image .card-bg {
-    filter: blur(4px) brightness(0.6);
-    transform: scale(1.05);
-  }
-  
-  .card-container.has-image:hover .card-bg {
-    filter: blur(0px) brightness(0.8);
-    transform: scale(1);
-  }
-  
-  .card-container.no-image .card-bg {
-    background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #3B82F6 100%);
-  }
-  
-  .card-content {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .card-content h3 {
-    margin: 0 0 0.5rem 0;
-    color: #FFFFFF !important; /* Always pure white */
-    font-size: 1.25rem;
-  }
-  
-  .card-content p {
-    margin: 0;
-    color: #E5E7EB !important; /* Always a light gray */
-    font-size: 0.9rem;
-  }
+}
+
+.card-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--card-bg);
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+// Feature B: Image Interaction (Grayscale to Color)
+.card-container.has-image .card-bg {
+  filter: grayscale(100%);
+  transform: scale(1);
+}
+
+.card-container.has-image:hover .card-bg {
+  filter: grayscale(0%);
+  transform: scale(1.08); // Feature F: Parallax/Zoom effect
+}
+
+.card-container.no-image .card-bg {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #3B82F6 100%);
+  filter: none !important;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #FFFFFF !important;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-content p {
+  margin: 0;
+  color: #E5E7EB !important;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
 
 // 5. Add Floating Elements
 @keyframes float {
@@ -925,4 +992,33 @@ pre:has(>code.mermaid) .clipboard-button {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+// Feature E: Vertical Rhythm Line
+@media (min-width: 1360px) {
+  .sidebar.left {
+    border-inline-end: 1px dashed #E5E5E5;
+    padding-inline-end: 3rem !important;
+  }
+}
+
+.dark {
+  .sidebar.left {
+    border-inline-end: 1px dashed rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Section Dividers (Feature G)
+.section-divider {
+  width: 100%;
+  height: 80px;
+  margin: 2rem 0;
+  color: var(--gray);
+  pointer-events: none;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 }

@@ -1,6 +1,6 @@
 views:
   - type: cards
-    name: Table
+    name: Gallery
     filters:
       and:
         - featured == true
@@ -9,5 +9,5 @@ views:
       - file.path
       - description
     image: note.image
-    imageFit: contain
     imageAspectRatio: 0.7
+    cardSize: 200

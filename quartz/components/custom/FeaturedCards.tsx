@@ -2,7 +2,9 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { resolveRelative } from "../../util/path"
 
 const FeaturedCards: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
-  const featuredPages = allFiles.filter((file) => file.frontmatter?.featured)
+  const featuredPages = allFiles
+    .filter((file) => file.frontmatter?.featured)
+    .slice(0, 4)
 
   return (
     <div className="card-grid">
