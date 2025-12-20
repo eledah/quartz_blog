@@ -4,6 +4,19 @@ import { resolveRelative } from "../../util/path"
 const FeaturedCards: QuartzComponent = ({ allFiles }: QuartzComponentProps) => {
   const featuredPages = allFiles
     .filter((file) => file.frontmatter?.featured)
+    .sort((a, b) => {
+      const orderA = (a.frontmatter?.order as number | undefined) ?? Infinity
+      const orderB = (b.frontmatter?.order as number | undefined) ?? Infinity
+
+      if (orderA !== orderB) {
+        return orderA - orderB
+      }
+
+      // Fallback: sort by date (newest first) if order is same or missing
+      const dateA = new Date((a.frontmatter?.date as string | number | Date) ?? 0).getTime()
+      const dateB = new Date((b.frontmatter?.date as string | number | Date) ?? 0).getTime()
+      return dateB - dateA
+    })
     .slice(0, 4)
 
   return (

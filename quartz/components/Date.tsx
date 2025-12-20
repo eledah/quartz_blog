@@ -5,6 +5,7 @@ import { QuartzPluginData } from "../plugins/vfile"
 interface Props {
   date: Date
   locale?: ValidLocale
+  showEmoji?: boolean
 }
 
 export type ValidDateType = keyof Required<QuartzPluginData>["dates"]
@@ -26,8 +27,8 @@ export function formatDate(d: Date, locale: ValidLocale = "en-US"): string {
   })
 }
 
-export function Date({ date, locale }: Props) {
+export function Date({ date, locale, showEmoji = true }: Props) {
   const formatted = formatDate(date, locale)
-  const emojiPrefix = locale && locale.startsWith("fa") ? "📅 " : ""
+  const emojiPrefix = showEmoji && locale && locale.startsWith("fa") ? "📅 " : ""
   return <time datetime={date.toISOString()}>{emojiPrefix}{formatted}</time>
 }

@@ -47,16 +47,12 @@ export default ((userOpts?: Partial<Options>) => {
               <li class="recent-li">
                 <div class="section">
                   <div class="desc">
-                    <h4>
-                      <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                        {title}
-                      </a>
-                    </h4>
                     {page.dates && (
-                      <div class="date">
-                        <Date date={getDate(cfg, page)!} locale={cfg.locale} />
-                      </div>
+                      <Date date={getDate(cfg, page)!} locale={cfg.locale} showEmoji={false} />
                     )}
+                    <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal recent-title">
+                      {title}
+                    </a>
                   </div>
                   {opts.showTags && (
                     <ul class="tags">

@@ -6,8 +6,6 @@
 // 1. Add Global Background Texture (Feature D)
 body {
   background-color: #F9F7F2;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  background-attachment: fixed;
   min-height: 100vh;
   position: relative;
 }
@@ -19,14 +17,16 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: inherit;
-  opacity: 0.05; // Make the noise very subtle
+  // monochromatic fine-grain noise
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04; 
   pointer-events: none;
   z-index: -1;
+  background-repeat: repeat;
 }
 
-.dark body {
-  background-color: #1a1915; // Darker warm beige for dark mode
+[saved-theme="dark"] body {
+  background-color: var(--light); 
 }
 
 // 2. Main Content Container (Feature C)
@@ -40,9 +40,16 @@ body::before {
   z-index: 1;
 }
 
-.dark .center {
-  background-color: var(--light);
+[saved-theme="dark"] .center {
+  background-color: var(--lightgray);
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+// Hide empty page-header on index page
+body[data-slug="index"] .page-header {
+  margin-top: 0;
+  height: 0;
+  display: none;
 }
 
 html {
@@ -148,7 +155,7 @@ footer {
 	margin-top: 2rem;
 }
 
-.dark footer {
+[saved-theme="dark"] footer {
 	background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
 }
 
@@ -742,7 +749,7 @@ pre:has(>code.mermaid) .clipboard-button {
 
 @media (min-width: variables.$desktopBreakpoint) {
     .page-header {
-        margin: 7rem auto 0 !important;
+        margin: 0rem auto 0 !important;
     }
     .page > #quartz-body .sidebar {
         margin-top: 7rem !important;
@@ -971,17 +978,17 @@ pre:has(>code.mermaid) .clipboard-button {
 }
 
 // 10. Dark Mode Enhancements
-.dark .card-container {
+[saved-theme="dark"] .card-container {
   background: rgba(30, 30, 30, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.dark .search input {
+[saved-theme="dark"] .search input {
   background: rgba(40, 40, 40, 0.8);
   color: var(--dark);
 }
 
-.dark .explorer {
+[saved-theme="dark"] .explorer {
   background: rgba(40, 40, 40, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -1002,7 +1009,7 @@ pre:has(>code.mermaid) .clipboard-button {
   }
 }
 
-.dark {
+[saved-theme="dark"] {
   .sidebar.left {
     border-inline-end: 1px dashed rgba(255, 255, 255, 0.1);
   }
@@ -1021,4 +1028,48 @@ pre:has(>code.mermaid) .clipboard-button {
     height: 100%;
     display: block;
   }
+}
+
+/* Recent Notes Styling Fix */
+.recent-notes .recent-ul li .section .desc {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem !important;
+  width: 100%;
+  direction: rtl;
+}
+
+.recent-notes .recent-ul li .section .desc time {
+  margin: 0 !important;
+  margin-left: 10px !important;
+  color: var(--gray) !important;
+  font-size: 0.85rem !important;
+  white-space: nowrap !important;
+  opacity: 0.8 !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+}
+
+.recent-notes .recent-ul li .section .desc .recent-title {
+  margin: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: var(--secondary) !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.recent-notes .recent-ul li .section .desc .recent-title:hover {
+  color: var(--tertiary) !important;
+  text-decoration: underline !important;
 }
