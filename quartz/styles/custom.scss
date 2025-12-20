@@ -29,6 +29,23 @@ body::before {
   background-color: var(--light); 
 }
 
+// Global Box Sizing & Overflow Fixes
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+    font-family: Vazirmatn, sans-serif !important;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 // 2. Main Content Container (Feature C)
 .center {
   background-color: #FFFFFF;
@@ -37,6 +54,16 @@ body::before {
   padding: 32px !important;
   margin-top: 2rem !important;
   z-index: 1;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .center {
+    padding: 20px !important;
+    border-radius: 16px;
+    margin-top: 1rem !important;
+  }
 }
 
 [saved-theme="dark"] .center {
@@ -49,10 +76,6 @@ body[data-slug="index"] .page-header {
   margin-top: 0;
   height: 0;
   display: none;
-}
-
-html {
-    font-family: Vazirmatn, sans-serif !important;
 }
 
 // Enhanced Typography
