@@ -1,0 +1,11 @@
+views:
+  - type: cards
+    name: Table
+    filters:
+      and:
+        - "!image.isEmpty()"
+    order:
+      - title
+    image: note.image
+    cardSize: 160
+    imageAspectRatio: 0.45

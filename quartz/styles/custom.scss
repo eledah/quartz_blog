@@ -181,11 +181,7 @@ footer {
 	// Match footer background with body gradient
 	// background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
 	padding: 2rem 0;
-	margin-top: 2rem;
-}
-
-[saved-theme="dark"] footer {
-	background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+	// margin-top: 2rem;
 }
 
 footer ul {
