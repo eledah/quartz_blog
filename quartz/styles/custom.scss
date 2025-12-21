@@ -1,6 +1,13 @@
 @use "./base.scss";
 @use "./variables.scss";
 
+@font-face {
+  font-family: 'Ray-ExtraBold';
+  src: url('/static/fonts/Ray-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 // put your custom CSS here!
 
 // 1. Add Global Background Texture (Feature D)
