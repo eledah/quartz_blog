@@ -69,3 +69,7 @@ Since neither hurts the other,
 their Virtue joins and flows together.
 
 [[dao-de-jing]]
+
+| [[chapter-59\|فصل ۵۹]] | [[chapter-61\|فصل ۶۱]] |
+| --------------------- | --------------------- |
+

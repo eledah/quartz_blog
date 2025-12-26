@@ -77,3 +77,7 @@ He rejects that,
 and takes this.
 
 [[dao-de-jing]]
+
+| [[chapter-71\|فصل ۷۱]] | [[chapter-73\|فصل ۷۳]] |
+| --------------------- | --------------------- |
+

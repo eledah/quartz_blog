@@ -85,3 +85,7 @@ The net of heaven is vast.
 The mesh is wide, but nothing slips through.
 
 [[dao-de-jing]]
+
+| [[chapter-72\|فصل ۷۲]] | [[chapter-74\|فصل ۷۴]] |
+| --------------------- | --------------------- |
+

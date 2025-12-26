@@ -75,3 +75,7 @@ Without desire, there is stillness,
 and the world settles down by itself.
 
 [[dao-de-jing]]
+
+| [[chapter-36\|فصل ۳۶]] | [[chapter-38\|فصل ۳۸]] |
+| --------------------- | --------------------- |
+

@@ -97,3 +97,7 @@ Love the world as your self;
 then you can care for all things.
 
 [[dao-de-jing]]
+
+| [[chapter-12\|فصل ۱۲]] | [[chapter-14\|فصل ۱۴]] |
+| --------------------- | --------------------- |
+

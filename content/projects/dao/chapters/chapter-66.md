@@ -91,3 +91,7 @@ Because she does not compete,
 no one can compete with her.
 
 [[dao-de-jing]]
+
+| [[chapter-65\|فصل ۶۵]] | [[chapter-67\|فصل ۶۷]] |
+| --------------------- | --------------------- |
+

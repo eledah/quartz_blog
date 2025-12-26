@@ -101,3 +101,7 @@ if you have sinned, you are forgiven"?
 Therefore it is the treasure of the world.
 
 [[dao-de-jing]]
+
+| [[chapter-61\|فصل ۶۱]] | [[chapter-63\|فصل ۶۳]] |
+| --------------------- | --------------------- |
+

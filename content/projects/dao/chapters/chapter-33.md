@@ -69,3 +69,7 @@ To die but not to perish
 is to be eternally present.
 
 [[dao-de-jing]]
+
+| [[chapter-32\|فصل ۳۲]] | [[chapter-34\|فصل ۳۴]] |
+| --------------------- | --------------------- |
+

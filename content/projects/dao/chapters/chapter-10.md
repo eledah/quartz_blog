@@ -97,3 +97,7 @@ Leading, yet not dominating.
 This is the Primal Virtue.
 
 [[dao-de-jing]]
+
+| [[chapter-09\|فصل ۹]] | [[chapter-11\|فصل ۱۱]] |
+| --------------------- | --------------------- |
+

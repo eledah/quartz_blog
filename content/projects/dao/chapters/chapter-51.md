@@ -117,3 +117,7 @@ to lead and not to rule.
 This is called the Primal Virtue.
 
 [[dao-de-jing]]
+
+| [[chapter-50\|فصل ۵۰]] | [[chapter-52\|فصل ۵۲]] |
+| --------------------- | --------------------- |
+

@@ -75,3 +75,7 @@ Diminish the self;
 curb the desires.
 
 [[dao-de-jing]]
+
+| [[chapter-18\|فصل ۱۸]] | [[chapter-20\|فصل ۲۰]] |
+| --------------------- | --------------------- |
+

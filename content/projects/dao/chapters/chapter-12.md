@@ -67,3 +67,7 @@ They let go of that,
 and choose this.
 
 [[dao-de-jing]]
+
+| [[chapter-11\|فصل ۱۱]] | [[chapter-13\|فصل ۱۳]] |
+| --------------------- | --------------------- |
+

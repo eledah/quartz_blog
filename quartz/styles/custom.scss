@@ -1136,3 +1136,81 @@ pre:has(>code.mermaid) .clipboard-button {
   color: var(--tertiary) !important;
   text-decoration: underline !important;
 }
+
+.dao table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.dao table td {
+  padding: 1rem;
+  text-align: center;
+  border: none;
+  vertical-align: middle;
+}
+
+.dao table tr:nth-child(2) {
+  display: none;
+}
+
+.dao table a {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.dao table a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.1);
+}
+
+.dao thead,
+.dao th {
+  border-bottom: none !important;
+}
+
+.dao table a::after {
+  content: none;
+}
+
+[saved-theme="dark"] .dao table a {
+  background: linear-gradient(135deg, var(--tertiary), var(--secondary));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+[saved-theme="dark"] .dao table a:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dao {
+  --light: #F5F3EE !important;
+  --lightgray: #E8E5DC !important;
+  --gray: #9A958B !important;
+  --darkgray: #4A4640 !important;
+  --dark: #2C2A27 !important;
+  --secondary: #6B8E7E !important;
+  --tertiary: #4A6B5C !important;
+  --highlight: rgba(107, 142, 126, 0.15) !important;
+  --textHighlight: rgba(107, 142, 126, 0.15) !important;
+}
+
+[saved-theme="dark"] .dao {
+  --light: #1A1D23 !important;
+  --lightgray: #252A33 !important;
+  --gray: #8B9099 !important;
+  --darkgray: #D4D8DD !important;
+  --dark: #E8EBF0 !important;
+  --secondary: #5C7A9E !important;
+  --tertiary: #7B9BC0 !important;
+  --highlight: rgba(92, 122, 158, 0.15) !important;
+  --textHighlight: rgba(92, 122, 158, 0.15) !important;
+}

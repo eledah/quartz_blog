@@ -57,3 +57,7 @@ because they are sick of the sickness.
 Therefore they are not sick.
 
 [[dao-de-jing]]
+
+| [[chapter-70\|فصل ۷۰]] | [[chapter-72\|فصل ۷۲]] |
+| --------------------- | --------------------- |
+

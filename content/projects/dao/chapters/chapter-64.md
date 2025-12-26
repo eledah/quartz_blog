@@ -133,3 +133,7 @@ They assist the ten thousand things to find their own nature,
 but dare not interfere.
 
 [[dao-de-jing]]
+
+| [[chapter-63\|فصل ۶۳]] | [[chapter-65\|فصل ۶۵]] |
+| --------------------- | --------------------- |
+

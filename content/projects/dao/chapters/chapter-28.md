@@ -115,3 +115,7 @@ he becomes the chief of the ministers.
 So the great carver does not hack.
 
 [[dao-de-jing]]
+
+| [[chapter-27\|فصل ۲۷]] | [[chapter-29\|فصل ۲۹]] |
+| --------------------- | --------------------- |
+

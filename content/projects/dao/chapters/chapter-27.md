@@ -119,3 +119,7 @@ confusion will reign, however smart one is.
 This is the great secret.
 
 [[dao-de-jing]]
+
+| [[chapter-26\|فصل ۲۶]] | [[chapter-28\|فصل ۲۸]] |
+| --------------------- | --------------------- |
+

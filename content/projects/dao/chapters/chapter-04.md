@@ -76,3 +76,7 @@ I don't know whose child it is.
 It looks older than God.
 
 [[dao-de-jing]]
+
+| [[chapter-03\|فصل ۳]] | [[chapter-05\|فصل ۵]] |
+| --------------------- | --------------------- |
+

@@ -119,3 +119,7 @@ That is not the Way.
 Whatever is not the Way ends early.
 
 [[dao-de-jing]]
+
+| [[chapter-54\|فصل ۵۴]] | [[chapter-56\|فصل ۵۶]] |
+| --------------------- | --------------------- |
+

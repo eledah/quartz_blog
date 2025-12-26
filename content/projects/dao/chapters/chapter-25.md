@@ -127,3 +127,7 @@ Heaven follows the Way.
 The Way follows what is.
 
 [[dao-de-jing]]
+
+| [[chapter-24\|فصل ۲۴]] | [[chapter-26\|فصل ۲۶]] |
+| --------------------- | --------------------- |
+

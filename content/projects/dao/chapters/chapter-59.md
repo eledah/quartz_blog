@@ -89,3 +89,7 @@ This is called having deep roots and a firm base,
 the way of long life and eternal vision.
 
 [[dao-de-jing]]
+
+| [[chapter-58\|فصل ۵۸]] | [[chapter-60\|فصل ۶۰]] |
+| --------------------- | --------------------- |
+

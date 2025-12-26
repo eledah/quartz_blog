@@ -79,3 +79,7 @@ People look at her and listen to her;
 and she treats them all as her children.
 
 [[dao-de-jing]]
+
+| [[chapter-48\|فصل ۴۸]] | [[chapter-50\|فصل ۵۰]] |
+| --------------------- | --------------------- |
+

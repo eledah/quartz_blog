@@ -95,3 +95,7 @@ Since both get what they want,
 it is fitting for the great one to be low.
 
 [[dao-de-jing]]
+
+| [[chapter-60\|فصل ۶۰]] | [[chapter-62\|فصل ۶۲]] |
+| --------------------- | --------------------- |
+

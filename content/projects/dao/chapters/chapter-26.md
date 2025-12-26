@@ -69,3 +69,7 @@ If you are light, you lose your root.
 If you are restless, you lose your mastery.
 
 [[dao-de-jing]]
+
+| [[chapter-25\|فصل ۲۵]] | [[chapter-27\|فصل ۲۷]] |
+| --------------------- | --------------------- |
+

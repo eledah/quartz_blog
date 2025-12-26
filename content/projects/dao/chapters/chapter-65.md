@@ -95,3 +95,7 @@ It leads all things back
 towards the Great Harmony.
 
 [[dao-de-jing]]
+
+| [[chapter-64\|فصل ۶۴]] | [[chapter-66\|فصل ۶۶]] |
+| --------------------- | --------------------- |
+

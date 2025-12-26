@@ -145,3 +145,7 @@ dwells in the fruit, not in the flower.
 He lets go of that, and takes this.
 
 [[dao-de-jing]]
+
+| [[chapter-37\|فصل ۳۷]] | [[chapter-39\|فصل ۳۹]] |
+| --------------------- | --------------------- |
+

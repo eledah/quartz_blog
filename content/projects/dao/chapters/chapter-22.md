@@ -119,3 +119,7 @@ Be really whole,
 and all things will come to you.
 
 [[dao-de-jing]]
+
+| [[chapter-21\|فصل ۲۱]] | [[chapter-23\|فصل ۲۳]] |
+| --------------------- | --------------------- |
+

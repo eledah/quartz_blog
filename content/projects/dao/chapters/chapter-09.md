@@ -60,3 +60,7 @@ Retire when the work is done.
 This is the way of heaven.
 
 [[dao-de-jing]]
+
+| [[chapter-08\|فصل ۸]] | [[chapter-10\|فصل ۱۰]] |
+| --------------------- | --------------------- |
+

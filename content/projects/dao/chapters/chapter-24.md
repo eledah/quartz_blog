@@ -73,3 +73,7 @@ Even animals dislike them.
 So the follower of the Way avoids them.
 
 [[dao-de-jing]]
+
+| [[chapter-23\|فصل ۲۳]] | [[chapter-25\|فصل ۲۵]] |
+| --------------------- | --------------------- |
+

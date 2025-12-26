@@ -59,3 +59,7 @@ the value of action that is not action,
 few indeed can understand.
 
 [[dao-de-jing]]
+
+| [[chapter-42\|فصل ۴۲]] | [[chapter-44\|فصل ۴۴]] |
+| --------------------- | --------------------- |
+

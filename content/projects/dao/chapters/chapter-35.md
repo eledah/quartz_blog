@@ -79,3 +79,7 @@ Listen to it, there is nothing to hear.
 Use it, it is inexhaustible.
 
 [[dao-de-jing]]
+
+| [[chapter-34\|فصل ۳۴]] | [[chapter-36\|فصل ۳۶]] |
+| --------------------- | --------------------- |
+

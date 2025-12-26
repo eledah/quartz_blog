@@ -67,3 +67,7 @@ This is called mastery of men.
 This is called matching the sublimity of heaven.
 
 [[dao-de-jing]]
+
+| [[chapter-67\|فصل ۶۷]] | [[chapter-69\|فصل ۶۹]] |
+| --------------------- | --------------------- |
+

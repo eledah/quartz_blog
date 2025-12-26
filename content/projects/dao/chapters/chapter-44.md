@@ -69,3 +69,7 @@ He who knows when to stop does not find himself in trouble.
 He will stay forever safe.
 
 [[dao-de-jing]]
+
+| [[chapter-43\|فصل ۴۳]] | [[chapter-45\|فصل ۴۵]] |
+| --------------------- | --------------------- |
+

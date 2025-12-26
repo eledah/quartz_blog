@@ -93,3 +93,7 @@ Because it never claims greatness,
 it achieves greatness.
 
 [[dao-de-jing]]
+
+| [[chapter-33\|فصل ۳۳]] | [[chapter-35\|فصل ۳۵]] |
+| --------------------- | --------------------- |
+

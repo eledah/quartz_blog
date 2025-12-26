@@ -105,3 +105,7 @@ straight but not rigid,
 bright but not glaring.
 
 [[dao-de-jing]]
+
+| [[chapter-57\|فصل ۵۷]] | [[chapter-59\|فصل ۵۹]] |
+| --------------------- | --------------------- |
+

@@ -115,3 +115,7 @@ you can deal with whatever life brings you,
 and when death comes, you are ready.
 
 [[dao-de-jing]]
+
+| [[chapter-15\|فصل ۱۵]] | [[chapter-17\|فصل ۱۷]] |
+| --------------------- | --------------------- |
+

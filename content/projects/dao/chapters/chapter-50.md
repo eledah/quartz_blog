@@ -95,3 +95,7 @@ Why is this so?
 Because he has no place for death to enter.
 
 [[dao-de-jing]]
+
+| [[chapter-49\|فصل ۴۹]] | [[chapter-51\|فصل ۵۱]] |
+| --------------------- | --------------------- |
+

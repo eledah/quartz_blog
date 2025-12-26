@@ -71,3 +71,7 @@ If you try to cut wood like a master carpenter,
 you will likely cut your own hand.
 
 [[dao-de-jing]]
+
+| [[chapter-73\|فصل ۷۳]] | [[chapter-75\|فصل ۷۵]] |
+| --------------------- | --------------------- |
+

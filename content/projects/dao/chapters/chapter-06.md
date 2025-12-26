@@ -55,3 +55,7 @@ Dimly visible, it seems as if it were there,
 yet use will never drain it.
 
 [[dao-de-jing]]
+
+| [[chapter-05\|فصل ۵]] | [[chapter-07\|فصل ۷]] |
+| --------------------- | --------------------- |
+

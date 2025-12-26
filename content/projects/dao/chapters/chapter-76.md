@@ -69,3 +69,7 @@ The hard and strong will fall.
 The soft and weak will overcome.
 
 [[dao-de-jing]]
+
+| [[chapter-75\|فصل ۷۵]] | [[chapter-77\|فصل ۷۷]] |
+| --------------------- | --------------------- |
+

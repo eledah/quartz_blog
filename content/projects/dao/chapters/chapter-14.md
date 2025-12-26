@@ -125,3 +125,7 @@ Knowing where it all began:
 That is the thread of the Way.
 
 [[dao-de-jing]]
+
+| [[chapter-13\|فصل ۱۳]] | [[chapter-15\|فصل ۱۵]] |
+| --------------------- | --------------------- |
+

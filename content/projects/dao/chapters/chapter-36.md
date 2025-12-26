@@ -87,3 +87,7 @@ Fish should not be taken from the deep waters.
 The state's sharp weapons should not be shown to the people.
 
 [[dao-de-jing]]
+
+| [[chapter-35\|فصل ۳۵]] | [[chapter-37\|فصل ۳۷]] |
+| --------------------- | --------------------- |
+

@@ -149,3 +149,7 @@ Do not tinkle like jade
 but rumble like rocks.
 
 [[dao-de-jing]]
+
+| [[chapter-38\|فصل ۳۸]] | [[chapter-40\|فصل ۴۰]] |
+| --------------------- | --------------------- |
+

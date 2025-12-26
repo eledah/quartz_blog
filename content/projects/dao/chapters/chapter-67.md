@@ -123,3 +123,7 @@ When Heaven wants to save someone,
 it arms him with compassion.
 
 [[dao-de-jing]]
+
+| [[chapter-66\|فصل ۶۶]] | [[chapter-68\|فصل ۶۸]] |
+| --------------------- | --------------------- |
+

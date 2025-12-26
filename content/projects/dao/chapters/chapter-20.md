@@ -149,3 +149,7 @@ I am different from all the others:
 I drink from the Great Mother's breasts.
 
 [[dao-de-jing]]
+
+| [[chapter-19\|فصل ۱۹]] | [[chapter-21\|فصل ۲۱]] |
+| --------------------- | --------------------- |
+

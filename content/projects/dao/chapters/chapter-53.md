@@ -87,3 +87,7 @@ This is called Robber's Swagger.
 It is certainly not the Way.
 
 [[dao-de-jing]]
+
+| [[chapter-52\|فصل ۵۲]] | [[chapter-54\|فصل ۵۴]] |
+| --------------------- | --------------------- |
+

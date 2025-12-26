@@ -111,3 +111,7 @@ Observers of the Way do not seek fulfillment.
 Not seeking fulfillment, they are not swayed by desire for change.
 
 [[dao-de-jing]]
+
+| [[chapter-14\|فصل ۱۴]] | [[chapter-16\|فصل ۱۶]] |
+| --------------------- | --------------------- |
+

@@ -75,3 +75,7 @@ Stillness overcomes heat.
 The calm and quiet set the order of the universe.
 
 [[dao-de-jing]]
+
+| [[chapter-44\|فصل ۴۴]] | [[chapter-46\|فصل ۴۶]] |
+| --------------------- | --------------------- |
+

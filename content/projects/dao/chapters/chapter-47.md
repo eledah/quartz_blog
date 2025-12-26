@@ -69,3 +69,7 @@ sees without looking,
 works without doing.
 
 [[dao-de-jing]]
+
+| [[chapter-46\|فصل ۴۶]] | [[chapter-48\|فصل ۴۸]] |
+| --------------------- | --------------------- |
+

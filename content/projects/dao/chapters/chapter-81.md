@@ -81,3 +81,7 @@ The Way of Heaven benefits and does not harm.
 The Way of the Sage is to act but not to compete.
 
 [[dao-de-jing]]
+
+| [[chapter-80\|فصل ۸۰]] | این فصل آخر بود |
+| ---------------------- | --------------- |
+

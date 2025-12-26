@@ -93,3 +93,7 @@ is fit to be king of the universe."
 Straight words seem crooked.
 
 [[dao-de-jing]]
+
+| [[chapter-77\|فصل ۷۷]] | [[chapter-79\|فصل ۷۹]] |
+| --------------------- | --------------------- |
+

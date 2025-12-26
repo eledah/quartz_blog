@@ -90,3 +90,7 @@ Rule by not ruling,
 and nothing will be out of order.
 
 [[dao-de-jing]]
+
+| [[chapter-02\|فصل ۲]] | [[chapter-04\|فصل ۴]] |
+| --------------------- | --------------------- |
+

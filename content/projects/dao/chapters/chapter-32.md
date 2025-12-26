@@ -89,3 +89,7 @@ what the great rivers and oceans are
 to the streams and valleys.
 
 [[dao-de-jing]]
+
+| [[chapter-31\|فصل ۳۱]] | [[chapter-33\|فصل ۳۳]] |
+| --------------------- | --------------------- |
+

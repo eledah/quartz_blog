@@ -79,3 +79,7 @@ wears coarse cloth on the outside,
 but carries jade within his bosom.
 
 [[dao-de-jing]]
+
+| [[chapter-69\|فصل ۶۹]] | [[chapter-71\|فصل ۷۱]] |
+| --------------------- | --------------------- |
+

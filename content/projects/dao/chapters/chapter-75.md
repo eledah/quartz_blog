@@ -71,3 +71,7 @@ One who does not strive for life
 is worthier than one who clings to it.
 
 [[dao-de-jing]]
+
+| [[chapter-74\|فصل ۷۴]] | [[chapter-76\|فصل ۷۶]] |
+| --------------------- | --------------------- |
+

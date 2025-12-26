@@ -105,3 +105,7 @@ will grow old and die
 without ever having visited one another.
 
 [[dao-de-jing]]
+
+| [[chapter-79\|فصل ۷۹]] | [[chapter-81\|فصل ۸۱]] |
+| --------------------- | --------------------- |
+

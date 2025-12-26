@@ -121,3 +121,7 @@ How do I know the ways of the world?
 By this.
 
 [[dao-de-jing]]
+
+| [[chapter-53\|فصل ۵۳]] | [[chapter-55\|فصل ۵۵]] |
+| --------------------- | --------------------- |
+

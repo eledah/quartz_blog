@@ -101,3 +101,7 @@ you can't debase it.
 Therefore, it is the most valuable thing under heaven.
 
 [[dao-de-jing]]
+
+| [[chapter-55\|فصل ۵۵]] | [[chapter-57\|فصل ۵۷]] |
+| --------------------- | --------------------- |
+

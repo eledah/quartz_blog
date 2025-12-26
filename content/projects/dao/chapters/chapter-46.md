@@ -69,3 +69,7 @@ the contentment that comes from knowing you have enough
 is the only contentment that lasts.
 
 [[dao-de-jing]]
+
+| [[chapter-45\|فصل ۴۵]] | [[chapter-47\|فصل ۴۷]] |
+| --------------------- | --------------------- |
+

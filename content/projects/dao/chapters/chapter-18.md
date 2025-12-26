@@ -59,3 +59,7 @@ When a nation is in chaos,
 we get loyal ministers.
 
 [[dao-de-jing]]
+
+| [[chapter-17\|فصل ۱۷]] | [[chapter-19\|فصل ۱۹]] |
+| --------------------- | --------------------- |
+

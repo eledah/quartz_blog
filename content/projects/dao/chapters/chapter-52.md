@@ -113,3 +113,7 @@ Do not bring upon yourself the body's doom.
 This is called practicing eternity.
 
 [[dao-de-jing]]
+
+| [[chapter-51\|فصل ۵۱]] | [[chapter-53\|فصل ۵۳]] |
+| --------------------- | --------------------- |
+

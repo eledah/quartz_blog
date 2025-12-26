@@ -77,3 +77,7 @@ When all is finished,
 the people say, "We did it ourselves."
 
 [[dao-de-jing]]
+
+| [[chapter-16\|فصل ۱۶]] | [[chapter-18\|فصل ۱۸]] |
+| --------------------- | --------------------- |
+

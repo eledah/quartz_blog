@@ -89,3 +89,7 @@ reject extravagance,
 reject excess.
 
 [[dao-de-jing]]
+
+| [[chapter-28\|فصل ۲۸]] | [[chapter-30\|فصل ۳۰]] |
+| --------------------- | --------------------- |
+

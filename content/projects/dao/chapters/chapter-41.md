@@ -163,3 +163,7 @@ The Tao is hidden and nameless.
 Yet it is the Tao that nourishes and brings everything to fulfillment.
 
 [[dao-de-jing]]
+
+| [[chapter-40\|فصل ۴۰]] | [[chapter-42\|فصل ۴۲]] |
+| --------------------- | --------------------- |
+

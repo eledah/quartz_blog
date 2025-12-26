@@ -111,3 +111,7 @@ Therefore the Sage considers things difficult,
 and so never finds them difficult.
 
 [[dao-de-jing]]
+
+| [[chapter-62\|فصل ۶۲]] | [[chapter-64\|فصل ۶۴]] |
+| --------------------- | --------------------- |
+

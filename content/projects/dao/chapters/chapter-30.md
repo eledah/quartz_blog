@@ -103,3 +103,7 @@ This is against the Way.
 What is against the Way ends soon.
 
 [[dao-de-jing]]
+
+| [[chapter-29\|فصل ۲۹]] | [[chapter-31\|فصل ۳۱]] |
+| --------------------- | --------------------- |
+

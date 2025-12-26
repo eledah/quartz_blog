@@ -89,3 +89,7 @@ achieve without claiming,
 and have no wish to show off their worth.
 
 [[dao-de-jing]]
+
+| [[chapter-76\|فصل ۷۶]] | [[chapter-78\|فصل ۷۸]] |
+| --------------------- | --------------------- |
+

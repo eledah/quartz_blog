@@ -67,3 +67,7 @@ If you try to grasp it,
 you can never win it.
 
 [[dao-de-jing]]
+
+| [[chapter-47\|فصل ۴۷]] | [[chapter-49\|فصل ۴۹]] |
+| --------------------- | --------------------- |
+

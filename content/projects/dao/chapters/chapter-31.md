@@ -125,3 +125,7 @@ We should mourn them with sorrow and tears.
 A victory in war should be treated like a funeral.
 
 [[dao-de-jing]]
+
+| [[chapter-30\|فصل ۳۰]] | [[chapter-32\|فصل ۳۲]] |
+| --------------------- | --------------------- |
+

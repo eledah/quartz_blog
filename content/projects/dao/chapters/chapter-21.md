@@ -91,3 +91,7 @@ How do I know this is the beginning?
 By this.
 
 [[dao-de-jing]]
+
+| [[chapter-20\|فصل ۲۰]] | [[chapter-22\|فصل ۲۲]] |
+| --------------------- | --------------------- |
+

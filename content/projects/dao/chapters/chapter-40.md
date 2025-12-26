@@ -43,3 +43,7 @@ The ten thousand things are born of being.
 Being is born of not being.
 
 [[dao-de-jing]]
+
+| [[chapter-39\|فصل ۳۹]] | [[chapter-41\|فصل ۴۱]] |
+| --------------------- | --------------------- |
+

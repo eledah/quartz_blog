@@ -97,3 +97,7 @@ What others teach, I teach too:
 This is the father of my teaching.
 
 [[dao-de-jing]]
+
+| [[chapter-41\|فصل ۴۱]] | [[chapter-43\|فصل ۴۳]] |
+| --------------------- | --------------------- |
+

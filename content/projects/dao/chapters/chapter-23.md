@@ -107,3 +107,7 @@ If you don't trust the people,
 you make them untrustworthy.
 
 [[dao-de-jing]]
+
+| [[chapter-22\|فصل ۲۲]] | [[chapter-24\|فصل ۲۴]] |
+| --------------------- | --------------------- |
+

@@ -67,3 +67,7 @@ The Way of Heaven has no favorites.
 It is always with the good man.
 
 [[dao-de-jing]]
+
+| [[chapter-78\|فصل ۷۸]] | [[chapter-80\|فصل ۸۰]] |
+| --------------------- | --------------------- |
+

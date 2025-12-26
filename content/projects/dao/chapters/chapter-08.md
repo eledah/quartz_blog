@@ -97,3 +97,7 @@ In action, watch the timing.
 No fight: no blame.
 
 [[dao-de-jing]]
+
+| [[chapter-07\|فصل ۷]] | [[chapter-09\|فصل ۹]] |
+| --------------------- | --------------------- |
+

@@ -121,3 +121,7 @@ I do not want,
 and people go back to the simple life.
 
 [[dao-de-jing]]
+
+| [[chapter-56\|فصل ۵۶]] | [[chapter-58\|فصل ۵۸]] |
+| --------------------- | --------------------- |
+

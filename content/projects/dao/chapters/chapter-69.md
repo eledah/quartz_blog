@@ -97,3 +97,7 @@ Therefore, when armies of equal strength meet,
 the one who grieves, wins.
 
 [[dao-de-jing]]
+
+| [[chapter-68\|فصل ۶۸]] | [[chapter-70\|فصل ۷۰]] |
+| --------------------- | --------------------- |
+
