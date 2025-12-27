@@ -133,7 +133,7 @@
   }
 }
 
-.active-popover,
-.popover:hover {
+.active-popover > .popover-inner,
+.popover:hover > .popover-inner {
   animation:slide-in-blurred-bottom .4s cubic-bezier(.23,1.000,.32,1.000) both;
 }
