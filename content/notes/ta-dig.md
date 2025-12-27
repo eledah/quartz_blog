@@ -1,12 +1,12 @@
 ---
 title: ته‌دیگ
 draft: false
-tags: 
+tags:
 date: 2025-08-15
-featured: true
+featured: false
 description: ارزشمندترین دستاوردها، اغلب نتیجهٔ مستقیم اهداف ما نیستند.
 image: /attachment/ta-dig.jpg
-order: 3
+order:
 ---
 ارزشمندترین دستاوردها، اغلب نتیجهٔ مستقیم اهداف ما نیستند.
 
