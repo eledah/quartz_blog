@@ -124,20 +124,15 @@
 
   visibility: hidden;
   opacity: 0;
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 
   @media all and ($mobile) {
     display: none !important;
   }
 }
 
-.active-popover {
+.active-popover,
+.popover:hover {
   visibility: visible;
   opacity: 1;
-
-  & > .popover-inner {
-    animation: slide-in-blurred-bottom 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
-  }
 }
