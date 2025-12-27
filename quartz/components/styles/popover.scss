@@ -133,7 +133,11 @@
   }
 }
 
-.active-popover > .popover-inner,
-.popover:hover > .popover-inner {
-  animation:slide-in-blurred-bottom .4s cubic-bezier(.23,1.000,.32,1.000) both;
+.active-popover {
+  visibility: visible;
+  opacity: 1;
+
+  & > .popover-inner {
+    animation: slide-in-blurred-bottom 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
 }
