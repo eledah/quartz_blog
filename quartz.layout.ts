@@ -82,10 +82,6 @@ export const indexPageLayout: PageLayout = {
   left: [
     Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.Backlinks()),
-    Component.DesktopOnly(Component.RecentNotes({
-      limit: 3,
-      filter: recentNotesFilter
-    })),
     Component.MobileOnly(Component.PageTitle()),
     Component.MobileOnly(Component.Darkmode()),
   ],
@@ -93,6 +89,10 @@ export const indexPageLayout: PageLayout = {
     Component.DesktopOnly(Component.PageTitle()),
     Component.DesktopOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Search()),
+    Component.DesktopOnly(Component.RecentNotes({
+      limit: 3,
+      filter: recentNotesFilter
+    })),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.MobileOnly(Component.Backlinks()),
   ],

@@ -1214,3 +1214,9 @@ pre:has(>code.mermaid) .clipboard-button {
   --highlight: rgba(92, 122, 158, 0.15) !important;
   --textHighlight: rgba(92, 122, 158, 0.15) !important;
 }
+
+// Fix graph z-index
+.global-graph-outer.active {
+  position: fixed !important;
+  z-index: 999999 !important;
+}
