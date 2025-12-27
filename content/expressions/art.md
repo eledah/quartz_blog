@@ -2,10 +2,11 @@
 title: هنر
 description: هنر، جور دیگر دیدن است. باز کردن پنجره‌ای تازه به باغ زندگی است.
 image: /attachment/Storm_over_the_Black_Sea_by_Aivazovsky,_1893-2.jpg
-featured: false
+featured: true
 draft: false
 tags: []
 date: 2024-07-17 12:57
+order: 1
 ---
 <blockquote class="farsi-blockquote">تا به حال چند بار دریا را دیده‌اید؟ ده بار؟ صد بار؟ قطعاً اشتباه می‌کنید. مطمئنم که تا به حال یک بار هم دریا را ندیده‌اید. دیدن دریا یعنی درک کردن آب، گفتگوی با موج‌ها، لمس کردن نوازش‌های آن، خیره شدن به رقص آب و گوش کردن به نجواهای آن. هنرِ واقعی این‌گونه دیدن است…</blockquote>
 
