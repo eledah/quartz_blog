@@ -60,7 +60,6 @@ body {
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   padding: 32px !important;
   margin-top: 2rem !important;
-  z-index: 1;
   width: 100%;
   max-width: 100%;
 }
@@ -1213,10 +1212,4 @@ pre:has(>code.mermaid) .clipboard-button {
   --tertiary: #7B9BC0 !important;
   --highlight: rgba(92, 122, 158, 0.15) !important;
   --textHighlight: rgba(92, 122, 158, 0.15) !important;
-}
-
-// Fix graph z-index
-.global-graph-outer.active {
-  position: fixed !important;
-  z-index: 999999 !important;
 }
