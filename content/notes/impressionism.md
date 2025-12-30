@@ -4,9 +4,9 @@ draft: false
 tags:
 date: 2025-11-25
 image: /attachment/impressionism-card.jpg
-featured: true
+featured: false
 description: پدیدارشناسی، چشم معصوم و نقاشی
-order: 2
+order:
 ---
 من همیشه نقاشی‌های امپرسیونیسم را دوست داشته‌ام. بدون اینکه بدانم چرا. بارها به سایت [Artvee](https://artvee.com/movement/impressionism/) سر زده‌ام تا آثارشان را ببینم و مدام از نقاشی‌هایشان در پس‌زمینهٔ گوشی و کامپیوتر یا داخل همین سایت استفاده کرده‌ام تا همیشه جلوی چشمم باشد. 
 
