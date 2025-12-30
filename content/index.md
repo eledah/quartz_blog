@@ -30,7 +30,7 @@ tags:
 
 ## 📷 استعاره‌ها
 
-[[the-undersoul|زیرزمین روح]] | [[upward-spit|تف سربالا]] | [[overflow|سرریز]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]] | [[peach-and-onion|هلو و پیاز]]
+[[the-undersoul|زیرزمین روح]] | [[upward-spit|تف سربالا]] | [[overflow|سرریز]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]] | [[peach-and-onion|هلو و پیاز]] | [[the-second-red-light|چراغ قرمز دوم]]
 
 # 📝 تأملات و تخیلات
 
