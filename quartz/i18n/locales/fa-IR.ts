@@ -60,7 +60,7 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => {
         const localizedMinutes = new Intl.NumberFormat("fa-IR").format(minutes)
-        return `⏱️ زمان تقریبی مطالعه: ${localizedMinutes} دقیقه`
+        return `زمان تقریبی مطالعه: ${localizedMinutes} دقیقه`
       },
     },
   },

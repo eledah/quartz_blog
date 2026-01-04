@@ -769,6 +769,52 @@ pre:has(>code.mermaid) .clipboard-button {
     }
 }
 
+// Page Header styling
+.page-header {
+  padding-top: 0 !important;
+  padding-bottom: 0.5rem;
+}
+
+.breadcrumb-container {
+  margin-top: 0 !important;
+  font-family: var(--headerFont);
+  font-size: 0.95rem;
+  font-weight: 100;
+
+  a {
+    color: var(--gray);
+  }
+
+  p {
+    color: var(--gray);
+  }
+}
+
+.article-title {
+  font-size: 2.75rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.content-meta {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray);
+  font-size: 0.9rem;
+  color: var(--darkgray);
+
+  time::before,
+  span::before {
+    content: "";
+  }
+
+  &[show-comma="true"] > *:not(:last-child)::after {
+    content: " • ";
+    color: var(--gray);
+    margin: 0 0.5rem;
+  }
+}
+
 // top margin
 
 @media (min-width: variables.$desktopBreakpoint) {
