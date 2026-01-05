@@ -4,11 +4,11 @@
   & > h3 {
     font-size: 1rem;
     margin: 0;
+    font-weight: 100;
   }
 
   & > .graph-outer {
     border-radius: 5px;
-    border: 1px solid var(--gray);
     box-sizing: border-box;
     height: 250px;
     margin: 0.5em 0;
@@ -54,7 +54,6 @@
     }
 
     & > .global-graph-container {
-      border: 1px solid var(--lightgray);
       background-color: var(--light);
       border-radius: 5px;
       box-sizing: border-box;

@@ -9,7 +9,6 @@
   /* Container styling similar to backlinks */
   margin: 0.5em 0;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--gray);
   border-radius: 6px;
   background: transparent;
   box-sizing: border-box;
@@ -34,6 +33,7 @@ button.toc-header {
     font-size: 1rem;
     display: inline-block;
     margin: 0;
+    font-weight: 100;
   }
 
   & .fold {

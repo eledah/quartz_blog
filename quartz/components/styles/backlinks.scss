@@ -4,51 +4,62 @@
   flex-direction: column;
 
   & > h3 {
-    font-size: 1rem;
-    margin: 0 0 0.5rem 0;
+    margin: 0.5rem 0 0 0 !important;
+    font-size: 1rem !important;
+    font-weight: 100 !important;
   }
 
   & > ul.overflow {
     /* Container */
-    margin: 0.5em 0;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--gray);
-    border-radius: 6px;
-    background: transparent;
-    direction: rtl;
-    box-sizing: border-box;
-    width: 100%;
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
     /* Avoid internal scrollbars for small lists */
-    max-height: none;
-    overflow-y: visible;
+    max-height: none !important;
+    overflow-y: visible !important;
     /* Disable global overflow gradient */
-    position: relative;
+    position: relative !important;
     &::after {
       display: none !important;
     }
     /* Hide scrollbar in browsers that might still render it */
-    scrollbar-width: none;
+    scrollbar-width: none !important;
     &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
+      width: 0 !important;
+      height: 0 !important;
     }
 
     /* List */
-    list-style: none;
-    overscroll-behavior: contain;
+    list-style: none !important;
+    overscroll-behavior: contain !important;
+    margin-top: 0.5rem !important;
+    padding-left: 0 !important;
 
     & > li {
-      line-height: 1.35rem;
-      margin: 0.15rem 0;
+      line-height: 1.3rem !important;
 
       & > a {
-        display: block;
-        padding: 0.15rem 0.25rem;
-        background-color: transparent;
-        border-radius: 4px;
+        display: inline-block !important;
+        padding: 0 !important;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+        color: var(--secondary) !important;
+        text-decoration: none !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        line-height: 1.3rem !important;
 
         &:hover {
-          background-color: var(--light);
+          color: var(--tertiary) !important;
+          text-decoration: underline !important;
+          background-color: transparent !important;
         }
       }
     }
