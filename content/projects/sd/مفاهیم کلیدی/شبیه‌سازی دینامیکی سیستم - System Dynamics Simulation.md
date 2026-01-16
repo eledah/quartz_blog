@@ -44,7 +44,7 @@ date: 2024-10-09 12:59
 در صورت داشتن فرمول‌های مدل دینامیکی، شبیه‌سازی در محیط‌های مختلف ممکن می‌شود. مثلاً سایت زیر نمونهٔ شبیه‌سازی با کمک زبان `javascript` است[^3].
  
 
-<iframe width="100%" height="700px" src="https://raw.githack.com/eledah/quartz_blog/refs/heads/v4/content/attachment/predator-prey.html"></iframe>
+<iframe width="100%" height="800px" src="https://raw.githack.com/eledah/quartz_blog/refs/heads/v4/content/attachment/predator-prey.html"></iframe>
 
 ## ضعف مدل‌های دینامیکی در پیش‌بینی
 
