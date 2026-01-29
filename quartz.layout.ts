@@ -48,6 +48,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
+    Component.FeaturedImage(),
   ],
   left: [
     // Component.DesktopOnly(Component.Sidenotes()),

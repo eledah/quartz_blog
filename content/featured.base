@@ -8,6 +8,7 @@ views:
       - title
       - file.path
       - description
+      - order
     image: note.image
     imageAspectRatio: 0.7
     cardSize: 200

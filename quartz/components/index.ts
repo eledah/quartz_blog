@@ -23,6 +23,7 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Sidenotes from "./Sidenotes"
 import ConditionalRender from "./ConditionalRender"
+import FeaturedImage from "./FeaturedImage"
 
 export {
   ArticleTitle,
@@ -50,4 +51,5 @@ export {
   Comments,
   Sidenotes,
   ConditionalRender,
+  FeaturedImage,
 }

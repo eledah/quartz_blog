@@ -21,12 +21,14 @@ tags:
 - [[noise|نویز]]: نویز، اطلاعات ناخواسته‌ای است که خلاف میل ما به ما می‌رسد
 - [[art|هنر]]: هنر، جور دیگر دیدن است
 - [[to-grow|رشد]]: رشد، پذیرفتن مسئولیت و نشستن پشت فرمان زندگی است
+- [[religiosity|دین‌داری]]: دین‌داری، پذیرش نقصان پرتاب‌شدگی در دنیا، شناخت ایدئال و حرکت به سمت زنده کردن آن در خود است
+
 
 # ✍🏻 لقمه‌های فکری
 
 *جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
-[[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[against-gatekeepers|علیه کاهنان]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]] | [[children-of-paradox|زادگان تناقض]]
+[[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[against-gatekeepers|علیه کاهنان]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]] | [[children-of-paradox|زادگان تناقض]] | [[in-praise-of-whats-not|در ستایش نیستی]]
 
 ## 📷 استعاره‌ها
 
