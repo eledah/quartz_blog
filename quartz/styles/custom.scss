@@ -468,6 +468,36 @@ a:hover::after {
     width: 100%;
 }
 
+// Internal Links - Gradient Underline with Glow
+a.internal {
+    background-color: transparent !important;
+    padding: 0 !important;
+    color: var(--secondary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+a.internal::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary), var(--tertiary));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+a.internal:hover {
+    color: var(--tertiary);
+    text-shadow: 0 0 20px rgba(139, 126, 200, 0.3);
+}
+
+a.internal:hover::after {
+    width: 100%;
+}
+
 // Center tables
 
 .table-container > table {
