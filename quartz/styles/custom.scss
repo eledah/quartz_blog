@@ -484,14 +484,14 @@ a.internal::after {
     right: 0;
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--secondary), var(--tertiary));
+    background: linear-gradient(90deg, var(--tertiary), var(--tertiary));
     border-radius: 2px;
     transition: width 0.3s ease;
 }
 
 a.internal:hover {
     color: var(--tertiary);
-    text-shadow: 0 0 20px rgba(139, 126, 200, 0.3);
+    text-shadow: 0 0 20px rgba(94, 64, 157, 0.3);
 }
 
 a.internal:hover::after {
