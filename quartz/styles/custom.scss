@@ -799,31 +799,6 @@ pre:has(>code.mermaid) .clipboard-button {
     }
 }
 
-// Two Column Grid for Think-bites and Metaphors
-.two-column-grid {
-  margin: 1rem 0;
-
-  > p {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem 2rem;
-    margin: 0;
-
-    a {
-      display: block;
-      padding: 0.25rem 0;
-    }
-  }
-}
-
-// Home page specific styles - remove padding from UL elements
-body[data-slug="index"] ul,
-body.home ul {
-  padding-left: 0;
-  padding-right: 0;
-  list-style-position: inside;
-}
-
 // Page Header styling
 .page-header {
   padding-top: 0 !important;
