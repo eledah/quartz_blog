@@ -148,3 +148,7 @@ date: 2024-05-18
 
 <blockquote class="english-blockquote">If you want to know where your heart is, look to where your mind goes when it wanders.<footer class="english-footer">Walt Whitman</footer></blockquote>
 
+<blockquote class="english-blockquote">Though these young men unhappily fail to understand that the sacrifice of life is, in many cases, the easiest of all sacrifices, and that to sacrifice, for instance, five or six years of their seething youth to hard and tedious study, if only to multiply tenfold their power of serving the truth and the cause they have set before them as their goal, such a sacrifice is utterly beyond the strength of many of them.<footer class="english-footer">Fyodor Dostoyevsky, The Brothers Karamazov</footer></blockquote>
+
+<blockquote class="english-blockquote">革命是从你自己开始的。鸡蛋从外面打开是食物，从里面打开是新生</blockquote>
+
