@@ -28,11 +28,35 @@ tags:
 
 *جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
-[[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[against-gatekeepers|علیه کاهنان]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]] | [[children-of-paradox|زادگان تناقض]] | [[in-praise-of-whats-not|در ستایش نیستی]]
+<div class="two-column-grid">
+
+[[new-manager-paradox|مدیریت با ذهن کارمندی]]
+[[perspective-calibration|تنظیم پرسپکتیو]]
+[[against-omnitools|علیه ابزارهای همه‌کاره]]
+[[against-gatekeepers|علیه کاهنان]]
+[[war-talk|صحبت جنگ]]
+[[ladder-of-agency|نردبان ابتکار]]
+[[hyperformalism|ابرفرمالیسم]]
+[[impressionism|امپرسیونیسم]]
+[[moderation|اعتدال]]
+[[children-of-paradox|زادگان تناقض]]
+[[in-praise-of-whats-not|در ستایش آنچه نیست]]
+
+</div>
 
 ## 📷 استعاره‌ها
 
-[[the-undersoul|زیرزمین روح]] | [[upward-spit|تف سربالا]] | [[overflow|سرریز]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]] | [[peach-and-onion|هلو و پیاز]] | [[the-second-red-light|چراغ قرمز دوم]]
+<div class="two-column-grid">
+
+[[the-undersoul|زیرزمین روح]]
+[[upward-spit|تف سربالا]]
+[[overflow|سرریز]]
+[[ta-dig|ته‌دیگ]]
+[[sediment-stirring|نوشابه و خاکشیر]]
+[[peach-and-onion|هلو و پیاز]]
+[[the-second-red-light|چراغ قرمز دوم]]
+
+</div>
 
 # 📝 تأملات و تخیلات
 
