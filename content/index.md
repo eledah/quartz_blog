@@ -2,6 +2,8 @@
 title: کریستالین
 tags:
   - index
+cssclasses:
+  - home
 ---
 # 🌳 کاوش‌ها و آموخته‌ها
 

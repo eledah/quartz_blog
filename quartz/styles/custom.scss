@@ -816,6 +816,14 @@ pre:has(>code.mermaid) .clipboard-button {
   }
 }
 
+// Home page specific styles - remove padding from UL elements
+body[data-slug="index"] ul,
+body.home ul {
+  padding-left: 0;
+  padding-right: 0;
+  list-style-position: inside;
+}
+
 // Page Header styling
 .page-header {
   padding-top: 0 !important;
