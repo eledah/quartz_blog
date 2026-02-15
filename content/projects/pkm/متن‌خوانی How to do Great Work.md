@@ -1,13 +1,13 @@
 ---
 title: متن‌خوانی How to do Great Work
-description: "مرور یکی از بهترین متن‌ها برای انجام کارهای بزرگ"
-image: "/attachment/The_Doctor_Luke_Fildes_crop.jpg"
-featured: true
+description: مرور یکی از بهترین متن‌ها برای انجام کارهای بزرگ
+image: /attachment/The_Doctor_Luke_Fildes_crop.jpg
+featured: false
 draft: false
-tags: 
+tags:
 date: 2024-08-03 10:53
 cssclasses: []
-order: 4
+order:
 ---
 
 > [!NOTE] مقدمه

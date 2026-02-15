@@ -152,3 +152,5 @@ date: 2024-05-18
 
 <blockquote class="english-blockquote">革命是从你自己开始的。鸡蛋从外面打开是食物，从里面打开是新生</blockquote>
 
+
+<blockquote class="farsi-blockquote">زبان، ترجمان دل است</blockquote>
