@@ -212,9 +212,10 @@ order: 4
 
 ابژه‌سازی، اولین گام حل هر مسأله‌ای است. ذهن باید متوجه مشکل شود که برای آن کاری کند. متوجه که شد، مکث نیاز دارد که فکر کند و جرئت می‌خواهد که عمل کند. انسان ضعیف، ترجیح می‌دهد که مشکل را عضوی جداناپذیر از خودش بداند و مثل حاکمی زورگو به آن از وقت و انرژی خودش باج بدهد که در ازایش اجازهٔ نالیدن و غر زدن پیدا کند. در حالی که صاحب‌خانه کس دیگریست. اگر چشم باز شود و دست به کار بیفتد، خانه هم آباد خواهد شد.
 
-<div class='poem-verse-div'><div class='poem-right-verse-div'>درد داروی کهن را نو کند</div><div class='poem-left-verse-div'>درد هر شاخ ملولی خو کند</div><br><div class='poem-verse-div'><div class='poem-right-verse-div'>کیمیای نو کننده دردهاست</div><div class='poem-left-verse-div'>کو ملولی آن طرف که درد خاست</div><br><div class='poem-verse-div'><div class='poem-right-verse-div'>هین مزن تو از ملولی آه سرد</div><div class='poem-left-verse-div'>درد جو و درد جو و درد درد
+<div class='poem-verse-div'><div class='poem-right-verse-div'>درد داروی کهن را نو کند</div><div class='poem-left-verse-div'>درد هر شاخ ملولی خو کند</div></div><br><div class='poem-verse-div'><div class='poem-right-verse-div'>کیمیای نو کننده دردهاست</div><div class='poem-left-verse-div'>کو ملولی آن طرف که درد خاست</div></div><br><div class='poem-verse-div'><div class='poem-right-verse-div'>هین مزن تو از ملولی آه سرد</div><div class='poem-left-verse-div'>درد جو و درد جو و درد درد
 </div><br><div class='poem-footer'>مولوی</div></div>
 
+<br>
 
 
 ## ضمیمه: در راه دگرگون‌سازی خود
