@@ -3,7 +3,7 @@ title: رشد
 draft: false
 tags:
 date: 2025-06-26 11:54
-featured: true
+featured: false
 image: /attachment/the-ancient-days.jpg
 description: رشد یعنی مسئولیت‌پذیری؛ یعنی نشستن پشت فرمان زندگی
 order: 4

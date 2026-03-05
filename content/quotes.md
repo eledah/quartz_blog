@@ -154,3 +154,6 @@ date: 2024-05-18
 
 
 <blockquote class="farsi-blockquote">زبان، ترجمان دل است</blockquote>
+
+<blockquote class="farsi-blockquote">انسان در کارهای کوچک دارد امتحانات بزرگ پس می‌دهد<footer class="farsi-footer">محی‌الدین حائری شیرازی</footer></blockquote>
+

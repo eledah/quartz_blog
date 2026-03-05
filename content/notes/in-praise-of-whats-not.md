@@ -5,7 +5,7 @@ tags:
 date: 2026-01-21
 description: لیوان و اتاق به خاطر خالی بودنشان به کار می‌آیند.
 image: attachment/in-praise-of-whats-not.jpg
-featured: true
+featured: false
 order: 3
 ---
 *ارزش خیلی چیزها در نداشته‌هایشان است.*

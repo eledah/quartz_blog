@@ -5,7 +5,7 @@ tags:
 date: 2025-12-27
 image: /attachment/children-of-paradox.jpg
 order: 3
-featured: false
+featured: true
 description: بروز شجاعت فقط در لحظهٔ ترس ممکن می‌شود
 ---
 شجاعت بدون ترس معنایی ندارد. اتفاقا انسان فقط وقتی ترسیده است می‌تواند شجاع باشد.
