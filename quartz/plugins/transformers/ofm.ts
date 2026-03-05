@@ -560,7 +560,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
 
       plugins.push(() => {
         return (tree: HtmlRoot) => {
-          visit(tree, 'element', (node) => {
+          visit(tree, 'element', (node, _index, parent) => {
             if (node.tagName === 'p' || /^h[1-6]$/.test(node.tagName)) {
               const textContent = node.children
                 .map(child => {
@@ -573,6 +573,42 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
               if (textContent.length > 0) {
                 node.properties = node.properties || {}
                 node.properties.dir = isFarsi(textContent) ? 'rtl' : 'ltr'
+              }
+            }
+
+            if (node.tagName === 'ol' &&
+                parent?.type === 'element' &&
+                parent.tagName === 'section') {
+              const sectionElement = parent as Element
+              if (sectionElement.properties?.className === 'footnotes' ||
+                  (Array.isArray(sectionElement.properties?.className) && sectionElement.properties.className.includes('footnotes')) ||
+                  sectionElement.properties?.['data-footnotes']) {
+                for (const li of node.children) {
+                  if (li.type === 'element' && li.tagName === 'li') {
+                    const liElement = li as Element
+                    const p = liElement.children.find(c => c.type === 'element' && c.tagName === 'p') as Element
+                    if (p) {
+                      const textContent = p.children
+                        .map(child => {
+                          if (child.type === 'text') return (child as Literal).value;
+                          if (child.type === 'element') return (child as Element).children.map(c => c.type === 'text' ? (c as Literal).value : '').join('');
+                          return '';
+                        })
+                        .join('');
+                      
+                      if (textContent.length > 0) {
+                        const isRtl = isFarsi(textContent)
+                        liElement.properties = liElement.properties || {}
+                        liElement.properties.dir = isRtl ? 'rtl' : 'ltr'
+                        p.properties = p.properties || {}
+                        p.properties.dir = isRtl ? 'rtl' : 'ltr'
+                        const textAlign = isRtl ? 'right' : 'left'
+                        const existingStyle = (p.properties.style as string) || ''
+                        p.properties.style = existingStyle ? `${existingStyle}; text-align: ${textAlign}` : `text-align: ${textAlign}`
+                      }
+                    }
+                  }
+                }
               }
             }
           })

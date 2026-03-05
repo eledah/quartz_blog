@@ -1,6 +1,11 @@
 @use "./base.scss";
 @use "./variables.scss";
 
+.footnotes > ol {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 @font-face {
   font-family: 'Ray-ExtraBold';
   src: url('/static/fonts/Ray-ExtraBold.ttf') format('truetype');
