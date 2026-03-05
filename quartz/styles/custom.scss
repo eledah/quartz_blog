@@ -100,6 +100,19 @@ p {
   margin-bottom: 1.2em;
 }
 
+// Fix for footnote references causing extra line-height
+sup {
+  line-height: 0;
+  vertical-align: super;
+  font-size: 0.75em;
+  margin-left: 2px;
+  
+  a[data-footnote-ref] {
+    line-height: 0;
+    vertical-align: baseline;
+  }
+}
+
 .breadcrumb-element p {
 	margin: 0 .5rem 0 0;
 	padding: 0;
