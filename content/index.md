@@ -22,17 +22,20 @@ tags:
 - [[art|هنر]]: هنر، جور دیگر دیدن است
 - [[to-grow|رشد]]: رشد، پذیرفتن مسئولیت و نشستن پشت فرمان زندگی است
 - [[religiosity|دین‌داری]]: دین‌داری، پذیرش نقصان پرتاب‌شدگی در دنیا، شناخت ایدئال و حرکت به سمت زنده کردن آن در خود است
+- [[on-talent|استعداد]]: استعداد، بدهی ما به جهان است
+- [[prngrphy|پورنوگرافی]]: پورنوگرافی، سبکی از نگاه به دنیاست
+- [[ritual|آیین]]: آیین، در و دیوارِ خانهٔ زمان است
 
 
 # ✍🏻 لقمه‌های فکری
 
 *جرقه‌های ذهنی در قالب یادداشت‌های ۵ دقیقه‌ای*
 
-[[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[against-gatekeepers|علیه کاهنان]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]] | [[children-of-paradox|زادگان تناقض]] | [[in-praise-of-whats-not|در ستایش آنچه نیست]]
+[[new-manager-paradox|مدیریت با ذهن کارمندی]] | [[perspective-calibration|تنظیم پرسپکتیو]] | [[against-omnitools|علیه ابزارهای همه‌کاره]] | [[against-gatekeepers|علیه کاهنان]] | [[war-talk|صحبت جنگ]] | [[ladder-of-agency|نردبان ابتکار]] | [[hyperformalism|ابرفرمالیسم]] | [[impressionism|امپرسیونیسم]] | [[moderation|اعتدال]] | [[children-of-paradox|زادگان تناقض]] | [[in-praise-of-whats-not|در ستایش آنچه نیست]] | [[bodies-and-democracy|انفصال بدن و اختلاف نظر]]
 
 ## 📷 استعاره‌ها
 
-[[the-undersoul|زیرزمین روح]] | [[upward-spit|تف سربالا]] | [[overflow|سرریز]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]] | [[peach-and-onion|هلو و پیاز]] | [[the-second-red-light|چراغ قرمز دوم]]
+[[the-undersoul|زیرزمین روح]] | [[upward-spit|تف سربالا]] | [[overflow|سرریز]] | [[ta-dig|ته‌دیگ]] | [[sediment-stirring|نوشابه و خاکشیر]] | [[peach-and-onion|هلو و پیاز]] | [[the-second-red-light|چراغ قرمز دوم]] | [[the-bus-metaphor|اتوبوس ذهن]]
 
 # 📝 تأملات و تخیلات
 
@@ -53,3 +56,11 @@ tags:
 - [[modular and whole design|دیزاین ماژولار و دیزاین کل‌نگر]]: مقایسهٔ دو رویکرد اصلی در دیزاین
 - [[system generating systems|زبان دیزاین]]: الفبای دیزاین چیست و به چه کاری می‌آید
 - [[generating generating systems|ایجاد زبان دیزاین]]: چطور برای خودمان الفبای دیزاین بسازیم
+
+
+## 📖 داستان‌های کوتاه
+
+- [[the-garden|باغچهٔ آقای عطایی]]
+- [[room-412|اتاق ۴۱۲]]
+- [[a-world-of-sorries|یک دنیا معذرت]]
+- [[a-few-knuckles|چند بند انگشت]]

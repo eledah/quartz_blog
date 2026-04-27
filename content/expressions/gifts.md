@@ -23,7 +23,7 @@ date: 2024-06-08
 این زیر فهرست هدیه‌های پیشنهادی خودم است که هدیه‌گیران محترم فرستاده‌ام و می‌فرستم 😁 موارد خط‌خورده را عزیزان قبلاً تقبل کرده‌اند.
 
 
-- متن یا نامه‌ای که من را به خودم بشناساند
+- متن یا نامه‌ای که جنبه‌های ناشناختهٔ من را به خودم بشناساند
 - [خانهٔ مینیاتوری باغ گل](https://www.robotimeonline.com/products/rolife-cathys-flower-house-diy-miniature-house-dg104)
 - لگوی [Tranquil Garden](https://www.amazon.com/LEGO-Tranquil-Creative-Building-Meditation/dp/B0BSRGKTGB?ref_=pb_hm_dp_T1)
 - ~~[ماهیتابهٔ روحی مخصوص املت :)](https://www.digikala.com/product/dkp-7400438/%D8%AA%D8%A7%D8%A8%D9%87-%D9%85%D8%AF%D9%84-%D8%B1%D9%88%D8%AD%DB%8C-%D8%B3%D8%A7%DB%8C%D8%B2-18/)~~
@@ -42,5 +42,7 @@ date: 2024-06-08
 - کتاب [تاریخ بی‌خردی](https://www.iranketab.ir/book/2198-the-march-of-folly-from-troy-to-vietnam) از باربارا تاکمن
 - کتاب [حرکت در مه](https://www.iranketab.ir/book/14585-move-on-in-the-fog) از محمدحسن شهسواری
 - کتاب [حس وحدت](https://www.iranketab.ir/book/42235-the-sense-of-unity) از لاله بختیار و نادر اردلان
+- کتاب [اینک انسان / Ecco Homo](https://www.iranketab.ir/book/11678-ecce-homo) از فردریش نیچه
+- دایرة‌المعارف‌های [افسانه‌ها و اسطوره‌ها](https://www.iranketab.ir/book/34709-myths-legends-an-illustrated-guide-to-their-origins-and-meanings)، [مُد](https://www.iranketab.ir/book/48815-fashion-the-definitive-history-of-costume-and-style)، [نمادها و نشانه‌ها](https://www.iranketab.ir/book/34714-the-illustrated-book-of-signs-symbols)، [کتاب مقدس](https://www.iranketab.ir/book/56137-the-illustrated-bible)، [ادیان جهان](https://www.iranketab.ir/book/34620-religion-eyewitness-books)، [امپراتوری چین](https://www.iranketab.ir/book/109584-imperial-china)، [حشرات](https://www.iranketab.ir/book/34675-insect#pts=34675)و [آفرینش](https://www.iranketab.ir/book/34715-the-natural-history-book) از نشر سایان
 
 [^1]: البته که ممکن است شخص به گدابازی متهم شود. در این‌صورت می‌توانید از دارایی‌های ارزشمندتر مایه بگذارید :) مثلاً پتوی سربازی من خیلی برایم عزیز است. اما شاید هر کسی متوجه آن نباشد و از دریافت پتو احساس ناخوشایندی بکند.
