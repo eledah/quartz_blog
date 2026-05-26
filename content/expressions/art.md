@@ -191,10 +191,7 @@ order:
 
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>از ورطهٔ ما خبر ندارد</div><div class='poem-left-verse-div'>آسوده که بر کنار دریا‌ست</div><br><div class='poem-footer'>سعدی</div></div>
-
-
-<div class='poem-verse-div'><div class='poem-right-verse-div'>شب تاریک و بیم موج و گردابی چنین هایل</div><div class='poem-left-verse-div'>کجا دانند حال ما سبک‌باران ساحل‌ها</div><br><div class='poem-footer'>حافظ</div></div>
-
+<br>
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>ای برادر ما به گرداب اندریم</div><div class='poem-left-verse-div'>وان که شنعت می‌زند بر ساحل است</div><br><div class='poem-footer'>سعدی</div></div>
 
@@ -202,6 +199,10 @@ order:
 <div class='poem-verse-div'><div class='poem-right-verse-div'>ملامتگوی عاشق را چه گوید مردم دانا</div><div class='poem-left-verse-div'>که حال غرقه در دریا نداند خفته بر ساحل</div><br><div class='poem-footer'>سعدی</div></div>
 
 <br>
+<div class='poem-verse-div'><div class='poem-right-verse-div'>شب تاریک و بیم موج و گردابی چنین هایل</div><div class='poem-left-verse-div'>کجا دانند حال ما سبک‌باران ساحل‌ها</div><br><div class='poem-footer'>حافظ</div></div>
+
+<br>
+
 
 **هنرمندان مدام از هم الهام می‌گیرند**. مثلاً ملودی قطعهٔ [brutal](https://www.youtube.com/watch?v=hM2U8cb8lhI) اثر اولیویا رودریگو[^12] و [وودو چایلد](https://www.youtube.com/watch?v=SrlhLaNClgw)[^13] از قطعهٔ [Pump it Up](https://www.youtube.com/watch?v=3Y71iDvCYXA)  اثر الویس کاستلو[^14] تقلید شده است. خود کاستلو هم می‌گوید که از قطعهٔ [Subterranean Homesick Blues](https://www.youtube.com/watch?v=MGxjIBEZvx0) اثر باب دیلن[^15] الهام گرفته که آن هم از [Too Much Monkey Business](https://www.youtube.com/watch?v=_B0UfDJDuVY) اقتباس کرده است. بعضی‌ها اسم الهام گرفتن یا اقتباس را دزدی می‌گذارند. در حالی که اکثر اوقات اقتباس هنرمندان باعث [[spiral|تکامل تدریجی]] اثر هنری می‌شود[^16].
 

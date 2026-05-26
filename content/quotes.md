@@ -115,7 +115,7 @@ date: 2024-05-18
 
 <blockquote class="english-blockquote">Yet if the only form of tradition, of handing down, consisted in following the ways of the immediate generation before us in a blind or timid adherence to its successes, "tradition" should positively be discouraged. We have seen many such simple currents soon lost in the sand; and novelty is better than repetition. Tradition is a matter of much wider significance. It cannot be inherited, and if you want it you must obtain it by great labour.<footer class="english-footer">T.S. Elliot, Tradition and the Individual Talent</footer></blockquote>
 
-<blockquote class="farsi-blockquote">أحسِنِ الظَّنَّ باللّه ِ؛ فإنّ اللّه َ عَزَّ و جلَّ یقولُ : أنا عِندَ ظَنِّ عَبدِیَ المُؤمِنِ بی؛ إن خَیرا فخَیرا، و إن شَرّا فَشَرّا | به خداوند گمان نیک ببر ؛ زیرا خداى عزّ و جلّ مى‌فرماید: من نزد گمان بنده مؤمن خویشم؛ اگر گمانِ او به من نیک باشد، مطابق آن گمان با او رفتار کنم و اگر بد باشد نیز مطابق همان گمانِ بد با او عمل کنم.<footer class="farsi-footer">امام رضا علیه‌السلام- <a href="https://www.hadithlib.com/rolls/view/2300477/%DA%AF%D9%85%D8%A7%D9%86-%D9%86%D9%8A%DA%A9-%D8%A8%D9%87-%D8%AE%D8%AF%D8%A7%D9%88%D9%86%D8%AF">مشابهات</a></footer></blockquote>
+<blockquote class="farsi-blockquote">أحسِنِ الظَّنَّ باللّه ِ؛ فإنّ اللّه َ عَزَّ و جلَّ یقولُ : أنا عِندَ ظَنِّ عَبدِیَ المُؤمِنِ بی؛ إن خَیرا فخَیرا، و إن شَرّا فَشَرّا | به خداوند گمان نیک ببر ؛ زیرا خداى عزّ و جلّ مى‌فرماید: من نزد گمان بنده مؤمن خویشم؛ اگر گمانِ او به من نیک باشد، مطابق آن گمان با او رفتار کنم و اگر بد باشد نیز مطابق همان گمانِ بد با او عمل کنم.<footer class="farsi-footer">امام رضا علیه‌السلام- <a href="https://www.hadithlib.com/rolls/view/2300477/%DA%AF%D9%85%D8%A7%D9%86-%D9%86%D9%8A%DA%A9-%D8%A8%D9%87-%D8%AE%D8%AF%D8%A7%D9%88%D9%86%D8%AF">احادیث مشابه</a></footer></blockquote>
 
 <blockquote class="english-blockquote">Learning more is a smart person’s favorite form of procrastination.<footer class="english-footer">Mark Manson</footer></blockquote>
 
@@ -158,7 +158,10 @@ date: 2024-05-18
 <blockquote class="farsi-blockquote">انسان در کارهای کوچک دارد امتحانات بزرگ پس می‌دهد<footer class="farsi-footer">محی‌الدین حائری شیرازی</footer></blockquote>
 
 
-<blockquote class="farsi-blockquote">همهٔ آنان که از پادشاهی دروغ به‌ستوه‌اند بپامی‌خیزند که تباه‌کنندهٔ سیاوش را از صحفهٔ روزگار بزدایند. و بدین گونه مرگ گسترش می‌یابد. شاهزاده‌ای که در زندگی منفرد و برکنار بود پس از مرگ در همه حضور می‌یابد و ناگزیر می‌شود. دیگر عالم مبتلای اوست. هر کس باید در قبال این خون ریخته شده بداند که با کیست، در هوای کشنده است یا کشته. و این ستم بر هر کس و هر چیز سخت ناهموار است.<footer class="farsi-footer">شاهرخ مسکوب - سوگ سیاوش</footer></blockquote>
+<blockquote class="farsi-blockquote">همهٔ آنان که از پادشاهی دروغ به‌ستوه‌اند بپامی‌خیزند که تباه‌کنندهٔ سیاوش را از صفحهٔ روزگار بزدایند. و بدین گونه مرگ گسترش می‌یابد. شاهزاده‌ای که در زندگی منفرد و برکنار بود پس از مرگ در همه حضور می‌یابد و ناگزیر می‌شود. دیگر عالم مبتلای اوست. هر کس باید در قبال این خون ریخته شده بداند که با کیست، در هوای کشنده است یا کشته. و این ستم بر هر کس و هر چیز سخت ناهموار است.<footer class="farsi-footer">شاهرخ مسکوب - سوگ سیاوش</footer></blockquote>
 
 <blockquote class="farsi-blockquote">من بین مردم فرق می‌ذارم. دوست‌هام رو از بین خوب‌روها، آشناهام رو از بین آدم‌های باشخصیت و دشمن‌هام رو از بین آدم‌های نخبه انتخاب می‌کنم. من دشمن احمق ندارم.<footer class="farsi-footer">اسکار وایلد - تصویر دوریان گری</footer></blockquote>
+
+
+<blockquote class="english-blockquote">The day you teach the child the name of the bird, the child will never see that bird again.<footer class="english-footer">Jiddu Krishnamurti</footer></blockquote>
 
