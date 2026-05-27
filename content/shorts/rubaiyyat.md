@@ -9,6 +9,7 @@ cssclasses:
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>این قطره که در میان دریا گم شد</div><div class='poem-left-verse-div'>آمیخته با خروش و با مردم شد</div></div><br>
 <div class='poem-verse-div'><div class='poem-right-verse-div'>پر زد به هوا، یکّه و تنها شد و بعد</div><div class='poem-left-verse-div'>بارید و هم‌آغوش گل و گندم شد</div></div><br><br>
+
 ### ۲
 
 
