@@ -13,7 +13,7 @@ cssclasses:
 ### ۲
 
 
-<div class='poem-verse-div'><div class='poem-right-verse-div'>طومار غزل‌های پاره شده‌ست</div><div class='poem-left-verse-div'>آن ساقیِ میخانه چه آواره شده‌ست</div></div><br>
+<div class='poem-verse-div'><div class='poem-right-verse-div'>طومار غزل‌های کهن پاره شده‌ست</div><div class='poem-left-verse-div'>آن ساقیِ میخانه چه آواره شده‌ست</div></div><br>
 <div class='poem-verse-div'><div class='poem-right-verse-div'>در سایهٔ تاکسیک ترومای تو هم</div><div class='poem-left-verse-div'>این شعر زبان‌بسته چه بیچاره شده‌ست</div></div><br><br>
 
 ### ۳
