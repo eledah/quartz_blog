@@ -165,3 +165,5 @@ date: 2024-05-18
 
 <blockquote class="english-blockquote">The day you teach the child the name of the bird, the child will never see that bird again.<footer class="english-footer">Jiddu Krishnamurti</footer></blockquote>
 
+
+<blockquote class="farsi-blockquote">از بهاران کی شود سرسبز سنگ | خاک شو تا گل نمایی رنگ رنگ<footer class="farsi-footer">دفتر اول مثنوی، بخش ۹۶</footer></blockquote>
