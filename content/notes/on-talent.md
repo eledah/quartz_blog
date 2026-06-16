@@ -4,8 +4,8 @@ draft: false
 tags:
 date: 2025-12-18
 image: /attachment/talent.jpg
-featured: true
-order: 2
+featured: false
+order:
 description: استعداد، بدهی ما به جهان است
 ---
 <blockquote class="english-blockquote">God has granted me so much, that I fear He will demand a great account of me.<footer class="english-footer">Lorenzo de’ Medici</footer></blockquote>

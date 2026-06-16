@@ -3,10 +3,10 @@ title: جراح، معمار و میزبان
 draft: false
 tags:
 date: 2026-06-09
-featured: false
+featured: true
 description: رویکرد هر کس در دیزاین منتج از نگاهش به «انسان» است
 image: /attachment/surgeon-architect-host-1.jpeg
-order:
+order: 1
 ---
 رویکرد هر کس در [[what is design|دیزاین]] و حل مسأله منتج از نگاهش به «انسان» است.
 
