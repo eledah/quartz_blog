@@ -4,9 +4,9 @@ draft: false
 tags:
 date: 2025-04-27
 image: /attachment/bus_pics/passengers.jpeg
-featured: false
+featured: true
 description: انسان مجمعی از مسافرانِ متکثر، متضاد و تخصص‌گراست
-order:
+order: 4
 ---
 ## مقدمه: داستان اتوبوس
 
