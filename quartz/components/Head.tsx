@@ -57,6 +57,11 @@ export default (() => {
             {cfg.theme.typography.title && (
               <link rel="stylesheet" href={googleFontSubsetHref(cfg.theme, cfg.pageTitle)} />
             )}
+            <link
+              rel="stylesheet"
+              href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+            />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amiri" />
           </>
         )}
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
@@ -69,6 +74,7 @@ export default (() => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
+        <meta name="telegram:channel" content="@crystalline_channel" />
         <meta property="og:image:alt" content={description} />
 
         {!usesCustomOgImage && (

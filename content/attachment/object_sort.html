@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شبیه‌سازی بسته‌بندی اشیا</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-top: 20px;
+            background-color: #f0f0f0;
+        }
+        #controls {
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #e7e7e7;
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+        #simulationCanvas {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        .info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <button id="startButton">Start</button>
+        <button id="shakeButton">Shake</button>
+        <button id="resetButton">Reset</button>
+    </div>
+    <canvas id="simulationCanvas"></canvas>
+    <div class="info">
+        Highest Point: <span id="highestPointDisplay">-</span> px
+    </div>
+
+    <script>
+        const canvas = document.getElementById('simulationCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const startButton = document.getElementById('startButton');
+        const shakeButton = document.getElementById('shakeButton');
+        const resetButton = document.getElementById('resetButton');
+        const highestPointDisplay = document.getElementById('highestPointDisplay');
+
+        // پارامترهای شبیه‌سازی
+        const CANVAS_WIDTH = 300;
+        const CANVAS_HEIGHT = 500;
+        const CYLINDER_WIDTH = 200;
+        const CYLINDER_X_OFFSET = (CANVAS_WIDTH - CYLINDER_WIDTH) / 2;
+        const GRAVITY = 0.55;
+        const FRICTION = 0.99;
+        const GROUND_FRICTION_LINEAR = 0.92;
+        const ANGULAR_FRICTION = 0.95;
+        const GROUND_ANGULAR_FRICTION = 0.85;
+        const BOUNCE_FACTOR = 0.2;
+        const SHAKE_INTENSITY = 1.5;
+        const SHAKE_ANGULAR_INTENSITY = 0.03;
+        const COLLISION_ANGULAR_KICK = 0.005;
+        const NUM_OBJECTS_TO_SPAWN = 60;
+        const COLLISION_ITERATIONS = 5;
+        const SPAWN_DELAY = 100; // میلی‌ثانیه تأخیر بین ایجاد هر شیء
+
+        let objects = [];
+        let animationFrameId = null;
+        let isShaking = false;
+        let simulationRunning = false;
+        let highestPoint = CANVAS_HEIGHT;
+        let spawnTimeoutIds = []; // برای نگهداری شناسه‌های setTimeout جهت لغو در صورت reset
+
+        canvas.width = CANVAS_WIDTH;
+        canvas.height = CANVAS_HEIGHT;
+
+        class Shape {
+            constructor(x, y, type, size, color) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 1;
+                this.vy = (Math.random() -0.5) * 0.5; // سرعت عمودی اولیه کوچک برای تنوع بیشتر
+                this.type = type;
+                this.size = size;
+                this.color = color;
+
+                this.angle = Math.random() * Math.PI * 0.1 - 0.05;
+                this.angularVelocity = (Math.random() - 0.5) * 0.005;
+
+                if (type === 'circle') {
+                    this.radius = size;
+                    this.width = this.height = size * 2;
+                    this.mass = Math.PI * size * size * 0.1;
+                } else if (type === 'square') {
+                    this.width = this.height = size;
+                    this.mass = size * size * 0.1;
+                } else if (type === 'triangle') {
+                    this.width = size;
+                    this.height = (Math.sqrt(3) / 2) * size;
+                    this.mass = (0.5 * size * this.height) * 0.1;
+                }
+                this.invMass = this.mass > 0 ? 1 / this.mass : 0;
+            }
+
+            draw() {
+                ctx.save();
+                const centerX = this.x + this.width / 2;
+                const centerY = this.y + this.height / 2;
+                ctx.translate(centerX, centerY);
+                ctx.rotate(this.angle);
+                ctx.translate(-centerX, -centerY);
+
+                ctx.fillStyle = this.color;
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+
+                if (this.type === 'circle') {
+                    ctx.arc(this.x + this.radius, this.y + this.radius, this.radius, 0, Math.PI * 2);
+                } else if (this.type === 'square') {
+                    ctx.rect(this.x, this.y, this.size, this.size);
+                } else if (this.type === 'triangle') {
+                    ctx.moveTo(this.x + this.size / 2, this.y);
+                    ctx.lineTo(this.x + this.size, this.y + this.height);
+                    ctx.lineTo(this.x, this.y + this.height);
+                    ctx.closePath();
+                }
+                ctx.fill();
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            update() {
+                this.vy += GRAVITY;
+                this.vx *= FRICTION;
+                this.vy *= FRICTION;
+                this.angularVelocity *= ANGULAR_FRICTION;
+                if (Math.abs(this.angularVelocity) < 0.0001) this.angularVelocity = 0;
+
+                this.x += this.vx;
+                this.y += this.vy;
+                this.angle += this.angularVelocity;
+
+                if (this.x < CYLINDER_X_OFFSET) {
+                    this.x = CYLINDER_X_OFFSET;
+                    this.vx *= -BOUNCE_FACTOR;
+                    this.angularVelocity *= 0.9;
+                } else if (this.x + this.width > CYLINDER_X_OFFSET + CYLINDER_WIDTH) {
+                    this.x = CYLINDER_X_OFFSET + CYLINDER_WIDTH - this.width;
+                    this.vx *= -BOUNCE_FACTOR;
+                    this.angularVelocity *= 0.9;
+                }
+
+                if (this.y + this.height > CANVAS_HEIGHT) {
+                    this.y = CANVAS_HEIGHT - this.height;
+                    this.vy *= -BOUNCE_FACTOR;
+                    if (Math.abs(this.vy) < GRAVITY * 1.1 ) this.vy = 0;
+                    this.vx *= GROUND_FRICTION_LINEAR;
+                    this.angularVelocity *= GROUND_ANGULAR_FRICTION;
+                    if(Math.abs(this.angularVelocity) < 0.001) this.angularVelocity = 0;
+                }
+            }
+        }
+
+        function clearSpawnTimeouts() {
+            spawnTimeoutIds.forEach(id => clearTimeout(id));
+            spawnTimeoutIds = [];
+        }
+
+        function spawnSingleObject(index) {
+            const types = ['square', 'circle', 'triangle'];
+            const type = types[Math.floor(Math.random() * types.length)];
+            let size = Math.random() * 15 + 18;
+            if (type === 'circle') size = Math.random() * 8 + 8;
+
+            const x = CYLINDER_X_OFFSET + Math.random() * (CYLINDER_WIDTH - (type === 'circle' ? size * 2 : size) - 10) + 5; // کمی فضای بیشتر از لبه‌ها
+            const y = -size - Math.random() * 50; // شروع از بالای کادر
+            const color = `hsl(${Math.random() * 360}, 60%, 65%)`;
+            objects.push(new Shape(x, y, type, size, color));
+        }
+
+        function startSpawningObjects() {
+            objects = []; // پاک کردن اشیاء قبلی
+            highestPoint = CANVAS_HEIGHT;
+            clearSpawnTimeouts(); // پاک کردن تایم‌اوت‌های قبلی اگر وجود دارد
+
+            for (let i = 0; i < NUM_OBJECTS_TO_SPAWN; i++) {
+                const timeoutId = setTimeout(() => {
+                    spawnSingleObject(i);
+                }, i * SPAWN_DELAY);
+                spawnTimeoutIds.push(timeoutId);
+            }
+        }
+
+
+        function handleObjectCollisions() {
+            for (let iter = 0; iter < COLLISION_ITERATIONS; iter++) {
+                for (let i = 0; i < objects.length; i++) {
+                    for (let j = i + 1; j < objects.length; j++) {
+                        const obj1 = objects[i];
+                        const obj2 = objects[j];
+
+                        const dx = (obj1.x + obj1.width / 2) - (obj2.x + obj2.width / 2);
+                        const dy = (obj1.y + obj1.height / 2) - (obj2.y + obj2.height / 2);
+                        const combinedHalfWidths = obj1.width / 2 + obj2.width / 2;
+                        const combinedHalfHeights = obj1.height / 2 + obj2.height / 2;
+
+                        if (Math.abs(dx) < combinedHalfWidths && Math.abs(dy) < combinedHalfHeights) {
+                            const overlapX = combinedHalfWidths - Math.abs(dx);
+                            const overlapY = combinedHalfHeights - Math.abs(dy);
+
+                            const totalMass = obj1.mass + obj2.mass;
+                            let ratio1 = obj1.invMass > 0 ? obj2.mass / totalMass : 1;
+                            let ratio2 = obj2.invMass > 0 ? obj1.mass / totalMass : 1;
+                            if (obj1.invMass === 0 && obj2.invMass > 0) { ratio1 = 0; ratio2 = 1;}
+                            if (obj2.invMass === 0 && obj1.invMass > 0) { ratio1 = 1; ratio2 = 0;}
+                            if (obj1.invMass === 0 && obj2.invMass === 0) {ratio1 = 0; ratio2 = 0;}
+
+
+                            if (overlapX < overlapY) {
+                                const moveX1 = (dx > 0 ? overlapX * ratio1 : -overlapX * ratio1);
+                                const moveX2 = (dx > 0 ? -overlapX * ratio2 : overlapX * ratio2);
+                                if (obj1.invMass > 0) obj1.x += moveX1;
+                                if (obj2.invMass > 0) obj2.x += moveX2;
+
+                                const v1x = obj1.vx;
+                                const v2x = obj2.vx;
+                                if (totalMass > 0) {
+                                    if (obj1.invMass > 0) obj1.vx = (v1x * (obj1.mass - obj2.mass) + 2 * obj2.mass * v2x) / totalMass * BOUNCE_FACTOR;
+                                    if (obj2.invMass > 0) obj2.vx = (v2x * (obj2.mass - obj1.mass) + 2 * obj1.mass * v1x) / totalMass * BOUNCE_FACTOR;
+                                }
+
+                            } else {
+                                const moveY1 = (dy > 0 ? overlapY * ratio1 : -overlapY * ratio1);
+                                const moveY2 = (dy > 0 ? -overlapY * ratio2 : overlapY * ratio2);
+                                if (obj1.invMass > 0) obj1.y += moveY1;
+                                if (obj2.invMass > 0) obj2.y += moveY2;
+
+                                const v1y = obj1.vy;
+                                const v2y = obj2.vy;
+                                if (totalMass > 0) {
+                                    if (obj1.invMass > 0) obj1.vy = (v1y * (obj1.mass - obj2.mass) + 2 * obj2.mass * v2y) / totalMass * BOUNCE_FACTOR;
+                                    if (obj2.invMass > 0) obj2.vy = (v2y * (obj2.mass - obj1.mass) + 2 * obj1.mass * v1y) / totalMass * BOUNCE_FACTOR;
+                                }
+                            }
+
+                            if (COLLISION_ANGULAR_KICK > 0) {
+                                const impulseMagnitude = Math.sqrt(overlapX*overlapX + overlapY*overlapY);
+                                const angularImpulse = (Math.random() - 0.5) * COLLISION_ANGULAR_KICK * impulseMagnitude * 0.1;
+                                if (obj1.invMass > 0) obj1.angularVelocity += angularImpulse / (obj1.mass * 0.1 + 0.01);
+                                if (obj2.invMass > 0) obj2.angularVelocity -= angularImpulse / (obj2.mass * 0.1 + 0.01);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        function applyShaking() {
+            if (isShaking) {
+                objects.forEach(obj => {
+                    if (obj.y > -obj.height && obj.invMass > 0) {
+                        obj.vx += (Math.random() - 0.5) * SHAKE_INTENSITY * obj.invMass * 50;
+                        obj.angularVelocity += (Math.random() - 0.5) * SHAKE_ANGULAR_INTENSITY * obj.invMass * 20;
+                        if (Math.random() < 0.05 && obj.y > CANVAS_HEIGHT * 0.2) {
+                             obj.vy -= SHAKE_INTENSITY * 0.3 * Math.random() * obj.invMass * 50;
+                        }
+                    }
+                });
+            }
+        }
+
+        function calculateHighestPoint() {
+            let currentMinY = CANVAS_HEIGHT;
+            let objectsInCylinder = 0;
+            objects.forEach(obj => {
+                if (obj.y + obj.height > 0 && obj.y < CANVAS_HEIGHT &&
+                    obj.x + obj.width > CYLINDER_X_OFFSET && obj.x < CYLINDER_X_OFFSET + CYLINDER_WIDTH) {
+                     currentMinY = Math.min(currentMinY, obj.y);
+                     objectsInCylinder++;
+                }
+            });
+
+            if (objectsInCylinder === 0 && objects.length > 0) { // اگر شیئی در استوانه نیست اما اشیاء وجود دارند
+                let minOverallY = CANVAS_HEIGHT;
+                objects.forEach(obj => minOverallY = Math.min(minOverallY, obj.y));
+                if (minOverallY < 0) { // هنوز در حال سقوط هستند
+                    highestPoint = CANVAS_HEIGHT; // یا یک مقدار نشان‌دهنده در حال سقوط
+                    highestPointDisplay.textContent = "در حال سقوط...";
+                } else {
+                    highestPoint = CANVAS_HEIGHT;
+                    highestPointDisplay.textContent = '-';
+                }
+            } else if (objectsInCylinder === 0 && objects.length === 0) {
+                 highestPoint = CANVAS_HEIGHT;
+                 highestPointDisplay.textContent = '-';
+            }
+            else {
+                highestPoint = currentMinY;
+                highestPointDisplay.textContent = `${Math.round(CANVAS_HEIGHT - highestPoint)} (From Bottom)، ${Math.round(highestPoint)} (From Top)`;
+            }
+        }
+
+
+        function drawTopLine() {
+            if (objects.length > 0 && highestPoint < CANVAS_HEIGHT && highestPoint >=0 && highestPointDisplay.textContent !== "در حال سقوط..." ) {
+                ctx.beginPath();
+                ctx.moveTo(CYLINDER_X_OFFSET, highestPoint);
+                ctx.lineTo(CYLINDER_X_OFFSET + CYLINDER_WIDTH, highestPoint);
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 3]);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+        }
+
+        function drawCylinder() {
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(CYLINDER_X_OFFSET, CANVAS_HEIGHT);
+            ctx.lineTo(CYLINDER_X_OFFSET + CYLINDER_WIDTH, CANVAS_HEIGHT);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(CYLINDER_X_OFFSET, 0);
+            ctx.lineTo(CYLINDER_X_OFFSET, CANVAS_HEIGHT);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(CYLINDER_X_OFFSET + CYLINDER_WIDTH, 0);
+            ctx.lineTo(CYLINDER_X_OFFSET + CYLINDER_WIDTH, CANVAS_HEIGHT);
+            ctx.stroke();
+        }
+
+        function gameLoop() {
+            ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+            drawCylinder();
+
+            if (simulationRunning || objects.length > 0) { // حلقه را ادامه بده اگر شبیه‌سازی در حال اجراست یا هنوز اشیائی برای پردازش وجود دارند
+                applyShaking();
+                objects.forEach(obj => obj.update());
+                handleObjectCollisions();
+                calculateHighestPoint();
+            }
+
+            objects.forEach(obj => obj.draw()); // همیشه اشیاء را رسم کن
+            drawTopLine();
+
+            animationFrameId = requestAnimationFrame(gameLoop);
+        }
+
+        startButton.addEventListener('click', () => {
+            if (!simulationRunning) {
+                startSpawningObjects(); // به جای spawnObjects
+                simulationRunning = true;
+                if (!animationFrameId) {
+                    gameLoop();
+                }
+                startButton.disabled = true;
+                resetButton.disabled = false;
+            }
+        });
+
+        resetButton.addEventListener('click', () => {
+            simulationRunning = false;
+            isShaking = false;
+            shakeButton.textContent = 'Shake';
+            clearSpawnTimeouts(); // مهم: لغو تایم‌اوت‌های ایجاد در صورت ریست کردن وسط ایجاد اشیاء
+            objects = [];
+            highestPoint = CANVAS_HEIGHT;
+            highestPointDisplay.textContent = '-';
+            startButton.disabled = false;
+            resetButton.disabled = true;
+        });
+        resetButton.disabled = true;
+
+        shakeButton.addEventListener('click', () => {
+            if (!simulationRunning && objects.length === 0) return; // فقط اگر شبیه‌سازی شروع شده یا اشیاء ایجاد شده‌اند
+            isShaking = !isShaking;
+            shakeButton.textContent = isShaking ? 'Stop Shaking' : 'Shake';
+        });
+
+        // شروع حلقه بازی به صورت خودکار برای رسم استوانه
+        // اما شبیه‌سازی فیزیک تا زدن دکمه شروع، آغاز نمی‌شود.
+        if (!animationFrameId) {
+            gameLoop();
+        }
+        // drawCylinder(); // دیگر نیازی نیست چون gameLoop بلافاصله صدا زده می‌شود
+    </script>
+</body>
+</html>

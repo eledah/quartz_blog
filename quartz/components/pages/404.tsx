@@ -1,4 +1,3 @@
-import { i18n } from "../../i18n"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 
 const NotFound: QuartzComponent = ({ cfg, ctx }: QuartzComponentProps) => {
@@ -7,9 +6,15 @@ const NotFound: QuartzComponent = ({ cfg, ctx }: QuartzComponentProps) => {
 
   return (
     <article class="popover-hint">
-      <h1>404</h1>
-      <p>{i18n(cfg.locale).pages.error.notFound}</p>
-      <a href={baseDir}>{i18n(cfg.locale).pages.error.home}</a>
+      <h1>ول‌چرخیدن</h1>
+      <img src="https://blog.eledah.ir/attachment/404.png" alt="" />
+      <p>
+        خوش به حال ما که هنوز که هنوز است به جایی نرسیده‌ایم که رسیدن، کیف جستجو را از سر
+        می‌پرانَد. کسی که در قدم‌های اول راهش را پیدا کرده، یا خیالباف است یا راه دیگران را
+        می‌رود. حیف. من هم جزو خیالباف‌ها بودم. حالا از خیالات دست کشیدم. اوایلش گم شده بودم؛
+        اما الان مشغول ول‌چرخیدنم.
+      </p>
+      <a href={baseDir}>بازگشت به خانه</a>
       <script
         dangerouslySetInnerHTML={{
           __html: `

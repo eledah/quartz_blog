@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدل سه‌گونه‌ای: چمن-خرگوش-روباه</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 2px solid #333;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #1e40af;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+        #chartContainer {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .parameters {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .param-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .param-section h3 {
+            margin: 0 0 5px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        .grass-section h3 {
+            color: #22c55e;
+        }
+        .rabbit-section h3 {
+            color: #3b82f6;
+        }
+        .fox-section h3 {
+            color: #dc2626;
+        }
+        .param-group {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .param-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        .param-slider {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #ddd;
+            outline: none;
+        }
+        .param-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            background: #1e40af;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .param-slider::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            background: #1e40af;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+        }
+        .grass-slider::-webkit-slider-thumb {
+            background: #22c55e;
+        }
+        .grass-slider::-moz-range-thumb {
+            background: #22c55e;
+        }
+        .rabbit-slider::-webkit-slider-thumb {
+            background: #3b82f6;
+        }
+        .rabbit-slider::-moz-range-thumb {
+            background: #3b82f6;
+        }
+        .fox-slider::-webkit-slider-thumb {
+            background: #dc2626;
+        }
+        .fox-slider::-moz-range-thumb {
+            background: #dc2626;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-family: 'Vazirmatn', sans-serif;
+            cursor: pointer;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            min-width: 100px;
+        }
+        button:hover {
+            background-color: #3b82f6;
+        }
+        .btn-stop {
+            background-color: #dc2626;
+        }
+        .btn-stop:hover {
+            background-color: #ef4444;
+        }
+        @media (max-width: 900px) {
+            .parameters {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            #chartContainer {
+                height: 300px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+                min-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>مدل سه‌گونه‌ای: چمن-خرگوش-روباه</h1>
+        <div id="chartContainer">
+            <canvas id="populationChart"></canvas>
+        </div>
+        <div class="controls">
+            <div class="parameters">
+                <div class="param-section grass-section">
+                    <h3>چمن</h3>
+                    <div class="param-group">
+                        <div class="param-label">
+                            <span>ظرفیت محیطی</span>
+                            <span id="grassCapacityValue">2000</span>
+                        </div>
+                        <input type="range" id="grassCapacity" min="500" max="5000" step="100" value="2000" class="param-slider grass-slider">
+                    </div>
+                    <div class="param-group">
+                        <div class="param-label">
+                            <span>نرخ رشد</span>
+                            <span id="grassGrowthValue">0.05</span>
+                        </div>
+                        <input type="range" id="grassGrowth" min="0.01" max="0.2" step="0.01" value="0.05" class="param-slider grass-slider">
+                    </div>
+                    <div class="param-group">
+                        <div class="param-label">
+                            <span>نرخ خوردن</span>
+                            <span id="grassEatenValue">0.0001</span>
+                        </div>
+                        <input type="range" id="grassEaten" min="0.00002" max="0.0005" step="0.00002" value="0.0001" class="param-slider grass-slider">
+                    </div>
+                </div>
+                <div class="param-section rabbit-section">
+                    <h3>خرگوش</h3>
+                    <div class="param-group">
+                        <div class="param-label">
+                            <span>کارایی تبدیل</span>
+                            <span id="rabbitEfficiencyValue">0.5</span>
+                        </div>
+                        <input type="range" id="rabbitEfficiency" min="0.1" max="1.0" step="0.1" value="0.5" class="param-slider rabbit-slider">
+                    </div>
+                    <div class="param-group">
+                        <div class="param-label">
+                            <span>نرخ مرگ طبیعی</span>
+                            <span id="rabbitNaturalDeathValue">0.01</span>
+                        </div>
+                        <input type="range" id="rabbitNaturalDeath" min="0.005" max="0.05" step="0.005" value="0.01" class="param-slider rabbit-slider">
+                    </div>
+                    <div class="param-group">
+                        <div class="param-label">
+                            <span>نرخ خورده شدن</span>
+                            <span id="rabbitEatenValue">0.00005</span>
+                        </div>
+                        <input type="range" id="rabbitEaten" min="0.00002" max="0.0002" step="0.00001" value="0.00005" class="param-slider rabbit-slider">
+                    </div>
+                </div>
+                <div class="param-section fox-section">
+                    <h3>روباه</h3>
+                    <div class="param-group">
+                        <div class="param-label">
+                            <span>کارایی تبدیل</span>
+                            <span id="foxEfficiencyValue">0.3</span>
+                        </div>
+                        <input type="range" id="foxEfficiency" min="0.1" max="1.0" step="0.1" value="0.3" class="param-slider fox-slider">
+                    </div>
+                    <div class="param-group">
+                        <div class="param-label">
+                            <span>نرخ مرگ طبیعی</span>
+                            <span id="foxNaturalDeathValue">0.02</span>
+                        </div>
+                        <input type="range" id="foxNaturalDeath" min="0.005" max="0.1" step="0.005" value="0.02" class="param-slider fox-slider">
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="startBtn">شروع</button>
+                <button id="resetBtn">بازنشانی</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('populationChart').getContext('2d');
+        let chart;
+        let time = 0;
+        let grass = 1000;
+        let rabbits = 100;
+        let foxes = 15;
+        let running = false;
+        let animationId = null;
+
+        let grassCapacity = 2000;
+        let grassGrowthRate = 0.05;
+        let grassEatenRate = 0.0001;
+        let rabbitEfficiency = 0.5;
+        let rabbitNaturalDeathRate = 0.01;
+        let rabbitEatenRate = 0.00005;
+        let foxEfficiency = 0.3;
+        let foxNaturalDeathRate = 0.02;
+
+        function initChart() {
+            Chart.defaults.font.family = 'Vazirmatn';
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: 'چمن',
+                            data: [],
+                            borderColor: '#22c55e',
+                            backgroundColor: '#22c55e',
+                            tension: 0.1,
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'خرگوش‌ها',
+                            data: [],
+                            borderColor: '#3b82f6',
+                            backgroundColor: '#3b82f6',
+                            tension: 0.1,
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            yAxisID: 'y1'
+                        },
+                        {
+                            label: 'روباه‌ها',
+                            data: [],
+                            borderColor: '#dc2626',
+                            backgroundColor: '#dc2626',
+                            tension: 0.1,
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'زمان',
+                                color: '#333',
+                                font: { size: 14 }
+                            },
+                            grid: {
+                                color: '#ddd'
+                            },
+                            ticks: { color: '#333' }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'چمن',
+                                color: '#22c55e',
+                                font: { size: 14 }
+                            },
+                            grid: {
+                                color: '#ddd'
+                            },
+                            ticks: { color: '#22c55e' },
+                            min: 0
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'حیوانات',
+                                color: '#333',
+                                font: { size: 14 }
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            },
+                            ticks: { color: '#333' },
+                            min: 0
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#333',
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChart() {
+            chart.data.labels.push(time);
+            chart.data.datasets[0].data.push(grass);
+            chart.data.datasets[1].data.push(rabbits);
+            chart.data.datasets[2].data.push(foxes);
+
+            if (chart.data.labels.length > 300) {
+                chart.data.labels.shift();
+                chart.data.datasets[0].data.shift();
+                chart.data.datasets[1].data.shift();
+                chart.data.datasets[2].data.shift();
+            }
+            chart.update('none');
+        }
+
+        function step() {
+            const grassEaten = grassEatenRate * grass * rabbits;
+            const rabbitEaten = rabbitEatenRate * rabbits * foxes;
+
+            const grassGrowth = grassGrowthRate * grass * (1 - grass / grassCapacity);
+            const newGrass = grass + grassGrowth - grassEaten;
+            const newRabbits = rabbits + (rabbitEfficiency * grassEaten) - rabbitEaten - (rabbitNaturalDeathRate * rabbits);
+            const newFoxes = foxes + (foxEfficiency * rabbitEaten) - (foxNaturalDeathRate * foxes);
+
+            grass = Math.max(0, newGrass);
+            rabbits = Math.max(0, newRabbits);
+            foxes = Math.max(0, newFoxes);
+            time++;
+
+            updateChart();
+        }
+
+        function animate() {
+            if (!running) return;
+
+            step();
+            animationId = requestAnimationFrame(animate);
+        }
+
+        function start() {
+            if (!running) {
+                running = true;
+                startBtn.textContent = 'توقف';
+                startBtn.classList.add('btn-stop');
+                animate();
+            } else {
+                running = false;
+                startBtn.textContent = 'شروع';
+                startBtn.classList.remove('btn-stop');
+                cancelAnimationFrame(animationId);
+            }
+        }
+
+        function reset() {
+            time = 0;
+            grass = 1000;
+            rabbits = 100;
+            foxes = 15;
+            chart.data.labels = [];
+            chart.data.datasets[0].data = [];
+            chart.data.datasets[1].data = [];
+            chart.data.datasets[2].data = [];
+            chart.update('none');
+            running = false;
+            startBtn.textContent = 'شروع';
+            startBtn.classList.remove('btn-stop');
+            cancelAnimationFrame(animationId);
+            updateChart();
+        }
+
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const grassCapacitySlider = document.getElementById('grassCapacity');
+        const grassGrowthSlider = document.getElementById('grassGrowth');
+        const grassEatenSlider = document.getElementById('grassEaten');
+        const rabbitEfficiencySlider = document.getElementById('rabbitEfficiency');
+        const rabbitNaturalDeathSlider = document.getElementById('rabbitNaturalDeath');
+        const rabbitEatenSlider = document.getElementById('rabbitEaten');
+        const foxEfficiencySlider = document.getElementById('foxEfficiency');
+        const foxNaturalDeathSlider = document.getElementById('foxNaturalDeath');
+
+        grassCapacitySlider.addEventListener('input', (e) => {
+            grassCapacity = parseFloat(e.target.value);
+            document.getElementById('grassCapacityValue').textContent = grassCapacity.toFixed(0);
+        });
+
+        grassGrowthSlider.addEventListener('input', (e) => {
+            grassGrowthRate = parseFloat(e.target.value);
+            document.getElementById('grassGrowthValue').textContent = grassGrowthRate.toFixed(2);
+        });
+
+        grassEatenSlider.addEventListener('input', (e) => {
+            grassEatenRate = parseFloat(e.target.value);
+            document.getElementById('grassEatenValue').textContent = grassEatenRate.toFixed(5);
+        });
+
+        rabbitEfficiencySlider.addEventListener('input', (e) => {
+            rabbitEfficiency = parseFloat(e.target.value);
+            document.getElementById('rabbitEfficiencyValue').textContent = rabbitEfficiency.toFixed(1);
+        });
+
+        rabbitNaturalDeathSlider.addEventListener('input', (e) => {
+            rabbitNaturalDeathRate = parseFloat(e.target.value);
+            document.getElementById('rabbitNaturalDeathValue').textContent = rabbitNaturalDeathRate.toFixed(3);
+        });
+
+        rabbitEatenSlider.addEventListener('input', (e) => {
+            rabbitEatenRate = parseFloat(e.target.value);
+            document.getElementById('rabbitEatenValue').textContent = rabbitEatenRate.toFixed(5);
+        });
+
+        foxEfficiencySlider.addEventListener('input', (e) => {
+            foxEfficiency = parseFloat(e.target.value);
+            document.getElementById('foxEfficiencyValue').textContent = foxEfficiency.toFixed(1);
+        });
+
+        foxNaturalDeathSlider.addEventListener('input', (e) => {
+            foxNaturalDeathRate = parseFloat(e.target.value);
+            document.getElementById('foxNaturalDeathValue').textContent = foxNaturalDeathRate.toFixed(3);
+        });
+
+        startBtn.addEventListener('click', start);
+        resetBtn.addEventListener('click', reset);
+
+        initChart();
+        updateChart();
+    </script>
+</body>
+</html>

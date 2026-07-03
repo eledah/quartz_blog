@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدل شکارچی-طعمه</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 2px solid #333;
+            padding: 30px;
+            max-width: 700px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #1e40af;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+        #chartContainer {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .parameters {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .param-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .param-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .param-slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #ddd;
+            outline: none;
+        }
+        .param-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #1e40af;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .param-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #1e40af;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-family: 'Vazirmatn', sans-serif;
+            cursor: pointer;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            min-width: 100px;
+        }
+        button:hover {
+            background-color: #3b82f6;
+        }
+        .btn-stop {
+            background-color: #dc2626;
+        }
+        .btn-stop:hover {
+            background-color: #ef4444;
+        }
+        .rabbit-param {
+            color: #3b82f6;
+        }
+        .fox-param {
+            color: #dc2626;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            #chartContainer {
+                height: 300px;
+            }
+            .parameters {
+                grid-template-columns: 1fr;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 14px;
+                min-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>مدل شکارچی-طعمه</h1>
+        <div id="chartContainer">
+            <canvas id="populationChart"></canvas>
+        </div>
+        <div class="controls">
+            <div class="parameters">
+                <div class="param-group">
+                    <div class="param-label rabbit-param">
+                        <span>نرخ رشد خرگوش</span>
+                        <span id="rabbitGrowthValue">0.1</span>
+                    </div>
+                    <input type="range" id="rabbitGrowth" min="0.01" max="0.3" step="0.01" value="0.1" class="param-slider">
+                </div>
+                <div class="param-group">
+                    <div class="param-label fox-param">
+                        <span>نرخ رشد روباه</span>
+                        <span id="foxGrowthValue">0.0002</span>
+                    </div>
+                    <input type="range" id="foxGrowth" min="0.0001" max="0.001" step="0.0001" value="0.0002" class="param-slider">
+                </div>
+                <div class="param-group">
+                    <div class="param-label rabbit-param">
+                        <span>نرخ مرگ خرگوش</span>
+                        <span id="rabbitDeathValue">0.0005</span>
+                    </div>
+                    <input type="range" id="rabbitDeath" min="0.0001" max="0.002" step="0.0001" value="0.0005" class="param-slider">
+                </div>
+                <div class="param-group">
+                    <div class="param-label fox-param">
+                        <span>نرخ مرگ روباه</span>
+                        <span id="foxDeathValue">0.1</span>
+                    </div>
+                    <input type="range" id="foxDeath" min="0.01" max="0.3" step="0.01" value="0.1" class="param-slider">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="startBtn">شروع</button>
+                <button id="resetBtn">بازنشانی</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('populationChart').getContext('2d');
+        let chart;
+        let time = 0;
+        let rabbits = 50;
+        let foxes = 10;
+        let running = false;
+        let animationId = null;
+
+        let rabbitGrowthRate = 0.1;
+        let rabbitDeathRate = 0.0005;
+        let foxGrowthRate = 0.0002;
+        let foxDeathRate = 0.1;
+
+        function initChart() {
+            Chart.defaults.font.family = 'Vazirmatn';
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: 'خرگوش‌ها',
+                            data: [],
+                            borderColor: '#3b82f6',
+                            backgroundColor: '#3b82f6',
+                            tension: 0.1,
+                            borderWidth: 2,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'روباه‌ها',
+                            data: [],
+                            borderColor: '#dc2626',
+                            backgroundColor: '#dc2626',
+                            tension: 0.1,
+                            borderWidth: 2,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'زمان',
+                                color: '#333',
+                                font: { size: 14 }
+                            },
+                            grid: {
+                                color: '#ddd'
+                            },
+                            ticks: { color: '#333' }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'جمعیت',
+                                color: '#333',
+                                font: { size: 14 }
+                            },
+                            grid: {
+                                color: '#ddd'
+                            },
+                            ticks: { color: '#333' },
+                            min: 0
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#333',
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChart() {
+            chart.data.labels.push(time);
+            chart.data.datasets[0].data.push(rabbits);
+            chart.data.datasets[1].data.push(foxes);
+
+            if (chart.data.labels.length > 200) {
+                chart.data.labels.shift();
+                chart.data.datasets[0].data.shift();
+                chart.data.datasets[1].data.shift();
+            }
+            chart.update('none');
+        }
+
+        function step() {
+            const newRabbits = rabbits + (rabbitGrowthRate * rabbits) - (rabbitDeathRate * rabbits * foxes);
+            const newFoxes = foxes + (foxGrowthRate * foxes * rabbits) - (foxDeathRate * foxes);
+
+            rabbits = Math.max(0, newRabbits);
+            foxes = Math.max(0, Math.min(newFoxes, 500));
+            time++;
+
+            updateChart();
+        }
+
+        function animate() {
+            if (!running) return;
+
+            step();
+            animationId = requestAnimationFrame(animate);
+        }
+
+        function start() {
+            if (!running) {
+                running = true;
+                startBtn.textContent = 'توقف';
+                startBtn.classList.add('btn-stop');
+                animate();
+            } else {
+                running = false;
+                startBtn.textContent = 'شروع';
+                startBtn.classList.remove('btn-stop');
+                cancelAnimationFrame(animationId);
+            }
+        }
+
+        function reset() {
+            time = 0;
+            rabbits = 50;
+            foxes = 10;
+            chart.data.labels = [];
+            chart.data.datasets[0].data = [];
+            chart.data.datasets[1].data = [];
+            chart.update('none');
+            running = false;
+            startBtn.textContent = 'شروع';
+            startBtn.classList.remove('btn-stop');
+            cancelAnimationFrame(animationId);
+            updateChart();
+        }
+
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const rabbitGrowthSlider = document.getElementById('rabbitGrowth');
+        const rabbitDeathSlider = document.getElementById('rabbitDeath');
+        const foxGrowthSlider = document.getElementById('foxGrowth');
+        const foxDeathSlider = document.getElementById('foxDeath');
+        const rabbitGrowthValue = document.getElementById('rabbitGrowthValue');
+        const rabbitDeathValue = document.getElementById('rabbitDeathValue');
+        const foxGrowthValue = document.getElementById('foxGrowthValue');
+        const foxDeathValue = document.getElementById('foxDeathValue');
+
+        rabbitGrowthSlider.addEventListener('input', (e) => {
+            rabbitGrowthRate = parseFloat(e.target.value);
+            rabbitGrowthValue.textContent = rabbitGrowthRate.toFixed(2);
+        });
+
+        rabbitDeathSlider.addEventListener('input', (e) => {
+            rabbitDeathRate = parseFloat(e.target.value);
+            rabbitDeathValue.textContent = rabbitDeathRate.toFixed(4);
+        });
+
+        foxGrowthSlider.addEventListener('input', (e) => {
+            foxGrowthRate = parseFloat(e.target.value);
+            foxGrowthValue.textContent = foxGrowthRate.toFixed(4);
+        });
+
+        foxDeathSlider.addEventListener('input', (e) => {
+            foxDeathRate = parseFloat(e.target.value);
+            foxDeathValue.textContent = foxDeathRate.toFixed(2);
+        });
+
+        startBtn.addEventListener('click', start);
+        resetBtn.addEventListener('click', reset);
+
+        initChart();
+        updateChart();
+    </script>
+</body>
+</html>

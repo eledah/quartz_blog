@@ -1,3 +1,1309 @@
 @use "./variables.scss" as *;
 
+.footnotes > ol {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@font-face {
+  font-family: 'Ray-ExtraBold';
+  src: url('/static/fonts/Ray-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 // put your custom CSS here!
+
+// 1. Add Global Background Texture (Feature D)
+body {
+  background-color: #F9F7F2;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // monochromatic fine-grain noise
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04; 
+  pointer-events: none;
+  z-index: -1;
+  background-repeat: repeat;
+}
+
+[saved-theme="dark"] body {
+  background-color: var(--light); 
+}
+
+// Global Box Sizing & Overflow Fixes
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+    font-family: Vazirmatn, sans-serif !important;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+// 2. Main Content Container (Feature C)
+.center {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  padding: 32px !important;
+  margin-top: 2rem !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .center {
+    padding: 20px !important;
+    border-radius: 16px;
+    margin-top: 1rem !important;
+  }
+}
+
+[saved-theme="dark"] .center {
+  background-color: var(--lightgray);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+// Hide empty page-header on index page
+body[data-slug="index"] .page-header {
+  margin-top: 0;
+  height: 0;
+  display: none;
+}
+
+// Enhanced Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1.2em;
+}
+
+// Fix for footnote references causing extra line-height
+sup {
+  line-height: 0;
+  vertical-align: super;
+  font-size: 0.75em;
+  margin-left: 2px;
+  
+  a[data-footnote-ref] {
+    line-height: 0;
+    vertical-align: baseline;
+  }
+}
+
+.breadcrumb-element p {
+	margin: 0 .5rem 0 0;
+	padding: 0;
+	line-height: normal;
+}
+
+button#explorer .fold {
+	opacity: .8;
+	transition: transform .3s;
+}
+
+.content-meta[show-comma="true"] > span:not(:last-child) {
+	margin-left: 8px !important;
+    margin-right: 0px !important;
+}
+
+.tags {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.folder-icon {
+	margin-right: 0px !important;
+	margin-left: 5px !important;
+}
+
+#explorer-content ul {
+	padding-right: .5rem !important;
+	padding-left: 0px !important;
+}
+
+.explorer {
+    border:1px solid var(--gray);
+    border-radius:5px;
+    padding:10px;
+    font-size:1rem;
+    // 7. Add Glassmorphism Effects
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+#toc-content .depth-0 {
+	padding: 0px !important;
+	padding-right: 1rem !important;
+}
+
+#toc-content .depth-1 {
+	padding: 0px !important;
+	padding-right: 1.5rem !important;
+}
+
+#toc-content .depth-2 {
+	padding: 0px !important;
+	padding-right: 2rem !important;
+}
+
+#toc-content .depth-3 {
+	padding: 0px !important;
+	padding-right: 2.5rem !important;
+}
+
+/* Backlinks styles moved to component stylesheet (quartz/components/styles/backlinks.scss) */
+
+// Margin fix in tag pages
+
+li.section-li > .section > .meta {
+    margin: 0 0 0 1em !important;
+}
+
+li:has(> .folder-outer:not(.open)) > .folder-container > svg {
+	transform: rotate(90deg) !important;
+}
+
+footer {
+	text-align: center;
+	// Match footer background with body gradient
+	// background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
+	padding: 2rem 0;
+	// margin-top: 2rem;
+}
+
+footer ul {
+	display: unset;
+}
+
+code {
+	direction: ltr !important;
+	font-family: 'Fira Code', 'IBM Plex Mono', monospace;
+	font-size: 0.9em;
+}
+
+// Enhanced Code Blocks
+pre {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+//   background: linear-gradient(90deg, #ff5f56 0%, #ffbd2e 33%, #27c93f 66%);
+  opacity: 0.8;
+}
+
+.search {
+    max-width: unset;
+    // 8. Improve Search Bar
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search > #search-icon {
+    background-color: unset !important;
+    border: 1px solid var(--gray) !important;
+}
+
+.search input {
+    border-radius: 25px;
+    padding: 12px 20px 12px 45px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.search input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(139, 126, 200, 0.3);
+}
+
+div.search.mobile-only {
+    padding-right: 10px !important;
+    padding-left: 30px;
+    margin-right: auto;
+}
+
+.center img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+// Farsi Blockquote
+
+.markdown-preview-view .farsi-blockquote {
+    direction: rtl;
+    
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0 20px 0 0;
+
+    border-right: 2px solid gray !important;
+    border-left: unset;
+
+    
+    color: gray;
+    /* color: gray; */
+}
+  
+.farsi-blockquote {
+    direction: rtl;
+    padding: 0 20px 0 0;
+
+    max-width: var(--max-width);
+
+    border-right: 2px solid gray !important;
+    border-left: unset;
+
+    // font-family: Sahel;
+    font-size: 16px;
+    /* font-style: italic; */
+    color: var(--text-muted);   
+    max-width: var(--max-width);
+    margin: 0 auto!important;
+    width: var(--line-width-adaptive);
+    /* color: gray; */
+}
+
+.farsi-blockquote-black {
+    color: var(--text-normal) !important;
+}
+
+.farsi-blockquote::before {
+    content:unset;
+}
+
+blockquote .farsi-footer {
+    margin-top: 1em;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 10pt;
+    text-align: right;
+    // font-family: Sahel;
+    font-style: normal;
+    color: gray;
+}
+
+.markdown-preview-view blockquote .farsi-footer {
+    margin-top: 1em !important;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 10pt;
+    text-align: right;
+    // font-family: Sahel;
+    font-style: normal;
+    /* color: gray; */
+}
+
+blockquote footer:before {
+    content: '— ';
+}
+
+
+.markdown-preview-view blockquote {
+    direction: rtl;
+    
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0 calc(var(--nested-padding)) 0 0;
+
+    border-right: 2px solid var(--text-muted) !important;
+    border-left: unset;
+
+    
+    color: var(--text-muted);
+    /* color: gray; */
+}
+  
+blockquote {
+    direction: rtl;
+
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0 calc(var(--nested-padding)) 0 0;
+
+    // border-right: 2px solid var(--text-muted) !important;
+    border-left: unset;
+
+    // font-family: Sahel;
+    font-size: 17px;
+    /* font-style: italic; */
+    color: var(--text-muted);   
+    width: var(--line-width-adaptive);
+    /* color: gray; */
+}
+
+blockquote::before {
+    content: none !important;
+}
+
+// English Blockquote
+
+.markdown-preview-view .english-blockquote {
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-left: 2px solid var(--text-muted) !important;
+    border-right: none !important;
+    direction: ltr;
+    color: var(--text-muted);
+    font-size: 19px !important;
+    font-style: italic;
+    padding: 0 0 0 20px;
+}
+  
+.english-blockquote {
+    direction: ltr;
+    
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0 0 0 20px;
+
+    border-left: 2px solid var(--text-muted) !important;
+    border-right: none !important;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-muted);   
+}
+
+.english-blockquote::before {
+    content: none;
+}
+
+blockquote .english-footer {
+    margin-top: 1em;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 10pt;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.markdown-preview-view blockquote .english-footer {
+    margin-top: 1em !important;
+    padding: 0;
+    color: var(--text-muted);
+    font-size: 10pt;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    
+}
+
+blockquote footer:before {
+    content: '— ';
+}
+
+
+// Highlight Coloring
+
+.text-highlight {
+    font-weight: normal;
+    background-color: transparent;
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 3px;
+    transition: background 200ms ease;
+    background-image: linear-gradient(120deg, var(--secondary), var(--secondary));
+}
+
+.text-highlight:hover {
+    background-size: 100% 100%;
+}
+
+// 3. Add Smooth Animations (RTL version)
+a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+// Internal Links - Gradient Underline with Glow
+a.internal {
+    background-color: transparent !important;
+    padding: 0 !important;
+    color: var(--secondary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+a.internal::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--tertiary), var(--tertiary));
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+a.internal:hover {
+    color: var(--tertiary);
+    text-shadow: 0 0 20px rgba(94, 64, 157, 0.3);
+}
+
+a.internal:hover::after {
+    width: 100%;
+}
+
+// Center tables
+
+.table-container > table {
+    margin: auto;
+}
+
+// Two columns in index page
+
+// .index ul{
+//     list-style-type: disc;
+//     -webkit-columns: 2;
+//     -moz-columns: 2;
+//     columns: 2;
+//     list-style-position: inside;
+// }
+
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+body::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+    display:none;
+}
+
+th {
+    text-align: center !important;
+}
+
+// Katex LTR
+
+.poem-title {
+    text-align: center;
+    font-family: IranNastaliq !important;
+}
+
+h3.poem-title::before {
+    content: none;
+}
+
+.poem-verse-div {
+    margin: auto;
+    height: auto;
+    text-align: center;
+    clear: both;
+    font-weight: 400;
+}
+
+.poem-right-verse-div {
+    width: 45%;
+    float: right;
+    text-align: left;
+}
+
+.poem-left-verse-div {
+    width: 45%;
+    float: left;
+    text-align: right;
+}
+
+.poem-footer {
+    text-align: center;
+    color: gray;
+    font-size: 12px;
+}
+
+.poem-reference {
+    display:table;
+    margin:0 auto;
+    direction: rtl;
+}
+
+.poem-verse-num {
+    position: relative !important;
+    right: -5% !important;
+    top: 34px !important;
+    line-height: 0px !important;
+    margin-top: 6px !important;
+    margin-right: 3px !important;
+    // font-family: 'Sahel FD' !important;
+    font-weight: 500 !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    font-style: normal !important;
+    color: var(--text-faint) !important;
+}
+
+.ayah {
+    font-family: "Amiri";
+    font-size: 22px !important;
+    line-height: 2.5em;
+}
+
+.ayah_translation {
+    color: darkgray;
+}
+
+.callout.is-collapsed > .callout-title > .fold-callout-icon {
+    transform: rotate(90deg);
+}
+
+h2#footnote-label{
+    visibility: hidden;
+    direction: rtl !important;
+}
+  
+  
+h2#footnote-label::after{
+    content: "پانوشت‌ها";
+    visibility: visible;
+    display: block;
+}
+
+
+div>ul>li>a {
+    font-weight: 400;
+}
+
+body[data-slug="projects/pkm/متن‌خوانی-how-to-do-great-work"] article > p,
+body[data-slug="projects/pkm/متن‌خوانی-how-to-do-great-work"] section.footnotes > ol {
+    direction: ltr;
+}
+
+
+.about-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--lightgray);
+    transition: all 0.3s ease;
+}
+
+.logo-svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo-link:hover .logo-svg {
+    fill: var(--tertiary);
+    filter: brightness(1.2) saturate(1.3);
+}
+
+@media (max-width: $mobileBreakpoint) {
+    .logo-div {
+        gap: 10px;
+        padding: 10px;
+    }
+    .logo-link {
+        width: 35px;
+        height: 35px;
+    }
+    .logo-svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+// Article Header
+
+.article-header {/* Default background color */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.article-header h1 { 
+    margin: 0;
+    color: white !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.article-header p {
+    margin: 5px 0 0;
+    color: white !important;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* background image */
+.article-header.with-background-image {
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+// Mermaid fix: https://ifard.ir/quartz-configuration#%D8%AF%DB%8C%D8%A7%DA%AF%D8%B1%D8%A7%D9%85
+
+.mermaid {
+	direction: rtl !important;
+    text-align: center;
+}
+ 
+pre:has(>code.mermaid) {
+	background-color: transparent;
+}
+ 
+.nodeLabel {
+	font-family: var(--bodyFont);
+}
+
+.edgeLabel {
+    font-family: var(--bodyFont);
+    background-color: #fff !important;
+}
+ 
+pre:has(>code.mermaid) .clipboard-button {
+	display: none;
+}
+
+
+// Latex LTR
+
+.katex-display {
+    direction: ltr;
+}
+
+.katex {
+    direction: ltr;
+    display: inline-block;
+}
+
+// title logo
+.title-logo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    img {
+        width: 150px;
+    }
+}
+
+@media (max-width: $mobileBreakpoint) {
+    .title-logo {
+        flex-direction: row;
+        align-items: center;
+        img {
+            width: 75px;
+        }
+    }
+    #header-text {
+        overflow-wrap: unset;
+    }
+}
+
+// Tablet styles
+@media (min-width: $mobileBreakpoint) and (max-width: calc($desktopBreakpoint - 1px)) {
+    .title-logo {
+        flex-direction: row;
+        align-items: center;
+        img {
+            width: 75px;
+        }
+    }
+    #header-text {
+        overflow-wrap: unset;
+    }
+}
+
+#icon-header {
+    margin: 0;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Page Header styling
+.page-header {
+  padding-top: 0 !important;
+  padding-bottom: 0.5rem;
+}
+
+.breadcrumb-container {
+  margin-top: 0 !important;
+  font-family: var(--headerFont);
+  font-size: 0.95rem;
+  font-weight: 100;
+
+  a {
+    color: var(--gray);
+  }
+
+  p {
+    color: var(--gray);
+  }
+}
+
+.article-title {
+  font-size: 2.75rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.content-meta {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray);
+  font-size: 0.9rem;
+  color: var(--gray);
+
+  time::before,
+  span::before {
+    content: "";
+  }
+
+  &[show-comma="true"] > *:not(:last-child)::after {
+    content: " • ";
+    color: var(--gray);
+    margin: 0 0.5rem;
+  }
+}
+
+// top margin
+
+@media (min-width: $desktopBreakpoint) {
+    .page-header {
+        margin: 0rem auto 0 !important;
+    }
+    .page > #quartz-body .sidebar {
+        margin-top: 7rem !important;
+    }
+}
+
+// Image Grid 
+.img-grid, article.img-grid {
+    // Handle images directly in paragraphs
+    > p {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        
+        > img {
+            flex: 1;
+            min-width: 200px;
+            width: 100%;
+            object-fit: cover;
+            margin: 0;
+        }
+    }
+    
+    // Keep the existing selectors for compatibility
+    article > div:has(> img) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    article > div:has(> img) > * {
+        flex: 1;
+        min-width: 200px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    
+    article > div:has(> img) > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    // Make sure paragraphs with images inside are properly handled
+    article > div:has(> p:has(> img)) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    article > div:has(> p:has(> img)) > p {
+        flex: 1;
+        min-width: 200px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    
+    article > div:has(> p:has(> img)) > p > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    // Support for internal embeds that contain images
+    article > div:has(> .internal-embed:has(> img)) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    article > div:has(> .internal-embed:has(> img)) > .internal-embed {
+        flex: 1;
+        min-width: 200px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding: 0;
+        background-color: transparent;
+    }
+    
+    article > div:has(> .internal-embed:has(> img)) > .internal-embed > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+/* === Styles for Featured Cards === */
+
+.featured-cards-title {
+  text-align: right;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+// Feature A: Bento Grid Layout
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(160px, auto);
+  gap: 1.5rem;
+  margin: 2rem 0;
+  perspective: 1000px;
+
+  @media (max-width: 600px) { // Using standard mobile breakpoint
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+}
+
+.card-container {
+  display: block;
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 24px; // Match main container rounded corners (Feature C/specs 32)
+  background-color: var(--darkgray);
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow 0.4s ease-in-out;
+  transform-style: preserve-3d;
+  min-height: 100px;
+  z-index: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+  will-change: transform;
+}
+
+// Specific Bento positions
+.card-container:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 350px;
+
+  @media (max-width: 600px) {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 250px;
+  }
+}
+
+.card-container:nth-child(4) {
+  grid-column: span 3;
+
+  @media (max-width: 600px) {
+    grid-column: span 1;
+  }
+}
+
+// Gradient overlay for better text readability
+.card-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  border-radius: 24px;
+  z-index: 1;
+  pointer-events: none;
+  transition: background 0.4s ease-in-out;
+}
+
+.card-container:hover::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.card-container:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.card-container.card-tilt-reset {
+  transition: transform 0.5s ease-out;
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--card-bg);
+  background-size: cover;
+  background-position: center;
+}
+
+// Feature B: Image Interaction (Grayscale to Color)
+.card-container.has-image .card-bg {
+  filter: grayscale(70%);
+  transform: scale(1);
+  transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.card-container.has-image:hover .card-bg {
+  filter: grayscale(0%);
+  transform: scale(1.08); // Feature F: Parallax/Zoom effect
+}
+
+.card-container.no-image .card-bg {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #3B82F6 100%);
+  filter: none !important;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #FFFFFF !important;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-content p {
+  margin: 0;
+  color: #E5E7EB !important;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+// 5. Add Floating Elements
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.logo-link:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+// align page header to the right on mobile and tablet
+@media (max-width: calc($desktopBreakpoint - 1px)) {
+    .page-title-container {
+        align-items: flex-start;
+    }
+}
+
+// Recent Notes ul fix
+.recent-notes .recent-ul {
+    list-style: none !important;
+    padding-right: 0 !important;
+}
+
+// 10. Dark Mode Enhancements
+[saved-theme="dark"] .card-container {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[saved-theme="dark"] .search input {
+  background: rgba(40, 40, 40, 0.8);
+  color: var(--dark);
+}
+
+[saved-theme="dark"] .explorer {
+  background: rgba(40, 40, 40, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+// Additional glassmorphism utility class
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+// Feature E: Vertical Rhythm Line
+@media (min-width: 1360px) {
+  .sidebar.left {
+    border-inline-end: 1px dashed #E5E5E5;
+    padding-inline-end: 3rem !important;
+  }
+}
+
+[saved-theme="dark"] {
+  .sidebar.left {
+    border-inline-end: 1px dashed rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Section Dividers (Feature G)
+.section-divider {
+  width: 100%;
+  height: 80px;
+  margin: 2rem 0;
+  color: var(--gray);
+  pointer-events: none;
+  opacity: 0.8; // Added a bit of transparency control here
+  
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+[saved-theme="dark"] .section-divider {
+  color: var(--lightgray); // Use a softer color in dark mode
+  opacity: 0.3; // Make it much more subtle in dark mode to compensate for higher SVG opacity
+}
+
+/* Recent Notes Styling Fix */
+.recent-notes .recent-ul li .section .desc {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem !important;
+  width: 100%;
+  direction: rtl;
+}
+
+.recent-notes .recent-ul li .section .desc time {
+  margin: 0 !important;
+  margin-left: 10px !important;
+  color: var(--gray) !important;
+  font-size: 0.85rem !important;
+  white-space: nowrap !important;
+  opacity: 0.8 !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+}
+
+.recent-notes .recent-ul li .section .desc .recent-title {
+  margin: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: var(--secondary) !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.recent-notes .recent-ul li .section .desc .recent-title:hover {
+  color: var(--tertiary) !important;
+  text-decoration: underline !important;
+}
+
+.dao table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.dao table td {
+  padding: 1rem;
+  text-align: center;
+  border: none;
+  vertical-align: middle;
+}
+
+.dao table tr:nth-child(2) {
+  display: none;
+}
+
+.dao table a {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.dao table a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.1);
+}
+
+.dao thead,
+.dao th {
+  border-bottom: none !important;
+}
+
+.dao table a::after {
+  content: none;
+}
+
+[saved-theme="dark"] .dao table a {
+  background: linear-gradient(135deg, var(--tertiary), var(--secondary));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+[saved-theme="dark"] .dao table a:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dao {
+  --light: #F5F3EE !important;
+  --lightgray: #E8E5DC !important;
+  --gray: #9A958B !important;
+  --darkgray: #4A4640 !important;
+  --dark: #2C2A27 !important;
+  --secondary: #6B8E7E !important;
+  --tertiary: #4A6B5C !important;
+  --highlight: rgba(107, 142, 126, 0.15) !important;
+  --textHighlight: rgba(107, 142, 126, 0.15) !important;
+}
+
+[saved-theme="dark"] .dao {
+  --light: #1A1D23 !important;
+  --lightgray: #252A33 !important;
+  --gray: #8B9099 !important;
+  --darkgray: #D4D8DD !important;
+  --dark: #E8EBF0 !important;
+  --secondary: #5C7A9E !important;
+  --tertiary: #7B9BC0 !important;
+  --highlight: rgba(92, 122, 158, 0.15) !important;
+  --textHighlight: rgba(92, 122, 158, 0.15) !important;
+}

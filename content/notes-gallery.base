@@ -1,0 +1,20 @@
+views:
+  - type: cards
+    name: Table
+    filters:
+      and:
+        - "!image.isEmpty()"
+    groupBy:
+      property: featured
+      direction: DESC
+    order:
+      - title
+      - description
+      - featured
+      - order
+    sort:
+      - property: order
+        direction: ASC
+    image: note.image
+    cardSize: 160
+    imageAspectRatio: 0.45

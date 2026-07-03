@@ -1,0 +1,13 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - draft == true
+    order:
+      - file.name
+      - title
+      - file.path
+      - file.mtime
+    columnSize:
+      note.title: 202

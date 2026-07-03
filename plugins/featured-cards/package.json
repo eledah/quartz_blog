@@ -1,0 +1,57 @@
+{
+  "name": "@eledah/featured-cards",
+  "version": "1.0.0",
+  "description": "Bento-style featured article cards and hero images for Quartz",
+  "type": "module",
+  "license": "MIT",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@quartz-community/types": "github:quartz-community/types",
+    "@quartz-community/utils": "github:quartz-community/utils"
+  },
+  "devDependencies": {
+    "@types/hast": "^3.0.4",
+    "preact": "^10.28.2",
+    "sass": "^1.97.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "quartz": {
+    "name": "featured-cards",
+    "displayName": "Featured Cards",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "defaultEnabled": true,
+    "components": {
+      "FeaturedCards": {
+        "displayName": "Featured Cards",
+        "defaultPosition": "beforeBody",
+        "defaultPriority": 7
+      },
+      "FeaturedImage": {
+        "displayName": "Featured Image",
+        "defaultPosition": "beforeBody",
+        "defaultPriority": 15
+      }
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
