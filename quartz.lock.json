@@ -20,10 +20,10 @@
       "installedAt": "2026-07-03T06:10:30.811Z"
     },
     "bases-page": {
-      "source": "github:quartz-community/bases-page",
-      "resolved": "https://github.com/quartz-community/bases-page.git",
-      "commit": "f8fc7da3515a4d4bbe0bd4be0fd9188823866a01",
-      "installedAt": "2026-07-03T06:10:38.733Z"
+      "source": "./plugins/bases-page",
+      "resolved": "C:\\Users\\Tetra-AI1\\Documents\\GitHub\\quartz_blog\\plugins\\bases-page",
+      "commit": "local",
+      "installedAt": "2026-07-03T18:10:53.716Z"
     },
     "bidi-text": {
       "source": "./plugins/bidi-text",
@@ -102,6 +102,12 @@
       "resolved": "https://github.com/quartz-community/darkmode.git",
       "commit": "c6484f72ebc6ea89339be7cf86ad14b40c47dcc7",
       "installedAt": "2026-07-03T06:10:34.993Z"
+    },
+    "date-field": {
+      "source": "./plugins/date-field",
+      "resolved": "C:\\Users\\Tetra-AI1\\Documents\\GitHub\\quartz_blog\\plugins\\date-field",
+      "commit": "local",
+      "installedAt": "2026-07-03T18:10:53.714Z"
     },
     "description": {
       "source": "github:quartz-community/description",
@@ -228,12 +234,6 @@
       "resolved": "https://github.com/quartz-community/search.git",
       "commit": "0f4c1a233cd03a0f562e13636b89b7708f8e2698",
       "installedAt": "2026-07-03T06:10:32.018Z"
-    },
-    "spacer": {
-      "source": "github:quartz-community/spacer",
-      "resolved": "https://github.com/quartz-community/spacer.git",
-      "commit": "64b135dcfb78c4911f8c42d942872d645cd2a456",
-      "installedAt": "2026-07-03T06:10:35.897Z"
     },
     "stacked-pages": {
       "source": "github:quartz-community/stacked-pages",

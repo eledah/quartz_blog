@@ -291,7 +291,7 @@ plugins:
       position: right
       priority: 25
       display: desktop-only
-  - source: github:quartz-community/bases-page
+  - source: ./plugins/bases-page
     enabled: true
     options: {}
     order: 50
