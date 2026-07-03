@@ -12,7 +12,9 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  # Cancel an in-progress deploy when a newer push lands so rapid commits
+  # don't queue multiple Pages publishes (GitHub allows one in flight).
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -58,14 +60,19 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # Pages allows only one deployment in flight. A new publish can fail with
+      # "Deployment failed, try again later" while the previous one is settling.
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         continue-on-error: true
+      - name: Wait for in-flight Pages deployment to settle
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 90
       - name: Retry deploy to GitHub Pages
         if: steps.deployment.outcome == 'failure'
         id: deployment_retry
         uses: actions/deploy-pages@v4
       - name: Fail if deploy did not succeed
-        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome != 'success'
         run: exit 1
