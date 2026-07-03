@@ -189,12 +189,24 @@ plugins:
       position: left
       priority: 30
       display: desktop-only
+  - source: github:quartz-community/search
+    enabled: true
+    layout:
+      position: left
+      priority: 25
+      display: mobile-only
   - source: github:quartz-community/backlinks
     enabled: true
     layout:
       position: right
       priority: 50
       display: desktop-only
+  - source: github:quartz-community/backlinks
+    enabled: true
+    layout:
+      position: right
+      priority: 50
+      display: mobile-only
   - source: github:quartz-community/article-title
     enabled: true
     layout:
@@ -217,23 +229,31 @@ plugins:
     layout:
       position: left
       priority: 5
-      display: desktop-only
+      component: PageTitle
   - source: github:quartz-community/darkmode
     enabled: true
     layout:
       position: left
       priority: 20
       display: desktop-only
-      group: toolbar
+      group: toggles
+  - source: github:quartz-community/darkmode
+    enabled: true
+    layout:
+      position: left
+      priority: 20
+      display: mobile-only
   - source: github:quartz-community/reader-mode
     enabled: true
     layout:
       position: left
       priority: 25
       display: desktop-only
-      group: toolbar
+      group: toggles
   - source: github:quartz-community/breadcrumbs
     enabled: true
+    options:
+      rootName: کریستالین
     layout:
       position: beforeBody
       priority: 5
@@ -271,14 +291,6 @@ plugins:
       position: right
       priority: 25
       display: desktop-only
-  - source: github:quartz-community/spacer
-    enabled: true
-    options: {}
-    order: 25
-    layout:
-      position: left
-      priority: 25
-      display: mobile-only
   - source: github:quartz-community/bases-page
     enabled: true
     options: {}
@@ -299,7 +311,7 @@ plugins:
     order: 5
 layout:
   groups:
-    toolbar:
+    toggles:
       priority: 20
       direction: row
       gap: 0.5rem

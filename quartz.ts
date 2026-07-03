@@ -32,6 +32,11 @@ function hasTag(file: QuartzPluginData, tag: string): boolean {
   return Array.isArray(tags) && tags.includes(tag)
 }
 
+Plugin.Explorer({
+  filterFn: (node) =>
+    node.file?.frontmatter?.tags?.includes("explorerexclude") !== true,
+})
+
 Plugin.RecentNotes({
   hideFolderPages: true,
   hideTagPages: true,

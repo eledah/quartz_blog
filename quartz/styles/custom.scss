@@ -48,12 +48,11 @@ body::before {
 html {
     font-family: Vazirmatn, sans-serif !important;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
   max-width: 100%;
-  overflow-x: hidden;
   width: 100%;
 }
 
@@ -68,7 +67,7 @@ body {
   max-width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: $mobileBreakpoint) {
   .center {
     padding: 20px !important;
     border-radius: 16px;
@@ -809,36 +808,55 @@ pre:has(>code.mermaid) .clipboard-button {
     .title-logo {
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        width: 100%;
         img,
         #icon-header {
-            width: 188px;
+            width: 75px;
         }
     }
     #header-text {
         overflow-wrap: unset;
+        font-size: 1.25rem;
     }
-}
 
-// Tablet styles
-@media (min-width: $mobileBreakpoint) and (max-width: calc($desktopBreakpoint - 1px)) {
-    .title-logo {
-        flex-direction: row;
+    .page > #quartz-body .sidebar.left {
         align-items: center;
-        img,
-        #icon-header {
-            width: 188px;
-        }
+        justify-content: center;
+        padding: 1.25rem 1rem 0.5rem;
+        margin-top: 0 !important;
     }
-    #header-text {
-        overflow-wrap: unset;
+
+    .page-title-container {
+        align-items: center;
+        width: 100%;
+    }
+
+    .page-title {
+        width: 100%;
+        text-align: center;
     }
 }
 
-// Sidebar toolbar: dark mode + reader mode side-by-side, centered
+#header-text {
+    color: var(--secondary);
+
+    &:hover {
+        color: var(--tertiary);
+    }
+}
+
+// Sidebar toggles: dark mode + reader mode side-by-side, centered above search
 .sidebar.left > .flex-component {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+@media (min-width: $desktopBreakpoint) {
+    .sidebar.left > .search {
+        width: 100%;
+    }
 }
 
 @media (max-width: $mobileBreakpoint) {
@@ -902,13 +920,19 @@ pre:has(>code.mermaid) .clipboard-button {
   }
 }
 
-// top margin
-
+// Desktop: sticky sidebars (grid items must not stretch to full row height)
 @media (min-width: $desktopBreakpoint) {
     .page-header {
         margin: 0rem auto 0 !important;
     }
     .page > #quartz-body .sidebar {
+        align-self: start;
+        position: sticky;
+        top: 2rem;
+        height: auto;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+        overscroll-behavior: contain;
         margin-top: 7rem !important;
     }
 }
@@ -994,155 +1018,7 @@ pre:has(>code.mermaid) .clipboard-button {
         object-fit: cover;
     }
 }
-/* === Styles for Featured Cards === */
-
-.featured-cards-title {
-  text-align: right;
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
-}
-
-// Feature A: Bento Grid Layout
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(160px, auto);
-  gap: 1.5rem;
-  margin: 2rem 0;
-  perspective: 1000px;
-
-  @media (max-width: 600px) { // Using standard mobile breakpoint
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-  }
-}
-
-.card-container {
-  display: block;
-  position: relative;
-  padding: 1.5rem;
-  border-radius: 24px; // Match main container rounded corners (Feature C/specs 32)
-  background-color: var(--darkgray);
-  overflow: hidden;
-  text-decoration: none;
-  transition: box-shadow 0.4s ease-in-out;
-  transform-style: preserve-3d;
-  min-height: 100px;
-  z-index: 0;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
-  will-change: transform;
-}
-
-// Specific Bento positions
-.card-container:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2;
-  min-height: 350px;
-
-  @media (max-width: 600px) {
-    grid-column: span 1;
-    grid-row: span 1;
-    min-height: 250px;
-  }
-}
-
-.card-container:nth-child(4) {
-  grid-column: span 3;
-
-  @media (max-width: 600px) {
-    grid-column: span 1;
-  }
-}
-
-// Gradient overlay for better text readability
-.card-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
-  border-radius: 24px;
-  z-index: 1;
-  pointer-events: none;
-  transition: background 0.4s ease-in-out;
-}
-
-.card-container:hover::before {
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.05) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
-}
-
-.card-container:hover {
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-}
-
-.card-container.card-tilt-reset {
-  transition: transform 0.5s ease-out;
-}
-
-.card-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: var(--card-bg);
-  background-size: cover;
-  background-position: center;
-}
-
-// Feature B: Image Interaction (Grayscale to Color)
-.card-container.has-image .card-bg {
-  filter: grayscale(70%);
-  transform: scale(1);
-  transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
-}
-
-.card-container.has-image:hover .card-bg {
-  filter: grayscale(0%);
-  transform: scale(1.08); // Feature F: Parallax/Zoom effect
-}
-
-.card-container.no-image .card-bg {
-  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #3B82F6 100%);
-  filter: none !important;
-}
-
-.card-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.card-content h3 {
-  margin: 0 0 0.5rem 0;
-  color: #FFFFFF !important;
-  font-size: 1.5rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.card-content p {
-  margin: 0;
-  color: #E5E7EB !important;
-  font-size: 1rem;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-}
-
-// 5. Add Floating Elements
+// Logo hover animation (PageTitle)
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -1153,9 +1029,9 @@ pre:has(>code.mermaid) .clipboard-button {
   animation: float 2s ease-in-out infinite;
 }
 
-// align page header to the right on mobile and tablet
-@media (max-width: calc($desktopBreakpoint - 1px)) {
-    .page-title-container {
+// align page header on non-desktop (article meta only; logo stays centered)
+@media (max-width: $mobileBreakpoint) {
+    .page-header {
         align-items: flex-start;
     }
 }
@@ -1164,12 +1040,6 @@ pre:has(>code.mermaid) .clipboard-button {
 .recent-notes .recent-ul {
     list-style: none !important;
     padding-right: 0 !important;
-}
-
-// 10. Dark Mode Enhancements
-[saved-theme="dark"] .card-container {
-  background: rgba(30, 30, 30, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 [saved-theme="dark"] .search input {
@@ -1191,7 +1061,7 @@ pre:has(>code.mermaid) .clipboard-button {
 }
 
 // Feature E: Vertical Rhythm Line
-@media (min-width: 1360px) {
+@media (min-width: $desktopBreakpoint) {
   .sidebar.left {
     border-inline-end: 1px dashed #E5E5E5;
     padding-inline-end: 3rem !important;

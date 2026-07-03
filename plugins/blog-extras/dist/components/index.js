@@ -85,12 +85,24 @@ PageTitle.css = `
   font-size: 1.75rem;
   margin: 0;
   font-family: var(--titleFont);
+  width: 100%;
 }
 
 .title-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
+}
+
+#header-text {
+  text-decoration: none;
+  color: var(--secondary);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--tertiary);
+  }
 }
 `;
 var PageTitle_default = (() => PageTitle);

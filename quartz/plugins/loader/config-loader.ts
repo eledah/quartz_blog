@@ -770,8 +770,7 @@ function buildLayoutForEntries(
     const reg =
       (layout.component ? componentRegistry.get(layout.component) : undefined) ??
       registered ??
-      componentRegistry.get(pascalName) ??
-      (name === "blog-extras" ? componentRegistry.get("PageTitle") : undefined)
+      componentRegistry.get(pascalName)
     if (!reg) continue
 
     let component: QuartzComponent

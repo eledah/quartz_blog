@@ -58,7 +58,8 @@ export default {
       title: "فهرست",
     },
     contentMeta: {
-      readingTime: ({ minutes }) => `زمان تقریبی مطالعه: ${minutes} دقیقه`,
+      readingTime: ({ minutes }) =>
+        `زمان تقریبی مطالعه: ${minutes.toLocaleString("fa-IR")} دقیقه`,
     },
   },
   pages: {

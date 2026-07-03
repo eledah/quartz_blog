@@ -254,6 +254,10 @@
                 "type": "string",
                 "description": "Conditional display logic"
               },
+              "component": {
+                "type": "string",
+                "description": "Component export name when a plugin provides multiple components"
+              },
               "group": {
                 "type": "string",
                 "description": "Layout group name"

@@ -1,20 +1,20 @@
 @use "sass:map";
 
 /**
- * Layout breakpoints — v4 blog values in v5 map format
+ * Two-layout breakpoints — mobile below 1200px, desktop at 1200px+.
+ * No tablet tier; $tablet is disabled so only mobileGrid / desktopGrid apply.
  */
 $breakpoints: (
-  mobile: 600px,
-  desktop: 1360px,
+  mobile: 1199px,
+  desktop: 1200px,
 );
 
 $mobileBreakpoint: map.get($breakpoints, mobile);
 $desktopBreakpoint: map.get($breakpoints, desktop);
-$tabletBreakpoint: 1000px;
 
-$mobile: "(max-width: #{map.get($breakpoints, mobile)})";
-$tablet: "(min-width: #{map.get($breakpoints, mobile)}) and (max-width: #{map.get($breakpoints, desktop)})";
-$desktop: "(min-width: #{map.get($breakpoints, desktop)})";
+$mobile: "(max-width: #{$mobileBreakpoint})";
+$desktop: "(min-width: #{$desktopBreakpoint})";
+$tablet: "(max-width: 0)";
 
 $pageWidth: 750px;
 $sidePanelWidth: 380px;
@@ -35,17 +35,7 @@ $mobileGrid: (
       "grid-sidebar-right"\
       "grid-footer"',
 );
-$tabletGrid: (
-  templateRows: "auto auto auto auto",
-  templateColumns: "#{$sidePanelWidth} auto",
-  rowGap: "5px",
-  columnGap: "5px",
-  templateAreas:
-    '"grid-sidebar-left grid-header"\
-      "grid-sidebar-left grid-center"\
-      "grid-sidebar-left grid-sidebar-right"\
-      "grid-sidebar-left grid-footer"',
-);
+$tabletGrid: $mobileGrid;
 $desktopGrid: (
   templateRows: "auto auto auto",
   templateColumns: "#{$sidePanelWidth} auto #{$sidePanelWidth}",
