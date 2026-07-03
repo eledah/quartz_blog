@@ -23,7 +23,6 @@ body {
   background-color: #F9F7F2;
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
 }
 
 body::before {
@@ -47,13 +46,13 @@ body::before {
   box-sizing: border-box;
 }
 
-// base.scss sets html { width: 100vw } which overflows the visual viewport on
-// real mobile browsers and enables horizontal scroll beside fixed backgrounds.
+// base.scss sets html { width: 100vw; overflow-x: hidden } — 100vw overflows on
+// mobile, and overflow:hidden on html/body breaks position:sticky on sidebars.
 html {
   font-family: Vazirmatn, sans-serif !important;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -73,6 +72,11 @@ body {
 }
 
 @media (max-width: $mobileBreakpoint) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   .page {
     width: 100%;
     max-width: 100%;
