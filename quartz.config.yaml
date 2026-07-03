@@ -41,6 +41,9 @@ configuration:
         highlight: rgba(139, 126, 200, 0.15)
         textHighlight: rgba(139, 126, 200, 0.15)
 plugins:
+  - source: ./plugins/date-field
+    enabled: true
+    order: 8
   - source: github:quartz-community/created-modified-date
     enabled: true
     options:
@@ -74,9 +77,10 @@ plugins:
     enabled: true
     order: 50
     layout:
-      position: right
+      position: left
       priority: 40
       display: desktop-only
+      condition: not-index
   - source: github:quartz-community/crawl-links
     enabled: true
     options:
@@ -157,22 +161,38 @@ plugins:
     layout:
       position: beforeBody
       priority: 7
+      component: FeaturedCards
+  - source: ./plugins/featured-cards
+    enabled: true
+    order: 36
+    layout:
+      position: beforeBody
+      priority: 22
+      condition: not-index
+      component: FeaturedImage
   - source: github:quartz-community/graph
     enabled: true
+    options:
+      localGraph:
+        removeTags:
+          - explorerexclude
+      globalGraph:
+        removeTags:
+          - explorerexclude
     layout:
-      position: left
+      position: right
       priority: 10
       display: desktop-only
   - source: github:quartz-community/search
     enabled: true
     layout:
-      position: right
+      position: left
       priority: 30
       display: desktop-only
   - source: github:quartz-community/backlinks
     enabled: true
     layout:
-      position: left
+      position: right
       priority: 50
       display: desktop-only
   - source: github:quartz-community/article-title
@@ -180,11 +200,13 @@ plugins:
     layout:
       position: beforeBody
       priority: 10
+      condition: not-index
   - source: github:quartz-community/content-meta
     enabled: true
     layout:
       position: beforeBody
       priority: 20
+      condition: not-index
   - source: github:quartz-community/tag-list
     enabled: false
     layout:
@@ -193,21 +215,23 @@ plugins:
   - source: ./plugins/blog-extras
     enabled: true
     layout:
-      position: right
-      priority: 10
+      position: left
+      priority: 5
       display: desktop-only
   - source: github:quartz-community/darkmode
     enabled: true
     layout:
-      position: right
+      position: left
       priority: 20
       display: desktop-only
+      group: toolbar
   - source: github:quartz-community/reader-mode
     enabled: true
     layout:
-      position: right
+      position: left
       priority: 25
       display: desktop-only
+      group: toolbar
   - source: github:quartz-community/breadcrumbs
     enabled: true
     layout:
@@ -241,8 +265,10 @@ plugins:
       limit: 3
       linkToMore: false
       showTags: false
+      hideTagPages: true
+      hideFolderPages: true
     layout:
-      position: left
+      position: right
       priority: 25
       display: desktop-only
   - source: github:quartz-community/spacer
@@ -258,26 +284,23 @@ plugins:
     options: {}
     order: 50
   - source: github:quartz-community/note-properties
-    enabled: false
+    enabled: true
     options:
       includeAll: false
       includedProperties:
+        - date
         - description
         - tags
         - aliases
       excludedProperties: []
-      hidePropertiesView: false
-      delimiters: ---
+      hidePropertiesView: true
+      delimiters: "---"
       language: yaml
     order: 5
-    layout:
-      position: beforeBody
-      priority: 15
-      display: all
 layout:
   groups:
     toolbar:
-      priority: 35
+      priority: 20
       direction: row
       gap: 0.5rem
   byPageType:

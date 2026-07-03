@@ -1,0 +1,42 @@
+{
+  "name": "@eledah/date-field",
+  "version": "1.0.0",
+  "description": "Maps frontmatter date to modified for Quartz date plugins",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "@quartz-community/types": "github:quartz-community/types"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "quartz": {
+    "name": "date-field",
+    "displayName": "Date Field",
+    "category": "transformer",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 8,
+    "defaultEnabled": true,
+    "defaultOptions": {}
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

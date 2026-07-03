@@ -25,7 +25,7 @@ const FeaturedImage: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
 FeaturedImage.css = `
   .featured-image-container {
     width: 100%;
-    height: 300px;
+    aspect-ratio: 16 / 9;
     margin-bottom: 2rem;
     overflow: hidden;
     border-radius: 12px;

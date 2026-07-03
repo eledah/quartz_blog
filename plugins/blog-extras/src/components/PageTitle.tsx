@@ -51,12 +51,6 @@ PageTitle.css = `
   align-items: center;
   gap: 1rem;
 }
-
-#icon-header {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-}
 `
 
 export default (() => PageTitle) satisfies QuartzComponentConstructor

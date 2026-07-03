@@ -128,6 +128,8 @@ export type PluginSpecifier =
 export interface PluginLayoutDeclaration {
   position: LayoutPosition
   priority: number
+  /** Export name for multi-component plugins (e.g. FeaturedImage) */
+  component?: string
   display?: LayoutDisplay
   condition?: string
   group?: string

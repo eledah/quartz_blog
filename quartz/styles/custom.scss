@@ -81,11 +81,10 @@ body {
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
-// Hide empty page-header on index page
+// Index page-header only holds featured cards now (article meta is excluded via layout)
 body[data-slug="index"] .page-header {
   margin-top: 0;
-  height: 0;
-  display: none;
+  padding-top: 0;
 }
 
 // Enhanced Typography
@@ -341,7 +340,7 @@ blockquote footer:before {
 }
 
 
-.markdown-preview-view blockquote {
+.markdown-preview-view blockquote:not(.callout) {
     direction: rtl;
     
     margin: 0 auto;
@@ -357,7 +356,7 @@ blockquote footer:before {
     /* color: gray; */
 }
   
-blockquote {
+blockquote:not(.callout) {
     direction: rtl;
 
     margin: 0 auto;
@@ -629,6 +628,17 @@ h3.poem-title::before {
     color: darkgray;
 }
 
+// Obsidian callouts are blockquotes — keep RTL text but don't inherit quote bar styling
+blockquote.callout,
+.markdown-preview-view blockquote.callout {
+  width: auto;
+  max-width: 100%;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  border-radius: 5px;
+  direction: rtl;
+}
+
 .callout.is-collapsed > .callout-title > .fold-callout-icon {
     transform: rotate(90deg);
 }
@@ -771,13 +781,27 @@ pre:has(>code.mermaid) .clipboard-button {
     display: inline-block;
 }
 
-// title logo
+// title logo — keep square aspect (plugin CSS must not set a fixed height)
 .title-logo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    img {
-        width: 150px;
+    img,
+    #icon-header {
+        width: 120px;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: contain;
+        border-radius: 12px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+}
+
+@media (min-width: $desktopBreakpoint) {
+    .sidebar .title-logo img,
+    .sidebar .title-logo #icon-header {
+        width: 200px;
     }
 }
 
@@ -785,8 +809,9 @@ pre:has(>code.mermaid) .clipboard-button {
     .title-logo {
         flex-direction: row;
         align-items: center;
-        img {
-            width: 75px;
+        img,
+        #icon-header {
+            width: 188px;
         }
     }
     #header-text {
@@ -799,12 +824,26 @@ pre:has(>code.mermaid) .clipboard-button {
     .title-logo {
         flex-direction: row;
         align-items: center;
-        img {
-            width: 75px;
+        img,
+        #icon-header {
+            width: 188px;
         }
     }
     #header-text {
         overflow-wrap: unset;
+    }
+}
+
+// Sidebar toolbar: dark mode + reader mode side-by-side, centered
+.sidebar.left > .flex-component {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: $mobileBreakpoint) {
+    .sidebar.left > .flex-component {
+        display: none;
     }
 }
 

@@ -679,17 +679,22 @@ export async function loadQuartzLayout(layoutOverrides?: {
   const head = HeadModule.default()
 
   // Find footer from component registry (loaded during plugin instantiation)
+  const footerPluginNames = new Set(["footer", "blog-extras"])
   const footerEntry = json.plugins.find(
-    (e) => e.enabled && extractPluginName(e.source) === "footer",
+    (e) => e.enabled && footerPluginNames.has(extractPluginName(e.source)),
   )
   let footer: QuartzComponent | undefined
   if (footerEntry) {
-    // Try registry lookup: plugin name ("footer") or export name ("Footer")
-    const footerReg = componentRegistry.get("footer") ?? componentRegistry.get("Footer")
+    const footerPluginName = extractPluginName(footerEntry.source)
+    // Try registry lookup: plugin name, export name ("Footer"), or blog-extras alias
+    const footerReg =
+      componentRegistry.get("footer") ??
+      componentRegistry.get("Footer") ??
+      (footerPluginName === "blog-extras" ? componentRegistry.get("Footer") : undefined)
     if (footerReg) {
       if (typeof footerReg.component === "function" && !("displayName" in footerReg.component)) {
         // It's a constructor — use registry cache for consistent instances
-        const footerOverrides = componentRegistry.getOptionOverrides("footer")
+        const footerOverrides = componentRegistry.getOptionOverrides(footerPluginName)
         const opts = { ...footerEntry.options, ...footerOverrides }
         footer = componentRegistry.instantiate(
           footerReg.component as QuartzComponentConstructor,
@@ -756,24 +761,17 @@ function buildLayoutForEntries(
     const registered =
       componentRegistry.get(name) ??
       componentRegistry.get(`${formatSourceDisplay(entry.source)}/${name}`)
-    if (!registered) {
-      // Try common naming patterns
-      const pascalName = name
-        .split("-")
-        .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
-        .join("")
-      const altRegistered = componentRegistry.get(pascalName)
-      if (!altRegistered) continue
-    }
+
+    const pascalName = name
+      .split("-")
+      .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+      .join("")
 
     const reg =
+      (layout.component ? componentRegistry.get(layout.component) : undefined) ??
       registered ??
-      componentRegistry.get(
-        name
-          .split("-")
-          .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
-          .join(""),
-      )
+      componentRegistry.get(pascalName) ??
+      (name === "blog-extras" ? componentRegistry.get("PageTitle") : undefined)
     if (!reg) continue
 
     let component: QuartzComponent

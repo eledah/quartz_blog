@@ -1,3 +1,4 @@
+unlisted: true
 views:
   - type: table
     name: Table

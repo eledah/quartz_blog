@@ -1,3 +1,4 @@
+unlisted: true
 views:
   - type: cards
     name: Table
