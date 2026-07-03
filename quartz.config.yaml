@@ -251,8 +251,8 @@ plugins:
         strict: true
         reactionsEnabled: true
         inputPosition: bottom
-        lightTheme: https://cdn.jsdelivr.net/gh/eledah/quartz_blog/quartz/static/giscus-light.css
-        darkTheme: https://cdn.jsdelivr.net/gh/eledah/quartz_blog/quartz/static/giscus-dark.css
+        lightTheme: light
+        darkTheme: dark
         lang: fa
     layout:
       position: afterBody
