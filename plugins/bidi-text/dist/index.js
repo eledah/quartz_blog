@@ -20,6 +20,12 @@ function getTextContent(node) {
     return "";
   }).join("");
 }
+function getBlockquoteDirection(node) {
+  const classNames = node.properties?.className ?? [];
+  if (classNames.includes("english-blockquote")) return "ltr";
+  if (classNames.includes("farsi-blockquote")) return "rtl";
+  return null;
+}
 var BidiText = () => {
   return {
     name: "BidiText",
@@ -27,6 +33,14 @@ var BidiText = () => {
       return [
         () => (tree) => {
           visit(tree, "element", (node) => {
+            if (node.tagName === "blockquote") {
+              const blockquoteDir = getBlockquoteDirection(node);
+              if (blockquoteDir) {
+                node.properties = node.properties || {};
+                node.properties.dir = blockquoteDir;
+                return;
+              }
+            }
             if (node.tagName === "p" || /^h[1-6]$/.test(node.tagName)) {
               const textContent = getTextContent(node);
               if (textContent.length > 0) {

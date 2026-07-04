@@ -393,6 +393,14 @@ blockquote {
   border-left: 3px solid var(--secondary);
   padding-left: 1rem;
   transition: border-color 0.2s ease;
+
+  &.farsi-blockquote,
+  &.english-blockquote {
+    margin: 1.25em auto;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 h1,

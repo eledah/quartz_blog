@@ -31,6 +31,13 @@ function getTextContent(node: Element): string {
     .join("")
 }
 
+function getBlockquoteDirection(node: Element): "ltr" | "rtl" | null {
+  const classNames = (node.properties?.className ?? []) as string[]
+  if (classNames.includes("english-blockquote")) return "ltr"
+  if (classNames.includes("farsi-blockquote")) return "rtl"
+  return null
+}
+
 export const BidiText: QuartzTransformerPlugin = () => {
   return {
     name: "BidiText",
@@ -38,6 +45,15 @@ export const BidiText: QuartzTransformerPlugin = () => {
       return [
         () => (tree: HastRoot) => {
           visit(tree, "element", (node: Element) => {
+            if (node.tagName === "blockquote") {
+              const blockquoteDir = getBlockquoteDirection(node)
+              if (blockquoteDir) {
+                node.properties = node.properties || {}
+                node.properties.dir = blockquoteDir
+                return
+              }
+            }
+
             if (node.tagName === "p" || /^h[1-6]$/.test(node.tagName)) {
               const textContent = getTextContent(node)
               if (textContent.length > 0) {

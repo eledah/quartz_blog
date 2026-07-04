@@ -300,46 +300,38 @@ div.search.mobile-only {
 .farsi-blockquote,
 .markdown-preview-view .farsi-blockquote {
     position: relative;
-    direction: rtl;
+    direction: rtl !important;
+    unicode-bidi: isolate;
+    text-align: right !important;
 
     max-width: var(--max-width);
-    width: var(--line-width-adaptive) !important;
-    margin: 1.9em auto !important;
-    padding: 1.3rem 3.25rem 1.15rem 1.75rem !important;
+    margin: 1.25em auto !important;
+    padding: 0 1.5rem 0 0 !important;
 
-    // soft tinted surface with an accent bar on the leading (right) edge
-    background: var(--highlight);
+    background: none !important;
     border: none !important;
-    border-right: 3px solid var(--secondary) !important;
-    border-radius: 5px 14px 14px 5px;
+    border-right: 1px solid var(--gray) !important;
+    box-shadow: none !important;
 
-    font-size: 1.05rem !important;
-    line-height: 2.1;
+    font-size: inherit !important;
+    line-height: inherit;
     color: var(--text-normal) !important;
-
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.farsi-blockquote:hover,
-.markdown-preview-view .farsi-blockquote:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transform: translateY(-1px);
-}
-
-// large decorative opening quotation mark, tucked into the top-right corner (RTL)
 .farsi-blockquote::before,
 .markdown-preview-view .farsi-blockquote::before {
     content: "\00AB" !important;
     position: absolute;
-    top: 0.02em;
-    right: 0.9rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 3.1rem;
+    right: 0;
+    top: 0;
+    color: var(--gray);
+    font-size: 14px;
     line-height: 1;
-    color: var(--secondary);
-    opacity: 0.25;
-    pointer-events: none;
+}
+
+.farsi-blockquote::after,
+.markdown-preview-view .farsi-blockquote::after {
+    content: none !important;
 }
 
 .farsi-blockquote-black {
@@ -350,16 +342,14 @@ div.search.mobile-only {
 blockquote .farsi-footer,
 .markdown-preview-view blockquote .farsi-footer {
     display: block;
-    margin-top: 1em !important;
+    margin-top: 0.75em !important;
     padding: 0;
-    direction: rtl;
+    direction: rtl !important;
     text-align: left;
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: normal;
     font-style: normal;
-    letter-spacing: 0.01em;
-    color: var(--secondary);
-    opacity: 0.9;
+    color: var(--darkgray);
 }
 
 blockquote footer:before {
@@ -367,7 +357,7 @@ blockquote footer:before {
 }
 
 
-.markdown-preview-view blockquote:not(.callout) {
+.markdown-preview-view blockquote:not(.callout):not(.farsi-blockquote):not(.english-blockquote) {
     direction: rtl;
     
     margin: 0 auto;
@@ -383,7 +373,7 @@ blockquote footer:before {
     /* color: gray; */
 }
   
-blockquote:not(.callout) {
+blockquote:not(.callout):not(.farsi-blockquote):not(.english-blockquote) {
     direction: rtl;
 
     margin: 0 auto;
@@ -402,75 +392,68 @@ blockquote:not(.callout) {
     /* color: gray; */
 }
 
-blockquote::before {
+blockquote:not(.farsi-blockquote):not(.english-blockquote)::before {
     content: none !important;
 }
 
 // English Blockquote
 
+html[dir="rtl"] blockquote.english-blockquote,
+html[dir="rtl"] .english-blockquote,
 .english-blockquote,
 .markdown-preview-view .english-blockquote {
     position: relative;
-    direction: ltr;
+    direction: ltr !important;
+    unicode-bidi: isolate;
+    text-align: left !important;
 
     max-width: var(--max-width);
-    width: var(--line-width-adaptive) !important;
-    margin: 1.9em auto !important;
-    padding: 1.3rem 1.75rem 1.15rem 3.25rem !important;
+    margin: 1.25em auto !important;
+    padding: 0 0 0 1.5rem !important;
 
-    // soft tinted surface with an accent bar on the leading (left) edge
-    background: var(--highlight);
+    background: none !important;
     border: none !important;
-    border-left: 3px solid var(--secondary) !important;
-    border-radius: 14px 5px 5px 14px;
+    border-left: 1px solid var(--gray) !important;
+    box-shadow: none !important;
 
     font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.05rem !important;
+    font-size: inherit !important;
     font-style: italic;
-    line-height: 1.85;
+    line-height: inherit;
     color: var(--text-normal) !important;
-
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.english-blockquote:hover,
-.markdown-preview-view .english-blockquote:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transform: translateY(-1px);
-}
-
-// large decorative opening quotation mark, tucked into the top-left corner (LTR)
 .english-blockquote::before,
 .markdown-preview-view .english-blockquote::before {
     content: "\201C" !important;
     position: absolute;
-    top: 0.02em;
-    left: 0.9rem;
+    left: 0;
+    top: 0;
+    color: var(--gray);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 3.1rem;
+    font-size: 14px;
     line-height: 1;
-    color: var(--secondary);
-    opacity: 0.25;
-    pointer-events: none;
+}
+
+.english-blockquote::after,
+.markdown-preview-view .english-blockquote::after {
+    content: none !important;
 }
 
 .english-blockquote .english-footer,
 blockquote .english-footer,
 .markdown-preview-view blockquote .english-footer {
     display: block;
-    margin-top: 1em !important;
+    margin-top: 0.75em !important;
     padding: 0;
-    direction: ltr;
+    direction: ltr !important;
     text-align: right;
     font-family: var(--bodyFont);
-    font-size: 0.82rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: normal;
     font-style: normal;
-    letter-spacing: 0.01em;
     text-transform: none;
-    color: var(--secondary);
-    opacity: 0.9;
+    color: var(--darkgray);
 }
 
 blockquote footer:before {
