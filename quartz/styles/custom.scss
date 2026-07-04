@@ -295,127 +295,71 @@ div.search.mobile-only {
 }
 
 
-// Farsi Blockquote — RTL redesign
-// Surface: a soft tinted wash + gradient accent on the right (the RTL leading edge),
-// an oversized guillemet parked in the corner, and a separated attribution footer.
+// Farsi Blockquote
 
-.farsi-blockquote {
-    direction: rtl;
+.farsi-blockquote,
+.markdown-preview-view .farsi-blockquote {
     position: relative;
+    direction: rtl;
 
     max-width: var(--max-width);
-    width: var(--line-width-adaptive);
-    margin: 1.75rem auto !important;
+    width: var(--line-width-adaptive) !important;
+    margin: 1.9em auto !important;
+    padding: 1.3rem 3.25rem 1.15rem 1.75rem !important;
 
-    padding: 1.15rem 1.5rem 1.1rem 1.85rem;
+    // soft tinted surface with an accent bar on the leading (right) edge
+    background: var(--highlight);
+    border: none !important;
+    border-right: 3px solid var(--secondary) !important;
+    border-radius: 5px 14px 14px 5px;
 
-    // Gradient accent bar on the right edge — uses the site accent palette
-    border-right: 4px solid var(--secondary);
-    border-left: none;
-    border-radius: 10px 0 0 10px;
-    background: color-mix(in srgb, var(--secondary) 7%, transparent);
+    font-size: 1.05rem !important;
+    line-height: 2.1;
+    color: var(--text-normal) !important;
 
-    font-size: 1.05rem;
-    line-height: 1.9;
-    color: var(--darkgray);
-
-    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-        background: color-mix(in srgb, var(--secondary) 11%, transparent);
-        border-right-color: var(--tertiary);
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-    }
-
-    // Oversized opening guillemet — « sits in the top-right for RTL
-    &::after {
-        content: "«";
-        position: absolute;
-        top: -0.4rem;
-        right: 0.55rem;
-        font-size: 3rem;
-        line-height: 1;
-        color: var(--secondary);
-        opacity: 0.16;
-        pointer-events: none;
-        font-family: var(--bodyFont);
-    }
-
-    p {
-        margin: 0 0 0.4rem;
-        line-height: 1.9;
-    }
-
-    // Attribution footer — separated by a hairline, accent-colored dash
-    .farsi-footer {
-        margin-top: 0.8rem;
-        padding-top: 0.6rem;
-        border-top: 1px solid color-mix(in srgb, var(--secondary) 22%, transparent);
-        color: var(--gray);
-        font-size: 0.85rem;
-        font-weight: 500;
-        text-align: right;
-        direction: rtl;
-        font-style: normal;
-
-        &::before {
-            content: "—";
-            margin-left: 0.35rem;
-            color: var(--secondary);
-        }
-
-        a {
-            color: var(--secondary);
-        }
-    }
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-// Variant: keep the quote text at full strength for emphasis passages
+.farsi-blockquote:hover,
+.markdown-preview-view .farsi-blockquote:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+// large decorative opening quotation mark, tucked into the top-right corner (RTL)
+.farsi-blockquote::before,
+.markdown-preview-view .farsi-blockquote::before {
+    content: "\00AB" !important;
+    position: absolute;
+    top: 0.02em;
+    right: 0.9rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3.1rem;
+    line-height: 1;
+    color: var(--secondary);
+    opacity: 0.25;
+    pointer-events: none;
+}
+
 .farsi-blockquote-black {
     color: var(--text-normal) !important;
 }
 
-// Keep Obsidian's default quote-bar suppressed on this class
-.farsi-blockquote::before {
-    content: unset;
-}
-
-// Dark theme — lift the tint so the surface still reads against dark backgrounds
-[saved-theme="dark"] .farsi-blockquote {
-    background: color-mix(in srgb, var(--secondary) 12%, transparent);
-
-    &:hover {
-        background: color-mix(in srgb, var(--secondary) 18%, transparent);
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    .farsi-footer {
-        border-top-color: color-mix(in srgb, var(--secondary) 30%, transparent);
-    }
-}
-
-// Obsidian live-preview mirror — keep the editor close to the published look
-.markdown-preview-view .farsi-blockquote {
+.farsi-blockquote .farsi-footer,
+blockquote .farsi-footer,
+.markdown-preview-view blockquote .farsi-footer {
+    display: block;
+    margin-top: 1em !important;
+    padding: 0;
     direction: rtl;
-    position: relative;
-    margin: 1.75rem auto;
-    padding: 1.15rem 1.5rem 1.1rem 1.85rem;
-    border-right: 4px solid var(--secondary) !important;
-    border-left: none;
-    border-radius: 10px 0 0 10px;
-    background: color-mix(in srgb, var(--secondary) 7%, transparent);
-    color: var(--darkgray);
-
-    .farsi-footer {
-        margin-top: 0.8rem;
-        padding-top: 0.6rem;
-        border-top: 1px solid color-mix(in srgb, var(--secondary) 22%, transparent);
-        color: var(--gray);
-        font-size: 0.85rem;
-        font-weight: 500;
-        text-align: right;
-        font-style: normal;
-    }
+    text-align: left;
+    font-size: 0.82rem;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.01em;
+    color: var(--secondary);
+    opacity: 0.9;
 }
 
 blockquote footer:before {
@@ -464,63 +408,69 @@ blockquote::before {
 
 // English Blockquote
 
+.english-blockquote,
 .markdown-preview-view .english-blockquote {
-    margin: 0 auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    border-left: 2px solid var(--text-muted) !important;
-    border-right: none !important;
+    position: relative;
     direction: ltr;
-    color: var(--text-muted);
-    font-size: 19px !important;
-    font-style: italic;
-    padding: 0 0 0 20px;
-}
-  
-.english-blockquote {
-    direction: ltr;
-    
+
     max-width: var(--max-width);
+    width: var(--line-width-adaptive) !important;
+    margin: 1.9em auto !important;
+    padding: 1.3rem 1.75rem 1.15rem 3.25rem !important;
 
-    margin: 0 auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: 0 0 0 20px;
+    // soft tinted surface with an accent bar on the leading (left) edge
+    background: var(--highlight);
+    border: none !important;
+    border-left: 3px solid var(--secondary) !important;
+    border-radius: 14px 5px 5px 14px;
 
-    border-left: 2px solid var(--text-muted) !important;
-    border-right: none !important;
-
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.05rem !important;
     font-style: italic;
-    color: var(--text-muted);   
+    line-height: 1.85;
+    color: var(--text-normal) !important;
+
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.english-blockquote::before {
-    content: none;
+.english-blockquote:hover,
+.markdown-preview-view .english-blockquote:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
 }
 
-blockquote .english-footer {
-    margin-top: 1em;
-    padding: 0;
-    color: var(--text-muted);
-    font-size: 10pt;
-    text-align: left;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-style: normal;
-    text-transform: uppercase;
+// large decorative opening quotation mark, tucked into the top-left corner (LTR)
+.english-blockquote::before,
+.markdown-preview-view .english-blockquote::before {
+    content: "\201C" !important;
+    position: absolute;
+    top: 0.02em;
+    left: 0.9rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3.1rem;
+    line-height: 1;
+    color: var(--secondary);
+    opacity: 0.25;
+    pointer-events: none;
 }
 
+.english-blockquote .english-footer,
+blockquote .english-footer,
 .markdown-preview-view blockquote .english-footer {
+    display: block;
     margin-top: 1em !important;
     padding: 0;
-    color: var(--text-muted);
-    font-size: 10pt;
-    text-align: left;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    direction: ltr;
+    text-align: right;
+    font-family: var(--bodyFont);
+    font-size: 0.82rem;
+    font-weight: 600;
     font-style: normal;
-    text-transform: uppercase;
-    
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: var(--secondary);
+    opacity: 0.9;
 }
 
 blockquote footer:before {
