@@ -1233,3 +1233,137 @@ pre:has(>code.mermaid) .clipboard-button {
   --highlight: rgba(92, 122, 158, 0.15) !important;
   --textHighlight: rgba(92, 122, 158, 0.15) !important;
 }
+
+/* Common Badge Styling */
+.similarity-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 9px;
+  border-radius: 6px; /* Changed from 9999px to modern rounded rectangle */
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  border-width: 1px;
+  border-style: solid;
+  vertical-align: middle;
+  margin: 0 4px;
+  cursor: default;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); /* Added for smooth animation transition */
+}
+
+/* Subtle elevation and shadow on hover */
+.similarity-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* --- LIGHT MODE COLORS --- */
+/* Red Badge (<30%) */
+.badge-low {
+  background-color: rgba(239, 68, 68, 0.08);
+  color: rgb(185, 28, 28);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+.badge-low:hover {
+  background-color: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+/* Yellow Badge (30%-70%) */
+.badge-mid {
+  background-color: rgba(217, 119, 6, 0.08);
+  color: rgb(180, 83, 9);
+  border-color: rgba(217, 119, 6, 0.2);
+}
+.badge-mid:hover {
+  background-color: rgba(217, 119, 6, 0.12);
+  border-color: rgba(217, 119, 6, 0.35);
+}
+
+/* Green Badge (>=70%) */
+.badge-high {
+  background-color: rgba(16, 185, 129, 0.08);
+  color: rgb(4, 120, 87);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+.badge-high:hover {
+  background-color: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+/* --- DARK MODE ADJUSTMENTS --- */
+@media (prefers-color-scheme: dark) {
+  .similarity-badge:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .badge-low {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: rgb(248, 113, 113);
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+  .badge-low:hover {
+    background-color: rgba(239, 68, 68, 0.22);
+    border-color: rgba(239, 68, 68, 0.45);
+  }
+  
+  .badge-mid {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: rgb(251, 191, 36);
+    border-color: rgba(245, 158, 11, 0.3);
+  }
+  .badge-mid:hover {
+    background-color: rgba(245, 158, 11, 0.22);
+    border-color: rgba(245, 158, 11, 0.45);
+  }
+  
+  .badge-high {
+    background-color: rgba(52, 211, 153, 0.15);
+    color: rgb(110, 231, 183);
+    border-color: rgba(52, 211, 153, 0.3);
+  }
+  .badge-high:hover {
+    background-color: rgba(52, 211, 153, 0.22);
+    border-color: rgba(52, 211, 153, 0.45);
+  }
+}
+
+
+.radif-boom {
+  display: inline-block;
+  font-weight: bold;
+  color: #e63946;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  animation: wave-pulse 2.5s infinite ease-in-out;
+}
+
+.radif-boom:hover {
+  animation: shake 0.3s infinite linear;
+  cursor: pointer;
+  color: #d90429;
+}
+
+@keyframes wave-pulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.08);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
