@@ -5,7 +5,7 @@ tags:
   - جستار
 date: 2026-05-25
 image: /attachment/castration.jpg
-featured: true
+featured: false
 description: برای برون‌رفت از چالش‌ها، باید فراتر از اختگی فکر کنیم
 order: 2
 ---

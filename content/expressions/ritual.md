@@ -3,7 +3,7 @@ title: آیین
 draft: false
 tags:
 date: 2026-03-27
-featured: true
+featured: false
 image: /attachment/ritual.jpeg
 description: آیین در و دیوار زمان است
 order: 3
