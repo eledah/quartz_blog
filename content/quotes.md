@@ -168,3 +168,9 @@ date: 2024-05-18
 
 
 <blockquote class="farsi-blockquote">از بهاران کی شود سرسبز سنگ | خاک شو تا گل نمایی رنگ رنگ<footer class="farsi-footer">دفتر اول مثنوی، بخش ۹۶</footer></blockquote>
+
+<blockquote class="farsi-blockquote">اسطوره، تاریخ را به طبیعت تبدیل می‌کند.<footer class="farsi-footer">رولان بارت</footer></blockquote>
+
+
+<blockquote class="farsi-blockquote">اگر بپذیریم که زندگی انسان را می‌توان با عقل مدیریت کرد، آنگاه امکان زندگی از بین می‌رود.<footer class="farsi-footer">لف تولستوی - جنگ و صلح</footer></blockquote>
+
