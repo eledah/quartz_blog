@@ -174,3 +174,5 @@ date: 2024-05-18
 
 <blockquote class="farsi-blockquote">اگر بپذیریم که زندگی انسان را می‌توان با عقل مدیریت کرد، آنگاه امکان زندگی از بین می‌رود.<footer class="farsi-footer">لف تولستوی - جنگ و صلح</footer></blockquote>
 
+
+<blockquote class="english-blockquote">The obsessive desire to know yourself is itself a pathology. You're not healed when you wholly understand yourself but when you don't matter to yourself anymore. You're healed once you internalize you must fight for something bigger than yourself. [...] The real goal of psychoanalysis is paradoxical; it's precisely to liberate you from yourself; to the point where you can finally forget about yourself and work for a greater cause.<footer class="english-footer">Slavoj Žižek (Attributed to)</footer></blockquote>
