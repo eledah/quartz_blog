@@ -12,5 +12,6 @@ private/
 replit.nix
 .quartz/
 quartz/cli/tui/dist/
+.turbo/
 /content/COLLECTION
 /COLLECTION
