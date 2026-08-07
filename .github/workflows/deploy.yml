@@ -37,13 +37,15 @@ jobs:
         uses: actions/cache@v5
         with:
           path: .quartz/plugins
-          key: ${{ runner.os }}-plugins-${{ hashFiles('quartz.lock.json') }}
+          key: ${{ runner.os }}-plugins-${{ hashFiles('quartz.config.yaml') }}
           restore-keys: |
             ${{ runner.os }}-plugins-
       - name: Install Dependencies
         run: npm ci
       - name: Install Quartz plugins
-        run: npx quartz plugin install
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+        run: npx quartz plugin install --from-config -c 1
       - name: Build Quartz
         run: npx quartz build
       - name: Configure GitHub Pages
