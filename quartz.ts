@@ -1,4 +1,3 @@
-import * as Plugin from "./.quartz/plugins"
 import type { QuartzPluginData } from "@quartz-community/types"
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
 import { componentRegistry } from "./quartz/components/registry"
@@ -27,9 +26,11 @@ function hasTag(file: QuartzPluginData, tag: string): boolean {
   return Array.isArray(tags) && tags.includes(tag)
 }
 
-Plugin.Explorer({
-  filterFn: (node) =>
-    node.file?.frontmatter?.tags?.includes("explorerexclude") !== true,
+componentRegistry.setOptionOverrides("explorer", {
+  filterFn: (node: { slugSegment?: string; data?: { tags?: string[] } | null }) => {
+    if (node.slugSegment === "tags") return false
+    return node.data?.tags?.includes("explorerexclude") !== true
+  },
 })
 
 componentRegistry.setOptionOverrides("recent-notes", {
