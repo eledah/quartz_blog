@@ -1,27 +1,22 @@
 import * as Plugin from "./.quartz/plugins"
 import type { QuartzPluginData } from "@quartz-community/types"
 import { loadQuartzConfig, loadQuartzLayout } from "./quartz/plugins/loader/config-loader"
+import { componentRegistry } from "./quartz/components/registry"
 
 type FrontmatterWithDates = {
   title?: string
   draft?: boolean
   tags?: string[]
   date?: unknown
-  modified?: unknown
-  created?: unknown
-  published?: unknown
 }
 
-function hasExplicitDate(file: QuartzPluginData): boolean {
+function hasDateMetadata(file: QuartzPluginData): boolean {
   const fm = file.frontmatter as FrontmatterWithDates | undefined
-  if (!fm) return false
-  return fm.date != null || fm.modified != null || fm.created != null || fm.published != null
+  return fm?.date != null
 }
 
-function getExplicitSortDate(file: QuartzPluginData): Date | undefined {
-  const fm = file.frontmatter as FrontmatterWithDates | undefined
-  if (!fm) return undefined
-  const raw = fm.date ?? fm.modified ?? fm.published ?? fm.created
+function getSortDate(file: QuartzPluginData): Date | undefined {
+  const raw = (file.frontmatter as FrontmatterWithDates | undefined)?.date
   if (raw == null) return undefined
   const d = new Date(raw as string | number)
   return Number.isNaN(d.getTime()) ? undefined : d
@@ -37,18 +32,18 @@ Plugin.Explorer({
     node.file?.frontmatter?.tags?.includes("explorerexclude") !== true,
 })
 
-Plugin.RecentNotes({
+componentRegistry.setOptionOverrides("recent-notes", {
   hideFolderPages: true,
   hideTagPages: true,
   filter: (file: QuartzPluginData) => {
     if (file.slug === "index") return false
     if (file.frontmatter?.draft === true) return false
     if (hasTag(file, "explorerexclude")) return false
-    return hasExplicitDate(file)
+    return hasDateMetadata(file)
   },
   sort: (a: QuartzPluginData, b: QuartzPluginData) => {
-    const da = getExplicitSortDate(a)
-    const db = getExplicitSortDate(b)
+    const da = getSortDate(a)
+    const db = getSortDate(b)
     if (da && db) return db.getTime() - da.getTime()
     if (da) return -1
     if (db) return 1
