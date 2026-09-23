@@ -26,14 +26,14 @@ function hasTag(file: QuartzPluginData, tag: string): boolean {
   return Array.isArray(tags) && tags.includes(tag)
 }
 
-componentRegistry.setOptionOverrides("explorer", {
+componentRegistry.setOptionOverrides("@quartz-community/explorer", {
   filterFn: (node: { slugSegment?: string; data?: { tags?: string[] } | null }) => {
     if (node.slugSegment === "tags") return false
     return node.data?.tags?.includes("explorerexclude") !== true
   },
 })
 
-componentRegistry.setOptionOverrides("recent-notes", {
+componentRegistry.setOptionOverrides("@quartz-community/recent-notes", {
   hideFolderPages: true,
   hideTagPages: true,
   filter: (file: QuartzPluginData) => {
