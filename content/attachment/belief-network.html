@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>نقشهٔ یک باور — واگذاری کار</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap">
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#faf9f6;color:#272c32;font-family:Vazirmatn,Tahoma,sans-serif}main{max-width:760px;margin:auto;padding:14px 14px 10px}header{display:flex;justify-content:space-between;align-items:center;gap:8px}h1{font-size:15px;margin:0;font-weight:700}header span{font-size:11px;color:#747a80}.graph{position:relative;height:260px;margin-top:7px;direction:ltr}svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}path{fill:none;stroke:#d3d6d5;stroke-width:1.5;vector-effect:non-scaling-stroke}path.learning{stroke:#539487;stroke-dasharray:4 4}path.on{stroke:#b77a43;stroke-width:2.5}.node{position:absolute;transform:translate(-50%,-50%);width:27%;max-width:174px;min-height:47px;padding:6px 5px;border:1px solid #dfdfda;border-radius:10px;background:#fffefa;color:#41454a;font:500 12px/1.65 Vazirmatn,Tahoma,sans-serif;direction:rtl;cursor:pointer;box-shadow:0 2px 5px #24242405}.node small{display:block;font-size:10px;color:#7e8588;font-weight:400}.node:hover{border-color:#b77a43}.node:focus-visible{outline:3px solid #bc8b58;outline-offset:3px}.node[aria-pressed=true]{border-color:#b77a43;background:#fff2e4}.node.core{width:34%;max-width:230px;background:#303b42;color:white;border-color:#303b42;font-size:12px;min-height:67px}.core small{color:#d0d7d8}.node.new{border-color:#86b7aa;background:#eef6f2}.node.new[aria-pressed=true]{outline:2px solid #508c7c;outline-offset:1px}.detail{height:155px;overflow:auto;border-top:1px solid #deded7;padding:11px 4px 0;direction:rtl;scrollbar-width:thin}.detail h2{font-size:13px;color:#94633b;margin:0 0 5px}.detail p{font-size:13px;line-height:1.95;margin:0}.detail ul{padding:0 18px 0 0;margin:0;font-size:13px;line-height:1.95}.relation{font-size:11px!important;color:#737b7e;margin-top:7px!important}footer{font-size:10px;color:#838787;margin-top:5px}.dot{display:inline-block;width:6px;height:6px;background:#548f80;border-radius:50%;margin-left:4px}@media(max-width:420px){main{padding:10px}header span{font-size:10px}h1{font-size:13px}.node{font-size:11px}.node small{font-size:9px}.node.core{font-size:11px}.detail p,.detail ul{font-size:12px}.graph{height:260px}}
+</style>
+</head>
+<body><main>
+<header><h1>اگر کار را به دیگری بسپارم…</h1><span>هر گره را لمس کنید</span></header>
+<div class="graph" aria-label="شبکهٔ باور دربارهٔ واگذاری کار">
+<svg viewBox="0 0 100 260" preserveAspectRatio="none" aria-hidden="true">
+<path data-edge="events" d="M82 35 Q70 88 50 130"/><path data-edge="assumptions" d="M50 27 L50 130"/><path data-edge="metaphors" d="M18 35 Q30 85 50 130"/><path data-edge="story" d="M82 220 Q72 170 50 130"/><path data-edge="fear" d="M18 220 Q28 175 50 130"/><path data-edge="alternative" d="M50 232 L50 130"/><path class="learning" data-edge="learning" d="M16 128 Q30 140 50 130"/>
+</svg>
+<button class="node" data-id="events" style="left:84%;top:35px">مشاهده‌ها<small>حجم و موعد تحویل</small></button>
+<button class="node" data-id="assumptions" style="left:50%;top:27px">پیش‌فرض‌ها<small>تعهد و انگیزهٔ دانشجو</small></button>
+<button class="node" data-id="metaphors" style="left:16%;top:35px">شباهت‌ها<small>اداره و پروژهٔ تیمی</small></button>
+<button class="node core" data-id="core" style="left:53%;top:130px">واگذاری، کیفیت را پایین می‌آورد<small>پس خودم انجامش می‌دهم</small></button>
+<button class="node new" data-id="learning" style="left:16%;top:128px;width:25%">تجربهٔ تازه<small>اعتماد بیرون دانشگاه</small></button>
+<button class="node" data-id="story" style="left:84%;top:217px">داستان تکراری<small>آخرش خودم می‌مانم</small></button>
+<button class="node" data-id="alternative" style="left:50%;top:232px">اگر خلافش درست باشد<small>آزادی عمل بیشتر</small></button>
+<button class="node" data-id="fear" style="left:16%;top:217px">ترس‌ها<small>مسئولیت و قضاوت</small></button>
+</div>
+<section class="detail" aria-live="polite" aria-atomic="true" tabindex="0"></section>
+<footer><span class="dot"></span>خط‌چین: تجربه‌ای که دامنهٔ باور را به پرسش می‌کشد · این نقشه، روایت شخصی است.</footer>
+<noscript>برای دیدن پاسخ‌های هر گره، جاوااسکریپت را فعال کنید.</noscript>
+</main>
+<script>
+const data={
+core:{title:'باور مرکزی · پیامد در عمل',items:['«اگر کار را به دیگری بسپارم، کیفیت پایین می‌آید؛ برای همین خودم انجامش می‌دهم.»'],note:'زمینهٔ شکل‌گیری: چند ماه کار در نشریه و تشکل دانشجویی.'},
+events:{title:'چه اتفاقی افتاده؟',items:['بهشون گفتم که ۳۰۰ کلمه متن می‌خوام، ۱۰۰۰ کلمه فرستادن.','متنی که قرار بود دو روز قبل از چاپ نشریه بفرستن، دو ساعت قبل از چاپ فرستادن.'],note:'رابطه: تجربه‌هایی که برای باور مرکزی شاهد شده‌اند.'},
+assumptions:{title:'چه چیزی باید درست باشد؟',items:['دانشجو دل به کار نمی‌ده و من باید بالا سرش باشم.','دانشجو تشویقی برای انجام صحیح کار یا تنبیهی برای تخطی نداره.'],note:'رابطه: پیش‌فرض‌هایی که تجربه‌ها را به نتیجهٔ کلی وصل می‌کنند.'},
+metaphors:{title:'این موقعیت شبیه چیست؟',items:['شبیه ادارات دولتی که همه شل و ولن.','شبیه پروژه‌های تیمی که یه عده مفت‌خوری می‌کنن.'],note:'رابطه: شباهت‌هایی که شیوهٔ تفسیر موقعیت را شکل می‌دهند.'},
+story:{title:'داستان تکرارشونده چیست؟',items:['آخرش خودم باید ایرادات بقیه رو جبران کنم.','آخرش خودم باید کار رو تموم کنم.'],note:'رابطه: روایتی که تجربه‌های گذشته را به انتظار از آینده پیوند می‌دهد.'},
+fear:{title:'از چه چیزی می‌ترسم؟',items:['اینکه نقص کار دیگری به گردن من بیفته.','اینکه من رو مدیر قابلی ندونن.'],note:'رابطه: هزینهٔ احساسی واگذاری؛ این ترس‌ها به‌خودی‌خود شاهد درستی باور نیستند.'},
+alternative:{title:'اگر خلافش درست باشد…',items:['باید بتونم دست آدما رو توی کارشون باز بذارم و میکرومنیج نکنم.'],note:'رابطه: پیامد احتمالی بازنگری در رفتار؛ نه تغییری که الزاماً رخ داده باشد.'},
+learning:{title:'امکان یادگیری · مرز تعمیم',items:['نظرم همچنان دربارهٔ دانشجوها عوض نشده.','اما در محل کار یا بیرون از دانشگاه آدم‌هایی دیده‌ام که می‌شود به آن‌ها اعتماد کرد تا کار را دربیاورند.'],note:'پرسش باز: این باور تا کجا دربارهٔ «دیگران» صدق می‌کند؟ تجربهٔ تازه به‌تنهایی نظر دربارهٔ دانشجوها را رد نمی‌کند.'}
+};
+function select(id){const d=data[id],panel=document.querySelector('.detail');panel.replaceChildren();const h=document.createElement('h2');h.textContent=d.title;panel.append(h);const list=document.createElement(d.items.length===1?'p':'ul');d.items.forEach(t=>{if(d.items.length===1){list.textContent=t}else{const li=document.createElement('li');li.textContent=t;list.append(li)}});panel.append(list);const note=document.createElement('p');note.className='relation';note.textContent=d.note;panel.append(note);panel.scrollTop=0;document.querySelectorAll('.node').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===id)));document.querySelectorAll('[data-edge]').forEach(p=>p.classList.toggle('on',p.dataset.edge===id));}
+document.querySelectorAll('.node').forEach(b=>b.addEventListener('click',()=>select(b.dataset.id)));select('core');
+</script></body></html>

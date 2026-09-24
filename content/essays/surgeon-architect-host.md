@@ -6,7 +6,7 @@ date: 2026-06-09
 featured: true
 description: رویکرد هر کس در دیزاین منتج از نگاهش به «انسان» است
 image: /attachment/surgeon-architect-host-1.jpeg
-order: 1
+order: 2
 ---
 رویکرد هر کس در [[what is design|دیزاین]] و حل مسأله منتج از نگاهش به «انسان» است.
 
