@@ -26,7 +26,7 @@ order: 1
 
 سؤال‌های مختلف، گره‌های مختلف را آشکار می‌کنند. مثلاً سؤال «این موقعیت برایم شبیه چیست؟» اغلب استعاره‌ها را از عمق ذهن به سطح آن می‌آورد؛ یا «از چه چیزی می‌ترسم؟» ارزش‌ها و احساسات را فراخوانی می‌کند یا «چه اتفاقی افتاده که به این نتیجه رسیده‌ام؟» مشاهدات را ثبت می‌کند. به مرور این گره‌ها در فرآیندی خودکاوانه استخراج و متصل می‌شوند و شبکهٔ شناختی را شکل می‌دهند. پس از آن است که می‌توان دربارهٔ (۱) اهمیت و (۲) قوت هر کدام از گره‌ها تأمل کرد و اگر تصمیمی بر تغییر بود، گره‌های مستعد برای باز کردن پنجره‌ای جدید را انتخاب کرد. برای خود من در مثال کار دانشجویی، بعد از ورود کار و آشنایی با افرادی که قابلیت پذیرفتن کار را داشتند، این شبکه خود به خود متحول شد.
 
-<iframe src="[/assets/belief-network.html](https://raw.githack.com/eledah/quartz_blog/refs/heads/v5/content/attachment/belief-network.html)" title="شبکهٔ شناختی من دربارهٔ واگذاری کار" width="100%" height="510" loading="lazy" style="display:block;border:0;border-radius:12px;" ></iframe>
+<iframe src="https://raw.githack.com/eledah/quartz_blog/refs/heads/v5/content/attachment/belief-network.html" title="شبکهٔ شناختی من دربارهٔ واگذاری کار" width="100%" height="510" loading="lazy" style="display:block;border:0;border-radius:12px;" ></iframe>
 
 
 [^1]: ر.ک. کتاب «ماشین تجربه» از اندی کلارک
