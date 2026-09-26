@@ -1,8 +1,7 @@
 @use "./variables.scss" as *;
 
 .footnotes > ol {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-inline: 40px;
 }
 
 @font-face {
@@ -14,15 +13,27 @@
 
 // put your custom CSS here!
 
+// Keep the paper texture and content surfaces in the same theme vocabulary.
+:root {
+  --paper-surface: #f9f7f2;
+  --content-surface: #ffffff;
+}
+
+:root[saved-theme="dark"] {
+  --paper-surface: var(--light);
+  --content-surface: var(--lightgray);
+}
+
 // 1. Add Global Background Texture (Feature D)
 // Use absolute (not fixed) so the noise scrolls with the page — fixed + horizontal
 // overflow on mobile pinned texture to the viewport while content slid underneath.
 $noise-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 
 body {
-  background-color: #F9F7F2;
+  background-color: var(--paper-surface);
   min-height: 100vh;
   position: relative;
+  isolation: isolate;
 }
 
 body::before {
@@ -31,19 +42,36 @@ body::before {
   inset: 0;
   min-height: 100%;
   background-image: $noise-texture;
-  opacity: 0.04;
+  opacity: 0.025;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
   background-repeat: repeat;
 }
 
-[saved-theme="dark"] body {
-  background-color: var(--light); 
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 // Global Box Sizing & Overflow Fixes
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 // base.scss sets html { width: 100vw; overflow-x: hidden } — 100vw overflows on
@@ -62,7 +90,7 @@ body {
 
 // 2. Main Content Container (Feature C)
 .center {
-  background-color: #FFFFFF;
+  background-color: var(--content-surface);
   border-radius: 24px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   padding: 32px !important;
@@ -80,7 +108,6 @@ body {
   .page {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
   }
 
   .page > #quartz-body {
@@ -104,8 +131,8 @@ body {
 }
 
 [saved-theme="dark"] .center {
-  background-color: var(--lightgray);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  background-color: var(--content-surface);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 // Index page-header only holds featured cards now (article meta is excluded via layout)
@@ -144,9 +171,10 @@ sup {
 }
 
 .breadcrumb-element p {
-	margin: 0 .5rem 0 0;
-	padding: 0;
-	line-height: normal;
+  margin-block: 0;
+  margin-inline-end: 0.5rem;
+  padding: 0;
+  line-height: normal;
 }
 
 button#explorer .fold {
@@ -179,10 +207,8 @@ button#explorer .fold {
     border-radius:5px;
     padding:10px;
     font-size:1rem;
-    // 7. Add Glassmorphism Effects
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--light);
+    border: 1px solid var(--lightgray);
 }
 
 
@@ -231,15 +257,21 @@ footer ul {
 }
 
 code {
-	direction: ltr !important;
-	font-family: 'Fira Code', 'IBM Plex Mono', monospace;
-	font-size: 0.9em;
+  direction: ltr !important;
+  unicode-bidi: isolate;
+  font-family: 'Fira Code', 'IBM Plex Mono', monospace;
+  font-size: 0.9em;
+}
+
+time {
+  unicode-bidi: isolate;
 }
 
 // Enhanced Code Blocks
 pre {
   border-radius: 12px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -260,7 +292,7 @@ pre::before {
     // 8. Improve Search Bar
     position: relative;
     border-radius: 25px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .search > #search-icon {
@@ -271,15 +303,14 @@ pre::before {
 .search input {
     border-radius: 25px;
     padding: 12px 20px 12px 45px;
-    border: none;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+    border: 1px solid var(--lightgray);
+    background: var(--light);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .search input:focus {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 20px rgba(139, 126, 200, 0.3);
+    background: var(--content-surface);
+    border-color: var(--secondary);
 }
 
 div.search.mobile-only {
@@ -306,11 +337,12 @@ div.search.mobile-only {
 
     max-width: var(--max-width);
     margin: 1.25em auto !important;
-    padding: 0 1.5rem 0 0 !important;
+    padding-block: 0 !important;
+    padding-inline-start: 1.5rem !important;
 
     background: none !important;
     border: none !important;
-    border-right: 1px solid var(--gray) !important;
+    border-inline-start: 1px solid var(--gray) !important;
     box-shadow: none !important;
 
     font-size: inherit !important;
@@ -363,10 +395,11 @@ blockquote footer:before {
     margin: 0 auto;
     margin-top: 1em;
     margin-bottom: 1em;
-    padding: 0 calc(var(--nested-padding)) 0 0;
+    padding-block: 0;
+    padding-inline-start: var(--nested-padding);
 
-    border-right: 2px solid var(--text-muted) !important;
-    border-left: unset;
+    border-inline-start: 2px solid var(--text-muted) !important;
+    border-inline-end: unset;
 
     
     color: var(--text-muted);
@@ -379,10 +412,11 @@ blockquote:not(.callout):not(.farsi-blockquote):not(.english-blockquote) {
     margin: 0 auto;
     margin-top: 1em;
     margin-bottom: 1em;
-    padding: 0 calc(var(--nested-padding)) 0 0;
+    padding-block: 0;
+    padding-inline-start: var(--nested-padding);
 
-    // border-right: 2px solid var(--text-muted) !important;
-    border-left: unset;
+    // border-inline-start: 2px solid var(--text-muted) !important;
+    border-inline-end: unset;
 
     // font-family: Sahel;
     font-size: 17px;
@@ -409,11 +443,12 @@ html[dir="rtl"] .english-blockquote,
 
     max-width: var(--max-width);
     margin: 1.25em auto !important;
-    padding: 0 0 0 1.5rem !important;
+    padding-block: 0 !important;
+    padding-inline-start: 1.5rem !important;
 
     background: none !important;
     border: none !important;
-    border-left: 1px solid var(--gray) !important;
+    border-inline-start: 1px solid var(--gray) !important;
     box-shadow: none !important;
 
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -481,53 +516,21 @@ blockquote footer:before {
 
 // 3. Add Smooth Animations (RTL version)
 a {
-    position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
-a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    right: 0;
-    width: 0;
-    height: 2px;
-    background: var(--secondary);
-    transition: width 0.3s ease;
-}
-
-a:hover::after {
-    width: 100%;
-}
-
+// No global anchor pseudo-element: component-specific link decorations can still render.
 // Internal Links - Gradient Underline with Glow
 a.internal {
     background-color: transparent !important;
     padding: 0 !important;
     color: var(--secondary);
     font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-a.internal::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    right: 0;
-    width: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--tertiary), var(--tertiary));
-    border-radius: 2px;
-    transition: width 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 a.internal:hover {
     color: var(--tertiary);
-    text-shadow: 0 0 20px rgba(94, 64, 157, 0.3);
-}
-
-a.internal:hover::after {
-    width: 100%;
 }
 
 // Center tables
@@ -547,24 +550,26 @@ a.internal:hover::after {
 // }
 
 /* Customize website's scrollbar like Mac OS
-Not supports in Firefox and IE */
+Not supported in Firefox and IE */
 
-/* total width */
+body {
+    scrollbar-color: var(--gray) var(--paper-surface);
+    scrollbar-width: auto;
+}
+
 body::-webkit-scrollbar {
-    background-color: #fff;
+    background-color: var(--paper-surface);
     width: 16px;
 }
 
-/* background of the scrollbar except button or resizer */
 body::-webkit-scrollbar-track {
-    background-color: #fff;
+    background-color: var(--paper-surface);
 }
 
-/* scrollbar itself */
 body::-webkit-scrollbar-thumb {
-    background-color: #babac0;
+    background-color: var(--gray);
     border-radius: 16px;
-    border: 4px solid #fff;
+    border: 4px solid var(--paper-surface);
 }
 
 /* set button(top and bottom of the scrollbar) */
@@ -778,7 +783,7 @@ pre:has(>code.mermaid) {
 
 .edgeLabel {
     font-family: var(--bodyFont);
-    background-color: #fff !important;
+    background-color: var(--content-surface) !important;
 }
  
 pre:has(>code.mermaid) .clipboard-button {
@@ -832,26 +837,72 @@ pre:has(>code.mermaid) .clipboard-button {
             width: 75px;
         }
     }
+
     #header-text {
-        overflow-wrap: unset;
+        min-width: 0;
+        overflow-wrap: anywhere;
         font-size: 1.25rem;
     }
 
     .page > #quartz-body .sidebar.left {
         align-items: center;
         justify-content: center;
-        padding: 1.25rem 1rem 0.5rem;
+        flex-wrap: wrap;
+        width: 100%;
+        min-width: 0;
+        padding: 1.25rem 0.5rem 0.5rem;
         margin-top: 0 !important;
     }
 
     .page-title-container {
         align-items: center;
+        flex: 1 1 100%;
         width: 100%;
+        min-width: 0;
     }
 
     .page-title {
         width: 100%;
+        min-width: 0;
         text-align: center;
+    }
+
+    // This wrapper contains only desktop toggles; keep the mobile buttons below.
+    .sidebar.left > .flex-component {
+        display: none;
+    }
+
+    // Keep the mobile theme/search controls visible and give them their own row.
+    .page > #quartz-body .sidebar.left > .mobile-only {
+        display: flex;
+        align-items: center;
+        flex: 0 0 auto;
+        min-width: 0;
+    }
+
+    .page > #quartz-body .sidebar.left > .mobile-only:has(.search) {
+        flex: 1 1 10rem;
+    }
+
+    .page > #quartz-body .sidebar.left > .mobile-only .search {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 430px) {
+    .title-logo {
+        gap: 0.5rem;
+    }
+
+    .title-logo img,
+    .title-logo #icon-header {
+        width: 60px;
+    }
+
+    #header-text {
+        font-size: 1.1rem;
     }
 }
 
@@ -873,12 +924,6 @@ pre:has(>code.mermaid) .clipboard-button {
 @media (min-width: $desktopBreakpoint) {
     .sidebar.left > .search {
         width: 100%;
-    }
-}
-
-@media (max-width: $mobileBreakpoint) {
-    .sidebar.left > .flex-component {
-        display: none;
     }
 }
 
@@ -904,26 +949,25 @@ pre:has(>code.mermaid) .clipboard-button {
   font-weight: 100;
 
   a {
-    color: var(--gray);
+    color: var(--darkgray);
   }
 
   p {
-    color: var(--gray);
+    color: var(--darkgray);
   }
 }
 
 .article-title {
   font-size: 2.75rem;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
 }
 
 .content-meta {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--gray);
+  border-bottom: 1px solid var(--lightgray);
   font-size: 0.9rem;
-  color: var(--gray);
+  color: var(--darkgray);
 
   time::before,
   span::before {
@@ -932,8 +976,8 @@ pre:has(>code.mermaid) .clipboard-button {
 
   &[show-comma="true"] > *:not(:last-child)::after {
     content: " • ";
-    color: var(--gray);
-    margin: 0 0.5rem;
+    color: var(--darkgray);
+    margin-inline: 0.5rem;
   }
 }
 
@@ -1035,16 +1079,6 @@ pre:has(>code.mermaid) .clipboard-button {
         object-fit: cover;
     }
 }
-// Logo hover animation (PageTitle)
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.logo-link:hover {
-  animation: float 2s ease-in-out infinite;
-}
 
 // align page header on non-desktop (article meta only; logo stays centered)
 @media (max-width: $mobileBreakpoint) {
@@ -1060,21 +1094,20 @@ pre:has(>code.mermaid) .clipboard-button {
 }
 
 [saved-theme="dark"] .search input {
-  background: rgba(40, 40, 40, 0.8);
+  background: var(--lightgray);
   color: var(--dark);
 }
 
 [saved-theme="dark"] .explorer {
-  background: rgba(40, 40, 40, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--light);
+  border: 1px solid var(--lightgray);
 }
 
-// Additional glassmorphism utility class
+// A solid, theme-aware surface is calmer and remains legible without blur.
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: var(--content-surface);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--lightgray);
 }
 
 // Feature E: Vertical Rhythm Line
@@ -1126,10 +1159,10 @@ pre:has(>code.mermaid) .clipboard-button {
 .recent-notes .recent-ul li .section .desc time {
   margin: 0 !important;
   margin-left: 10px !important;
-  color: var(--gray) !important;
+  color: var(--darkgray) !important;
   font-size: 0.85rem !important;
   white-space: nowrap !important;
-  opacity: 0.8 !important;
+  opacity: 1 !important;
   flex-shrink: 0 !important;
   display: inline-block !important;
 }
@@ -1299,7 +1332,7 @@ pre:has(>code.mermaid) .clipboard-button {
 }
 
 /* --- DARK MODE ADJUSTMENTS --- */
-@media (prefers-color-scheme: dark) {
+[saved-theme="dark"] {
   .similarity-badge:hover {
     /* Still just color/saturation, no shadow or transform */
     filter: saturate(1.2) brightness(1.09);
