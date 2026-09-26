@@ -16,7 +16,8 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "test": "npm run build && node --test test/transformer.test.mjs"
   },
   "dependencies": {
     "@quartz-community/types": "github:quartz-community/types",

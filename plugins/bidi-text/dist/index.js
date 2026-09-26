@@ -1,30 +1,54 @@
 // src/transformer.ts
-import { visit } from "unist-util-visit";
-var farsiRange = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
-var skipChars = /[\p{Emoji_Presentation}\p{Extended_Pictographic}\s\-\[\]{}\/\\#=@!*_\u200D(){}[\].,:»«]/u;
-function isFarsi(text) {
-  for (const char of text) {
-    if (skipChars.test(char)) {
-      continue;
-    }
-    return farsiRange.test(char);
+var rtlScript = /[\u0590-\u08FF\uFB1D-\uFDFF\uFE70-\uFEFF\u{1E800}-\u{1EEFF}]/u;
+var letter = /\p{Letter}/u;
+function firstStrongDirection(text) {
+  for (const character of text) {
+    if (!letter.test(character)) continue;
+    if (rtlScript.test(character)) return "rtl";
+    return "ltr";
   }
-  return false;
+  return "rtl";
 }
 function getTextContent(node) {
   return node.children.map((child) => {
     if (child.type === "text") return child.value;
     if (child.type === "element") {
-      return child.children.map((c) => c.type === "text" ? c.value : "").join("");
+      if (hasAuthorDirection(child) || ["bdi", "code", "pre", "time"].includes(child.tagName))
+        return "";
+      return getTextContent(child);
     }
     return "";
   }).join("");
 }
+function hasAuthorDirection(node) {
+  return node.properties != null && "dir" in node.properties && node.properties.dir != null;
+}
 function getBlockquoteDirection(node) {
-  const classNames = node.properties?.className ?? [];
+  const className = node.properties?.className;
+  const classNames = Array.isArray(className) ? className.filter((value) => typeof value === "string") : typeof className === "string" ? className.split(/\s+/) : [];
   if (classNames.includes("english-blockquote")) return "ltr";
   if (classNames.includes("farsi-blockquote")) return "rtl";
   return null;
+}
+function isDirectionalBlock(node) {
+  return node.tagName === "p" || /^h[1-6]$/.test(node.tagName);
+}
+function setDirection(node, direction) {
+  node.properties = node.properties ?? {};
+  node.properties.dir = direction;
+}
+function transformChildren(node, inheritedDirection) {
+  for (const child of node.children) {
+    if (child.type !== "element") continue;
+    const explicitDirection = hasAuthorDirection(child);
+    const blockquoteDirection = !explicitDirection && child.tagName === "blockquote" ? getBlockquoteDirection(child) : null;
+    if (blockquoteDirection) setDirection(child, blockquoteDirection);
+    const ownDirection = explicitDirection || blockquoteDirection !== null;
+    const textContent = isDirectionalBlock(child) ? getTextContent(child) : "";
+    const shouldInfer = !inheritedDirection && !ownDirection && isDirectionalBlock(child) && textContent.length > 0;
+    if (shouldInfer) setDirection(child, firstStrongDirection(textContent));
+    transformChildren(child, inheritedDirection || ownDirection || shouldInfer);
+  }
 }
 var BidiText = () => {
   return {
@@ -32,23 +56,7 @@ var BidiText = () => {
     htmlPlugins() {
       return [
         () => (tree) => {
-          visit(tree, "element", (node) => {
-            if (node.tagName === "blockquote") {
-              const blockquoteDir = getBlockquoteDirection(node);
-              if (blockquoteDir) {
-                node.properties = node.properties || {};
-                node.properties.dir = blockquoteDir;
-                return;
-              }
-            }
-            if (node.tagName === "p" || /^h[1-6]$/.test(node.tagName)) {
-              const textContent = getTextContent(node);
-              if (textContent.length > 0) {
-                node.properties = node.properties || {};
-                node.properties.dir = isFarsi(textContent) ? "rtl" : "ltr";
-              }
-            }
-          });
+          transformChildren(tree, false);
         }
       ];
     }
