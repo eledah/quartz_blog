@@ -1,12 +1,12 @@
 .featured-cards-title {
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-size: clamp(1.55rem, 1.25rem + 1vw, 1.85rem);
   text-align: start;
 }
 
 .card-grid-container {
   container: featured-cards / inline-size;
-  margin: 2rem 0;
+  margin: 1rem 0 2rem;
 }
 
 .card-grid {
@@ -22,9 +22,8 @@
   padding: 1.5rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 24px;
+  border-radius: var(--radius-card, 18px);
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
   text-align: start;
   text-decoration: none;
   z-index: 0;
@@ -94,6 +93,32 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 }
 
+// On narrow screens, the first image leads and the other three read as a
+// compact editorial selection rather than four full-height hero images.
+@container featured-cards (max-width: 35.99rem) {
+  .card-grid {
+    gap: 0.75rem;
+  }
+
+  .card-container:not(:first-child) {
+    min-height: 9rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .card-container:not(:first-child) .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-container:not(:first-child) .card-content p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: 0.9rem;
+  }
+}
+
 // The center column is narrow at the site's desktop breakpoint because it sits
 // between two 380px side panels. Size the grid from its actual container so a
 // cramped 3-column layout is never forced at that breakpoint.
@@ -133,14 +158,11 @@
 // touch and coarse-pointer devices retain the readable resting state.
 @media (hover: hover) and (pointer: fine) {
   .card-container {
-    transition:
-      box-shadow 180ms ease,
-      border-color 180ms ease;
+    transition: border-color 180ms ease;
   }
 
   .card-container:hover {
-    border-color: rgba(255, 255, 255, 0.42);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+    border-color: rgba(255, 255, 255, 0.58);
   }
 
   .card-container.has-image .card-bg {
