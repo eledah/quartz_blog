@@ -528,8 +528,22 @@ a {
     transition: color 0.2s ease;
 }
 
+// In reading content, reveal links with a fine underline rather than moving
+// text or decorating navigation, images, and heading anchor controls.
+.center article a:is(.internal, .external):not(:has(> img)):not([role="anchor"]) {
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.center article a:is(.internal, .external):not(:has(> img)):not([role="anchor"]):is(:hover, :focus-visible) {
+    text-decoration-color: currentColor;
+}
+
 // No global anchor pseudo-element: component-specific link decorations can still render.
-// Internal Links - Gradient Underline with Glow
+// Internal links retain the accent color without a heavy glow.
 a.internal {
     background-color: transparent !important;
     padding: 0 !important;
@@ -1136,9 +1150,14 @@ pre:has(>code.mermaid) .clipboard-button {
     padding-inline-end: 3rem !important;
   }
 
-  // The graph is supplemental navigation on articles, not a second hero.
+  // Keep the graph on the homepage and articles, but let it occupy less of
+  // the sidebar. Its renderer needs at least 250px of height for its canvas.
+  .sidebar.right .graph {
+    width: min(100%, 15rem);
+    align-self: center;
+  }
+
   .sidebar.right .graph > .graph-outer {
-    height: 160px;
     border-color: var(--surface-border);
     border-radius: var(--radius-control);
   }

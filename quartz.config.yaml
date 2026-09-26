@@ -183,7 +183,6 @@ plugins:
       position: right
       priority: 10
       display: desktop-only
-      condition: not-index
   - source: "@quartz-community/search"
     enabled: true
     layout:

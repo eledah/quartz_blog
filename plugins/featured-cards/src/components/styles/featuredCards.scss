@@ -154,24 +154,39 @@
   }
 }
 
-// Keep the restrained image and shadow response limited to precise pointers;
-// touch and coarse-pointer devices retain the readable resting state.
+// Bring back the photographic reveal for mouse/trackpad users. Touch devices
+// keep full-color images because they cannot hover to reveal the original.
 @media (hover: hover) and (pointer: fine) {
   .card-container {
-    transition: border-color 180ms ease;
+    transition:
+      transform 240ms ease,
+      box-shadow 240ms ease,
+      border-color 240ms ease;
   }
 
   .card-container:hover {
+    transform: translateY(-4px);
     border-color: rgba(255, 255, 255, 0.58);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
   }
 
   .card-container.has-image .card-bg {
-    transition: transform 180ms ease;
+    filter: grayscale(55%);
+    transition:
+      filter 300ms ease,
+      transform 300ms ease;
   }
 
   .card-container.has-image:hover .card-bg {
-    transform: scale(1.03);
+    filter: grayscale(0);
+    transform: scale(1.08);
   }
+}
+
+// Keyboard users get the same reveal without needing a pointer.
+.card-container.has-image:focus-visible .card-bg {
+  filter: grayscale(0);
+  transform: scale(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -180,7 +195,11 @@
     transition: none;
   }
 
-  .card-container.has-image:hover .card-bg {
+  .card-container:hover {
+    transform: none;
+  }
+
+  .card-container.has-image:is(:hover, :focus-visible) .card-bg {
     transform: none;
   }
 }

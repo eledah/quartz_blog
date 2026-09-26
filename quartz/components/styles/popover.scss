@@ -7,10 +7,20 @@
   }
   1% {
     opacity: 0;
+    visibility: visible;
   }
   100% {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+@keyframes preview-rise {
+  from {
+    translate: 0 4px;
+  }
+  to {
+    translate: 0 0;
   }
 }
 
@@ -33,10 +43,10 @@
     line-height: normal;
     font-size: initial;
     font-family: var(--bodyFont);
-    border: 1px solid var(--lightgray);
-    background-color: var(--light);
-    border-radius: 5px;
-    box-shadow: 6px 6px 36px 0 rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--surface-border, var(--lightgray));
+    background-color: var(--content-surface, var(--light));
+    border-radius: var(--radius-panel, 20px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     overflow: auto;
     overscroll-behavior: contain;
     white-space: normal;
@@ -54,7 +64,8 @@
     &[data-content-type*="image"] {
       img {
         margin: 0;
-        border-radius: 0;
+        border-radius: inherit;
+        max-width: 100%;
         display: block;
       }
     }
@@ -66,6 +77,11 @@
     }
   }
 
+  // Breadcrumbs belong to the article page, not the hover preview.
+  .breadcrumb-container {
+    display: none;
+  }
+
   h1 {
     font-size: 1.5rem;
   }
@@ -73,8 +89,8 @@
   visibility: hidden;
   opacity: 0;
   transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
+    opacity 0.2s ease-out,
+    visibility 0.2s ease-out;
 
   @media all and ($mobile) {
     display: none !important;
@@ -83,7 +99,23 @@
 
 .active-popover,
 .popover:hover {
-  animation: dropin 0.3s ease;
-  animation-fill-mode: forwards;
-  animation-delay: 0.2s;
+  animation: dropin 0.2s ease-out 0.1s forwards;
+}
+
+.active-popover > .popover-inner {
+  animation: preview-rise 0.2s ease-out 0.1s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .active-popover,
+  .popover:hover,
+  .active-popover > .popover-inner {
+    animation: none;
+  }
+
+  .active-popover,
+  .popover:hover {
+    visibility: visible;
+    opacity: 1;
+  }
 }
