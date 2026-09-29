@@ -25,10 +25,6 @@ on:
         description: Upstream ref to sync from
         type: string
         default: v5
-      base_branch:
-        description: Branch to sync into
-        type: string
-        default: v5
 
 permissions:
   contents: write
@@ -40,8 +36,8 @@ concurrency:
 
 env:
   UPSTREAM_REPO: https://github.com/jackyzha0/quartz.git
-  UPSTREAM_REF: upstream/${{ inputs.upstream_ref || 'v5' }}
-  BASE_BRANCH: ${{ inputs.base_branch || 'v5' }}
+  UPSTREAM_BRANCH: v5
+  BASE_BRANCH: v5
   SYNC_BRANCH: chore/upstream-sync
 
 jobs:
@@ -50,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: ${{ env.BASE_BRANCH }}
+          ref: v5
           fetch-depth: 0
 
       - uses: actions/setup-node@v6
@@ -73,10 +69,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-plugins-
 
+      # Resolved here rather than in the workflow-level env so a scheduled run (where the
+      # workflow_dispatch inputs do not exist) behaves exactly like a manual one.
+      - name: Resolve sync refs
+        env:
+          DISPATCH_REF: ${{ inputs.upstream_ref }}
+        run: |
+          REF="${DISPATCH_REF:-$UPSTREAM_BRANCH}"
+          {
+            echo "UPSTREAM_BRANCH=${REF}"
+            echo "UPSTREAM_REF=upstream/${REF}"
+            echo "SYNC_BODY_FILE=$(git rev-parse --git-path sync-upstream-body.md)"
+          } >> "$GITHUB_ENV"
+
       - name: Fetch upstream
         run: |
           git remote add upstream "$UPSTREAM_REPO"
-          git fetch --no-tags upstream "${UPSTREAM_REF#upstream/}"
+          git fetch --no-tags upstream "$UPSTREAM_BRANCH"
 
       - name: Merge upstream (core only)
         id: merge
@@ -112,7 +121,7 @@ jobs:
               echo
               echo "Pull \`chore/upstream-sync\` and finish the merge by hand, or close this PR to skip this week's sync."
             fi
-          } >> "${SYNC_BODY_FILE:-.git/sync-upstream-body.md}"
+          } >> "$SYNC_BODY_FILE"
 
       - name: Push sync branch and open pull request
         if: steps.merge.outputs.changed == 'true'
@@ -126,7 +135,7 @@ jobs:
           CONFLICTS: ${{ steps.merge.outputs.conflict_count }}
         run: |
           set -euo pipefail
-          BODY_FILE="${SYNC_BODY_FILE:-.git/sync-upstream-body.md}"
+          BODY_FILE="$SYNC_BODY_FILE"
           cat >> "$BODY_FILE" <<EOF
 
           ---
