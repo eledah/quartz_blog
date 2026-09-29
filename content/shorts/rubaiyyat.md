@@ -27,3 +27,9 @@ cssclasses:
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>عمری پیِ این شربتِ دنیایِ خراب</div><div class='poem-left-verse-div'>با شوق دویدم همه‌جا با تب‌وتاب</div></div><br>
 <div class='poem-verse-div'><div class='poem-right-verse-div'>یک قطره چشیدم و پرید آن به گلو</div><div class='poem-left-verse-div'>در سینه چو زهرِ مار شد شربتِ ناب</div></div><br><br>
+
+### ۵
+
+
+<div class='poem-verse-div'><div class='poem-right-verse-div'>هر شب زِ غمت ناله برآرم به هوا</div><div class='poem-left-verse-div'>گویند که باید برود غم، اما</div></div><br>
+<div class='poem-verse-div'><div class='poem-right-verse-div'>این زخمِ کهن، همدمِ شب‌های من است</div><div class='poem-left-verse-div'>ای زخم، بمان. بی‌تو کسی نیست مرا</div></div><br><br>

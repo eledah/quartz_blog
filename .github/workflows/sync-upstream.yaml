@@ -1,0 +1,155 @@
+name: Sync upstream Quartz
+
+# Weekly pull of jackyzha0/quartz's v5 branch (Quartz core + npm packages) into this
+# fork. It never writes to v5 directly: it merges upstream on a machine-owned branch,
+# validates the result, and opens a pull request for review.
+#
+#   * content/, quartz.config.yaml, quartz.lock.json, plugins/ and MIGRATION*.md are
+#     restored to v5's HEAD after the merge, so a sync can never touch them.
+#   * core files the fork has customised (quartz/styles/*.scss, components/Head.tsx,
+#     404.tsx, fa-IR.ts, plugins/loader/*, quartz.ts) merge normally; where upstream
+#     and the fork touched the same lines, the fork's side wins and the file is listed
+#     under "Review these" in the PR body.
+#   * npm ci / quartz plugin install / check / test / build run on the merged branch
+#     before the PR is opened; a failure opens the PR as a draft.
+#
+# The merge is a real 3-way merge, so the merge base advances every week and each sync
+# only has to consider genuinely new upstream commits.
+on:
+  schedule:
+    # Mondays 06:00 UTC — 09:30 Tehran.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      upstream_ref:
+        description: Upstream ref to sync from
+        type: string
+        default: v5
+      base_branch:
+        description: Branch to sync into
+        type: string
+        default: v5
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_REPO: https://github.com/jackyzha0/quartz.git
+  UPSTREAM_REF: upstream/${{ inputs.upstream_ref || 'v5' }}
+  BASE_BRANCH: ${{ inputs.base_branch || 'v5' }}
+  SYNC_BRANCH: chore/upstream-sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ env.BASE_BRANCH }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Cache dependencies
+        uses: actions/cache@v5
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Cache Quartz plugins
+        uses: actions/cache@v5
+        with:
+          path: .quartz/plugins
+          key: ${{ runner.os }}-plugins-${{ hashFiles('quartz.config.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-plugins-
+
+      - name: Fetch upstream
+        run: |
+          git remote add upstream "$UPSTREAM_REPO"
+          git fetch --no-tags upstream "${UPSTREAM_REF#upstream/}"
+
+      - name: Merge upstream (core only)
+        id: merge
+        run: bash .github/scripts/sync-upstream.sh
+
+      - name: Install dependencies
+        if: steps.merge.outputs.changed == 'true'
+        id: validate
+        continue-on-error: true
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+        run: |
+          set -o pipefail
+          npm ci
+          npx quartz plugin install --from-config -c 1
+          npm run check
+          npm test
+          npx quartz build
+
+      - name: Record validation result in the PR body
+        if: steps.merge.outputs.changed == 'true'
+        env:
+          VALIDATION: ${{ steps.validate.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo "### Validation on the merged branch"
+            echo
+            if [ "$VALIDATION" = "success" ]; then
+              echo "✅ \`npm ci\` · \`quartz plugin install\` · \`npm run check\` · \`npm test\` · \`quartz build\` all passed."
+            else
+              echo "❌ Validation failed — the merged branch does not build yet: $RUN_URL"
+              echo
+              echo "Pull \`chore/upstream-sync\` and finish the merge by hand, or close this PR to skip this week's sync."
+            fi
+          } >> "${SYNC_BODY_FILE:-.git/sync-upstream-body.md}"
+
+      - name: Push sync branch and open pull request
+        if: steps.merge.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATION: ${{ steps.validate.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          AHEAD: ${{ steps.merge.outputs.ahead }}
+          SYNC_SHA: ${{ steps.merge.outputs.sync_sha }}
+          SYNC_DATE: ${{ steps.merge.outputs.sync_date }}
+          CONFLICTS: ${{ steps.merge.outputs.conflict_count }}
+        run: |
+          set -euo pipefail
+          BODY_FILE="${SYNC_BODY_FILE:-.git/sync-upstream-body.md}"
+          cat >> "$BODY_FILE" <<EOF
+
+          ---
+
+          Merge \`${SYNC_SHA}\` with:
+
+          \`\`\`sh
+          git fetch origin ${SYNC_BRANCH} && git merge --ff-only origin/${SYNC_BRANCH}
+          \`\`\`
+
+          _${AHEAD} upstream commit(s) · ${CONFLICTS} file(s) resolved in the fork's favour · [run](${RUN_URL})_
+          EOF
+
+          TITLE="chore: upstream Quartz sync ${SYNC_DATE} (${SYNC_SHA})"
+          DRAFT=""
+          [ "$VALIDATION" = "success" ] || DRAFT="--draft"
+
+          EXISTING=$(gh pr list --head "$SYNC_BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh pr edit "$EXISTING" --title "$TITLE" --body-file "$BODY_FILE" >/dev/null
+            if [ -z "$DRAFT" ]; then gh pr ready "$EXISTING" >/dev/null 2>&1 || true; fi
+            echo "updated PR #$EXISTING"
+          else
+            gh pr create --base "$BASE_BRANCH" --head "$SYNC_BRANCH" $DRAFT \
+              --title "$TITLE" --body-file "$BODY_FILE"
+          fi
