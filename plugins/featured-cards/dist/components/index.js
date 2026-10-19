@@ -359,6 +359,7 @@ var FeaturedCards = ({ allFiles, fileData }) => {
 };
 // Restore v4's image-only hover; retain larger titles.
 FeaturedCards.css = featuredCards_default + `
+.card-container { border: none; }
 .card-content h3 { font-size: clamp(1.85rem, 1.5rem + 1cqi, 2.4rem); line-height: 1.4; }
 .card-container.no-image .card-bg { background: linear-gradient(135deg, #655f6c, #45434c 55%, #30343a); }
 @container featured-cards (max-width: 35.99rem) {
