@@ -152,17 +152,15 @@
 
 // Restore v4's image-only zoom and grayscale-to-color transition.
 // Titles and descriptions remain stationary and visible.
-@media (hover: hover) and (pointer: fine) {
-  .card-container.has-image .card-bg {
-    filter: grayscale(70%);
-    transform: scale(1);
-    transition: filter 400ms ease-in-out, transform 400ms ease-in-out;
-  }
+.card-container.has-image .card-bg {
+  filter: grayscale(70%);
+  transform: scale(1);
+  transition: filter 400ms ease-in-out, transform 400ms ease-in-out;
+}
 
-  .card-container.has-image:is(:hover, :focus-visible) .card-bg {
-    filter: grayscale(0%);
-    transform: scale(1.08);
-  }
+.card-container.has-image:is(:hover, :focus-visible) .card-bg {
+  filter: grayscale(0%);
+  transform: scale(1.08);
 }
 
 @media (prefers-reduced-motion: reduce) {

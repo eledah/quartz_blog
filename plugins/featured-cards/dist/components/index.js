@@ -378,6 +378,15 @@ FeaturedCards.css = featuredCards_default + `
     transform: scale(1.08);
   }
 }
+.card-container.has-image .card-bg {
+  filter: grayscale(70%);
+  transform: scale(1);
+  transition: filter 400ms ease-in-out, transform 400ms ease-in-out;
+}
+.card-container.has-image:is(:hover, :focus-visible) .card-bg {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
 @media (prefers-reduced-motion: reduce) {
   .card-container.has-image .card-bg { transition: none; }
   .card-container.has-image:is(:hover, :focus-visible) .card-bg { transform: none; }
