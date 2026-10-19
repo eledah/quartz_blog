@@ -230,6 +230,12 @@ plugins:
       position: left
       priority: 5
       component: PageTitle
+  - source: ./plugins/blog-extras
+    enabled: true
+    layout:
+      position: footer
+      priority: 10
+      component: Footer
   - source: "@quartz-community/darkmode"
     enabled: true
     layout:
