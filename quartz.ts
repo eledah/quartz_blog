@@ -9,11 +9,6 @@ type FrontmatterWithDates = {
   date?: unknown
 }
 
-function hasDateMetadata(file: QuartzPluginData): boolean {
-  const fm = file.frontmatter as FrontmatterWithDates | undefined
-  return fm?.date != null
-}
-
 function getSortDate(file: QuartzPluginData): Date | undefined {
   const raw = (file.frontmatter as FrontmatterWithDates | undefined)?.date
   if (raw == null) return undefined
@@ -33,15 +28,17 @@ componentRegistry.setOptionOverrides("@quartz-community/explorer", {
   },
 })
 
+function isRecentNote(file: QuartzPluginData): boolean {
+  if (file.slug === "index") return false
+  if (file.frontmatter?.draft === true || file.frontmatter?.unlisted === true) return false
+  if (hasTag(file, "explorerexclude")) return false
+  return getSortDate(file) !== undefined
+}
+
 componentRegistry.setOptionOverrides("@quartz-community/recent-notes", {
   hideFolderPages: true,
   hideTagPages: true,
-  filter: (file: QuartzPluginData) => {
-    if (file.slug === "index") return false
-    if (file.frontmatter?.draft === true) return false
-    if (hasTag(file, "explorerexclude")) return false
-    return hasDateMetadata(file)
-  },
+  filter: isRecentNote,
   sort: (a: QuartzPluginData, b: QuartzPluginData) => {
     const da = getSortDate(a)
     const db = getSortDate(b)

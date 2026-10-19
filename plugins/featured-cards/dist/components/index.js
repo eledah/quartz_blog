@@ -317,7 +317,119 @@ function pathToRoot(slug2) {
 }
 
 // plugins/featured-cards/src/components/styles/featuredCards.scss
-var featuredCards_default = '.featured-cards-title {\n  margin-bottom: 1rem;\n  font-size: clamp(1.55rem, 1.25rem + 1vw, 1.85rem);\n  text-align: start;\n}\n\n.card-grid-container {\n  container: featured-cards/inline-size;\n  margin: 1rem 0 2rem;\n}\n\n.card-grid {\n  display: grid;\n  grid-template-columns: minmax(0, 1fr);\n  gap: 1rem;\n}\n\n.card-container {\n  display: block;\n  position: relative;\n  min-height: 15rem;\n  padding: 1.5rem;\n  overflow: hidden;\n  border: 1px solid rgba(255, 255, 255, 0.24);\n  border-radius: var(--radius-card, 18px);\n  background: rgba(255, 255, 255, 0.1);\n  text-align: start;\n  text-decoration: none;\n  z-index: 0;\n}\n\n.card-container::before {\n  content: "";\n  position: absolute;\n  inset: 0;\n  z-index: 1;\n  border-radius: inherit;\n  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.38) 48%, rgba(0, 0, 0, 0.78) 100%);\n  pointer-events: none;\n}\n\n.card-container:focus-visible {\n  outline: 3px solid var(--secondary);\n  outline-offset: 4px;\n  box-shadow: 0 0 0 6px var(--light), 0 0 0 9px var(--secondary);\n  z-index: 2;\n}\n\n.card-bg {\n  position: absolute;\n  inset: 0;\n  background-image: var(--card-bg);\n  background-position: center;\n  background-size: cover;\n}\n\n.card-container.has-image .card-bg {\n  filter: none;\n}\n\n.card-container.no-image .card-bg {\n  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #3b82f6 100%);\n}\n\n.card-content {\n  display: flex;\n  position: relative;\n  z-index: 2;\n  height: 100%;\n  flex-direction: column;\n  justify-content: flex-end;\n  text-align: start;\n}\n\n.card-content h3 {\n  margin: 0 0 0.5rem;\n  color: #ffffff !important;\n  font-size: 1.5rem;\n  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);\n}\n\n.card-content p {\n  margin: 0;\n  color: #f3f4f6 !important;\n  font-size: 1rem;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);\n}\n\n@container featured-cards (max-width: 35.99rem) {\n  .card-grid {\n    gap: 0.75rem;\n  }\n  .card-container:not(:first-child) {\n    min-height: 9rem;\n    padding: 1rem 1.25rem;\n  }\n  .card-container:not(:first-child) .card-content h3 {\n    font-size: 1.2rem;\n  }\n  .card-container:not(:first-child) .card-content p {\n    display: -webkit-box;\n    overflow: hidden;\n    -webkit-box-orient: vertical;\n    -webkit-line-clamp: 2;\n    line-clamp: 2;\n    font-size: 0.9rem;\n  }\n}\n@container featured-cards (min-width: 36rem) {\n  .card-grid {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n  .card-container:nth-child(1),\n  .card-container:nth-child(4) {\n    grid-column: span 2;\n  }\n  .card-container:nth-child(1) {\n    min-height: 20rem;\n  }\n}\n@container featured-cards (min-width: 60rem) {\n  .card-grid {\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n    gap: 1.25rem;\n  }\n  .card-container:nth-child(1) {\n    grid-column: span 2;\n    grid-row: span 2;\n    min-height: 24rem;\n  }\n  .card-container:nth-child(4) {\n    grid-column: span 3;\n  }\n}\n@media (hover: hover) and (pointer: fine) {\n  .card-container {\n    transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;\n  }\n  .card-container:hover {\n    transform: translateY(-4px);\n    border-color: rgba(255, 255, 255, 0.58);\n    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);\n  }\n  .card-container.has-image .card-bg {\n    filter: grayscale(55%);\n    transition: filter 300ms ease, transform 300ms ease;\n  }\n  .card-container.has-image:hover .card-bg {\n    filter: grayscale(0);\n    transform: scale(1.08);\n  }\n}\n.card-container.has-image:focus-visible .card-bg {\n  filter: grayscale(0);\n  transform: scale(1.08);\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .card-container,\n  .card-container.has-image .card-bg {\n    transition: none;\n  }\n  .card-container:hover {\n    transform: none;\n  }\n  .card-container.has-image:is(:hover, :focus-visible) .card-bg {\n    transform: none;\n  }\n}\n[saved-theme=dark] .card-container {\n  border-color: rgba(255, 255, 255, 0.16);\n  background: rgba(30, 30, 30, 0.8);\n}';
+var featuredCards_default = `
+.featured-cards-title {
+  margin-bottom: 1rem;
+  font-size: clamp(1.55rem, 1.25rem + 1vw, 1.85rem);
+  text-align: start;
+}
+.card-grid-container {
+  container: featured-cards / inline-size;
+  margin: 1rem 0 2rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+.card-container {
+  display: block;
+  position: relative;
+  min-height: 15rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-card, 18px);
+  background: rgba(255, 255, 255, 0.1);
+  text-align: start;
+  text-decoration: none;
+  z-index: 0;
+}
+.card-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.38) 48%, rgba(0, 0, 0, 0.78) 100%);
+  pointer-events: none;
+}
+.card-container:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px var(--light), 0 0 0 9px var(--secondary);
+  z-index: 2;
+}
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--card-bg);
+  background-position: center;
+  background-size: cover;
+}
+.card-container.no-image .card-bg {
+  background: linear-gradient(135deg, #655f6c, #45434c 55%, #30343a);
+}
+.card-content {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: start;
+}
+.card-content h3 {
+  margin: 0 0 0.5rem;
+  color: #ffffff !important;
+  font-size: clamp(1.85rem, 1.5rem + 1cqi, 2.4rem);
+  line-height: 1.4;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+.card-content p {
+  margin: 0;
+  color: #f3f4f6 !important;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+@container featured-cards (max-width: 35.99rem) {
+  .card-grid { gap: 0.75rem; }
+  .card-container:not(:first-child) { min-height: 9rem; padding: 1rem 1.25rem; }
+  .card-container:not(:first-child) .card-content h3 { font-size: 1.5rem; }
+  .card-container:not(:first-child) .card-content p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: 0.9rem;
+  }
+}
+@container featured-cards (min-width: 36rem) {
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card-container:nth-child(1), .card-container:nth-child(4) { grid-column: span 2; }
+  .card-container:nth-child(1) { min-height: 20rem; }
+}
+@container featured-cards (min-width: 60rem) {
+  .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+  .card-container:nth-child(1) { grid-column: span 2; grid-row: span 2; min-height: 24rem; }
+  .card-container:nth-child(4) { grid-column: span 3; }
+}
+.card-container.has-image .card-bg {
+  filter: grayscale(70%);
+  transform: scale(1);
+  transition: filter 400ms ease-in-out, transform 400ms ease-in-out;
+}
+.card-container.has-image:is(:hover, :focus-visible) .card-bg {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-container.has-image .card-bg { transition: none; }
+  .card-container.has-image:is(:hover, :focus-visible) .card-bg { transform: none; }
+}
+[saved-theme="dark"] .card-container { background: rgba(30, 30, 30, 0.8); }
+`;
 
 // plugins/featured-cards/src/components/FeaturedCards.tsx
 var FeaturedCards = ({ allFiles, fileData }) => {
@@ -357,42 +469,7 @@ var FeaturedCards = ({ allFiles, fileData }) => {
     }) }) })
   ] });
 };
-// Restore v4's image-only hover; retain larger titles.
-FeaturedCards.css = featuredCards_default + `
-.card-container { border: none; }
-.card-content h3 { font-size: clamp(1.85rem, 1.5rem + 1cqi, 2.4rem); line-height: 1.4; }
-.card-container.no-image .card-bg { background: linear-gradient(135deg, #655f6c, #45434c 55%, #30343a); }
-@container featured-cards (max-width: 35.99rem) {
-  .card-container:not(:first-child) .card-content h3 { font-size: 1.5rem; }
-}
-.card-container.has-image:focus-visible .card-bg { filter: none; transform: none; }
-@media (hover: hover) and (pointer: fine) {
-  .card-container { transition: none; }
-  .card-container:hover { transform: none; box-shadow: none; border-color: rgba(255,255,255,0.24); }
-  .card-container.has-image .card-bg {
-    filter: grayscale(70%);
-    transform: scale(1);
-    transition: filter 400ms ease-in-out, transform 400ms ease-in-out;
-  }
-  .card-container.has-image:is(:hover, :focus-visible) .card-bg {
-    filter: grayscale(0%);
-    transform: scale(1.08);
-  }
-}
-.card-container.has-image .card-bg {
-  filter: grayscale(70%);
-  transform: scale(1);
-  transition: filter 400ms ease-in-out, transform 400ms ease-in-out;
-}
-.card-container.has-image:is(:hover, :focus-visible) .card-bg {
-  filter: grayscale(0%);
-  transform: scale(1.08);
-}
-@media (prefers-reduced-motion: reduce) {
-  .card-container.has-image .card-bg { transition: none; }
-  .card-container.has-image:is(:hover, :focus-visible) .card-bg { transform: none; }
-}
-`;
+FeaturedCards.css = featuredCards_default;
 var FeaturedCards_default = (() => FeaturedCards);
 
 // plugins/featured-cards/src/components/FeaturedImage.tsx

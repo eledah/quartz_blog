@@ -61,10 +61,6 @@
   background-size: cover;
 }
 
-.card-container.has-image .card-bg {
-  filter: none;
-}
-
 .card-container.no-image .card-bg {
   background: linear-gradient(135deg, #655f6c, #45434c 55%, #30343a);
 }
