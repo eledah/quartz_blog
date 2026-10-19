@@ -241,12 +241,12 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
 	transform: rotate(90deg) !important;
 }
 
-footer {
-	text-align: center;
-	// Match footer background with body gradient
-	// background: linear-gradient(135deg, var(--light) 0%, var(--lightgray) 100%);
-	padding: 2rem 0;
-	// margin-top: 2rem;
+// Keep the site footer close to the content panel. The plugin's 2rem top
+// margin previously stacked with another 2rem of padding here.
+.page > #quartz-body > footer {
+    text-align: center;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0 2rem;
 }
 
 footer ul {
