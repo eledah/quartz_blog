@@ -357,7 +357,45 @@ var FeaturedCards = ({ allFiles, fileData }) => {
     }) }) })
   ] });
 };
-FeaturedCards.css = featuredCards_default;
+// Lily-inspired overrides, mirrored from src/components/styles/featuredCards.scss.
+FeaturedCards.css = featuredCards_default + `
+.card-content h3 { font-size: clamp(1.85rem, 1.5rem + 1cqi, 2.4rem); line-height: 1.4; }
+.card-content { position: absolute; inset: auto 1.5rem 1.5rem; height: auto; }
+.card-container.has-image .card-bg { filter: saturate(65%); }
+.card-container.no-image .card-bg { background: linear-gradient(135deg, #655f6c, #45434c 55%, #30343a); }
+@container featured-cards (max-width: 35.99rem) {
+  .card-container:not(:first-child) .card-content h3 { font-size: 1.5rem; }
+  .card-container:not(:first-child) .card-content { inset: auto 1.25rem 1rem; }
+}
+.card-container.has-image:focus-visible .card-bg { filter: saturate(65%); transform: none; }
+@media (hover: hover) and (pointer: fine) {
+  .card-container { transition: border-color 350ms ease; }
+  .card-container:hover { transform: none; box-shadow: none; }
+  .card-container:is(:hover, :focus-visible) { border-color: rgba(255,255,255,0.58); }
+  .card-container.has-image .card-bg {
+    inset-inline: -24px;
+    transform: translateX(-16px);
+    filter: saturate(45%) brightness(0.85);
+    transition: filter 350ms ease, transform 350ms ease;
+  }
+  .card-content h3, .card-content p {
+    transform: translateY(1.25rem);
+    transition: transform 350ms ease, opacity 350ms ease;
+  }
+  .card-content p { opacity: 0; }
+  .card-container.has-image:is(:hover, :focus-visible) .card-bg {
+    transform: translateX(0); filter: saturate(75%) brightness(1);
+  }
+  .card-container:is(:hover, :focus-visible) .card-content h3,
+  .card-container:is(:hover, :focus-visible) .card-content p { transform: translateY(0); opacity: 1; }
+  .card-container:is(:hover, :focus-visible) .card-content p { transition-delay: 50ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-container, .card-container.has-image .card-bg, .card-content h3, .card-content p { transition: none; }
+  .card-container.has-image .card-bg, .card-content h3, .card-content p { transform: none; }
+  .card-content p { opacity: 1; }
+}
+`;
 var FeaturedCards_default = (() => FeaturedCards);
 
 // plugins/featured-cards/src/components/FeaturedImage.tsx
