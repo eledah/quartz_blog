@@ -916,11 +916,21 @@ pre:has(>code.mermaid) .clipboard-button {
     }
 
     .sidebar.left > .mobile-only > .darkmode {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 2.75rem;
         height: 2.75rem;
         border: 1px solid var(--surface-border);
         border-radius: var(--radius-control);
         background: var(--content-surface);
+    }
+
+    // The plugin absolutely positions its icon for a 20px-wide button.
+    // Use normal flex alignment inside our larger mobile control instead.
+    .sidebar.left > .mobile-only > .darkmode svg {
+        position: static;
+        inset: auto;
     }
 }
 
