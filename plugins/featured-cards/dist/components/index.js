@@ -357,47 +357,30 @@ var FeaturedCards = ({ allFiles, fileData }) => {
     }) }) })
   ] });
 };
-// Lily-inspired overrides, mirrored from src/components/styles/featuredCards.scss.
+// Restore v4's image-only hover; retain larger titles.
 FeaturedCards.css = featuredCards_default + `
 .card-content h3 { font-size: clamp(1.85rem, 1.5rem + 1cqi, 2.4rem); line-height: 1.4; }
-.card-content { position: absolute; inset: auto 1.5rem 1.5rem; height: auto; }
-.card-container.has-image .card-bg { filter: saturate(65%); }
 .card-container.no-image .card-bg { background: linear-gradient(135deg, #655f6c, #45434c 55%, #30343a); }
 @container featured-cards (max-width: 35.99rem) {
   .card-container:not(:first-child) .card-content h3 { font-size: 1.5rem; }
-  .card-container:not(:first-child) .card-content { inset: auto 1.25rem 1rem; }
 }
-.card-container.has-image:focus-visible .card-bg { filter: saturate(65%); transform: none; }
+.card-container.has-image:focus-visible .card-bg { filter: none; transform: none; }
 @media (hover: hover) and (pointer: fine) {
-  .card-container { background: #303033; transition: none; }
+  .card-container { transition: none; }
   .card-container:hover { transform: none; box-shadow: none; border-color: rgba(255,255,255,0.24); }
   .card-container.has-image .card-bg {
-    inset: 0 auto 0 0;
-    width: calc(100% + 50px);
-    transform: translate3d(-40px,0,0);
-    filter: saturate(60%);
-    opacity: 0.7;
-    transition: opacity 350ms ease, transform 350ms ease;
+    filter: grayscale(70%);
+    transform: scale(1);
+    transition: filter 400ms ease-in-out, transform 400ms ease-in-out;
   }
-  .card-content { inset: 50% 0 0; padding: 2rem; justify-content: flex-start; }
-  .card-content h3, .card-content p { transform: translate3d(0,40px,0); }
-  .card-content h3 { transition: transform 350ms ease; }
-  .card-content p { opacity: 0; transition: opacity 200ms ease, transform 350ms ease; }
   .card-container.has-image:is(:hover, :focus-visible) .card-bg {
-    transform: translate3d(0,0,0); filter: saturate(60%); opacity: 1;
-  }
-  .card-container:is(:hover, :focus-visible) .card-content h3,
-  .card-container:is(:hover, :focus-visible) .card-content p { transform: translate3d(0,0,0); opacity: 1; }
-  .card-container:is(:hover, :focus-visible) .card-content p { transition-delay: 50ms; transition-duration: 350ms; }
-  @container featured-cards (max-width: 35.99rem) {
-    .card-container:not(:first-child) { min-height: 15rem; }
-    .card-container:not(:first-child) .card-content { inset: 50% 0 0; padding: 1rem 1.25rem; }
+    filter: grayscale(0%);
+    transform: scale(1.08);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .card-container, .card-container.has-image .card-bg, .card-content h3, .card-content p { transition: none; }
-  .card-container.has-image .card-bg, .card-content h3, .card-content p { transform: none; }
-  .card-content p { opacity: 1; }
+  .card-container.has-image .card-bg { transition: none; }
+  .card-container.has-image:is(:hover, :focus-visible) .card-bg { transform: none; }
 }
 `;
 var FeaturedCards_default = (() => FeaturedCards);
