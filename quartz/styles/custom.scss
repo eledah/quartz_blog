@@ -875,7 +875,6 @@ pre:has(>code.mermaid) .clipboard-button {
         min-width: 0;
         gap: 0.5rem;
         padding: 1.25rem 0.5rem 0.75rem;
-        border-block-end: 1px solid var(--surface-border);
         margin-top: 0 !important;
     }
 
@@ -1173,11 +1172,6 @@ pre:has(>code.mermaid) .clipboard-button {
   }
 }
 
-[saved-theme="dark"] {
-  .sidebar.left {
-    border-inline-end: 1px solid var(--surface-border);
-  }
-}
 
 // Section Dividers (Feature G)
 .section-divider {
