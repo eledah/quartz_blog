@@ -36,7 +36,6 @@ description: فهرست نوشته‌ها و کاوش‌ها، از واژه‌�
 
 *جرقه‌های ذهنی در قالب یادداشت*
 
-- [[notes/thesis-on-cognition|تزهایی دربارهٔ شناخت]]
 - [[notes/new-manager-paradox|مدیریت با ذهن کارمندی]]
 - [[notes/perspective-calibration|تنظیم پرسپکتیو]]
 - [[notes/against-omnitools|علیه ابزارهای همه‌کاره]]
@@ -50,6 +49,9 @@ description: فهرست نوشته‌ها و کاوش‌ها، از واژه‌�
 - [[notes/in-praise-of-whats-not|در ستایش آنچه نیست]]
 - [[notes/bodies-and-democracy|انفصال بدن و اختلاف نظر]]
 - [[notes/benchmark|بنچ‌مارک]]
+- [[notes/theses-on-cognition|تزهایی دربارهٔ شناخت]]
+- [[theses-on-strategy|تزهایی دربارهٔ استراتژی]]
+- [[theses-on-motivation|تزهایی دربارهٔ انگیزه]]
 
 <h2 id="metaphors">📷 استعاره‌ها</h2>
 
