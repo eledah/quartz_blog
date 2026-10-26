@@ -1,0 +1,235 @@
+// Included after custom screen styles so paper layout wins at every breakpoint.
+@mixin styles {
+  @page {
+    margin: 18mm;
+  }
+
+  @media print {
+    :root,
+    :root[saved-theme="dark"] {
+      color-scheme: light;
+      --light: #fff;
+      --lightgray: #ddd;
+      --gray: #666;
+      --darkgray: #000;
+      --dark: #000;
+      --secondary: #000;
+      --tertiary: #000;
+      --highlight: transparent;
+      --textHighlight: transparent;
+      --paper-surface: #fff;
+      --content-surface: #fff;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      animation: none !important;
+      transition: none !important;
+    }
+
+    html,
+    body {
+      width: auto !important;
+      max-width: none !important;
+      min-height: 0;
+      overflow: visible !important;
+      background: #fff !important;
+      color: #000 !important;
+      font-size: 12pt;
+    }
+
+    .page,
+    .page > #quartz-body,
+    .page > #quartz-body > .center {
+      display: block !important;
+      width: auto !important;
+      min-width: 0 !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: 0;
+      border-radius: 0;
+      overflow: visible !important;
+      background: #fff !important;
+    }
+
+    .page > #quartz-body > .sidebar,
+    .page > #quartz-body > footer,
+    .page-footer,
+    .center > hr,
+    .print-actions,
+    .breadcrumb-container,
+    .featured-cards-title,
+    .card-grid-container,
+    .popover,
+    .clipboard-button,
+    .expand-button,
+    #mermaid-container,
+    .fold-callout-icon,
+    .heading-anchor,
+    .external-icon,
+    .noPrint {
+      display: none !important;
+    }
+
+    .page .page-header {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .page article {
+      overflow: visible !important;
+    }
+
+    p,
+    li,
+    td,
+    th {
+      font-size: 12pt;
+      line-height: 1.6;
+      orphans: 3;
+      widows: 3;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #000 !important;
+      break-after: avoid-page;
+      line-height: 1.4;
+    }
+
+    h1,
+    .article-title {
+      font-size: 20pt;
+    }
+
+    h2 {
+      font-size: 16pt;
+    }
+    h3 {
+      font-size: 14pt;
+    }
+    h4,
+    h5,
+    h6 {
+      font-size: 12pt;
+    }
+
+    .content-meta {
+      font-size: 10pt;
+      margin-block: 0.5rem 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    a,
+    a.internal,
+    a.external {
+      color: #000 !important;
+      background: transparent !important;
+      text-decoration: underline;
+    }
+
+    // Preserve link text and RTL reading order, rather than appending long URLs.
+    pre,
+    pre > code {
+      display: block !important;
+      overflow: visible !important;
+      white-space: pre-wrap !important;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      break-inside: auto;
+      color: #000 !important;
+      background: #fff !important;
+      font-size: 9pt;
+      line-height: 1.5;
+    }
+
+    pre {
+      border: 1px solid #999;
+      border-radius: 0;
+      padding: 0.75rem;
+    }
+
+    pre::before {
+      display: none;
+    }
+
+    pre > code > [data-line] {
+      padding-inline: 0;
+      background: transparent !important;
+    }
+
+    pre > code span {
+      color: #000 !important;
+      background: transparent !important;
+    }
+
+    img,
+    svg,
+    figure {
+      max-width: 100% !important;
+      break-inside: avoid;
+    }
+
+    img {
+      height: auto;
+      max-height: 220mm;
+      object-fit: contain;
+    }
+
+    .table-container {
+      overflow: visible !important;
+    }
+
+    table {
+      width: 100%;
+      table-layout: fixed;
+      overflow-wrap: anywhere;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+    tr {
+      break-inside: avoid;
+    }
+
+    blockquote,
+    .callout {
+      background: transparent !important;
+      border-color: #999 !important;
+    }
+
+    // Folded notes must not silently disappear from a paper copy.
+    .callout,
+    .callout > .callout-content,
+    .callout > .callout-content > * {
+      overflow: visible !important;
+    }
+
+    .callout > .callout-content {
+      display: block !important;
+    }
+
+    .callout.is-collapsed > :not(.callout-title):not(.callout-content) {
+      display: block !important;
+    }
+
+    .callout.is-collapsed > .callout-content > * {
+      height: auto !important;
+      margin-block: 0.5rem !important;
+    }
+
+    .katex-display {
+      overflow: visible;
+      break-inside: avoid;
+    }
+  }
+}

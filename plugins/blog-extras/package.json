@@ -44,6 +44,11 @@
         "defaultPosition": "right",
         "defaultPriority": 10
       },
+      "PrintButton": {
+        "displayName": "Print Button",
+        "defaultPosition": "beforeBody",
+        "defaultPriority": 8
+      },
       "Footer": {
         "displayName": "Footer",
         "defaultPosition": "footer",

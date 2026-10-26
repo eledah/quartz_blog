@@ -1,1 +1,1 @@
-export { PageTitle, Footer } from "./components"
+export { PageTitle, Footer, PrintButton } from "./components"

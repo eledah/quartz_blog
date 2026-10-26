@@ -207,6 +207,13 @@ plugins:
       position: right
       priority: 50
       display: mobile-only
+  - source: ./plugins/blog-extras
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 8
+      condition: not-index
+      component: PrintButton
   - source: "@quartz-community/article-title"
     enabled: true
     layout:
