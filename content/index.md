@@ -4,71 +4,60 @@ tags:
   - index
 ---
 
-گزیده‌ای از نوشته‌ها و کاوش‌های من؛ برای دیدن فهرست کامل، به [همهٔ مطالب](./all) سر بزنید.
+گزیده‌ای از نوشته‌ها و کاوش‌های من، از جزء به کل؛ از ارتباط با خود تا ارتباط با فرم و پیچیدگی. برای دیدن فهرست کامل، به [[all|همهٔ مطالب]] سر بزنید.
 
-## ✨ منشور واژه‌ها
+<div class="article-header" style="background-color: #9C2755;">
+<h2 id="micro">🌱 لایهٔ میکرو</h2>
+<p>ارتباط با خود؛ شناختن دنیای درون و راه‌های رشد</p>
+</div>
 
-*نگاه به واژه‌های آشنا از زاویه‌ای دیگر*
+- [[notes/the-bus-metaphor|اتوبوس ذهن]]
+- [[expressions/to-grow|رشد]]
+- [[notes/the-undersoul|زیرزمین روح]]
+- [[expressions/religiosity|دین‌داری]]
+- [[expressions/ritual|آیین]]
+- [[notes/children-of-paradox|زادگان تناقض]]
 
-- [[expressions/ritual|آیین]]: آیین، در و دیوارِ خانهٔ زمان است
-- [[expressions/gifts|هدیه]]: هدیه دادن ما را جزئی از زندگی روزمرهٔ هم‌دیگر می‌کند
-- [[expressions/prngrphy|پورنوگرافی]]: پورنوگرافی، سبکی از نگاه به دنیاست
+<div class="article-header" style="background-color: #00796B;">
+<h2 id="meso">🤝 لایهٔ مِزو</h2>
+<p>ارتباط با دیگری؛ از هدیه دادن تا کنار آمدن با اختلاف‌ها</p>
+</div>
 
-[باقی واژه‌ها ←](./all#expressions)
+- [[shorts/the-garden|باغچهٔ آقای عطایی]]
+- [[notes/bodies-and-democracy|انفصال بدن و اختلاف نظر]]
+- [[shorts/room-412|اتاق ۴۱۲]]
+- [[expressions/gifts|هدیه]]
+- [[notes/on-talent|استعداد]]
 
-## 🌳 کاوش‌ها و آموخته‌ها
+<div class="article-header" style="background-color: #1565C0;">
+<h2 id="macro">🏛️ لایهٔ ماکرو</h2>
+<p>ارتباط با ساختار؛ نگاهی به قدرت، نهادها و امکان تغییر</p>
+</div>
 
-*پژوهش‌هایی در جریان، برای درک بهتر جهان*
+- [[essays/castration-and-newborns|اختگی و نوزادگی]]
+- [[essays/surgeon-architect-host|جراح، معمار و میزبان]]
+- [[notes/against-gatekeepers|علیه کاهنان]]
+- [[notes/upward-spit|تف سربالا]]
 
-- [[projects/sd/مدخل × نظریهٔ سیستم|پیچیدگی و نظریهٔ سیستم]]: برای حل مسائل جدید باید ابتدا فضا را شناخت؛ سپس ابزارش را یافت یا ساخت
-- [[projects/pkm/مدخل  × یادداشت‌برداری|یادگیری و یادداشت‌برداری]]: اطلاعاتْ غذای روح است؛ دریافت و تشخیص خوب و بدش آداب خاصی دارد
-- [[projects/dao/dao-de-jing|دائو د جینگ]]: کتابِ «راه و فضیلت» متنی با قدمتی چندهزارساله است که همچنان الهام‌بخش است.
+<div class="article-header" style="background-color: #6A1B9A;">
+<h2 id="world">🌍 لایهٔ جهان</h2>
+<p>ارتباط با فرهنگ و زبان؛ لنزهایی که جهان را از پشت آن‌ها می‌بینیم</p>
+</div>
 
-[همهٔ کاوش‌ها ←](./all#explorations)
+- [[expressions/noise|نویز]]
+- [[notes/the-second-red-light|چراغ قرمز دوم]]
+- [[notes/war-talk|صحبت جنگ]]
+- [[notes/benchmark|بنچمارک]]
+- [[notes/perspective-calibration|تنظیم پرسپکتیو]]
 
-## ✍🏻 لقمه‌های فکری
+<div class="article-header" style="background-color: #4527A0;">
+<h2 id="meta">🔮 لایهٔ متا</h2>
+<p>ارتباط با فرم و پیچیدگی؛ تأملی در هنر، دیزاین و شیوهٔ دیدن</p>
+</div>
 
-*جرقه‌های ذهنی در قالب یادداشت*
-
-- [[theses-on-cognition|تزهایی دربارهٔ شناخت]]: انسان چگونه می‌شناسد و چطور نظرش را عوض می‌کند؟
-- [[notes/bodies-and-democracy|انفصال بدن و اختلاف نظر]]: حضورِ فیزیکی، ضامنِ انسانی ماندنِ اختلافات است
-- [[notes/hyperformalism|ابرفرمالیسم]]: آدم گمشده، ناچار روی تکنیک‌های قدم‌زدنش کار می‌کند
-
-[باقی لقمه‌ها ←](./all#thought-bites)
-
-## 📷 استعاره‌ها
-
-*لنزهایی برای دوباره دیدن دنیا*
-
-- [[notes/ta-dig|ته‌دیگ]]: ارزشمندترین دستاوردها، اغلب نتیجهٔ مستقیم اهداف ما نیستند
-- [[notes/the-second-red-light|چراغ قرمز دوم]]: دربارهٔ عجله برای رسیدن و چراغ‌های قرمزِ بعدی
-
-[باقی استعاره‌ها ←](./all#metaphors)
-
-## 📝 تأملات و تخیلات
-
-*نوشتارهایی برای تعمق*
-
-- [[essays/castration-and-newborns|اختگی و نوزادگی]]: برای برون‌رفت از چالش‌ها، باید فراتر از اختگی فکر کنیم
-
-[باقی تأملات ←](./all#reflections)
-
-## 🎨 جهان دیزاین
-
-*راهنمایی برای درک و به‌کارگیری دیزاین*
-
-- [[essays/surgeon-architect-host|جراح، معمار و میزبان]]: سه رویکرد مختلف در دیزاین سیستم‌های کلان
-
-[نوشته‌های بیشتر دربارهٔ دیزاین ←](./all#design)
-
-## 📖 داستان‌های کوتاه
-
-- [[shorts/a-world-of-sorries|یک دنیا معذرت]]
-
-[باقی داستان‌ها ←](./all#stories)
-
-## 🎼 اشعار
-
-- [[shorts/daas|داس]]: آن داسِ مرگ را که ز خود دور رانده‌ام، اکنون چو خوشه‌ای سرِ خود پیش خوانده‌ام
-
-[باقی اشعار ←](./all#poetry)
+- [[expressions/art|هنر]]
+- [[notes/peach-and-onion|هلو و پیاز]]
+- [[notes/hyperformalism|ابرفرمالیسم]]
+- [[notes/impressionism|امپرسیونیسم]]
+- [[expressions/prngrphy|پورنوگرافی]]
+- [[essays/what is design|سری دیزاین]]
