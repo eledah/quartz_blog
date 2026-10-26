@@ -1,7 +1,8 @@
 // Included after custom screen styles so paper layout wins at every breakpoint.
 @mixin styles {
   @page {
-    margin: 18mm;
+    // Comfortable binding/annotation space without wasting a separate cover.
+    margin: 20mm 22mm 22mm;
   }
 
   @media print {
@@ -38,7 +39,9 @@
       overflow: visible !important;
       background: #fff !important;
       color: #000 !important;
-      font-size: 12pt;
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 11.5pt;
+      line-height: 1.85;
     }
 
     .page,
@@ -92,44 +95,78 @@
     li,
     td,
     th {
-      font-size: 12pt;
-      line-height: 1.6;
+      font-size: 11.5pt;
+      line-height: 1.85;
       orphans: 3;
       widows: 3;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #000 !important;
-      break-after: avoid-page;
-      line-height: 1.4;
+    .page article p {
+      margin-block: 0 0.85em;
     }
 
-    h1,
-    .article-title {
+    .page article :is(ul, ol) {
+      padding-inline-start: 1.6em;
+      margin-block: 0.5em 1em;
+    }
+
+    .page article li + li {
+      margin-block-start: 0.25em;
+    }
+
+    .page :is(h1, h2, h3, h4, h5, h6) {
+      color: #000 !important;
+      font-family: "Ray-ExtraBold", "Vazirmatn", sans-serif;
+      letter-spacing: normal;
+      margin-block: 1.35em 0.45em;
+      break-after: avoid-page;
+      break-inside: avoid;
+      line-height: 1.5;
+    }
+
+    .page h1 {
       font-size: 20pt;
     }
 
-    h2 {
-      font-size: 16pt;
-    }
-    h3 {
-      font-size: 14pt;
-    }
-    h4,
-    h5,
-    h6 {
-      font-size: 12pt;
+    .page .article-title {
+      font-size: 23pt;
+      text-align: start;
+      margin-block: 0 0.3em;
     }
 
-    .content-meta {
-      font-size: 10pt;
-      margin-block: 0.5rem 1rem;
-      padding-bottom: 0.5rem;
+    .page h2 {
+      font-size: 16pt;
+    }
+    .page h3 {
+      font-size: 13.5pt;
+    }
+    .page :is(h4, h5, h6) {
+      font-size: 11.5pt;
+    }
+
+    .page .content-meta {
+      color: #555;
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 9pt;
+      line-height: 1.7;
+      margin-block: 0 1.4em;
+      padding-bottom: 0.8em;
+      border-bottom: 0.5pt solid #ccc;
+      break-after: avoid-page;
+    }
+
+    .page .content-meta * {
+      color: inherit;
+    }
+
+    .page .featured-image-container {
+      margin-block: 0 1.25em;
+      break-inside: avoid;
+    }
+
+    .page .featured-image-container img {
+      max-height: 75mm;
+      border-radius: 0;
     }
 
     a,
@@ -138,6 +175,8 @@
       color: #000 !important;
       background: transparent !important;
       text-decoration: underline;
+      text-decoration-thickness: 0.5pt;
+      text-underline-offset: 0.15em;
     }
 
     // Preserve link text and RTL reading order, rather than appending long URLs.
@@ -156,9 +195,11 @@
     }
 
     pre {
-      border: 1px solid #999;
+      font-family: "IBM Plex Mono", monospace;
+      border: 0.5pt solid #ccc;
       border-radius: 0;
-      padding: 0.75rem;
+      padding: 0.8em 1em;
+      margin-block: 1em 1.25em;
     }
 
     pre::before {
@@ -198,6 +239,19 @@
       overflow-wrap: anywhere;
     }
 
+    .page :is(td, th) {
+      padding: 0.45em 0.65em;
+      border-bottom: 0.5pt solid #ccc;
+      font-size: 10pt;
+      line-height: 1.6;
+    }
+
+    .page th {
+      font-weight: 700;
+      background: transparent;
+      border-bottom: 1pt solid #888;
+    }
+
     thead {
       display: table-header-group;
     }
@@ -209,6 +263,59 @@
     .callout {
       background: transparent !important;
       border-color: #999 !important;
+    }
+
+    .page blockquote:not(.callout) {
+      margin: 1.2em 0 !important;
+      padding: 0.25em 1em !important;
+      border: 0 !important;
+      border-inline-start: 1.5pt solid #aaa !important;
+      font-style: normal;
+    }
+
+    .page blockquote:not(.callout)::before,
+    .page blockquote:not(.callout)::after {
+      content: none !important;
+    }
+
+    .page .callout {
+      margin-block: 1em;
+      border-width: 0.5pt;
+      border-radius: 0;
+    }
+
+    .page :is(figcaption, .farsi-footer, .english-footer) {
+      color: #555;
+      font-size: 9pt;
+      line-height: 1.65;
+    }
+
+    .page .footnotes {
+      margin-block-start: 2em;
+      padding-block-start: 0.75em;
+      border-top: 0.5pt solid #bbb;
+    }
+
+    .page .footnotes :is(p, li) {
+      font-size: 9pt;
+      line-height: 1.75;
+    }
+
+    .page .footnotes > ol {
+      padding-inline-start: 1.5em;
+      padding-inline-end: 0;
+    }
+
+    .page a[data-footnote-backref] {
+      display: none;
+    }
+
+    .page article > hr {
+      height: 0;
+      width: 30%;
+      margin: 1.75em auto;
+      border: 0;
+      border-top: 0.5pt solid #bbb;
     }
 
     // Folded notes must not silently disappear from a paper copy.
