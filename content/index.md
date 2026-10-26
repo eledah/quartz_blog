@@ -6,58 +6,53 @@ tags:
 
 گزیده‌ای از نوشته‌ها و کاوش‌های من، از جزء به کل؛ از ارتباط با خود تا ارتباط با فرم و پیچیدگی. برای دیدن فهرست کامل، به [[all|همهٔ مطالب]] سر بزنید.
 
-<div class="article-header" style="background-color: #9C2755;">
-<h2 id="micro">🌱 لایهٔ میکرو</h2>
-<p>ارتباط با خود؛ شناختن دنیای درون و راه‌های رشد</p>
-</div>
+## لایهٔ میکرو
 
-- [[notes/the-bus-metaphor|اتوبوس ذهن]]
-- [[expressions/to-grow|رشد]]
-- [[notes/the-undersoul|زیرزمین روح]]
-- [[expressions/religiosity|دین‌داری]]
-- [[expressions/ritual|آیین]]
-- [[notes/children-of-paradox|زادگان تناقض]]
+*ارتباط با خود*
 
-<div class="article-header" style="background-color: #00796B;">
-<h2 id="meso">🤝 لایهٔ مِزو</h2>
-<p>ارتباط با دیگری؛ از هدیه دادن تا کنار آمدن با اختلاف‌ها</p>
-</div>
+- [[notes/the-bus-metaphor|اتوبوس ذهن]]: انسان مجمعی از مسافرانِ متکثر، متضاد و تخصص‌گراست
+- [[expressions/to-grow|رشد]]: رشد یعنی مسئولیت‌پذیری؛ یعنی نشستن پشت فرمان زندگی
+- [[notes/the-undersoul|زیرزمین روح]]: احساساتِ سرکوب‌شده ناپدید نمی‌شوند؛ از جای دیگری سر برمی‌آورند
+- [[expressions/religiosity|دین‌داری]]: شناختن ایدئال‌ها و حرکت به سمت زنده کردن آن‌ها در خود
+- [[expressions/ritual|آیین]]: آیین، در و دیوارِ خانهٔ زمان است
+- [[notes/children-of-paradox|زادگان تناقض]]: بروز شجاعت فقط در لحظهٔ ترس ممکن می‌شود
 
-- [[shorts/the-garden|باغچهٔ آقای عطایی]]
-- [[notes/bodies-and-democracy|انفصال بدن و اختلاف نظر]]
-- [[shorts/room-412|اتاق ۴۱۲]]
-- [[expressions/gifts|هدیه]]
-- [[notes/on-talent|استعداد]]
+## لایهٔ مِزو
 
-<div class="article-header" style="background-color: #1565C0;">
-<h2 id="macro">🏛️ لایهٔ ماکرو</h2>
-<p>ارتباط با ساختار؛ نگاهی به قدرت، نهادها و امکان تغییر</p>
-</div>
+*ارتباط با دیگری*
 
-- [[essays/castration-and-newborns|اختگی و نوزادگی]]
-- [[essays/surgeon-architect-host|جراح، معمار و میزبان]]
-- [[notes/against-gatekeepers|علیه کاهنان]]
-- [[notes/upward-spit|تف سربالا]]
+- [[shorts/the-garden|باغچهٔ آقای عطایی]]: داستان پیرمردی که به دنبال دزدِ گل‌های باغچه‌اش می‌رود
+- [[notes/bodies-and-democracy|انفصال بدن و اختلاف نظر]]: حضورِ فیزیکی، ضامنِ انسانی ماندنِ اختلافات است
+- [[shorts/room-412|اتاق ۴۱۲]]: داستان زوجی که ماه عسل‌شان در اتاقی عجیب آغاز می‌شود
+- [[expressions/gifts|هدیه]]: هدیه دادن ما را جزئی از زندگی روزمرهٔ هم‌دیگر می‌کند
+- [[notes/on-talent|استعداد]]: استعداد، بدهی ما به جهان است؛ نه طلبمان از آن
 
-<div class="article-header" style="background-color: #6A1B9A;">
-<h2 id="world">🌍 لایهٔ جهان</h2>
-<p>ارتباط با فرهنگ و زبان؛ لنزهایی که جهان را از پشت آن‌ها می‌بینیم</p>
-</div>
+## لایهٔ ماکرو
 
-- [[expressions/noise|نویز]]
-- [[notes/the-second-red-light|چراغ قرمز دوم]]
-- [[notes/war-talk|صحبت جنگ]]
-- [[notes/benchmark|بنچمارک]]
-- [[notes/perspective-calibration|تنظیم پرسپکتیو]]
+*ارتباط با ساختار*
 
-<div class="article-header" style="background-color: #4527A0;">
-<h2 id="meta">🔮 لایهٔ متا</h2>
-<p>ارتباط با فرم و پیچیدگی؛ تأملی در هنر، دیزاین و شیوهٔ دیدن</p>
-</div>
+- [[essays/castration-and-newborns|اختگی و نوزادگی]]: برای برون‌رفت از چالش‌ها، باید فراتر از اختگی فکر کنیم
+- [[essays/surgeon-architect-host|جراح، معمار و میزبان]]: سه رویکرد مختلف در دیزاین سیستم‌های کلان
+- [[notes/against-gatekeepers|علیه کاهنان]]: کاهن وابسته‌ات می‌کند؛ معلم کمک می‌کند روی پای خودت بایستی
+- [[notes/upward-spit|تف سربالا]]: وقتی همهٔ تقصیرها را به گردن محیط می‌اندازیم، ارادهٔ خودمان را زیر سؤال می‌بریم
 
-- [[expressions/art|هنر]]
-- [[notes/peach-and-onion|هلو و پیاز]]
-- [[notes/hyperformalism|ابرفرمالیسم]]
-- [[notes/impressionism|امپرسیونیسم]]
-- [[expressions/prngrphy|پورنوگرافی]]
-- [[essays/what is design|سری دیزاین]]
+## لایهٔ جهان
+
+*ارتباط با فرهنگ و زبان*
+
+- [[expressions/noise|نویز]]: چطور میان حرف‌های مهم و اطلاعاتِ بی‌فایده فرق بگذاریم؟
+- [[notes/the-second-red-light|چراغ قرمز دوم]]: دربارهٔ عجله برای رسیدن و چراغ‌های قرمزِ بعدی
+- [[notes/war-talk|صحبت جنگ]]: چرا دربارهٔ جنگ و سیاست راحت‌تر از حوزه‌های تخصصی نظر قطعی می‌دهیم؟
+- [[notes/benchmark|بنچمارک]]: ایران شبیه کجاست و با چه معیارهایی باید کشورها را مقایسه کرد؟
+- [[notes/perspective-calibration|تنظیم پرسپکتیو]]: نگاهی تصویری به زندگی پنج خانواده در پنج سطح درآمدی جهان
+
+## لایهٔ متا
+
+*ارتباط با فرم و پیچیدگی*
+
+- [[expressions/art|هنر]]: هنر، جور دیگر دیدن و باز کردن پنجره‌ای تازه به باغ زندگی است
+- [[notes/peach-and-onion|هلو و پیاز]]: همهٔ مسائل هسته ندارند؛ بعضی را باید از رابطهٔ میان لایه‌هایشان فهمید
+- [[notes/hyperformalism|ابرفرمالیسم]]: آدم گمشده، ناچار روی تکنیک‌های قدم‌زدنش کار می‌کند
+- [[notes/impressionism|امپرسیونیسم]]: دیدنِ بی‌واسطهٔ دنیا، پیش از آنکه دانسته‌هایمان جایش را بگیرند
+- [[expressions/prngrphy|پورنوگرافی]]: پورنوگرافی، سبکی از نگاه به دنیاست
+- [[essays/what is design|سری دیزاین]]: دیزاین، انجام کار خیر به شکلی زیباست
