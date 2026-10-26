@@ -168,9 +168,18 @@ sup {
   }
 }
 
-.breadcrumb-element p {
-  margin-block: 0;
-  margin-inline-end: 0.5rem;
+// Each separator belongs to the preceding crumb. Use the same gap within
+// and between crumbs instead of physical margins that skew spacing in RTL.
+.page-header .breadcrumb-container {
+  gap: 0.4rem;
+}
+
+.breadcrumb-container .breadcrumb-element {
+  gap: 0.4rem;
+}
+
+.breadcrumb-container .breadcrumb-element p {
+  margin: 0;
   padding: 0;
   line-height: normal;
 }
@@ -978,6 +987,32 @@ pre:has(>code.mermaid) .clipboard-button {
     &:hover {
         transform: scale(1.05);
     }
+}
+
+// Keep breadcrumbs and printing on one compact row; remaining header
+// components (title, metadata, featured image) still occupy the full width.
+.page-header > .popover-hint:has(> .print-actions) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.75rem;
+
+  > * {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  > .breadcrumb-container {
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+  }
+
+  > .print-actions {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
 }
 
 // Page Header styling
