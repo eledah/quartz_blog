@@ -214,6 +214,13 @@ plugins:
       priority: 8
       condition: not-index
       component: PrintButton
+  - source: ./plugins/blog-extras
+    enabled: true
+    layout:
+      position: afterBody
+      priority: 90
+      condition: not-index
+      component: PrintSource
   - source: "@quartz-community/article-title"
     enabled: true
     layout:

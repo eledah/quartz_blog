@@ -7,7 +7,7 @@
     // Supported browsers generate this independently of their own headers
     // and footers. Others simply leave the bottom margin empty.
     @bottom-center {
-      content: counter(page);
+      content: counter(page, persian);
       font-family: "Vazirmatn", sans-serif;
       font-size: 9pt;
       font-weight: 400;
@@ -90,6 +90,38 @@
     .external-icon,
     .noPrint {
       display: none !important;
+    }
+
+    // Only the attribution is printed here, never comments or other widgets.
+    .page .page-footer:has(> .print-source) {
+      display: block !important;
+      margin-top: 1.75em;
+    }
+
+    .page-footer > :not(.print-source) {
+      display: none !important;
+    }
+
+    .page-footer > .print-source {
+      display: block;
+      border-top: 0.5pt solid #ccc;
+      padding-top: 0.75em;
+      color: #666;
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 9pt;
+      line-height: 1.7;
+      break-inside: avoid;
+    }
+
+    .page .print-source a {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin-top: 0.2em;
+      color: #666 !important;
+      overflow-wrap: anywhere;
+      text-decoration: none;
+      unicode-bidi: isolate;
     }
 
     .page .page-header {

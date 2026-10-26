@@ -49,6 +49,11 @@
         "defaultPosition": "beforeBody",
         "defaultPriority": 8
       },
+      "PrintSource": {
+        "displayName": "Print Source",
+        "defaultPosition": "afterBody",
+        "defaultPriority": 90
+      },
       "Footer": {
         "displayName": "Footer",
         "defaultPosition": "footer",

@@ -21,6 +21,10 @@ function u2(e2, t2, n2, o2, i2, u3) {
 }
 
 // node_modules/@quartz-community/utils/dist/index.js
+function simplifySlug(fp) {
+  const res = stripSlashes(trimSuffix(fp, "index"), true);
+  return res.length === 0 ? "/" : res;
+}
 function joinSegments(...args) {
   if (args.length === 0) {
     return "";
@@ -36,11 +40,20 @@ function joinSegments(...args) {
   }
   return joined;
 }
+function endsWith(s2, suffix) {
+  return s2 === suffix || s2.endsWith("/" + suffix);
+}
+function trimSuffix(s2, suffix) {
+  if (endsWith(s2, suffix)) {
+    s2 = s2.slice(0, -suffix.length);
+  }
+  return s2;
+}
 function stripSlashes(s2, onlyStripPrefix) {
   if (s2.startsWith("/")) {
     s2 = s2.substring(1);
   }
-  if (s2.endsWith("/")) {
+  if (!onlyStripPrefix && s2.endsWith("/")) {
     s2 = s2.slice(0, -1);
   }
   return s2;
@@ -231,4 +244,21 @@ document.addEventListener("click", (event) => {
 `;
 var PrintButton_default = (() => PrintButton);
 
-export { Footer_default as Footer, PageTitle_default as PageTitle, PrintButton_default as PrintButton };
+// src/components/PrintSource.tsx
+var PrintSource = ({ cfg, fileData }) => {
+  if (!cfg.baseUrl || !fileData.slug) return null;
+  const base = cfg.baseUrl.replace(/^https?:\/\//, "").replace(/\/+$/, "");
+  const slug2 = simplifySlug(fileData.slug);
+  const url = `https://${base}/${slug2}`;
+  return /* @__PURE__ */ u2("div", { class: "print-source", dir: "rtl", children: [
+    /* @__PURE__ */ u2("span", { children: [
+      "\u0645\u0646\u0628\u0639: ",
+      cfg.pageTitle
+    ] }),
+    /* @__PURE__ */ u2("a", { href: url, dir: "ltr", children: url })
+  ] });
+};
+PrintSource.css = `.print-source { display: none; }`;
+var PrintSource_default = (() => PrintSource);
+
+export { Footer_default as Footer, PageTitle_default as PageTitle, PrintButton_default as PrintButton, PrintSource_default as PrintSource };

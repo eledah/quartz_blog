@@ -1,2 +1,2 @@
-export { Footer, PageTitle, PrintButton } from './components/index.js';
+export { Footer, PageTitle, PrintButton, PrintSource } from './components/index.js';
 import '@quartz-community/types';
