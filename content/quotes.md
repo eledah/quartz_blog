@@ -179,3 +179,15 @@ date: 2024-05-18
 
 <blockquote class="english-blockquote">Newer traditions have a tendency to overfit to the time and place and that's why they don't last long.</blockquote>
 
+<blockquote class="english-blockquote">We adopt the opinions of those we admire, then admire ourselves for holding them.<footer class="english-footer">Rob Henderson</footer></blockquote>
+
+
+<blockquote class="english-blockquote">It gets worse and worse when you have no objective element. Intellectuals are often contemptuous of business, and business people; but in business you can at least distinguish the successful people from the unsuccessful people. If your business is losing money, you will immediately ask what your competitor is doing which is better. And you’ll start imitating your competitor. But, if you are an intellectual, you will manage to rationalize things in such a way that you always want to do the opposite of your competitor. Therefore, you’ll hide the fact of imitation better. A businessman, who is responsible for a business will immediately imitate his competitor. That’s why the world of business today is probably more creative in relative terms than the intellectual world. It is the last creative world because, in intellectual life, you don’t dare to imitate others.<footer class="english-footer">René Girard - CBC Radio Ideas</footer></blockquote>
+
+<blockquote class="english-blockquote">The problem with young anime artists today is that the only thing they study is anime. When we were young, we studied French literature, we studied impressionism, we read Dostoevsky. We swallowed everything. And then we went and created original anime. But if you grow up and all you watch is anime, you're just regurgitating spinning wheels.<footer class="english-footer">Hayao Miyazaki on modern anime, via Roland Kelts the author of 'Japanamerica' </footer></blockquote>
+
+
+
+
+
+
