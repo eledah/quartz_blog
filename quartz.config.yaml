@@ -221,6 +221,12 @@ plugins:
       priority: 90
       condition: not-index
       component: PrintSource
+  - source: ./plugins/blog-extras
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 9
+      component: QuotesShuffle
   - source: "@quartz-community/article-title"
     enabled: true
     layout:

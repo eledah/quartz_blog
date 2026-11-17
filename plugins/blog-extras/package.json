@@ -4,7 +4,9 @@
   "description": "Custom PageTitle, Footer, and branding for eledah blog",
   "type": "module",
   "license": "MIT",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -48,6 +50,11 @@
         "displayName": "Print Button",
         "defaultPosition": "beforeBody",
         "defaultPriority": 8
+      },
+      "QuotesShuffle": {
+        "displayName": "Quotes Shuffle",
+        "defaultPosition": "beforeBody",
+        "defaultPriority": 9
       },
       "PrintSource": {
         "displayName": "Print Source",
