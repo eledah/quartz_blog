@@ -180,6 +180,9 @@ export function renderTranscludes(
         continue
       }
 
+      const isSurah = transcludeTarget.startsWith("projects/quran/surah/")
+      const surahTitle = isSurah ? page.frontmatter?.title : undefined
+      let sourceLabel = surahTitle ?? i18n(cfg.locale).components.transcludes.linkToOriginal
       let blockRef = el.properties.dataBlock as string | undefined
       if (blockRef?.startsWith("#^")) {
         // block transclude
@@ -204,9 +207,7 @@ export function renderTranscludes(
                 href: inner.properties?.href,
                 class: ["internal", "internal-link", "transclude-src"],
               },
-              children: [
-                { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
-              ],
+              children: [{ type: "text", value: sourceLabel }],
             },
           ]
         }
@@ -236,10 +237,19 @@ export function renderTranscludes(
           continue
         }
 
+        const isVerse = isSurah && /^\d+$/.test(blockRef)
+        if (isVerse && surahTitle) {
+          const verseNumber = blockRef.replace(/\d/g, (digit) => "۰۱۲۳۴۵۶۷۸۹"[Number(digit)])
+          sourceLabel = `${surahTitle}، آیهٔ ${verseNumber}`
+        }
+
         el.children = [
-          ...(page.htmlAst.children.slice(startIdx, endIdx) as ElementContent[]).map((c) =>
-            normalizeHastElement(c as Element, slug, transcludeTarget),
-          ),
+          ...(
+            page.htmlAst.children.slice(
+              isVerse ? startIdx + 1 : startIdx,
+              endIdx,
+            ) as ElementContent[]
+          ).map((c) => normalizeHastElement(c as Element, slug, transcludeTarget)),
           {
             type: "element",
             tagName: "a",
@@ -247,9 +257,7 @@ export function renderTranscludes(
               href: inner.properties?.href,
               class: ["internal", "internal-link", "transclude-src"],
             },
-            children: [
-              { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
-            ],
+            children: [{ type: "text", value: sourceLabel }],
           },
         ]
       } else if (page.htmlAst) {
@@ -280,9 +288,7 @@ export function renderTranscludes(
               href: inner.properties?.href,
               class: ["internal", "internal-link", "transclude-src"],
             },
-            children: [
-              { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
-            ],
+            children: [{ type: "text", value: sourceLabel }],
           },
         ]
       }
