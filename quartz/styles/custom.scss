@@ -390,6 +390,7 @@ div.search.mobile-only {
 blockquote .farsi-footer,
 .markdown-preview-view blockquote .farsi-footer {
     display: block;
+    margin: 0;
     margin-top: 0.5rem !important;
     padding: 0;
     direction: rtl !important;
@@ -492,6 +493,7 @@ html[dir="rtl"] .english-blockquote,
 blockquote .english-footer,
 .markdown-preview-view blockquote .english-footer {
     display: block;
+    margin: 0;
     margin-top: 0.5rem !important;
     padding: 0;
     direction: ltr !important;
