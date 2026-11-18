@@ -33,3 +33,10 @@ cssclasses:
 
 <div class='poem-verse-div'><div class='poem-right-verse-div'>هر شب زِ غمت ناله برآرم به هوا</div><div class='poem-left-verse-div'>گویند که باید برود غم، اما</div></div><br>
 <div class='poem-verse-div'><div class='poem-right-verse-div'>این زخمِ کهن، همدمِ شب‌های من است</div><div class='poem-left-verse-div'>ای زخم، بمان. بی‌تو کسی نیست مرا</div></div><br><br>
+
+### ۶
+
+
+
+<div class='poem-verse-div'><div class='poem-right-verse-div'>گفتم که همیشه دلِ من حیران است  </div><div class='poem-left-verse-div'>کو آن‌که به پایش دل و جان ارزان است؟ </div></div><br>
+<div class='poem-verse-div'><div class='poem-right-verse-div'>گفتا که دلت عاشق اگر بود ای دوست</div><div class='poem-left-verse-div'>صد دلبر از این راهِ تو در جولان است</div></div><br><br>
